@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="{{ @lang }}">
+<head>
+  <title>{{ v27.meta.title }}</title>
+  <meta name="description" content="{{ v27.meta.description }}">
+{% include head %}
+  <link rel="stylesheet" href="{{ @assets }}css/model.css">
+  <link rel="preload" as="image" href="{{ @assets }}video/v27-hero-poster.jpg" media="(min-width: 768px)">
+  <link rel="preload" as="image" href="{{ @assets }}video/v27-hero-mobile-poster.jpg" media="(max-width: 767px)">
+</head>
+<body class="page page--model page--v27">
+{% include header %}
+
+<main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section class="mhero" data-hero>
+    <div class="mhero__media" data-parallax="14">
+      <picture>
+        <source media="(max-width: 767px)" srcset="{{ @assets }}video/v27-hero-mobile-poster.jpg">
+        <img class="mhero__poster" src="{{ @assets }}video/v27-hero-poster.jpg" alt="" width="1600" height="900" fetchpriority="high">
+      </picture>
+      <video class="mhero__video" muted loop playsinline preload="none" aria-hidden="true"
+        data-video data-autoplay
+        data-src="{{ @assets }}video/v27-hero.mp4"
+        data-src-mobile="{{ @assets }}video/v27-hero-mobile.mp4"></video>
+    </div>
+    <div class="mhero__shade" aria-hidden="true"></div>
+
+    <div class="container mhero__content">
+      <h1 class="mhero__title">
+        <span class="visually-hidden">iCAUR V27 — </span>
+        <img class="mhero__logo" src="{{ @assets }}img/brand/v27-logo.webp" alt="V27" width="464" height="64" data-hero-fade>
+        <span class="mhero__line" data-split-lines>{{ v27.hero.line }}</span>
+      </h1>
+      <p class="mhero__text" data-hero-fade>{{ v27.hero.text }}</p>
+      <div class="hero__actions" data-hero-fade>
+        <a class="btn btn--light" href="#test-drive">{{ v27.hero.cta_test }}</a>
+        <a class="btn btn--ghost" href="#concessionari">{{ v27.hero.cta_dealer }}</a>
+      </div>
+    </div>
+
+    <div class="container mhero__bottom">
+      <dl class="mhero__stats" data-hero-fade>
+        {% for s in v27.hero.stats %}
+        <div><dt>{{ s.label }}</dt><dd><span data-count="{{ s.count }}" data-decimals="{{ s.dec }}">{{ s.value }}</span><small>{{ s.unit }}</small></dd></div>
+        {% endfor %}
+      </dl>
+      <button class="video-toggle" type="button" aria-pressed="false" data-video-toggle
+        data-label-pause="{{ common.video_pause }}" data-label-play="{{ common.video_play }}">
+        <svg class="icon icon--pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="1.8"/></svg>
+        <svg class="icon icon--play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg>
+        <span class="visually-hidden" data-video-toggle-label>{{ common.video_pause }}</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== SECTION DOCK (floating sub-navigation) ===== -->
+  <nav class="dock" aria-label="{{ v27.subnav.label }}" data-dock>
+    <ul class="dock__list">
+      <li><a href="#design" data-dock-link>{{ v27.subnav.design }}</a></li>
+      <li><a href="#colori" data-dock-link>{{ v27.subnav.colors }}</a></li>
+      <li><a href="#interni" data-dock-link>{{ v27.subnav.interior }}</a></li>
+      <li><a href="#tecnologia" data-dock-link>{{ v27.subnav.tech }}</a></li>
+      <li><a href="#sicurezza" data-dock-link>{{ v27.subnav.safety }}</a></li>
+      <li><a href="#specifiche" data-dock-link>{{ v27.subnav.specs }}</a></li>
+    </ul>
+    <a class="btn btn--light btn--sm dock__cta" href="#test-drive">{{ v27.subnav.cta }}</a>
+  </nav>
+
+  <!-- ===== DESIGN: the car turns as you scroll (pinned) ===== -->
+  <section class="turn" id="design" aria-labelledby="design-title" data-turn>
+    <header class="turn__head container">
+      <p class="eyebrow">{{ v27.turn.eyebrow }}</p>
+      <h2 class="section-title" id="design-title">{{ v27.turn.title }}</h2>
+    </header>
+    <ol class="turn__steps">
+      {% for step in v27.turn.steps %}
+      <li class="turn-step" data-turn-step>
+        <img class="turn-step__img" src="{{ @assets }}img/v27/{{ step.img }}-1440.jpg"
+          srcset="{{ @assets }}img/v27/{{ step.img }}-800.jpg 800w, {{ @assets }}img/v27/{{ step.img }}-1440.jpg 1440w, {{ @assets }}img/v27/{{ step.img }}-2048.jpg 2048w"
+          sizes="100vw" alt="{{ step.alt }}" width="1440" height="810" loading="lazy">
+        <div class="turn-step__caption">
+          <h3 class="turn-step__title">{{ step.title }}</h3>
+          <p class="turn-step__text">{{ step.text }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    <div class="turn__progress" aria-hidden="true"><span data-turn-progress></span></div>
+  </section>
+
+  <!-- ===== COLOURS ===== -->
+  <section class="colors section section--ink" id="colori" aria-labelledby="colors-title" data-colors>
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow" data-reveal>{{ v27.colors.eyebrow }}</p>
+        <h2 class="section-title" id="colors-title" data-reveal>{{ v27.colors.title }}</h2>
+      </header>
+    </div>
+    <div class="colors__stage">
+      {% for c in v27.colors.items %}
+      <img class="colors__img" src="{{ @assets }}img/v27/color-{{ c.slug }}-1440.jpg"
+        srcset="{{ @assets }}img/v27/color-{{ c.slug }}-800.jpg 800w, {{ @assets }}img/v27/color-{{ c.slug }}-1440.jpg 1440w, {{ @assets }}img/v27/color-{{ c.slug }}-2048.jpg 2048w"
+        sizes="100vw" alt="{{ v27.colors.alt }} {{ c.name }}" width="1440" height="810" loading="lazy" data-color-img="{{ c.slug }}">
+      {% endfor %}
+      <div class="colors__picker">
+        <p class="colors__name" aria-live="polite" data-color-name>{{ v27.colors.items.0.name }}</p>
+        <div class="swatches" role="radiogroup" aria-label="{{ v27.colors.label }}" data-swatches>
+          {% for c in v27.colors.items %}
+          <button class="swatch" type="button" role="radio" aria-checked="false" data-color="{{ c.slug }}" data-name="{{ c.name }}" style="--swatch: {{ c.hex }}">
+            <span class="visually-hidden">{{ c.name }}</span>
+          </button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DETAILS: one at a time (pinned) ===== -->
+  <section class="details section section--paper" aria-labelledby="details-title" data-steps>
+    <div class="container details__inner">
+      <div class="details__text">
+        <p class="eyebrow eyebrow--dark">{{ v27.details.eyebrow }}</p>
+        <h2 class="section-title" id="details-title">{{ v27.details.title }}</h2>
+        <ol class="details__list">
+          {% for d in v27.details.items %}
+          <li class="detail" data-step>
+            <div class="detail__media"><img src="{{ @assets }}img/v27/{{ d.img }}-1440.jpg" srcset="{{ @assets }}img/v27/{{ d.img }}-800.jpg 800w, {{ @assets }}img/v27/{{ d.img }}-1440.jpg 1440w" sizes="(min-width: 1024px) 55vw, 100vw" alt="{{ d.alt }}" width="1440" height="810" loading="lazy" data-step-img></div>
+            <h3 class="detail__title">{{ d.title }}</h3>
+            <p class="detail__text">{{ d.text }}</p>
+          </li>
+          {% endfor %}
+        </ol>
+        <div class="details__bars" aria-hidden="true"><span data-step-bar></span><span data-step-bar></span><span data-step-bar></span></div>
+      </div>
+      <div class="details__stage" aria-hidden="true" data-steps-stage></div>
+    </div>
+  </section>
+
+  <!-- ===== INTERIOR ===== -->
+  <section class="interior section" id="interni" aria-labelledby="interior-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow" data-reveal>{{ v27.interior.eyebrow }}</p>
+        <h2 class="section-title" id="interior-title" data-split-lines>{{ v27.interior.title }}</h2>
+        <p class="lead" data-reveal>{{ v27.interior.text }}</p>
+      </header>
+    </div>
+    <div class="interior__frame" data-expand>
+      <img src="{{ @assets }}img/v27/int-cockpit-1440.jpg" srcset="{{ @assets }}img/v27/int-cockpit-800.jpg 800w, {{ @assets }}img/v27/int-cockpit-1440.jpg 1440w, {{ @assets }}img/v27/int-cockpit-2048.jpg 2048w" sizes="100vw" alt="{{ v27.interior.alt }}" width="1440" height="1080" loading="lazy">
+    </div>
+    <div class="container">
+      <ul class="features">
+        {% for f in v27.interior.features %}
+        <li class="feature" data-reveal>
+          <h3 class="feature__title">{{ f.title }}</h3>
+          <p class="feature__text">{{ f.text }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== SPACE ===== -->
+  <section class="space section section--light" aria-labelledby="space-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.space.eyebrow }}</p>
+        <h2 class="section-title" id="space-title" data-reveal>{{ v27.space.title }}</h2>
+      </header>
+      <dl class="bignums bignums--dark">
+        {% for s in v27.space.stats %}
+        <div data-reveal><dd><span data-count="{{ s.count }}">{{ s.count }}</span><small>{{ s.unit }}</small></dd><dt>{{ s.label }}</dt></div>
+        {% endfor %}
+      </dl>
+      <p class="space__head" data-reveal>{{ v27.space.head }}</p>
+
+      <div class="media-split">
+        <div class="media-split__img" data-reveal><img src="{{ @assets }}img/v27/int-flat-1440.jpg" srcset="{{ @assets }}img/v27/int-flat-800.jpg 800w, {{ @assets }}img/v27/int-flat-1440.jpg 1440w" sizes="(min-width: 1024px) 60vw, 100vw" alt="{{ v27.space.flat_alt }}" width="1440" height="810" loading="lazy"></div>
+        <div class="media-split__body" data-reveal>
+          <h3 class="media-split__title">{{ v27.space.flat_title }}</h3>
+          <p>{{ v27.space.flat_text }}</p>
+          <p class="note">{{ v27.space.note }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMFORT (carousel) ===== -->
+  <section class="comfort section section--paper" aria-labelledby="comfort-title" data-carousel>
+    <div class="container">
+      <header class="section-head section-head--split">
+        <div>
+          <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.comfort.eyebrow }}</p>
+          <h2 class="section-title" id="comfort-title" data-reveal>{{ v27.comfort.title }}</h2>
+        </div>
+        <div class="carousel-nav">
+          <button class="round-btn" type="button" data-carousel-prev aria-label="‹"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H5m4-4-4 4 4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          <button class="round-btn" type="button" data-carousel-next aria-label="›"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        </div>
+      </header>
+    </div>
+    <ul class="carousel" data-carousel-track data-drag-scroll>
+      {% for c in v27.comfort.items %}
+      <li class="ccard">
+        <div class="ccard__media"><img src="{{ @assets }}img/v27/{{ c.img }}-800.jpg" alt="{{ c.alt }}" width="800" height="450" loading="lazy" draggable="false"></div>
+        <h3 class="ccard__title">{{ c.title }}</h3>
+        <p class="ccard__text">{{ c.text }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <!-- ===== TECHNOLOGY / PERFORMANCE ===== -->
+  <section class="perf section section--ink" id="tecnologia" aria-labelledby="perf-title">
+    <div class="container">
+      <div class="perf__intro">
+        <header>
+          <p class="eyebrow" data-reveal>{{ v27.performance.eyebrow }}</p>
+          <h2 class="section-title" id="perf-title" data-split-lines>{{ v27.performance.title }}</h2>
+          <p class="lead lead--dim" data-reveal>{{ v27.performance.text }}</p>
+        </header>
+        <figure class="perf__diagram" data-reveal>
+          <img src="{{ @assets }}img/v27/tech-reev-1440.jpg" srcset="{{ @assets }}img/v27/tech-reev-800.jpg 800w, {{ @assets }}img/v27/tech-reev-1440.jpg 1440w" sizes="(min-width: 1024px) 45vw, 100vw" alt="{{ v27.performance.img_alt }}" width="1440" height="810" loading="lazy">
+        </figure>
+      </div>
+      <dl class="bignums">
+        {% for s in v27.performance.stats %}
+        <div data-reveal><dd>{{ s.pre }}<span data-count="{{ s.count }}" data-decimals="{{ s.dec }}">{{ s.count }}</span><small>{{ s.unit }}</small></dd><dt>{{ s.label }}</dt></div>
+        {% endfor %}
+      </dl>
+      <p class="note note--dim" data-reveal>{{ v27.performance.battery }}</p>
+    </div>
+  </section>
+
+  <!-- ===== OFF-ROAD ===== -->
+  <section class="offroad" aria-labelledby="offroad-title">
+    <div class="offroad__media" data-parallax="12">
+      <img src="{{ @assets }}img/v27/out-dune-1440.jpg" srcset="{{ @assets }}img/v27/out-dune-800.jpg 800w, {{ @assets }}img/v27/out-dune-1440.jpg 1440w, {{ @assets }}img/v27/out-dune-2048.jpg 2048w" sizes="100vw" alt="{{ v27.offroad.alt }}" width="1440" height="810" loading="lazy">
+    </div>
+    <div class="container offroad__content">
+      <p class="eyebrow" data-reveal>{{ v27.offroad.eyebrow }}</p>
+      <h2 class="section-title" id="offroad-title" data-reveal>{{ v27.offroad.title }}</h2>
+      <p class="lead" data-reveal>{{ v27.offroad.text }}</p>
+      <dl class="bignums bignums--compact">
+        {% for s in v27.offroad.stats %}
+        <div data-reveal><dd><span data-count="{{ s.count }}">{{ s.count }}</span><small>{{ s.unit }}</small></dd><dt>{{ s.label }}</dt></div>
+        {% endfor %}
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===== SAFETY ===== -->
+  <section class="safety section section--light" id="sicurezza" aria-labelledby="safety-title">
+    <div class="container">
+      <div class="safety__intro">
+        <header>
+          <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.safety.eyebrow }}</p>
+          <h2 class="section-title" id="safety-title" data-reveal>{{ v27.safety.title }}</h2>
+          <p class="lead" data-reveal>{{ v27.safety.text }}</p>
+          <ul class="points">
+            {% for p in v27.safety.points %}
+            <li data-reveal><strong>{{ p.value }}</strong><span>{{ p.label }}</span></li>
+            {% endfor %}
+          </ul>
+        </header>
+        <figure class="safety__cage" data-reveal>
+          <img src="{{ @assets }}img/v27/tech-cage-1440.jpg" srcset="{{ @assets }}img/v27/tech-cage-800.jpg 800w, {{ @assets }}img/v27/tech-cage-1440.jpg 1440w" sizes="(min-width: 1024px) 50vw, 100vw" alt="{{ v27.safety.cage_alt }}" width="1440" height="810" loading="lazy">
+        </figure>
+      </div>
+
+      <h3 class="subhead" data-reveal>{{ v27.safety.adas_title }}</h3>
+      <ul class="adas">
+        {% for a in v27.safety.adas %}
+        <li class="adas__card" data-reveal>
+          <div class="adas__media"><img src="{{ @assets }}img/v27/{{ a.img }}-800.jpg" alt="{{ a.alt }}" width="800" height="450" loading="lazy"></div>
+          <h4 class="adas__title">{{ a.title }}</h4>
+          <p class="adas__text">{{ a.text }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery section section--ink" aria-labelledby="gallery-title">
+    <div class="container">
+      <header class="section-head section-head--split">
+        <div>
+          <p class="eyebrow" data-reveal>{{ v27.gallery.eyebrow }}</p>
+          <h2 class="section-title" id="gallery-title" data-reveal>{{ v27.gallery.title }}</h2>
+        </div>
+        <p class="gallery__hint" aria-hidden="true">{{ v27.gallery.hint }}</p>
+      </header>
+    </div>
+    <ul class="gallery__track" data-drag-scroll data-cursor-target="{{ v27.gallery.hint }}">
+      {% for g in v27.gallery.items %}
+      <li class="gallery__item"><img src="{{ @assets }}img/v27/{{ g.img }}-1440.jpg" srcset="{{ @assets }}img/v27/{{ g.img }}-800.jpg 800w, {{ @assets }}img/v27/{{ g.img }}-1440.jpg 1440w" sizes="(min-width: 1024px) 60vw, 85vw" alt="{{ g.alt }}" width="1440" height="810" loading="lazy" draggable="false"></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <!-- ===== SPECS ===== -->
+  <section class="specs section section--paper" id="specifiche" aria-labelledby="specs-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.specs.eyebrow }}</p>
+        <h2 class="section-title" id="specs-title" data-reveal>{{ v27.specs.title }}</h2>
+      </header>
+      <div class="specs__grid">
+        <div class="spec-group" data-reveal>
+          <h3 class="spec-group__title">{{ v27.specs.g_power }}</h3>
+          <dl>{% for r in v27.specs.power %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
+        </div>
+        <div class="spec-group" data-reveal>
+          <h3 class="spec-group__title">{{ v27.specs.g_space }}</h3>
+          <dl>{% for r in v27.specs.space %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
+        </div>
+        <div class="spec-group" data-reveal>
+          <h3 class="spec-group__title">{{ v27.specs.g_offroad }}</h3>
+          <dl>{% for r in v27.specs.offroad %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
+        </div>
+        <div class="spec-group" data-reveal>
+          <h3 class="spec-group__title">{{ v27.specs.g_tech }}</h3>
+          <dl>{% for r in v27.specs.tech %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
+        </div>
+      </div>
+      <p class="note">{{ v27.specs.note }}</p>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="mcta" id="test-drive" aria-labelledby="cta-title">
+    <img class="mcta__img" src="{{ @assets }}img/v27/out-meadow-1440.jpg" srcset="{{ @assets }}img/v27/out-meadow-800.jpg 800w, {{ @assets }}img/v27/out-meadow-1440.jpg 1440w, {{ @assets }}img/v27/out-meadow-2048.jpg 2048w" sizes="100vw" alt="{{ v27.cta.alt }}" width="1440" height="1080" loading="lazy" data-parallax="10">
+    <div class="container mcta__content">
+      <p class="eyebrow" data-reveal>{{ v27.cta.eyebrow }}</p>
+      <h2 class="mcta__title" id="cta-title" data-split-lines>{{ v27.cta.title }}</h2>
+      <p class="lead" data-reveal>{{ v27.cta.text }}</p>
+      <div class="hero__actions" data-reveal>
+        <a class="btn btn--light" href="contatti.html?motivo=test-drive&amp;modello=v27">{{ v27.cta.test }}</a>
+        <a class="btn btn--ghost" href="#concessionari">{{ v27.cta.dealer }}</a>
+        <a class="btn btn--ghost" href="contatti.html?modello=v27">{{ v27.cta.info }}</a>
+      </div>
+    </div>
+  </section>
+
+  <p class="container page-disclaimer">{{ v27.disclaimer }}</p>
+</main>
+
+{% include footer %}
+{% include scripts %}
+<script src="{{ @assets }}js/model.js" defer></script>
+</body>
+</html>

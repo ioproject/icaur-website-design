@@ -284,13 +284,15 @@
     var end = parseFloat(el.dataset.count);
     var dec = parseInt(el.dataset.decimals || '0', 10);
     var fmt = new Intl.NumberFormat(root.lang || 'it', { minimumFractionDigits: dec, maximumFractionDigits: dec });
-    if (reduceMotion) return;
+    if (reduceMotion) { el.textContent = fmt.format(end); return; }
     var obj = { v: 0 };
     el.textContent = fmt.format(0);
+    var inHero = el.closest('[data-hero]');
     gsap.to(obj, {
       v: end, duration: 1.8, ease: 'power2.out',
+      delay: inHero ? 1 : 0, // in the hero: right after the title reveal
       onUpdate: function () { el.textContent = fmt.format(obj.v); },
-      scrollTrigger: { trigger: el, start: 'top 90%', once: true }
+      scrollTrigger: inHero ? null : { trigger: el, start: 'top 90%', once: true }
     });
   });
 

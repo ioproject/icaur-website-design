@@ -34,6 +34,54 @@ IMAGES = [
     (f"{PKG}/iCAUR LIFE/PAGE 6.jpeg", "img/home/news-3", [640, 1024]),
 ]
 
+# V27 page
+EXT, INT, PERF = f"{PKG}/V27 MODEL/外观Exterior", f"{PKG}/V27 MODEL/内饰Interior", f"{PKG}/V27 MODEL/驾控Performance"
+COLORS = f"{PKG}/V27 MODEL/V27车色美图-横竖2版-完稿Color Visuals/小图 Thumbnail"
+L, M = [800, 1440, 2048], [800, 1440]
+IMAGES += [
+    # studio views for the scroll-driven turn (same framing on every shot)
+    (f"{EXT}/W01-iCAR_V27_车头-输出.jpg", "img/v27/turn-front", L),
+    (f"{EXT}/W04-iCAR_V27_左前45-输出.jpg", "img/v27/turn-front45", L),
+    (f"{EXT}/W03-iCAR_V27_正侧-输出.jpg", "img/v27/turn-side", L),
+    (f"{EXT}/W05-iCAR_V27_左后45-输出.jpg", "img/v27/turn-rear45", L),
+    (f"{EXT}/W02-iCAR_V27_车尾-输出.jpg", "img/v27/turn-rear", L),
+    (f"{EXT}/W08-iCAR_V27_正顶（有顶）-输出.jpg", "img/v27/turn-top", L),
+    # exterior details
+    (f"{EXT}/W11-iCAR_V27_角雷达-输出.jpg", "img/v27/detail-light", M),
+    (f"{EXT}/W14-iCAR_V27_轮毂-输出.jpg", "img/v27/detail-wheel", M),
+    (f"{EXT}/W13-iCAR_V27_脚踏-输出.jpg", "img/v27/detail-steps", M),
+    # interior
+    (f"{INT}/N01-icar_V27_正前-输出-改iCAUR logo.jpg", "img/v27/int-cockpit", L),
+    (f"{INT}/N03-2-icar_V27_正侧_透车-输出.jpg", "img/v27/int-cabin", M),
+    (f"{INT}/N06-iCAR_V27_后排座椅-输出.jpg", "img/v27/int-rear", M),
+    (f"{INT}/N04-icar_V27_后备箱座椅放倒-输出.jpg", "img/v27/int-flat", M),
+    (f"{INT}/N14-icar_V27_主驾座椅-输出.jpg", "img/v27/int-seat", M),
+    (f"{INT}/N09-iCAR_V27_音响-输出 (2).jpg", "img/v27/int-audio", M),
+    (f"{INT}/P14-香氛图.jpg", "img/v27/int-perfume", M),
+    (f"{INT}/iCAUR INTL_V27 REV_cam033.jpg", "img/v27/int-console", M),
+    (f"{PERF}/iCAUR INTL_V27 REV_cam030.jpg", "img/v27/int-trunk", M),
+    # performance, outdoor
+    (f"{PERF}/Cam 015冲沙_OL_H1014.jpg", "img/v27/out-dune", L),
+    (f"{PERF}/Cam 003_8k_OL.jpg", "img/v27/out-canyon", L),
+    (f"{PERF}/Cam 005 B6_OL.jpg", "img/v27/out-front", L),
+    (f"{PERF}/Cam 009 B3_OL.jpg", "img/v27/out-rear", L),
+    (f"{PERF}/Cam-004-OL.jpg", "img/v27/out-rocks", L),
+    (f"{PERF}/Cam-016-F-OL.jpg", "img/v27/out-valley", L),
+    (f"{PERF}/KV20-iCAR-V27高-户外草地-输出.jpg", "img/v27/out-meadow", L),
+    # technology & safety illustrations
+    (f"{PERF}/REEV.PNG", "img/v27/tech-reev", M),
+    (f"{PERF}/safety.PNG", "img/v27/tech-cage", M),
+    (f"{PERF}/RCTA.png", "img/v27/adas-rcta", M),
+    (f"{PERF}/Automatic Parking（APA）.png", "img/v27/adas-apa", M),
+    (f"{PERF}/L2 Active Safety.png", "img/v27/adas-active", M),
+]
+# body colours (file names contain full-width characters: matched by English prefix)
+for prefix, slug in [("Desert Bronze", "desert-bronze"), ("Moonstone White", "moonstone-white"), ("Deep Emerald", "deep-emerald"),
+                     ("Obsidian Black", "obsidian-black"), ("Glacier Silver", "glacier-silver"), ("Auric Gold", "auric-gold"), ("Basalt Grey", "basalt-grey")]:
+    match = [f for f in os.listdir(COLORS) if f.startswith(prefix)] if os.path.isdir(COLORS) else []
+    if match:
+        IMAGES.append((os.path.join(COLORS, match[0]), f"img/v27/color-{slug}", L))
+
 # (source, output name, start s, duration s, width, kbps, poster at s (relative to start), height or None)
 # height set = center-cropped to that frame (used for portrait mobile versions)
 VIDEOS = [
@@ -41,6 +89,8 @@ VIDEOS = [
     (f"{PKG}/HOME PAGE/PAGE 2 品牌视频.mp4", "video/home-hero-mobile", 45, 16, 720, 1600, 15.5, 1280),
     (f"{PKG}/HOME PAGE/PAGE3-3 V27视频.mp4", "video/card-v27", 19, 9, 1280, 1800, 3, None),
     (f"{PKG}/HOME PAGE/PAGE 3-2 V25 coming soon引导至品牌页.mp4", "video/card-v25", 7, 6, 1280, 1500, 2.5, None),
+    (f"{PKG}/HOME PAGE/PAGE3-3 V27视频.mp4", "video/v27-hero", 2, 14, 1600, 1800, 7, None),
+    (f"{PKG}/HOME PAGE/PAGE3-3 V27视频.mp4", "video/v27-hero-mobile", 2, 14, 720, 1100, 7, 1280),
 ]
 
 

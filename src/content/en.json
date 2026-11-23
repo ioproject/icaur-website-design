@@ -137,5 +137,514 @@
       "contact_title": "Let's talk",
       "contact_alt": "A man on the phone inside a red phone box"
     }
+  },
+  "v27": {
+    "meta": {
+      "title": "iCAUR V27 — All-round hybrid SUV",
+      "description": "iCAUR V27: classic boxy design, Golden REEV system, 0–100 km/h in 5.9 s, 505 N·m and one of the roomiest cabins in its class."
+    },
+    "subnav": {
+      "label": "V27 page sections",
+      "design": "Design",
+      "colors": "Colours",
+      "interior": "Interior",
+      "tech": "Technology",
+      "safety": "Safety",
+      "specs": "Specs",
+      "cta": "Test drive"
+    },
+    "hero": {
+      "eyebrow": "iCAUR V27",
+      "line": "All-round hybrid SUV",
+      "text": "Classic style, electric drive.",
+      "cta_test": "Book a test drive",
+      "cta_dealer": "Find a dealer",
+      "stats": [
+        {
+          "count": "5.9",
+          "dec": "1",
+          "value": "5.9",
+          "unit": "s",
+          "label": "0–100 km/h"
+        },
+        {
+          "count": "505",
+          "dec": "0",
+          "value": "505",
+          "unit": "N·m",
+          "label": "Motor max torque"
+        },
+        {
+          "count": "335",
+          "dec": "0",
+          "value": "335",
+          "unit": "kW",
+          "label": "Motor max power"
+        },
+        {
+          "count": "715",
+          "dec": "0",
+          "value": "715",
+          "unit": "L",
+          "label": "Boot, 5 seats up"
+        }
+      ]
+    },
+    "turn": {
+      "eyebrow": "Design",
+      "title": "Rugged stance,<br>classic aesthetic",
+      "steps": [
+        {
+          "img": "turn-front",
+          "title": "Retro meets tech",
+          "text": "Round headlights with the Star Halo light ring and separate turn signals: a classic face with today's details.",
+          "alt": "V27 seen from the front, in the studio"
+        },
+        {
+          "img": "turn-front45",
+          "title": "Classic boxy shape",
+          "text": "A 1:1 width-to-height ratio, vertical lines, wide wheel arches and 21-inch wheels.",
+          "alt": "V27 seen from the front three-quarter"
+        },
+        {
+          "img": "turn-side",
+          "title": "Sculpted surfaces",
+          "text": "Scoop cuts in the bodywork catch the light and give depth to a bold silhouette.",
+          "alt": "V27 seen from the side"
+        },
+        {
+          "img": "turn-rear45",
+          "title": "Imposing proportions",
+          "text": "A large body that stands out and leaves plenty of room for everyone inside.",
+          "alt": "V27 seen from the rear three-quarter"
+        },
+        {
+          "img": "turn-rear",
+          "title": "Power tailgate",
+          "text": "Hands full? A gentle push is all it takes: it closes on its own, smoothly and quietly.",
+          "alt": "V27 seen from behind with the spare wheel on the tailgate"
+        },
+        {
+          "img": "turn-top",
+          "title": "Starry Sky dual roof",
+          "text": "Two glass panels bring the sky into the cabin, in the city or out in the wild.",
+          "alt": "V27 seen from above with its dual glass roof"
+        }
+      ]
+    },
+    "colors": {
+      "eyebrow": "Colours",
+      "title": "Seven colours,<br>seven landscapes",
+      "label": "Choose a colour",
+      "alt": "V27 side view in",
+      "items": [
+        {
+          "slug": "desert-bronze",
+          "name": "Desert Bronze",
+          "hex": "#B9A27E"
+        },
+        {
+          "slug": "moonstone-white",
+          "name": "Moonstone White",
+          "hex": "#E6E3DC"
+        },
+        {
+          "slug": "deep-emerald",
+          "name": "Deep Emerald Green",
+          "hex": "#3F5A47"
+        },
+        {
+          "slug": "obsidian-black",
+          "name": "Obsidian Black",
+          "hex": "#232425"
+        },
+        {
+          "slug": "glacier-silver",
+          "name": "Glacier Silver",
+          "hex": "#B7BCC1"
+        },
+        {
+          "slug": "auric-gold",
+          "name": "Auric Gold Yellow",
+          "hex": "#D9AA3C"
+        },
+        {
+          "slug": "basalt-grey",
+          "name": "Basalt Grey",
+          "hex": "#8A8C8E"
+        }
+      ]
+    },
+    "details": {
+      "eyebrow": "Details",
+      "title": "Up close",
+      "items": [
+        {
+          "img": "detail-light",
+          "title": "Star Halo light signature",
+          "text": "It lights the road and makes the V27 recognisable in the dark: every time it turns on, it draws a ring of light.",
+          "alt": "V27 headlight with the light ring switched on"
+        },
+        {
+          "img": "detail-wheel",
+          "title": "21-inch wheels",
+          "text": "Sized to the body for a stable ride on the road. Wide wheel arches protect the sides when the road runs out.",
+          "alt": "V27 21-inch wheel and flared wheel arch"
+        },
+        {
+          "img": "detail-steps",
+          "title": "Fixed side steps",
+          "text": "Getting in and out is easy for everyone, young and old, and the side line stays clean.",
+          "alt": "V27 fixed side step"
+        }
+      ]
+    },
+    "interior": {
+      "eyebrow": "Interior",
+      "title": "Advanced tech,<br>living-room warmth",
+      "text": "Tan leather, horizontal lines and a 15.4-inch centre screen. Everything is where you expect it.",
+      "alt": "V27 dashboard and front seats in tan leather",
+      "features": [
+        {
+          "title": "15.4\" 2.5K screen",
+          "text": "Qualcomm 8155 chip, voice control, OTA updates (with active connectivity) and Driver Monitoring System (DMS)."
+        },
+        {
+          "title": "Seven modes, one tap",
+          "text": "Nap, Sentinel, Camping, off-vehicle battery protection and more."
+        },
+        {
+          "title": "Power driver's seat",
+          "text": "Six-way adjustment with memory and welcome function: find your position in a moment."
+        },
+        {
+          "title": "Starry Sky roof",
+          "text": "The dual glass roof brings light and sky into the cabin."
+        }
+      ]
+    },
+    "space": {
+      "eyebrow": "Space",
+      "title": "Room to spare,<br>no rush",
+      "note": "Manufacturer data. Class-leading values according to iCAUR.",
+      "stats": [
+        {
+          "count": "950",
+          "unit": "mm",
+          "label": "Second-row knee room"
+        },
+        {
+          "count": "1357",
+          "unit": "mm",
+          "label": "Floor-to-ceiling height"
+        },
+        {
+          "count": "715",
+          "unit": "L",
+          "label": "Boot with second row upright"
+        },
+        {
+          "count": "1818",
+          "unit": "L",
+          "label": "With second row reclined"
+        }
+      ],
+      "head": "Headroom: 1110 mm front, 1116 mm rear. There's an extra 40-litre compartment under the boot floor.",
+      "flat_title": "Second row down, bedroom up",
+      "flat_text": "One touch folds the rear seats flat: a bed for camping trips or a huge space for bulky loads.",
+      "flat_alt": "V27 load space with the rear seats folded flat"
+    },
+    "comfort": {
+      "eyebrow": "Comfort",
+      "title": "The small pleasures of the journey",
+      "items": [
+        {
+          "img": "int-seat",
+          "title": "Ventilated and heated",
+          "text": "The only model in its class with ventilation on both cushion and backrest, plus seat heating.",
+          "alt": "Driver's seat in tan leather"
+        },
+        {
+          "img": "int-audio",
+          "title": "15 speakers",
+          "text": "Carefully tuned surround sound: every journey gets its soundtrack.",
+          "alt": "Top view of the cabin with the speakers highlighted"
+        },
+        {
+          "img": "int-perfume",
+          "title": "Fragrance diffuser",
+          "text": "Replaceable refills to pick the scent of each journey.",
+          "alt": "Fragrance diffuser on the dashboard"
+        },
+        {
+          "img": "int-console",
+          "title": "Thermal armrest box",
+          "text": "Keeps summer drinks cold and winter coffee warm.",
+          "alt": "Centre console with the thermal armrest"
+        },
+        {
+          "img": "int-cabin",
+          "title": "Fully reclining seat",
+          "text": "While you wait or charge, lay the backrest flat and take a break.",
+          "alt": "V27 cabin seen from the side"
+        },
+        {
+          "img": "int-rear",
+          "title": "Ambient lighting",
+          "text": "Adjustable multi-colour lighting sets the right mood for every trip.",
+          "alt": "V27 rear bench"
+        }
+      ]
+    },
+    "performance": {
+      "eyebrow": "Technology",
+      "title": "Golden REEV:<br>electric power at the wheels",
+      "text": "The petrol engine works as a generator and charges the battery when needed. The wheels are always driven by the two electric motors, one per axle.",
+      "img_alt": "Diagram of the Golden REEV range extender system on the V27 platform",
+      "stats": [
+        {
+          "count": "5.9",
+          "dec": "1",
+          "pre": "",
+          "unit": "s",
+          "label": "0 to 100 km/h"
+        },
+        {
+          "count": "61",
+          "dec": "0",
+          "pre": "&lt;",
+          "unit": "dB",
+          "label": "In the cabin, 2 dB below the industry standard"
+        },
+        {
+          "count": "45.79",
+          "dec": "2",
+          "pre": "",
+          "unit": "%",
+          "label": "Engine thermal efficiency"
+        },
+        {
+          "count": "335",
+          "dec": "0",
+          "pre": "",
+          "unit": "kW",
+          "label": "150 kW front + 185 kW rear"
+        },
+        {
+          "count": "505",
+          "dec": "0",
+          "pre": "",
+          "unit": "N·m",
+          "label": "200 N·m front + 305 N·m rear"
+        }
+      ],
+      "battery": "CATL lithium iron phosphate (LFP) battery."
+    },
+    "offroad": {
+      "eyebrow": "Off-road",
+      "title": "Where the tarmac ends",
+      "text": "Generous angles, deep wading and a very rigid body: the V27 takes on sand, rocks and dirt tracks calmly.",
+      "alt": "V27 climbing a dune and kicking up sand",
+      "stats": [
+        {
+          "count": "24",
+          "unit": "°",
+          "label": "Approach angle"
+        },
+        {
+          "count": "23",
+          "unit": "°",
+          "label": "Departure angle"
+        },
+        {
+          "count": "600",
+          "unit": "mm",
+          "label": "Wading depth"
+        }
+      ]
+    },
+    "safety": {
+      "eyebrow": "Safety",
+      "title": "March forward fearlessly",
+      "text": "Designed to the five-star standards of E-NCAP, C-NCAP, A-NCAP and ASEAN NCAP.",
+      "cage_alt": "V27 cage body with high-strength steels highlighted",
+      "points": [
+        {
+          "value": "11 + 11",
+          "label": "Transverse and longitudinal beams form a cage"
+        },
+        {
+          "value": "39",
+          "label": "Key points in hot-formed steel"
+        },
+        {
+          "value": "76.53%",
+          "label": "High-strength steel and aluminium alloy"
+        },
+        {
+          "value": "32,186",
+          "label": "N·m/deg torsional rigidity"
+        }
+      ],
+      "adas_title": "Driver assistance",
+      "adas": [
+        {
+          "img": "adas-rcta",
+          "title": "Rear Cross Traffic Alert (RCTA)",
+          "text": "When reversing it watches traffic coming from the sides and warns you with sounds and lights.",
+          "alt": "Illustration of rear cross traffic alert"
+        },
+        {
+          "img": "adas-apa",
+          "title": "Automatic Parking (APA)",
+          "text": "It finds the space, plans the path and parks by itself, even in tight spots.",
+          "alt": "Illustration of automatic parking"
+        },
+        {
+          "img": "adas-active",
+          "title": "Active safety",
+          "text": "It monitors the surroundings in real time, anticipates risks and steps in when needed.",
+          "alt": "Illustration of active safety systems on the motorway"
+        }
+      ]
+    },
+    "gallery": {
+      "eyebrow": "Gallery",
+      "title": "As far as you want to go",
+      "hint": "Drag to scroll",
+      "items": [
+        {
+          "img": "out-canyon",
+          "alt": "V27 cornering on a sandy track between rocks"
+        },
+        {
+          "img": "out-front",
+          "alt": "V27 seen from the front on a rocky plateau"
+        },
+        {
+          "img": "out-rocks",
+          "alt": "V27 among boulders with snowy mountains behind"
+        },
+        {
+          "img": "out-rear",
+          "alt": "V27 seen from behind kicking up dust"
+        },
+        {
+          "img": "out-valley",
+          "alt": "V27 in a rocky valley under a cloudy sky"
+        },
+        {
+          "img": "out-meadow",
+          "alt": "V27 on a high meadow in front of a mountain"
+        }
+      ]
+    },
+    "specs": {
+      "eyebrow": "Specs",
+      "title": "Technical data",
+      "g_power": "Powertrain and performance",
+      "g_offroad": "Off-road and body",
+      "g_space": "Dimensions and space",
+      "g_tech": "Technology",
+      "power": [
+        {
+          "k": "System",
+          "v": "Golden REEV range extender, i-AWD all-wheel drive"
+        },
+        {
+          "k": "Motor max power",
+          "v": "335 kW (150 front + 185 rear)"
+        },
+        {
+          "k": "Motor max torque",
+          "v": "505 N·m (200 front + 305 rear)"
+        },
+        {
+          "k": "0–100 km/h",
+          "v": "5.9 s"
+        },
+        {
+          "k": "Thermal efficiency",
+          "v": "45.79%"
+        },
+        {
+          "k": "Battery",
+          "v": "CATL LFP — [capacity kWh to be confirmed]"
+        },
+        {
+          "k": "Range",
+          "v": "[WLTP to be confirmed]"
+        }
+      ],
+      "offroad": [
+        {
+          "k": "Approach angle",
+          "v": "24°"
+        },
+        {
+          "k": "Departure angle",
+          "v": "23°"
+        },
+        {
+          "k": "Wading depth",
+          "v": "600 mm"
+        },
+        {
+          "k": "Torsional rigidity",
+          "v": "32,186 N·m/deg"
+        }
+      ],
+      "space": [
+        {
+          "k": "Length × width × height",
+          "v": "[to be confirmed]"
+        },
+        {
+          "k": "Wheelbase",
+          "v": "[to be confirmed]"
+        },
+        {
+          "k": "Knee room, 2nd row",
+          "v": "950 mm"
+        },
+        {
+          "k": "Headroom, front/rear",
+          "v": "1110 / 1116 mm"
+        },
+        {
+          "k": "Boot",
+          "v": "715 L · 1818 L with 2nd row reclined · 40 L underfloor"
+        }
+      ],
+      "tech": [
+        {
+          "k": "Centre screen",
+          "v": "15.4\" 2.5K"
+        },
+        {
+          "k": "Chip",
+          "v": "Qualcomm 8155"
+        },
+        {
+          "k": "Audio",
+          "v": "15 speakers"
+        },
+        {
+          "k": "Wheels",
+          "v": "21\""
+        }
+      ],
+      "note": "Manufacturer data. Values in square brackets are to be confirmed for the Italian market."
+    },
+    "cta": {
+      "eyebrow": "<span class=\"nocase\">iCAUR</span> V27",
+      "title": "The V27<br>is for driving",
+      "text": "Book a test drive at your nearest dealer, or write to us and we'll get back to you.",
+      "test": "Book a test drive",
+      "dealer": "Find a dealer",
+      "info": "Request information",
+      "alt": "V27 on a high meadow"
+    },
+    "disclaimer": "Visuals are for illustrative purposes only. Configuration details depend on the models available in the Italian market."
   }
 }

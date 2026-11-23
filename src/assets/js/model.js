@@ -1,0 +1,214 @@
+/* ==========================================================================
+   iCAUR — model.js (model pages). Loaded after main.js.
+     [data-dock] [data-dock-link]           floating section nav + active section
+     [data-turn] [data-turn-step]           pinned section: car views change on scroll
+     [data-steps] [data-step]               pinned section: one detail at a time
+     [data-colors] [data-swatches]          colour picker
+     [data-expand]                          image grows to full width on scroll
+     [data-carousel]                        prev/next buttons for a scroll-snap track
+     [data-drag-scroll]                     drag with the mouse to scroll horizontally
+   Pinned effects run only on desktop (≥1024px) without reduced motion;
+   otherwise the same markup is shown as a simple vertical list.
+   ========================================================================== */
+(function () {
+  'use strict';
+
+  var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGsap = typeof window.gsap !== 'undefined' && window.ScrollTrigger;
+
+  /* ---------- Dock: visible after the hero, highlights the current section ---------- */
+  var dock = document.querySelector('[data-dock]');
+  if (dock && 'IntersectionObserver' in window) {
+    var hero = document.querySelector('[data-hero]');
+    var footer = document.querySelector('.site-footer');
+    var heroVisible = true, footerVisible = false;
+    var update = function () { dock.classList.toggle('is-visible', !heroVisible && !footerVisible); };
+    new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; update(); }, { threshold: 0.05 }).observe(hero);
+    if (footer) new IntersectionObserver(function (e) { footerVisible = e[0].isIntersecting; update(); }).observe(footer);
+
+    var links = $$('[data-dock-link]', dock);
+    var byId = {};
+    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        links.forEach(function (a) { a.classList.remove('is-active'); a.removeAttribute('aria-current'); });
+        var a = byId[en.target.id];
+        if (a) {
+          a.classList.add('is-active'); a.setAttribute('aria-current', 'true');
+          a.scrollIntoView({ block: 'nearest', inline: 'center' });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(byId).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
+  }
+
+  /* ---------- Colour picker ---------- */
+  $$('[data-colors]').forEach(function (root) {
+    var buttons = $$('[data-color]', root);
+    var imgs = $$('[data-color-img]', root);
+    var name = root.querySelector('[data-color-name]');
+    var select = function (btn, focus) {
+      buttons.forEach(function (b) {
+        var on = b === btn;
+        b.setAttribute('aria-checked', String(on));
+        b.tabIndex = on ? 0 : -1;
+      });
+      imgs.forEach(function (img) {
+        var on = img.dataset.colorImg === btn.dataset.color;
+        if (on) img.loading = 'eager';
+        img.classList.toggle('is-active', on);
+      });
+      if (name) name.textContent = btn.dataset.name;
+      if (focus) btn.focus();
+    };
+    buttons.forEach(function (b, i) {
+      b.addEventListener('click', function () { select(b); });
+      b.addEventListener('keydown', function (e) {
+        var d = (e.key === 'ArrowRight' || e.key === 'ArrowDown') ? 1 : (e.key === 'ArrowLeft' || e.key === 'ArrowUp') ? -1 : 0;
+        if (!d) return;
+        e.preventDefault();
+        select(buttons[(i + d + buttons.length) % buttons.length], true);
+      });
+    });
+    if (buttons[0]) select(buttons[0]);
+  });
+
+  /* ---------- Carousel buttons ---------- */
+  $$('[data-carousel]').forEach(function (root) {
+    var track = root.querySelector('[data-carousel-track]');
+    var prev = root.querySelector('[data-carousel-prev]');
+    var next = root.querySelector('[data-carousel-next]');
+    if (!track) return;
+    var step = function () { var c = track.firstElementChild; return c ? c.getBoundingClientRect().width + 24 : 300; };
+    var sync = function () {
+      if (prev) prev.disabled = track.scrollLeft < 8;
+      if (next) next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 8;
+    };
+    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: reduceMotion ? 'auto' : 'smooth' }); });
+    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: reduceMotion ? 'auto' : 'smooth' }); });
+    track.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  });
+
+  /* ---------- Drag to scroll (mouse only; touch scrolls natively) ---------- */
+  $$('[data-drag-scroll]').forEach(function (track) {
+    var startX = 0, startLeft = 0, down = false, moved = false;
+    track.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      down = true; moved = false; startX = e.clientX; startLeft = track.scrollLeft;
+    });
+    window.addEventListener('pointermove', function (e) {
+      if (!down) return;
+      var dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) { moved = true; track.classList.add('is-dragging'); }
+      track.scrollLeft = startLeft - dx;
+    });
+    window.addEventListener('pointerup', function () {
+      if (!down) return;
+      down = false;
+      track.classList.remove('is-dragging');
+    });
+    track.addEventListener('click', function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
+  });
+
+  if (!hasGsap) return;
+
+  /* ---------- Image grows to full width (interior) ---------- */
+  if (!reduceMotion) {
+    $$('[data-expand]').forEach(function (el) {
+      gsap.fromTo(el, { clipPath: 'inset(6% 8% 6% 8% round 24px)' }, {
+        clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none',
+        scrollTrigger: { trigger: el, start: 'top 85%', end: 'top 15%', scrub: true }
+      });
+      gsap.fromTo(el.querySelector('img'), { scale: 1.15 }, {
+        scale: 1, ease: 'none',
+        scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+  }
+
+  var mm = gsap.matchMedia();
+  mm.add('(min-width: 1024px) and (prefers-reduced-motion: no-preference)', function () {
+
+    /* ---------- Turn: the car changes angle as you scroll ---------- */
+    $$('[data-turn]').forEach(function (section) {
+      var steps = $$('[data-turn-step]', section);
+      if (steps.length < 2) return;
+      section.classList.add('is-pinned');
+      var imgs = steps.map(function (s) { return s.querySelector('.turn-step__img'); });
+      var caps = steps.map(function (s) { return s.querySelector('.turn-step__caption'); });
+      var bar = section.querySelector('[data-turn-progress]');
+      imgs.forEach(function (img) { img.loading = 'eager'; });
+
+      gsap.set(imgs.slice(1), { opacity: 0 });
+      gsap.set(caps.slice(1), { opacity: 0, y: 30 });
+
+      var tl = gsap.timeline({
+        defaults: { ease: 'power2.inOut' },
+        scrollTrigger: {
+          trigger: section, start: 'top top', end: '+=' + (steps.length * 90) + '%',
+          pin: true, scrub: 0.6, anticipatePin: 1,
+          onUpdate: function (st) { if (bar) bar.style.transform = 'scaleX(' + st.progress + ')'; }
+        }
+      });
+      // the first view settles in (zoom out), then each view replaces the previous one
+      tl.fromTo(imgs[0], { scale: 1.18 }, { scale: 1, duration: 1 });
+      for (var i = 1; i < steps.length; i++) {
+        tl.to(caps[i - 1], { opacity: 0, y: -30, duration: 0.4 }, '+=0.5')
+          .fromTo(imgs[i], { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 1 }, '<')
+          .to(caps[i], { opacity: 1, y: 0, duration: 0.5 }, '-=0.4');
+      }
+      tl.to({}, { duration: 0.6 }); // hold on the last view
+
+      return function () {
+        section.classList.remove('is-pinned');
+        gsap.set(imgs.concat(caps), { clearProps: 'all' });
+      };
+    });
+
+    /* ---------- Details: one at a time ---------- */
+    $$('[data-steps]').forEach(function (section) {
+      var items = $$('[data-step]', section);
+      if (items.length < 2) return;
+      section.classList.add('is-pinned');
+      var medias = items.map(function (it) { return it.querySelector('.detail__media'); });
+      var texts = items.map(function (it) { return [it.querySelector('.detail__title'), it.querySelector('.detail__text')]; });
+      var bars = $$('[data-step-bar]', section);
+      $$('img', section).forEach(function (img) { img.loading = 'eager'; });
+
+      gsap.set(medias.slice(1), { clipPath: 'inset(100% 0% 0% 0%)' });
+      texts.slice(1).forEach(function (t) { gsap.set(t, { opacity: 0, y: 40 }); });
+
+      var setBars = function (p) {
+        var per = 1 / items.length;
+        bars.forEach(function (b, i) { b.style.setProperty('--p', Math.min(1, Math.max(0, (p - i * per) / per))); });
+      };
+      var tl = gsap.timeline({
+        defaults: { ease: 'power3.inOut' },
+        scrollTrigger: {
+          trigger: section, start: 'top top', end: '+=' + (items.length * 100) + '%',
+          pin: true, scrub: 0.6, anticipatePin: 1,
+          onUpdate: function (st) { setBars(st.progress); }
+        }
+      });
+      for (var i = 1; i < items.length; i++) {
+        tl.to(texts[i - 1], { opacity: 0, y: -40, duration: 0.5, stagger: 0.05 }, '+=0.6')
+          .to(medias[i], { clipPath: 'inset(0% 0% 0% 0%)', duration: 1 }, '<')
+          .fromTo(medias[i].querySelector('img'), { scale: 1.2 }, { scale: 1, duration: 1.2 }, '<')
+          .to(texts[i], { opacity: 1, y: 0, duration: 0.6, stagger: 0.08 }, '-=0.5');
+      }
+      tl.to({}, { duration: 0.6 });
+
+      return function () {
+        section.classList.remove('is-pinned');
+        gsap.set(medias, { clearProps: 'all' });
+        texts.forEach(function (t) { gsap.set(t, { clearProps: 'all' }); });
+      };
+    });
+
+    ScrollTrigger.refresh();
+  });
+})();

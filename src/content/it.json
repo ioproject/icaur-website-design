@@ -137,5 +137,514 @@
       "contact_title": "Parliamone",
       "contact_alt": "Un uomo al telefono dentro una cabina telefonica rossa"
     }
+  },
+  "v27": {
+    "meta": {
+      "title": "iCAUR V27 — SUV ibrido a trazione integrale",
+      "description": "iCAUR V27: design squadrato classico, sistema Golden REEV, 0–100 km/h in 5,9 s, 505 N·m e un abitacolo tra i più spaziosi della categoria."
+    },
+    "subnav": {
+      "label": "Sezioni della pagina V27",
+      "design": "Design",
+      "colors": "Colori",
+      "interior": "Interni",
+      "tech": "Tecnologia",
+      "safety": "Sicurezza",
+      "specs": "Specifiche",
+      "cta": "Test drive"
+    },
+    "hero": {
+      "eyebrow": "iCAUR V27",
+      "line": "SUV ibrido a trazione integrale",
+      "text": "Stile classico, trazione elettrica.",
+      "cta_test": "Prenota un test drive",
+      "cta_dealer": "Trova concessionario",
+      "stats": [
+        {
+          "count": "5.9",
+          "dec": "1",
+          "value": "5,9",
+          "unit": "s",
+          "label": "0–100 km/h"
+        },
+        {
+          "count": "505",
+          "dec": "0",
+          "value": "505",
+          "unit": "N·m",
+          "label": "Coppia massima dei motori"
+        },
+        {
+          "count": "335",
+          "dec": "0",
+          "value": "335",
+          "unit": "kW",
+          "label": "Potenza massima dei motori"
+        },
+        {
+          "count": "715",
+          "dec": "0",
+          "value": "715",
+          "unit": "L",
+          "label": "Bagagliaio a 5 posti"
+        }
+      ]
+    },
+    "turn": {
+      "eyebrow": "Design",
+      "title": "Postura robusta,<br>estetica classica",
+      "steps": [
+        {
+          "img": "turn-front",
+          "title": "Retrò e tecnologia",
+          "text": "Fari tondi con anello luminoso Star Halo e indicatori di direzione separati: un volto classico, con i dettagli di oggi.",
+          "alt": "V27 visto di fronte, in studio"
+        },
+        {
+          "img": "turn-front45",
+          "title": "Forma squadrata",
+          "text": "Rapporto 1:1 tra larghezza e altezza, linee verticali, passaruota allargati e cerchi da 21 pollici.",
+          "alt": "V27 visto di tre quarti anteriore"
+        },
+        {
+          "img": "turn-side",
+          "title": "Superfici scolpite",
+          "text": "I tagli Scoop sulla carrozzeria catturano la luce e danno profondità a una silhouette decisa.",
+          "alt": "V27 visto di lato"
+        },
+        {
+          "img": "turn-rear45",
+          "title": "Proporzioni importanti",
+          "text": "Una carrozzeria ampia che si fa notare e lascia tanto spazio a chi viaggia dentro.",
+          "alt": "V27 visto di tre quarti posteriore"
+        },
+        {
+          "img": "turn-rear",
+          "title": "Portellone elettrico",
+          "text": "Con le mani occupate basta una leggera spinta: si chiude da solo, piano e in silenzio.",
+          "alt": "V27 visto da dietro con la ruota di scorta sul portellone"
+        },
+        {
+          "img": "turn-top",
+          "title": "Doppio tetto Starry Sky",
+          "text": "Due superfici vetrate portano il cielo dentro l'abitacolo, in città come nella natura.",
+          "alt": "V27 visto dall'alto con il doppio tetto vetrato"
+        }
+      ]
+    },
+    "colors": {
+      "eyebrow": "Colori",
+      "title": "Sette colori,<br>sette paesaggi",
+      "label": "Scegli il colore",
+      "alt": "V27 di profilo nel colore",
+      "items": [
+        {
+          "slug": "desert-bronze",
+          "name": "Desert Bronze",
+          "hex": "#B9A27E"
+        },
+        {
+          "slug": "moonstone-white",
+          "name": "Moonstone White",
+          "hex": "#E6E3DC"
+        },
+        {
+          "slug": "deep-emerald",
+          "name": "Deep Emerald Green",
+          "hex": "#3F5A47"
+        },
+        {
+          "slug": "obsidian-black",
+          "name": "Obsidian Black",
+          "hex": "#232425"
+        },
+        {
+          "slug": "glacier-silver",
+          "name": "Glacier Silver",
+          "hex": "#B7BCC1"
+        },
+        {
+          "slug": "auric-gold",
+          "name": "Auric Gold Yellow",
+          "hex": "#D9AA3C"
+        },
+        {
+          "slug": "basalt-grey",
+          "name": "Basalt Grey",
+          "hex": "#8A8C8E"
+        }
+      ]
+    },
+    "details": {
+      "eyebrow": "Dettagli",
+      "title": "Visti da vicino",
+      "items": [
+        {
+          "img": "detail-light",
+          "title": "Firma luminosa Star Halo",
+          "text": "Illumina la strada e rende il V27 riconoscibile al buio: a ogni accensione disegna un cerchio di luce.",
+          "alt": "Faro anteriore del V27 con l'anello luminoso acceso"
+        },
+        {
+          "img": "detail-wheel",
+          "title": "Cerchi da 21 pollici",
+          "text": "Proporzionati alla carrozzeria, danno stabilità su strada. I passaruota allargati proteggono la fiancata quando la strada finisce.",
+          "alt": "Cerchio da 21 pollici e passaruota allargato del V27"
+        },
+        {
+          "img": "detail-steps",
+          "title": "Pedane laterali fisse",
+          "text": "Salire e scendere è facile per tutti, dai più piccoli ai più grandi, e la linea della fiancata resta pulita.",
+          "alt": "Pedana laterale fissa del V27"
+        }
+      ]
+    },
+    "interior": {
+      "eyebrow": "Interni",
+      "title": "Tecnologia avanzata,<br>calore da salotto",
+      "text": "Pelle color cuoio, linee orizzontali e uno schermo centrale da 15,4 pollici. Tutto è dove te lo aspetti.",
+      "alt": "Plancia e sedili anteriori del V27 in pelle color cuoio",
+      "features": [
+        {
+          "title": "Schermo 15,4\" 2.5K",
+          "text": "Chip Qualcomm 8155, comandi vocali, aggiornamenti OTA (con connettività attiva) e monitoraggio del conducente (DMS)."
+        },
+        {
+          "title": "Sette modalità, un tocco",
+          "text": "Riposo, Sentinella, Campeggio, protezione della batteria a vettura spenta e altre ancora."
+        },
+        {
+          "title": "Sedile guida elettrico",
+          "text": "Sei regolazioni con memoria e funzione di benvenuto: trovi la tua posizione in un attimo."
+        },
+        {
+          "title": "Tetto Starry Sky",
+          "text": "Il doppio tetto vetrato porta la luce e il cielo dentro l'abitacolo."
+        }
+      ]
+    },
+    "space": {
+      "eyebrow": "Spazio",
+      "title": "Spazio da vendere,<br>senza fretta",
+      "note": "Dati del costruttore. Valori ai vertici della categoria secondo iCAUR.",
+      "stats": [
+        {
+          "count": "950",
+          "unit": "mm",
+          "label": "Spazio per le ginocchia in seconda fila"
+        },
+        {
+          "count": "1357",
+          "unit": "mm",
+          "label": "Altezza dal pavimento al tetto"
+        },
+        {
+          "count": "715",
+          "unit": "L",
+          "label": "Bagagliaio con la seconda fila in uso"
+        },
+        {
+          "count": "1818",
+          "unit": "L",
+          "label": "Con la seconda fila reclinata"
+        }
+      ],
+      "head": "Spazio per la testa: 1110 mm davanti, 1116 mm dietro. Sotto il piano di carico c'è un vano extra da 40 litri.",
+      "flat_title": "Seconda fila giù, camera da letto su",
+      "flat_text": "Con un tocco i sedili posteriori si abbattono in piano: una zona notte per il campeggio o un vano enorme per i carichi ingombranti.",
+      "flat_alt": "Vano di carico del V27 con i sedili posteriori abbattuti in piano"
+    },
+    "comfort": {
+      "eyebrow": "Comfort",
+      "title": "I piccoli piaceri del viaggio",
+      "items": [
+        {
+          "img": "int-seat",
+          "title": "Ventilati e riscaldati",
+          "text": "Unico della categoria con ventilazione su seduta e schienale, insieme al riscaldamento.",
+          "alt": "Sedile del guidatore in pelle color cuoio"
+        },
+        {
+          "img": "int-audio",
+          "title": "15 altoparlanti",
+          "text": "Un suono avvolgente e tarato con cura: ogni viaggio ha la sua colonna sonora.",
+          "alt": "Vista dall'alto dell'abitacolo con gli altoparlanti evidenziati"
+        },
+        {
+          "img": "int-perfume",
+          "title": "Diffusore di fragranze",
+          "text": "Ricariche sostituibili per scegliere ogni volta il profumo del tuo viaggio.",
+          "alt": "Diffusore di fragranze sulla plancia"
+        },
+        {
+          "img": "int-console",
+          "title": "Bracciolo termico",
+          "text": "Rinfresca le bibite d'estate e tiene caldo il caffè nelle mattine d'inverno.",
+          "alt": "Console centrale con il bracciolo termico"
+        },
+        {
+          "img": "int-cabin",
+          "title": "Sedile tutto reclinabile",
+          "text": "Mentre aspetti o ricarichi, abbassi del tutto lo schienale e ti prendi una pausa.",
+          "alt": "Abitacolo del V27 visto di lato"
+        },
+        {
+          "img": "int-rear",
+          "title": "Luci d'atmosfera",
+          "text": "Illuminazione ambiente multicolore regolabile, per dare a ogni viaggio il tono giusto.",
+          "alt": "Divano posteriore del V27"
+        }
+      ]
+    },
+    "performance": {
+      "eyebrow": "Tecnologia",
+      "title": "Golden REEV:<br>a muovere le ruote è l'elettrico",
+      "text": "Il motore a benzina fa da generatore e ricarica la batteria quando serve. Le ruote le muovono sempre i due motori elettrici, uno per asse.",
+      "img_alt": "Schema del sistema range extender Golden REEV sul pianale del V27",
+      "stats": [
+        {
+          "count": "5.9",
+          "dec": "1",
+          "pre": "",
+          "unit": "s",
+          "label": "Da 0 a 100 km/h"
+        },
+        {
+          "count": "61",
+          "dec": "0",
+          "pre": "&lt;",
+          "unit": "dB",
+          "label": "In abitacolo, 2 dB sotto la media del settore"
+        },
+        {
+          "count": "45.79",
+          "dec": "2",
+          "pre": "",
+          "unit": "%",
+          "label": "Rendimento termico del motore"
+        },
+        {
+          "count": "335",
+          "dec": "0",
+          "pre": "",
+          "unit": "kW",
+          "label": "150 kW anteriore + 185 kW posteriore"
+        },
+        {
+          "count": "505",
+          "dec": "0",
+          "pre": "",
+          "unit": "N·m",
+          "label": "200 N·m anteriore + 305 N·m posteriore"
+        }
+      ],
+      "battery": "Batteria CATL al litio ferro fosfato (LFP)."
+    },
+    "offroad": {
+      "eyebrow": "Fuoristrada",
+      "title": "Quando l'asfalto finisce",
+      "text": "Angoli generosi, guado profondo e una scocca rigidissima: il V27 affronta sabbia, rocce e sterrati con calma.",
+      "alt": "V27 che risale una duna sollevando sabbia",
+      "stats": [
+        {
+          "count": "24",
+          "unit": "°",
+          "label": "Angolo di attacco"
+        },
+        {
+          "count": "23",
+          "unit": "°",
+          "label": "Angolo di uscita"
+        },
+        {
+          "count": "600",
+          "unit": "mm",
+          "label": "Profondità di guado"
+        }
+      ]
+    },
+    "safety": {
+      "eyebrow": "Sicurezza",
+      "title": "Avanti tranquilli",
+      "text": "Progettato secondo gli standard a cinque stelle di E-NCAP, C-NCAP, A-NCAP e ASEAN NCAP.",
+      "cage_alt": "Scocca a gabbia del V27 con gli acciai ad alta resistenza evidenziati",
+      "points": [
+        {
+          "value": "11 + 11",
+          "label": "Traverse e longheroni formano una gabbia"
+        },
+        {
+          "value": "39",
+          "label": "Punti chiave in acciaio stampato a caldo"
+        },
+        {
+          "value": "76,53%",
+          "label": "Acciai alto resistenziali e alluminio"
+        },
+        {
+          "value": "32.186",
+          "label": "N·m/grado di rigidità torsionale"
+        }
+      ],
+      "adas_title": "Assistenza alla guida",
+      "adas": [
+        {
+          "img": "adas-rcta",
+          "title": "Avviso traffico posteriore (RCTA)",
+          "text": "In retromarcia controlla il traffico che arriva di lato e ti avvisa con suoni e segnali luminosi.",
+          "alt": "Illustrazione dell'avviso di traffico trasversale posteriore"
+        },
+        {
+          "img": "adas-apa",
+          "title": "Parcheggio automatico (APA)",
+          "text": "Riconosce lo stallo, calcola la traiettoria e parcheggia da solo, anche negli spazi stretti.",
+          "alt": "Illustrazione del parcheggio automatico"
+        },
+        {
+          "img": "adas-active",
+          "title": "Sicurezza attiva",
+          "text": "Controlla ciò che succede intorno in tempo reale, anticipa i rischi e interviene se serve.",
+          "alt": "Illustrazione dei sistemi di sicurezza attiva in autostrada"
+        }
+      ]
+    },
+    "gallery": {
+      "eyebrow": "Galleria",
+      "title": "Fin dove vuoi arrivare",
+      "hint": "Trascina per scorrere",
+      "items": [
+        {
+          "img": "out-canyon",
+          "alt": "V27 in curva su una pista sabbiosa tra le rocce"
+        },
+        {
+          "img": "out-front",
+          "alt": "V27 visto di fronte su un altopiano roccioso"
+        },
+        {
+          "img": "out-rocks",
+          "alt": "V27 tra i massi con le montagne innevate sullo sfondo"
+        },
+        {
+          "img": "out-rear",
+          "alt": "V27 visto da dietro mentre solleva polvere"
+        },
+        {
+          "img": "out-valley",
+          "alt": "V27 in una valle rocciosa sotto un cielo con nuvole"
+        },
+        {
+          "img": "out-meadow",
+          "alt": "V27 su un prato d'alta quota davanti a una montagna"
+        }
+      ]
+    },
+    "specs": {
+      "eyebrow": "Specifiche",
+      "title": "Dati tecnici",
+      "g_power": "Motore e prestazioni",
+      "g_offroad": "Fuoristrada e scocca",
+      "g_space": "Dimensioni e spazio",
+      "g_tech": "Tecnologia",
+      "power": [
+        {
+          "k": "Sistema",
+          "v": "Range extender Golden REEV, trazione integrale i-AWD"
+        },
+        {
+          "k": "Potenza massima motori",
+          "v": "335 kW (150 anteriore + 185 posteriore)"
+        },
+        {
+          "k": "Coppia massima motori",
+          "v": "505 N·m (200 anteriore + 305 posteriore)"
+        },
+        {
+          "k": "0–100 km/h",
+          "v": "5,9 s"
+        },
+        {
+          "k": "Rendimento termico",
+          "v": "45,79%"
+        },
+        {
+          "k": "Batteria",
+          "v": "CATL LFP — [capacità kWh da confermare]"
+        },
+        {
+          "k": "Autonomia",
+          "v": "[WLTP da confermare]"
+        }
+      ],
+      "offroad": [
+        {
+          "k": "Angolo di attacco",
+          "v": "24°"
+        },
+        {
+          "k": "Angolo di uscita",
+          "v": "23°"
+        },
+        {
+          "k": "Profondità di guado",
+          "v": "600 mm"
+        },
+        {
+          "k": "Rigidità torsionale",
+          "v": "32.186 N·m/grado"
+        }
+      ],
+      "space": [
+        {
+          "k": "Lunghezza × larghezza × altezza",
+          "v": "[da confermare]"
+        },
+        {
+          "k": "Passo",
+          "v": "[da confermare]"
+        },
+        {
+          "k": "Spazio ginocchia, 2ª fila",
+          "v": "950 mm"
+        },
+        {
+          "k": "Spazio testa, ant./post.",
+          "v": "1110 / 1116 mm"
+        },
+        {
+          "k": "Bagagliaio",
+          "v": "715 L · 1818 L con 2ª fila reclinata · vano sotto il piano 40 L"
+        }
+      ],
+      "tech": [
+        {
+          "k": "Schermo centrale",
+          "v": "15,4\" 2.5K"
+        },
+        {
+          "k": "Chip",
+          "v": "Qualcomm 8155"
+        },
+        {
+          "k": "Audio",
+          "v": "15 altoparlanti"
+        },
+        {
+          "k": "Cerchi",
+          "v": "21\""
+        }
+      ],
+      "note": "Dati del costruttore. I valori tra parentesi quadre vanno confermati per il mercato italiano."
+    },
+    "cta": {
+      "eyebrow": "<span class=\"nocase\">iCAUR</span> V27",
+      "title": "Il V27<br>va provato",
+      "text": "Prenota un test drive nella concessionaria più vicina, oppure scrivici: ti rispondiamo noi.",
+      "test": "Prenota un test drive",
+      "dealer": "Trova concessionario",
+      "info": "Richiedi informazioni",
+      "alt": "V27 su un prato d'alta quota"
+    },
+    "disclaimer": "Le immagini hanno scopo illustrativo. Allestimenti e dotazioni dipendono dai modelli disponibili sul mercato italiano."
   }
 }

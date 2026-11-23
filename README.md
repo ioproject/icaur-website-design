@@ -15,7 +15,7 @@ cd dist && python3 -m http.server 8080  # in un altro terminale → http://local
 |---|---|
 | `index.html` — Home | ✅ |
 | `chi-siamo.html` — Chi siamo + iCAUR Life | in lavorazione |
-| `v27.html` — V27, pagina modello completa | in lavorazione |
+| `v27.html` — V27, pagina modello completa | ✅ |
 | `v25.html` — V25 coming soon | in lavorazione |
 | `contatti.html` — Contatti con form | in lavorazione |
 
@@ -29,8 +29,8 @@ src/
   partials/     head, header, footer, scripts (→ header.php / footer.php)
   content/      it.json (lingua principale) e en.json: TUTTI i testi del sito
   assets/
-    css/        main.css (token, base, header, footer) + un css per pagina
-    js/         main.js (tutte le interazioni, attivate da attributi data-*) + vendor/
+    css/        main.css (token, base, header, footer), home.css, model.css (pagine modello)
+    js/         main.js (interazioni comuni), model.js (pagine modello), vendor/ — tutto attivato da attributi data-*
     fonts/      Gotham (Light, Book, Medium, Bold)
     img/ video/ immagini e video ottimizzati
 tools/
