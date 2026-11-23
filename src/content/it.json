@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "site": "iCAUR Italia",
+    "home_title": "iCAUR Italia — Classic Never Fades",
+    "home_description": "iCAUR porta in Italia SUV dal design classico e dalla tecnologia ibrida ed elettrica. Scopri V27 e il nuovo V25 in arrivo."
+  },
+  "common": {
+    "skip": "Vai al contenuto",
+    "nav": {
+      "label": "Menu principale",
+      "home": "Home",
+      "about": "Chi siamo",
+      "models": "Modelli",
+      "dealers": "Concessionari",
+      "news": "News",
+      "contact": "Contatti",
+      "menu": "Menu",
+      "close": "Chiudi",
+      "lang_label": "Lingua",
+      "dealer_cta": "Trova concessionario",
+      "v27_line": "SUV ibrido a trazione integrale",
+      "v25_line": "Presto in Italia",
+      "explore": "Esplora"
+    },
+    "coming_soon": "Coming soon",
+    "explore_more": "Scopri di più",
+    "video_pause": "Metti in pausa il video",
+    "video_play": "Riproduci il video",
+    "scroll": "Scorri",
+    "footer": {
+      "slogan": "Classic Never Fades",
+      "models": "Modelli",
+      "company": "<span class=\"nocase\">iCAUR</span>",
+      "follow": "Seguici",
+      "legal": "Note legali",
+      "cookies": "Cookie",
+      "privacy": "Privacy",
+      "copyright": "© 2026 iCAUR Italia — [Ragione sociale e P.IVA dell'importatore]",
+      "disclaimer": "Le immagini hanno scopo illustrativo. Allestimenti e dotazioni possono variare in base al mercato."
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "<span class=\"nocase\">iCAUR</span> Italia",
+      "title": "Classic<br>Never Fades",
+      "text": "Design senza tempo, guida di nuova generazione.",
+      "cta_primary": "Scopri V27",
+      "cta_secondary": "La gamma"
+    },
+    "statement": {
+      "eyebrow": "Chi siamo",
+      "text": "Un classico vero non sbiadisce con il tempo: entra nella vita di ogni giorno. Non guardiamo indietro. Costruiamo auto dove il design che dura incontra l'intelligenza dell'energia nuova.",
+      "cta": "Scopri iCAUR"
+    },
+    "models": {
+      "eyebrow": "La gamma",
+      "title": "Classico senza tempo,<br>guida moderna",
+      "v27": {
+        "line": "SUV ibrido a trazione integrale",
+        "stat1_value": "Classic",
+        "stat1_label": "Design robusto e squadrato",
+        "stat2_value": "5,9 s",
+        "stat2_label": "0–100 km/h",
+        "stat3_value": "505 N·m",
+        "stat3_label": "Coppia massima dei motori",
+        "cta": "Esplora V27",
+        "alt": "iCAUR V27 color sabbia su una pista sterrata nel deserto"
+      },
+      "v25": {
+        "line": "Il nuovo SUV iCAUR sta arrivando.",
+        "text": "Lasciaci la tua email: ti avvisiamo noi quando sarà in concessionaria.",
+        "cta": "Avvisami",
+        "alt": "Dettaglio in penombra del faro tondo del nuovo V25"
+      }
+    },
+    "innovation": {
+      "eyebrow": "Innovazione",
+      "title": "La tecnologia<br>sotto la forma classica",
+      "items": [
+        {
+          "key": "awd",
+          "label": "i-AWD",
+          "title": "Un motore per asse",
+          "text": "150 kW all'anteriore, 185 kW al posteriore. La trazione integrale distribuisce la spinta da sola, su asfalto come sulla sabbia.",
+          "img": "innovation-awd",
+          "alt": "Pianale del V27 visto dall'alto con i due motori elettrici"
+        },
+        {
+          "key": "reev",
+          "label": "REEV",
+          "title": "Elettrico, senza ansia da ricarica",
+          "text": "Il sistema Golden REEV porta il V27 da 0 a 100 km/h in 5,9 secondi. Il motore termico ha un rendimento del 45,79% e lavora solo per ricaricare la batteria.",
+          "img": "innovation-reev",
+          "alt": "Motore termico del sistema range extender Golden REEV"
+        },
+        {
+          "key": "safety",
+          "label": "Sicurezza",
+          "title": "Una gabbia d'acciaio intorno a te",
+          "text": "11 traverse e 11 longheroni, acciaio stampato a caldo in 39 punti chiave e una rigidità torsionale di 32.186 N·m/grado.",
+          "img": "innovation-safety",
+          "alt": "Scocca a gabbia ad alta rigidità del V27"
+        }
+      ],
+      "cta": "La tecnologia del V27"
+    },
+    "news": {
+      "eyebrow": "News",
+      "title": "Dal mondo <span class=\"nocase\">iCAUR</span>",
+      "all": "Tutte le news",
+      "items": [
+        {
+          "img": "news-1",
+          "date": "[gg/mm/aaaa]",
+          "title": "[Titolo news — contenuto gestito da WordPress]",
+          "alt": "Lancio globale del V27"
+        },
+        {
+          "img": "news-2",
+          "date": "[gg/mm/aaaa]",
+          "title": "[Titolo news — contenuto gestito da WordPress]",
+          "alt": "V27 in un ambiente urbano"
+        },
+        {
+          "img": "news-3",
+          "date": "[gg/mm/aaaa]",
+          "title": "[Titolo news — contenuto gestito da WordPress]",
+          "alt": "Momento di vita all'aria aperta con iCAUR"
+        }
+      ]
+    },
+    "split": {
+      "about_eyebrow": "Chi siamo",
+      "about_title": "Una sola auto,<br>tanti mondi",
+      "about_alt": "Un V27 giallo parcheggiato su un campo da tennis in terra rossa, visto dall'alto",
+      "contact_eyebrow": "Contatti",
+      "contact_title": "Parliamone",
+      "contact_alt": "Un uomo al telefono dentro una cabina telefonica rossa"
+    }
+  }
+}

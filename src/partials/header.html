@@ -1,0 +1,66 @@
+<!-- ==================== HEADER (→ header.php) ==================== -->
+<a class="skip-link" href="#main">{{ common.skip }}</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__bar">
+
+    <a class="site-header__logo" href="index.html" aria-label="iCAUR — {{ common.nav.home }}">
+      <img src="{{ @assets }}img/brand/icaur-logo-white.svg" alt="" width="112" height="20">
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="{{ common.nav.label }}" data-nav>
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html"{{ @current:index.html }}>{{ common.nav.home }}</a></li>
+        <li><a class="site-nav__link" href="chi-siamo.html"{{ @current:chi-siamo.html }}>{{ common.nav.about }}</a></li>
+        <li class="site-nav__item site-nav__item--models" data-models>
+          <button class="site-nav__link site-nav__trigger" type="button" aria-expanded="false" aria-controls="models-panel" data-models-trigger>
+            {{ common.nav.models }}
+            <svg class="icon icon--chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+          <div class="models-panel" id="models-panel" data-models-panel>
+            <a class="model-tile" href="v27.html"{{ @current:v27.html }}>
+              <span class="model-tile__media"><img src="{{ @assets }}img/home/v27-card-768.jpg" alt="" width="768" height="326" loading="lazy"></span>
+              <span class="model-tile__body">
+                <img class="model-tile__logo" src="{{ @assets }}img/brand/v27-logo.webp" alt="V27" width="116" height="16">
+                <span class="model-tile__line">{{ common.nav.v27_line }}</span>
+              </span>
+            </a>
+            <a class="model-tile" href="v25.html"{{ @current:v25.html }}>
+              <span class="model-tile__media"><img src="{{ @assets }}video/card-v25-poster.jpg" alt="" width="1280" height="520" loading="lazy"></span>
+              <span class="model-tile__body">
+                <img class="model-tile__logo" src="{{ @assets }}img/brand/v25-logo.webp" alt="V25" width="116" height="16">
+                <span class="model-tile__line">{{ common.nav.v25_line }} <span class="badge">{{ common.coming_soon }}</span></span>
+              </span>
+            </a>
+          </div>
+        </li>
+        <!-- Concessionari e News: pagine WordPress, link provvisori -->
+        <li><a class="site-nav__link" href="#concessionari">{{ common.nav.dealers }}</a></li>
+        <li><a class="site-nav__link" href="#news">{{ common.nav.news }}</a></li>
+        <li><a class="site-nav__link" href="contatti.html"{{ @current:contatti.html }}>{{ common.nav.contact }}</a></li>
+      </ul>
+
+      <a class="btn btn--light site-nav__cta" href="#concessionari">
+        <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-5.6 6-10.2A6 6 0 0 0 4 7.8C4 12.4 10 18 10 18Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        {{ common.nav.dealer_cta }}
+      </a>
+    </nav>
+
+    <div class="site-header__actions">
+      <div class="lang-switch" role="group" aria-label="{{ common.nav.lang_label }}">
+        <a href="{{ @href_it }}" hreflang="it" lang="it" data-lang="it">IT</a>
+        <a href="{{ @href_en }}" hreflang="en" lang="en" data-lang="en">EN</a>
+      </div>
+      <a class="btn btn--light btn--sm site-header__cta" href="#concessionari">
+        <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-5.6 6-10.2A6 6 0 0 0 4 7.8C4 12.4 10 18 10 18Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        {{ common.nav.dealer_cta }}
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__label" data-label-open="{{ common.nav.menu }}" data-label-close="{{ common.nav.close }}">{{ common.nav.menu }}</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+<!-- ==================== /HEADER ==================== -->

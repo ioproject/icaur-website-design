@@ -1,0 +1,51 @@
+<!-- ==================== FOOTER (→ footer.php) ==================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <img src="{{ @assets }}img/brand/icaur-logo-white.svg" alt="iCAUR" width="140" height="25" loading="lazy">
+        <p class="site-footer__slogan">{{ common.footer.slogan }}</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer">
+        <div>
+          <h2 class="site-footer__title">{{ common.footer.models }}</h2>
+          <ul>
+            <li><a href="v27.html">iCAUR V27</a></li>
+            <li><a href="v25.html">iCAUR V25 <span class="badge badge--quiet">{{ common.coming_soon }}</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__title">{{ common.footer.company }}</h2>
+          <ul>
+            <li><a href="chi-siamo.html">{{ common.nav.about }}</a></li>
+            <li><a href="#news">{{ common.nav.news }}</a></li>
+            <li><a href="#concessionari">{{ common.nav.dealers }}</a></li>
+            <li><a href="contatti.html">{{ common.nav.contact }}</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__title">{{ common.footer.follow }}</h2>
+          <!-- Link social: segnaposto, da completare con i profili ufficiali -->
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__copy">{{ common.footer.copyright }}</p>
+      <ul class="site-footer__legal">
+        <li><a href="#legal">{{ common.footer.legal }}</a></li>
+        <li><a href="#cookies">{{ common.footer.cookies }}</a></li>
+        <li><a href="#privacy">{{ common.footer.privacy }}</a></li>
+      </ul>
+    </div>
+    <p class="site-footer__disclaimer">{{ common.footer.disclaimer }}</p>
+  </div>
+</footer>
+<!-- ==================== /FOOTER ==================== -->

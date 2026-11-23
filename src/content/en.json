@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "site": "iCAUR Italy",
+    "home_title": "iCAUR Italy — Classic Never Fades",
+    "home_description": "iCAUR brings classic-design SUVs with hybrid and electric technology to Italy. Discover the V27 and the upcoming V25."
+  },
+  "common": {
+    "skip": "Skip to content",
+    "nav": {
+      "label": "Main menu",
+      "home": "Home",
+      "about": "About us",
+      "models": "Models",
+      "dealers": "Dealers",
+      "news": "News",
+      "contact": "Contact",
+      "menu": "Menu",
+      "close": "Close",
+      "lang_label": "Language",
+      "dealer_cta": "Find a dealer",
+      "v27_line": "All-round hybrid SUV",
+      "v25_line": "Coming soon to Italy",
+      "explore": "Explore"
+    },
+    "coming_soon": "Coming soon",
+    "explore_more": "Explore more",
+    "video_pause": "Pause video",
+    "video_play": "Play video",
+    "scroll": "Scroll",
+    "footer": {
+      "slogan": "Classic Never Fades",
+      "models": "Models",
+      "company": "<span class=\"nocase\">iCAUR</span>",
+      "follow": "Follow us",
+      "legal": "Legal",
+      "cookies": "Cookies",
+      "privacy": "Privacy Policy",
+      "copyright": "© 2026 iCAUR Italy — [Importer company name and VAT number]",
+      "disclaimer": "Images are for illustrative purposes only. Trims and equipment may vary by market."
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "<span class=\"nocase\">iCAUR</span> Italy",
+      "title": "Classic<br>Never Fades",
+      "text": "Timeless classic, modern drive.",
+      "cta_primary": "Discover the V27",
+      "cta_secondary": "The lineup"
+    },
+    "statement": {
+      "eyebrow": "About us",
+      "text": "What is truly classic doesn't fade with time: it grows into everyday life. We don't look back. We build cars where enduring design meets new energy intelligence.",
+      "cta": "Discover iCAUR"
+    },
+    "models": {
+      "eyebrow": "The lineup",
+      "title": "Timeless classic,<br>modern drive",
+      "v27": {
+        "line": "All-round hybrid SUV",
+        "stat1_value": "Classic",
+        "stat1_label": "Rugged boxy styling",
+        "stat2_value": "5.9 s",
+        "stat2_label": "0–100 km/h",
+        "stat3_value": "505 N·m",
+        "stat3_label": "Motor max torque",
+        "cta": "Explore the V27",
+        "alt": "Sand-coloured iCAUR V27 on a desert dirt track"
+      },
+      "v25": {
+        "line": "The new iCAUR SUV is on its way.",
+        "text": "Leave your email and we'll tell you when it reaches our dealers.",
+        "cta": "Notify me",
+        "alt": "Close-up of the new V25's round headlight in low light"
+      }
+    },
+    "innovation": {
+      "eyebrow": "Innovation",
+      "title": "Technology<br>beneath the classic shape",
+      "items": [
+        {
+          "key": "awd",
+          "label": "i-AWD",
+          "title": "One motor per axle",
+          "text": "150 kW at the front, 185 kW at the rear. All-wheel drive splits the power on its own, on tarmac and on sand.",
+          "img": "innovation-awd",
+          "alt": "Top view of the V27 platform with its two electric motors"
+        },
+        {
+          "key": "reev",
+          "label": "REEV",
+          "title": "Electric, without range anxiety",
+          "text": "The Golden REEV system takes the V27 from 0 to 100 km/h in 5.9 seconds. The engine reaches 45.79% thermal efficiency and only works to recharge the battery.",
+          "img": "innovation-reev",
+          "alt": "Engine of the Golden REEV range extender system"
+        },
+        {
+          "key": "safety",
+          "label": "Safety",
+          "title": "A steel cage around you",
+          "text": "11 transverse and 11 longitudinal beams, hot-formed steel at 39 key points and 32,186 N·m/deg of torsional rigidity.",
+          "img": "innovation-safety",
+          "alt": "High-rigidity cage body of the V27"
+        }
+      ],
+      "cta": "V27 technology"
+    },
+    "news": {
+      "eyebrow": "News",
+      "title": "From the <span class=\"nocase\">iCAUR</span> world",
+      "all": "All news",
+      "items": [
+        {
+          "img": "news-1",
+          "date": "[dd/mm/yyyy]",
+          "title": "[News title — managed in WordPress]",
+          "alt": "V27 global launch"
+        },
+        {
+          "img": "news-2",
+          "date": "[dd/mm/yyyy]",
+          "title": "[News title — managed in WordPress]",
+          "alt": "V27 in an urban setting"
+        },
+        {
+          "img": "news-3",
+          "date": "[dd/mm/yyyy]",
+          "title": "[News title — managed in WordPress]",
+          "alt": "Outdoor life moment with iCAUR"
+        }
+      ]
+    },
+    "split": {
+      "about_eyebrow": "About us",
+      "about_title": "One car,<br>many worlds",
+      "about_alt": "A yellow V27 parked on a clay tennis court, seen from above",
+      "contact_eyebrow": "Contact",
+      "contact_title": "Let's talk",
+      "contact_alt": "A man on the phone inside a red phone box"
+    }
+  }
+}

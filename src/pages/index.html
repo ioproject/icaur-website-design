@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="{{ @lang }}">
+<head>
+  <title>{{ meta.home_title }}</title>
+  <meta name="description" content="{{ meta.home_description }}">
+{% include head %}
+  <link rel="stylesheet" href="{{ @assets }}css/home.css">
+  <link rel="preload" as="image" href="{{ @assets }}video/home-hero-poster.jpg" media="(min-width: 768px)">
+  <link rel="preload" as="image" href="{{ @assets }}video/home-hero-mobile-poster.jpg" media="(max-width: 767px)">
+</head>
+<body class="page page--home">
+{% include header %}
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" data-hero>
+    <div class="hero__media" data-parallax="18">
+      <picture>
+        <source media="(max-width: 767px)" srcset="{{ @assets }}video/home-hero-mobile-poster.jpg">
+        <img class="hero__poster" src="{{ @assets }}video/home-hero-poster.jpg" alt="" width="1600" height="650" fetchpriority="high">
+      </picture>
+      <video class="hero__video" muted loop playsinline preload="none" aria-hidden="true"
+        data-video data-autoplay
+        data-src="{{ @assets }}video/home-hero.mp4"
+        data-src-mobile="{{ @assets }}video/home-hero-mobile.mp4"></video>
+    </div>
+    <div class="hero__shade" aria-hidden="true"></div>
+
+    <div class="container hero__content">
+      <p class="eyebrow" data-hero-fade>{{ home.hero.eyebrow }}</p>
+      <h1 class="hero__title" data-split-lines>{{ home.hero.title }}</h1>
+      <p class="hero__text" data-hero-fade>{{ home.hero.text }}</p>
+      <div class="hero__actions" data-hero-fade>
+        <a class="btn btn--light" href="v27.html">{{ home.hero.cta_primary }}</a>
+        <a class="btn btn--ghost" href="#gamma">{{ home.hero.cta_secondary }}</a>
+      </div>
+    </div>
+
+    <div class="container hero__footer">
+      <button class="video-toggle" type="button" aria-pressed="false" data-video-toggle
+        data-label-pause="{{ common.video_pause }}" data-label-play="{{ common.video_play }}">
+        <svg class="icon icon--pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="1.8"/></svg>
+        <svg class="icon icon--play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg>
+        <span class="visually-hidden" data-video-toggle-label>{{ common.video_pause }}</span>
+      </button>
+      <span class="scroll-cue" aria-hidden="true">{{ common.scroll }}<span class="scroll-cue__line"></span></span>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement section section--light">
+    <div class="container container--narrow">
+      <p class="eyebrow eyebrow--dark" data-reveal>{{ home.statement.eyebrow }}</p>
+      <p class="statement__text" data-words>{{ home.statement.text }}</p>
+      <a class="link-arrow link-arrow--dark" href="chi-siamo.html" data-reveal>
+        {{ home.statement.cta }}
+        <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- MODELS -->
+  <section class="models section section--dark" id="gamma" aria-labelledby="models-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow" data-reveal>{{ home.models.eyebrow }}</p>
+        <h2 class="section-title" id="models-title" data-reveal>{{ home.models.title }}</h2>
+      </header>
+    </div>
+
+    <div class="models__grid">
+      <article class="model-card model-card--v27" data-cursor-target="{{ common.nav.explore }}" data-hover-video>
+        <a class="model-card__link" href="v27.html" aria-label="{{ home.models.v27.cta }}"></a>
+        <div class="model-card__media">
+          <img src="{{ @assets }}video/card-v27-poster.jpg" alt="{{ home.models.v27.alt }}" width="1280" height="720" loading="lazy"
+            srcset="{{ @assets }}img/home/v27-card-768.jpg 768w, {{ @assets }}video/card-v27-poster.jpg 1280w" sizes="(min-width: 1024px) 50vw, 100vw">
+          <video muted loop playsinline preload="none" aria-hidden="true" data-video data-src="{{ @assets }}video/card-v27.mp4"></video>
+        </div>
+        <div class="model-card__body">
+          <img class="model-card__logo" src="{{ @assets }}img/brand/v27-logo.webp" alt="V27" width="232" height="32" loading="lazy">
+          <p class="model-card__line">{{ home.models.v27.line }}</p>
+          <dl class="stats">
+            <div><dt>{{ home.models.v27.stat1_label }}</dt><dd>{{ home.models.v27.stat1_value }}</dd></div>
+            <div><dt>{{ home.models.v27.stat2_label }}</dt><dd>{{ home.models.v27.stat2_value }}</dd></div>
+            <div><dt>{{ home.models.v27.stat3_label }}</dt><dd>{{ home.models.v27.stat3_value }}</dd></div>
+          </dl>
+          <span class="link-arrow" aria-hidden="true">{{ home.models.v27.cta }}
+            <svg class="icon" viewBox="0 0 20 20"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+        </div>
+      </article>
+
+      <article class="model-card model-card--v25" data-cursor-target="{{ common.coming_soon }}" data-hover-video>
+        <a class="model-card__link" href="v25.html" aria-label="V25 — {{ home.models.v25.cta }}"></a>
+        <div class="model-card__media">
+          <img src="{{ @assets }}video/card-v25-poster.jpg" alt="{{ home.models.v25.alt }}" width="1280" height="520" loading="lazy">
+          <video muted loop playsinline preload="none" aria-hidden="true" data-video data-src="{{ @assets }}video/card-v25.mp4"></video>
+        </div>
+        <div class="model-card__body">
+          <span class="badge badge--gold">{{ common.coming_soon }}</span>
+          <img class="model-card__logo" src="{{ @assets }}img/brand/v25-logo.webp" alt="V25" width="232" height="32" loading="lazy">
+          <p class="model-card__line">{{ home.models.v25.line }}</p>
+          <p class="model-card__text">{{ home.models.v25.text }}</p>
+          <span class="link-arrow" aria-hidden="true">{{ home.models.v25.cta }}
+            <svg class="icon" viewBox="0 0 20 20"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- INNOVATION -->
+  <section class="innovation section section--light" aria-labelledby="innovation-title">
+    <div class="container">
+      <header class="section-head section-head--split">
+        <div>
+          <p class="eyebrow eyebrow--dark" data-reveal>{{ home.innovation.eyebrow }}</p>
+          <h2 class="section-title" id="innovation-title" data-reveal>{{ home.innovation.title }}</h2>
+        </div>
+        <a class="link-arrow link-arrow--dark" href="v27.html#tecnologia" data-reveal>{{ home.innovation.cta }}
+          <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+      </header>
+
+      <div class="accordion" data-accordion>
+        {% for item in home.innovation.items %}
+        <article class="accordion__panel" tabindex="0" data-accordion-panel>
+          <img class="accordion__img" src="{{ @assets }}img/home/{{ item.img }}-1280.jpg" alt="{{ item.alt }}"
+            srcset="{{ @assets }}img/home/{{ item.img }}-768.jpg 768w, {{ @assets }}img/home/{{ item.img }}-1280.jpg 1280w, {{ @assets }}img/home/{{ item.img }}-1920.jpg 1920w"
+            sizes="(min-width: 1024px) 60vw, 100vw" width="1280" height="720" loading="lazy">
+          <div class="accordion__body">
+            <p class="accordion__label">{{ item.label }}</p>
+            <h3 class="accordion__title">{{ item.title }}</h3>
+            <p class="accordion__text">{{ item.text }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS (contenuti da WordPress) -->
+  <section class="news section section--paper" aria-labelledby="news-title">
+    <div class="container">
+      <header class="section-head section-head--split">
+        <div>
+          <p class="eyebrow eyebrow--dark" data-reveal>{{ home.news.eyebrow }}</p>
+          <h2 class="section-title" id="news-title" data-reveal>{{ home.news.title }}</h2>
+        </div>
+        <a class="link-arrow link-arrow--dark" href="#news" data-reveal>{{ home.news.all }}
+          <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+      </header>
+      <ul class="news__grid">
+        {% for item in home.news.items %}
+        <li class="news-card" data-reveal>
+          <a class="news-card__link" href="#news">
+            <span class="news-card__media"><img src="{{ @assets }}img/home/{{ item.img }}-640.jpg" srcset="{{ @assets }}img/home/{{ item.img }}-640.jpg 640w, {{ @assets }}img/home/{{ item.img }}-1024.jpg 1024w" sizes="(min-width: 768px) 33vw, 100vw" alt="{{ item.alt }}" width="640" height="400" loading="lazy"></span>
+            <time class="news-card__date">{{ item.date }}</time>
+            <h3 class="news-card__title">{{ item.title }}</h3>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <!-- SPLIT: CHI SIAMO / CONTATTI -->
+  <section class="split" aria-label="{{ home.split.about_eyebrow }} / {{ home.split.contact_eyebrow }}">
+    <a class="split__tile" href="chi-siamo.html" data-cursor-target="{{ common.nav.explore }}">
+      <img src="{{ @assets }}img/home/life-1280.jpg" srcset="{{ @assets }}img/home/life-768.jpg 768w, {{ @assets }}img/home/life-1280.jpg 1280w, {{ @assets }}img/home/life-1920.jpg 1920w" sizes="(min-width: 768px) 50vw, 100vw" alt="{{ home.split.about_alt }}" width="1280" height="714" loading="lazy">
+      <span class="split__body">
+        <span class="eyebrow">{{ home.split.about_eyebrow }}</span>
+        <span class="split__title">{{ home.split.about_title }}</span>
+        <span class="link-arrow">{{ common.explore_more }}<svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+      </span>
+    </a>
+    <a class="split__tile" href="contatti.html" data-cursor-target="{{ common.nav.explore }}">
+      <img src="{{ @assets }}img/home/contact-1280.jpg" srcset="{{ @assets }}img/home/contact-768.jpg 768w, {{ @assets }}img/home/contact-1280.jpg 1280w, {{ @assets }}img/home/contact-1920.jpg 1920w" sizes="(min-width: 768px) 50vw, 100vw" alt="{{ home.split.contact_alt }}" width="1280" height="853" loading="lazy">
+      <span class="split__body">
+        <span class="eyebrow">{{ home.split.contact_eyebrow }}</span>
+        <span class="split__title">{{ home.split.contact_title }}</span>
+        <span class="link-arrow">{{ common.explore_more }}<svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+      </span>
+    </a>
+  </section>
+
+</main>
+
+{% include footer %}
+{% include scripts %}
+</body>
+</html>

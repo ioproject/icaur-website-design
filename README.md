@@ -1,36 +1,69 @@
-# ICAUR — Prototipo sito
+# iCAUR Italia — Prototipo sito
 
-Prototipo statico (HTML, CSS e JS vanilla, nessuna dipendenza né build) da integrare in un tema WordPress custom.
+Prototipo statico da integrare in un tema WordPress custom. HTML, CSS e JavaScript scritti a mano; animazioni con GSAP + ScrollTrigger e scroll fluido con Lenis (file locali in `src/assets/js/vendor/`). Nessun framework, nessun `npm install`: serve solo Python 3.
+
+## Avvio rapido
+
+```bash
+python3 tools/build.py --watch          # genera dist/ e la rigenera a ogni modifica di src/
+cd dist && python3 -m http.server 8080  # in un altro terminale → http://localhost:8080
+```
 
 ## Pagine
 
-| File | Pagina |
+| Pagina | Stato |
 |---|---|
-| `index.html` | Home |
-| `chi-siamo.html` | Chi siamo |
-| `modello-v27.html` | Dettaglio modello V27 |
-| `modello-v25.html` | Dettaglio modello V25 |
+| `index.html` — Home | ✅ |
+| `chi-siamo.html` — Chi siamo + iCAUR Life | in lavorazione |
+| `v27.html` — V27, pagina modello completa | in lavorazione |
+| `v25.html` — V25 coming soon | in lavorazione |
+| `contatti.html` — Contatti con form | in lavorazione |
 
-Concessionari, News e Contatti saranno realizzate direttamente in WordPress: nel menu hanno link provvisori (`#concessionari`, `#news`, `#contatti`).
+Concessionari e News saranno realizzate in WordPress: nel menu hanno link provvisori (`#concessionari`, `#news`).
 
 ## Struttura
 
 ```
-assets/css/main.css   stili (design tokens in :root, poi base, layout, header, footer, componenti)
-assets/js/main.js     menu mobile e sottomenu
-assets/img/           immagini
+src/
+  pages/        template delle pagine
+  partials/     head, header, footer, scripts (→ header.php / footer.php)
+  content/      it.json (lingua principale) e en.json: TUTTI i testi del sito
+  assets/
+    css/        main.css (token, base, header, footer) + un css per pagina
+    js/         main.js (tutte le interazioni, attivate da attributi data-*) + vendor/
+    fonts/      Gotham (Light, Book, Medium, Bold)
+    img/ video/ immagini e video ottimizzati
+tools/
+  build.py      generatore: src/ → dist/ (italiano in /, inglese in /en/)
+  media.py      ottimizza immagini e video da mater/ (macOS)
+  video.swift   taglio/compressione video e poster con AVFoundation
+dist/           output generato (non versionato)
+mater/          materiale originale HQ, 8 GB (non versionato)
 ```
 
-## Note per l'integrazione
+### Sintassi dei template
 
-- Header e footer sono identici in tutte le pagine e delimitati da commenti `HEADER (→ header.php)` / `FOOTER (→ footer.php)`.
-- Colori, font e spaziature sono variabili CSS in `:root`.
-- Classi in stile BEM, indipendenti dalla pagina; `is-current` / `aria-current="page"` segnano la voce di menu attiva.
+```
+{{ home.hero.title }}                    testo dal file della lingua
+{% include header %}                     partial
+{% for item in home.news.items %}…{{ item.title }}…{% endfor %}
+{{ @assets }}  {{ @lang }}  {{ @href_it }}  {{ @href_en }}  {{ @current:v27.html }}
+```
 
-## Anteprima locale
+## Note per l'integrazione in WordPress
+
+- Header e footer sono partial separati e delimitati da commenti `HEADER (→ header.php)` / `FOOTER (→ footer.php)`.
+- Ogni testo ha una chiave nei JSON: si mappano 1:1 su stringhe traducibili o campi ACF.
+- Colori, font, spaziature e tempi delle animazioni sono variabili CSS in `:root` (`main.css`).
+- Le interazioni si attivano con attributi `data-*` documentati in testa a `main.js`; nessuna dipendenza dall'ordine delle sezioni.
+- `prefers-reduced-motion` è rispettato: niente scroll fluido né effetti forti, solo dissolvenze.
+- Il nome del brand si scrive sempre **iCAUR**: dentro testi in maiuscolo va avvolto in `<span class="nocase">`.
+
+## Rigenerare i media
 
 ```bash
-python3 -m http.server 8080
+python3 tools/media.py          # crea solo i file mancanti
+python3 tools/media.py --force  # rigenera tutto
 ```
 
-Poi apri http://localhost:8080
+Le immagini sono JPEG responsive (q70). Per passare a WebP/AVIF basta installare `cwebp`/`avifenc` e cambiare l'encoder in `tools/media.py`.
