@@ -27,7 +27,7 @@
 }
 .statement--full .tag-stack { margin-bottom: var(--space-sm); }
 @media (min-width: 768px) {
-  .statement--full .tag-stack { position: absolute; left: var(--gutter); top: calc(var(--st-size) * 0.54 - 11px - 28px); margin: 0; } /* filled label stays on the first line */
+  .statement--full .tag-stack { position: absolute; left: var(--gutter); top: calc(var(--st-size) * 0.897 - 50px); margin: 0; } /* bottom of the stack (50px) sits on the first line baseline */
   .statement--full .statement__text { text-indent: 7.5rem; }   /* room for the inline tag, as in the reference */
 }
 @media (min-height: 1100px) { .hero { min-height: 1100px; } }
