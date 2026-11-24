@@ -45,7 +45,10 @@
           <a href="{{ @href_it }}" hreflang="it" lang="it" data-lang="it">IT</a>
           <a href="{{ @href_en }}" hreflang="en" lang="en" data-lang="en">EN</a>
         </div>
-        <a class="btn btn--dark site-nav__cta" href="#concessionari">{{ common.nav.dealer_cta }}</a>
+        <a class="btn btn--dark site-nav__cta" href="#concessionari">
+          <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-5.6 6-10.2A6 6 0 0 0 4 7.8C4 12.4 10 18 10 18Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          {{ common.nav.dealers }}
+        </a>
       </div>
     </nav>
   </div>
@@ -53,11 +56,15 @@
   <span class="site-header__joint" aria-hidden="true"></span>
 
   <div class="site-header__side">
+    <!-- Concessionari: pagina WordPress, link provvisorio -->
+    <a class="site-header__cta" href="#concessionari">
+      <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-5.6 6-10.2A6 6 0 0 0 4 7.8C4 12.4 10 18 10 18Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      {{ common.nav.dealers }}
+    </a>
     <div class="lang-switch site-header__lang" role="group" aria-label="{{ common.nav.lang_label }}">
       <a href="{{ @href_it }}" hreflang="it" lang="it" data-lang="it">IT</a>
       <a href="{{ @href_en }}" hreflang="en" lang="en" data-lang="en">EN</a>
     </div>
-    <a class="site-header__cta" href="#concessionari">{{ common.nav.dealer_cta }}</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
       <span class="nav-toggle__icon" aria-hidden="true"></span>
       <span class="visually-hidden nav-toggle__label" data-label-open="{{ common.nav.menu }}" data-label-close="{{ common.nav.close }}">{{ common.nav.menu }}</span>

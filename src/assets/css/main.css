@@ -224,15 +224,15 @@ input, select, textarea { font: inherit; }
 
 .site-header__logo img { width: 88px; height: auto; }
 
-.lang-switch { display: flex; align-items: center; gap: 2px; font-size: var(--fs-xs); font-weight: 500; letter-spacing: 0.12em; }
+.lang-switch { display: flex; align-items: center; gap: 2px; font-size: var(--fs-xs); font-weight: 500; letter-spacing: 0.06em; }
 .lang-switch a { padding: 0.7em 0.5em; border-radius: 4px; color: rgba(35, 24, 21, 0.45); transition: color var(--dur-fast); }
 .lang-switch a:hover, .lang-switch a[aria-current] { color: var(--c-black); }
 .site-header__lang { display: none; }
 
 .site-header__cta {
-  display: none; align-items: center; justify-content: center; align-self: stretch;
-  padding: 0 clamp(16px, 2.4vw, 40px);
-  font-size: var(--fs-xs); font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap;
+  display: none; align-items: center; justify-content: center; gap: 8px; align-self: stretch;
+  padding: 0 clamp(12px, 1.6vw, 28px);
+  font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap;
   transition: color var(--dur-fast);
 }
 .site-header__cta:hover { color: var(--c-brown); }
@@ -299,7 +299,7 @@ input, select, textarea { font: inherit; }
 /* --- desktop: menu inline in the main panel --- */
 @media (min-width: 1180px) {
   .site-header__main { position: relative; padding: 0 12px 0 28px; }
-  .site-header__side { padding: 0 16px 0 20px; gap: 4px; }
+  .site-header__side { padding: 0 16px 0 12px; gap: 4px; }
   .site-header__logo img { width: 100px; }
   .site-header__cta { display: inline-flex; }
   .nav-toggle, .site-nav__extra { display: none; }
