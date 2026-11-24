@@ -79,9 +79,6 @@
           </div>
         </div>
       </div>
-
-      <!-- slogan across the full width (font size fitted to the width in home.css) -->
-      <div class="statement__big-wrap"><p class="statement__big" data-reveal>{{ home.statement.big }}</p></div>
     </div>
   </section>
 
@@ -89,7 +86,9 @@
 
   <!-- MODELS -->
   <section class="models section" id="gamma" aria-label="{{ home.models.eyebrow }}">
-    <!-- the V27 box starts centred and grows to full screen while scrolling (main.js [data-grow-box]) -->
+    <!-- slogan across the full width (font size fitted in home.css); it stays put (sticky)
+         while the V27 box rises over it, grows to full screen (main.js [data-grow-box]) and covers it -->
+    <div class="statement__big-wrap"><p class="statement__big" data-reveal>{{ home.statement.big }}</p></div>
     <div class="models__grid">
       <article class="model-card model-card--v27" data-grow-box data-cursor-target="{{ common.nav.explore }}" data-hover-video>
         <a class="model-card__link" href="v27.html" aria-label="{{ home.models.v27.cta }}"></a>

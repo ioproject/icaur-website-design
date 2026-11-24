@@ -18,7 +18,7 @@
 .intro .hero { position: sticky; top: 0; z-index: 0; }
 
 /* Statement over the hero: its light background grows from inset + rounded to full width (main.js [data-grow-bg]) */
-.statement--full { position: relative; z-index: 1; isolation: isolate; color: var(--c-black); padding-block: clamp(5rem, 3rem + 9vw, 11rem) 90px; }   /* 90px between the slogan and the V27 box */
+.statement--full { position: relative; z-index: 1; isolation: isolate; color: var(--c-black); padding-block: clamp(5rem, 3rem + 9vw, 11rem); }
 .statement__bg { position: absolute; inset: 0; z-index: -1; background: var(--c-white); will-change: clip-path; }
 .statement--full .statement__inner { position: relative; --st-size: clamp(1.875rem, 1rem + 3.6vw, 4.5rem); }
 .statement--full .statement__text {
@@ -200,10 +200,15 @@
 }
 
 /* Slogan across the viewport with 20px on each side: the wrapper widens past the side margin, 100cqw = its width, K = width of the text at 1px font size */
-.statement__big-wrap { container-type: inline-size; margin-inline: calc(20px - var(--home-x)); }
+.statement__big-wrap {
+  container-type: inline-size; margin-inline: 20px;
+  position: sticky; top: calc(50vh - 3.9vw);   /* text height ≈ 7.8vw: stays centred on screen while the box slides over it */
+}
 .statement__big {
   --k: 11.27;   /* "CLASSIC NEVER FADES" (uppercase) in Gotham Medium at -0.045em; re-measure if the text changes */
-  margin-top: clamp(4rem, 2rem + 8vw, 10rem); margin-bottom: -0.092em;   /* line box ends on the baseline (caps only), so the 90px below is measured from the letters */
   font-size: calc(100cqw / var(--k)); font-weight: 500; line-height: 0.9; letter-spacing: -0.045em;
-  white-space: nowrap; text-transform: uppercase;
+  white-space: nowrap; text-transform: uppercase; color: var(--c-black);
 }
+
+/* V27 box: starts just over the bottom of the slogan, then rises above it */
+.models__grid { position: relative; z-index: 1; margin-top: -24px; }
