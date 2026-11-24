@@ -32,6 +32,8 @@ IMAGES = [
     (f"{PKG}/V27 MODEL/Crop For the Entrance Reception_V27 Launching KV01-Golden Glowing Circle KV01-v2.png", "img/home/news-1", [640, 1024]),
     (f"{PKG}/ABOUT iCAUR/PAGE 2.jpg", "img/home/news-2", [640, 1024]),
     (f"{PKG}/iCAUR LIFE/PAGE 6.jpeg", "img/home/news-3", [640, 1024]),
+    (f"{PKG}/ABOUT iCAUR/PAGE 3.jpg", "img/home/news-4", [640, 1024]),
+    (f"{PKG}/ABOUT iCAUR/PAGE 6.jpg", "img/home/news-5", [640, 1024]),
 ]
 
 # V27 page

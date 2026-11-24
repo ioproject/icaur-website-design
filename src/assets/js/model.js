@@ -5,8 +5,6 @@
      [data-steps] [data-step]               pinned section: one detail at a time
      [data-colors] [data-swatches]          colour picker
      [data-expand]                          image grows to full width on scroll
-     [data-carousel]                        prev/next buttons for a scroll-snap track
-     [data-drag-scroll]                     drag with the mouse to scroll horizontally
    Pinned effects run only on desktop (≥1024px) without reduced motion;
    otherwise the same markup is shown as a simple vertical list.
    ========================================================================== */
@@ -73,45 +71,6 @@
       });
     });
     if (buttons[0]) select(buttons[0]);
-  });
-
-  /* ---------- Carousel buttons ---------- */
-  $$('[data-carousel]').forEach(function (root) {
-    var track = root.querySelector('[data-carousel-track]');
-    var prev = root.querySelector('[data-carousel-prev]');
-    var next = root.querySelector('[data-carousel-next]');
-    if (!track) return;
-    var step = function () { var c = track.firstElementChild; return c ? c.getBoundingClientRect().width + 24 : 300; };
-    var sync = function () {
-      if (prev) prev.disabled = track.scrollLeft < 8;
-      if (next) next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 8;
-    };
-    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: reduceMotion ? 'auto' : 'smooth' }); });
-    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: reduceMotion ? 'auto' : 'smooth' }); });
-    track.addEventListener('scroll', sync, { passive: true });
-    window.addEventListener('resize', sync);
-    sync();
-  });
-
-  /* ---------- Drag to scroll (mouse only; touch scrolls natively) ---------- */
-  $$('[data-drag-scroll]').forEach(function (track) {
-    var startX = 0, startLeft = 0, down = false, moved = false;
-    track.addEventListener('pointerdown', function (e) {
-      if (e.pointerType !== 'mouse') return;
-      down = true; moved = false; startX = e.clientX; startLeft = track.scrollLeft;
-    });
-    window.addEventListener('pointermove', function (e) {
-      if (!down) return;
-      var dx = e.clientX - startX;
-      if (Math.abs(dx) > 4) { moved = true; track.classList.add('is-dragging'); }
-      track.scrollLeft = startLeft - dx;
-    });
-    window.addEventListener('pointerup', function () {
-      if (!down) return;
-      down = false;
-      track.classList.remove('is-dragging');
-    });
-    track.addEventListener('click', function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
   });
 
   if (!hasGsap) return;

@@ -196,6 +196,73 @@
     });
   });
 
+  /* ---------- Carousel [data-carousel]: [data-carousel-track], -prev, -next, -dots ---------- */
+  $$('[data-carousel]').forEach(function (root) {
+    var track = root.querySelector('[data-carousel-track]');
+    var prev = root.querySelector('[data-carousel-prev]');
+    var next = root.querySelector('[data-carousel-next]');
+    var dotsBox = root.querySelector('[data-carousel-dots]');
+    if (!track) return;
+    var behavior = reduceMotion ? 'auto' : 'smooth';
+    var step = function () {
+      var c = track.firstElementChild;
+      return c ? c.getBoundingClientRect().width + (parseFloat(getComputedStyle(track).columnGap) || 0) : 300;
+    };
+    var max = function () { return track.scrollWidth - track.clientWidth; };
+    var dots = [];
+    var buildDots = function () {
+      if (!dotsBox) return;
+      var n = Math.max(1, Math.ceil((max() - 4) / step()) + 1);
+      if (n === dots.length) return;
+      dotsBox.innerHTML = '';
+      dots = [];
+      for (var i = 0; i < n; i++) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', (dotsBox.getAttribute('data-label') || '') + ' ' + (i + 1));
+        b.addEventListener('click', (function (k) { return function () { track.scrollTo({ left: Math.min(k * step(), max()), behavior: behavior }); }; })(i));
+        dotsBox.appendChild(b);
+        dots.push(b);
+      }
+      dotsBox.hidden = n < 2;
+    };
+    var sync = function () {
+      if (prev) prev.disabled = track.scrollLeft < 8;
+      if (next) next.disabled = track.scrollLeft > max() - 8;
+      if (dots.length) {
+        var i = track.scrollLeft > max() - 8 ? dots.length - 1 : Math.round(track.scrollLeft / step());
+        dots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+      }
+    };
+    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: behavior }); });
+    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: behavior }); });
+    track.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', function () { buildDots(); sync(); });
+    buildDots();
+    sync();
+  });
+
+  /* ---------- Drag to scroll (mouse only; touch scrolls natively) ---------- */
+  $$('[data-drag-scroll]').forEach(function (track) {
+    var startX = 0, startLeft = 0, down = false, moved = false;
+    track.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      down = true; moved = false; startX = e.clientX; startLeft = track.scrollLeft;
+    });
+    window.addEventListener('pointermove', function (e) {
+      if (!down) return;
+      var dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) { moved = true; track.classList.add('is-dragging'); }
+      track.scrollLeft = startLeft - dx;
+    });
+    window.addEventListener('pointerup', function () {
+      if (!down) return;
+      down = false;
+      track.classList.remove('is-dragging');
+    });
+    track.addEventListener('click', function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
+  });
+
   /* ---------- Custom cursor ---------- */
   var cursor = document.querySelector('[data-cursor]');
   if (cursor && finePointer && !reduceMotion) {

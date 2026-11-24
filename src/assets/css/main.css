@@ -531,3 +531,26 @@ select.field__input { appearance: none; background-image: url("data:image/svg+xm
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   @view-transition { navigation: none; }
 }
+
+/* ==========================================================================
+   Carousel [data-carousel]: scroll-snap track + prev/next + dots (main.js)
+   ========================================================================== */
+.carousel-nav { display: flex; gap: 8px; }
+.round-btn { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--c-line-light); color: var(--c-black); transition: background var(--dur-fast), color var(--dur-fast), opacity var(--dur-fast); }
+.round-btn:hover { background: var(--c-black); color: var(--c-white); }
+.round-btn:disabled { opacity: 0.3; pointer-events: none; }
+.carousel {
+  display: grid; grid-auto-flow: column; grid-auto-columns: min(78vw, 380px); gap: var(--space-md);
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  padding: 0 var(--gutter) var(--space-xs);
+  scroll-padding-inline: var(--gutter);
+}
+@media (min-width: 1440px) { .carousel { padding-inline: calc((100vw - var(--container)) / 2 + var(--gutter)); scroll-padding-inline: calc((100vw - var(--container)) / 2 + var(--gutter)); } }
+.carousel::-webkit-scrollbar { display: none; }
+[data-drag-scroll] { cursor: grab; }
+[data-drag-scroll].is-dragging { cursor: grabbing; scroll-snap-type: none; user-select: none; }
+.round-btn--soft { border-color: transparent; background: #F0EEEB; }
+.carousel-dots { display: flex; align-items: center; gap: 2px; }
+.carousel-dots button { width: 20px; height: 32px; display: inline-flex; align-items: center; justify-content: center; }
+.carousel-dots button::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-black); opacity: 0.18; transition: opacity var(--dur-fast); }
+.carousel-dots button[aria-current="true"]::before { opacity: 0.8; }

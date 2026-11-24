@@ -151,8 +151,23 @@
           "date": "[gg/mm/aaaa]",
           "title": "[Titolo news — contenuto gestito da WordPress]",
           "alt": "Momento di vita all'aria aperta con iCAUR"
+        },
+        {
+          "img": "news-4",
+          "date": "[gg/mm/aaaa]",
+          "title": "[Titolo news — contenuto gestito da WordPress]",
+          "alt": "Dettaglio di design iCAUR"
+        },
+        {
+          "img": "news-5",
+          "date": "[gg/mm/aaaa]",
+          "title": "[Titolo news — contenuto gestito da WordPress]",
+          "alt": "Un V27 in viaggio nel paesaggio"
         }
-      ]
+      ],
+      "prev": "News precedente",
+      "next": "News successiva",
+      "dot": "Vai al gruppo di news"
     },
     "split": {
       "about_eyebrow": "Chi siamo",

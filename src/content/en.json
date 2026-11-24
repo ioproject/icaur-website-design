@@ -151,8 +151,23 @@
           "date": "[dd/mm/yyyy]",
           "title": "[News title — managed in WordPress]",
           "alt": "Outdoor life moment with iCAUR"
+        },
+        {
+          "img": "news-4",
+          "date": "[dd/mm/yyyy]",
+          "title": "[News title — managed in WordPress]",
+          "alt": "iCAUR design detail"
+        },
+        {
+          "img": "news-5",
+          "date": "[dd/mm/yyyy]",
+          "title": "[News title — managed in WordPress]",
+          "alt": "A V27 travelling through the landscape"
         }
-      ]
+      ],
+      "prev": "Previous news",
+      "next": "Next news",
+      "dot": "Go to news group"
     },
     "split": {
       "about_eyebrow": "About us",

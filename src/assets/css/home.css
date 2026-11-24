@@ -162,16 +162,21 @@
 }
 
 /* ---------- News ---------- */
-.news__grid { display: grid; gap: var(--space-lg) var(--space-md); }
-.news-card__link { display: grid; gap: var(--space-sm); }
-.news-card__media { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-radius: var(--radius); background: var(--c-line-light); }
+.news__title { text-align: center; margin-bottom: clamp(2.5rem, 1.5rem + 4vw, 5.5rem); }
+.news__track { grid-auto-columns: 34vw; gap: 10px; }
+@media (max-width: 767px) { .news__track { grid-auto-columns: 82vw; } }
+.news-card { scroll-snap-align: start; }
+.news-card__link { display: grid; gap: 6px; }
+.news-card__media { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 4px; background: var(--c-line-light); margin-bottom: var(--space-xs); }
 .news-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-slow) var(--ease-out); }
-.news-card__link:hover .news-card__media img { transform: scale(1.05); }
-.news-card__date { font-size: var(--fs-xs); letter-spacing: 0.1em; color: var(--c-brown); }
-.news-card__title { font-size: var(--fs-md); font-weight: 500; line-height: 1.3; }
+.news-card__link:hover .news-card__media img { transform: scale(1.04); }
+.news-card__title { font-size: var(--fs-md); font-weight: 400; line-height: 1.3; letter-spacing: -0.01em; max-width: 30ch; }
 .news-card__link:hover .news-card__title { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
-
-@media (min-width: 768px) { .news__grid { grid-template-columns: repeat(3, 1fr); } }
+.news-card__date { font-size: var(--fs-xs); color: var(--c-gray); }
+.news__foot { display: flex; align-items: center; gap: var(--space-md); margin-top: var(--space-md); }
+.news__foot { flex-wrap: wrap; }
+.news__all { margin-left: auto; white-space: nowrap; }
+@media (max-width: 767px) { .news__all { margin-left: 0; flex-basis: 100%; } }
 
 /* View transition: V27 card media morphs into the V27 page hero */
 .model-card--v27 .model-card__media { view-transition-name: v27-media; }
