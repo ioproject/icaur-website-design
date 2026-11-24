@@ -216,7 +216,7 @@ input, select, textarea { font: inherit; }
 }
 
 /* orange joint between the two panels (brand Vibrant Orange) */
-.site-header__joint { position: relative; flex: 0 0 8px; }
+.site-header__joint { position: relative; z-index: 2; flex: 0 0 8px; } /* above both panels */
 .site-header__joint::before {
   content: ""; position: absolute; top: 50%; left: 50%; width: 30px; height: 5px;
   margin: -2.5px 0 0 -15px; border-radius: 3px; background: var(--c-orange);
