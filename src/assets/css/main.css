@@ -182,6 +182,7 @@ input, select, textarea { font: inherit; }
   min-height: 44px; padding: 0; gap: 4px; border-color: transparent; color: var(--c-black);
 }
 .btn--text::after { width: 20px; height: 20px; }
+.btn__upper { text-transform: uppercase; letter-spacing: 0.02em; }   /* e.g. "iCAUR LIFE" (keep .nocase on iCAUR) */
 .btn--text > span { position: relative; text-transform: uppercase; letter-spacing: 0.02em; }
 .btn--text > span::after {          /* same orange underline as the navbar links: grows from the left */
   content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; border-radius: 1px;
