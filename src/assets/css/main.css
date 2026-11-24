@@ -168,8 +168,8 @@ input, select, textarea { font: inherit; }
 .btn:active { transform: scale(0.98); }
 .btn--sm { min-height: 44px; padding: 0 7px 0 16px; gap: 10px; font-size: 0.875rem; }
 .btn--sm::after { width: 28px; height: 28px; }
-.btn--light { background: var(--c-white); color: var(--c-black); }
-.btn--light:hover { background: var(--c-gold); }
+.btn--light { background: var(--c-gold); color: var(--c-black); }   /* primary: Collection Gold #CAA87B */
+.btn--light:hover { background: var(--c-white); }
 .btn--ghost { color: var(--c-white); border-color: rgba(255, 255, 255, 0.45); }
 .btn--ghost:hover { border-color: var(--c-white); background: rgba(255, 255, 255, 0.1); }
 .btn--dark { background: var(--c-black); color: var(--c-white); }
