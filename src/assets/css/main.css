@@ -360,6 +360,15 @@ input, select, textarea { font: inherit; }
 
 html.menu-open { overflow: hidden; }
 
+/* Framed hero: light frame with rounded inner corners drawn over the section's edges.
+   Add class="framed" to any full-bleed hero; nothing else changes in its markup. */
+.framed { position: relative; overflow: hidden; --frame: 8px; }   /* overflow clips the frame shadow */
+@media (min-width: 768px) { .framed { --frame: 12px; } }
+.framed::after {
+  content: ""; position: absolute; inset: var(--frame); pointer-events: none;
+  border-radius: 10px; box-shadow: 0 0 0 calc(var(--frame) + 40px) var(--c-white);
+}
+
 /* Video play/pause button (all pages) */
 .video-toggle {
   display: inline-flex; align-items: center; justify-content: center;
