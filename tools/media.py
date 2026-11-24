@@ -82,6 +82,12 @@ for prefix, slug in [("Desert Bronze", "desert-bronze"), ("Moonstone White", "mo
     if match:
         IMAGES.append((os.path.join(COLORS, match[0]), f"img/v27/color-{slug}", L))
 
+# Vertical (9:16) colour visual for the tall tile of the mega menu
+VERTICAL = f"{PKG}/V27 MODEL/V27车色美图-横竖2版-完稿Color Visuals/竖版 Vertical"
+_v = [f for f in os.listdir(VERTICAL) if f.startswith("Desert Bronze") and f.endswith(".jpg")] if os.path.isdir(VERTICAL) else []
+if _v:
+    IMAGES.append((os.path.join(VERTICAL, _v[0]), "img/menu/v27-vertical", [600, 1000]))
+
 # About us (+ part of iCAUR Life). Life photos/video showing the V23 are deliberately not used.
 ABOUT, LIFE = f"{PKG}/ABOUT iCAUR", f"{PKG}/iCAUR LIFE"
 IMAGES += [

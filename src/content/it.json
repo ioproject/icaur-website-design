@@ -53,6 +53,15 @@
       "error_email": "Inserisci un indirizzo email valido.",
       "error_privacy": "Per continuare devi accettare l'informativa privacy.",
       "prototype_note": "Prototipo: il form non invia dati. In WordPress andrà collegato al plugin scelto (es. Contact Form 7 o Gravity Forms)."
+    },
+    "menu": {
+      "label": "Menu del sito",
+      "open": "Apri il menu",
+      "close": "Chiudi il menu",
+      "v27_text": "Il SUV ibrido a trazione integrale",
+      "v25_text": "Coming soon",
+      "life_text": "Una sola auto, tanti mondi",
+      "more": "Altro"
     }
   },
   "home": {

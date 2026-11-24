@@ -1,74 +1,98 @@
 <!-- ==================== HEADER (→ header.php) ====================
-     Two light panels joined by small connectors: [logo + menu] [language + CTA + menu button] -->
+     Two light panels joined by an orange connector:
+     [ menu button · links · (logo centred) ] —— [ dealers · language ]
+     The menu button and "Modelli" both open the full mega menu below. -->
 <a class="skip-link" href="#main">{{ common.skip }}</a>
 
 <header class="site-header" data-header>
 
   <div class="site-header__main">
-    <a class="site-header__logo" href="index.html" aria-label="iCAUR — {{ common.nav.home }}">
-      <img src="{{ @assets }}img/brand/icaur-logo-black.svg" alt="" width="112" height="20">
-    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="megamenu" data-menu-toggle
+      data-label-open="{{ common.menu.open }}" data-label-close="{{ common.menu.close }}">
+      <span class="menu-btn__icon" aria-hidden="true"></span>
+      <span class="visually-hidden" data-menu-label>{{ common.menu.open }}</span>
+    </button>
 
-    <nav class="site-nav" id="site-nav" aria-label="{{ common.nav.label }}" data-nav>
+    <nav class="site-nav" aria-label="{{ common.nav.label }}">
       <ul class="site-nav__list">
         <li><a class="site-nav__link" href="chi-siamo.html"{{ @current:chi-siamo.html }}><span>{{ common.nav.life }}</span></a></li>
-        <li class="site-nav__item site-nav__item--models" data-models>
-          <button class="site-nav__link site-nav__trigger" type="button" aria-expanded="false" aria-controls="models-panel" data-models-trigger>
+        <li>
+          <button class="site-nav__link site-nav__trigger" type="button" aria-expanded="false" aria-controls="megamenu" data-menu-toggle>
             {{ common.nav.models }}
             <svg class="icon icon--plus" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5v9M1.5 6h9" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
           </button>
-          <div class="models-panel" id="models-panel" data-models-panel>
-            <a class="model-tile" href="v27.html"{{ @current:v27.html }}>
-              <span class="model-tile__media"><img src="{{ @assets }}img/home/v27-card-768.jpg" alt="" width="768" height="326" loading="lazy"></span>
-              <span class="model-tile__body">
-                <span class="model-tile__name"><span class="nocase">iCAUR</span> V27</span>
-                <span class="model-tile__line">{{ common.nav.v27_line }}</span>
-              </span>
-            </a>
-            <a class="model-tile" href="v25.html"{{ @current:v25.html }}>
-              <span class="model-tile__media"><img src="{{ @assets }}video/card-v25-poster.jpg" alt="" width="1280" height="520" loading="lazy"></span>
-              <span class="model-tile__body">
-                <span class="model-tile__name"><span class="nocase">iCAUR</span> V25 <span class="badge">{{ common.coming_soon }}</span></span>
-                <span class="model-tile__line">{{ common.nav.v25_line }}</span>
-              </span>
-            </a>
-          </div>
         </li>
         <!-- News: pagina WordPress, link provvisorio -->
-        <li><a class="site-nav__link" href="#news">{{ common.nav.news }}</a></li>
+        <li class="site-nav__push"><a class="site-nav__link" href="#news">{{ common.nav.news }}</a></li>
         <li><a class="site-nav__link" href="contatti.html"{{ @current:contatti.html }}>{{ common.nav.contact }}</a></li>
       </ul>
-
-      <div class="site-nav__extra">
-        <div class="lang-switch" role="group" aria-label="{{ common.nav.lang_label }}">
-          <a href="{{ @href_it }}" hreflang="it" lang="it" data-lang="it">IT</a>
-          <a href="{{ @href_en }}" hreflang="en" lang="en" data-lang="en">EN</a>
-        </div>
-        <a class="btn btn--dark site-nav__cta" href="#concessionari">
-          <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-5.6 6-10.2A6 6 0 0 0 4 7.8C4 12.4 10 18 10 18Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          {{ common.nav.dealers }}
-        </a>
-      </div>
     </nav>
+
+    <a class="site-header__logo" href="index.html" aria-label="iCAUR — {{ common.nav.home }}">
+      <img src="{{ @assets }}img/brand/icaur-logo-black.svg" alt="" width="112" height="20">
+    </a>
   </div>
 
   <span class="site-header__joint" aria-hidden="true"></span>
 
   <div class="site-header__side">
     <!-- Concessionari: pagina WordPress, link provvisorio -->
-    <a class="site-header__cta" href="#concessionari">
+    <a class="site-header__cta" href="#concessionari" aria-label="{{ common.nav.dealers }}">
       <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-5.6 6-10.2A6 6 0 0 0 4 7.8C4 12.4 10 18 10 18Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-      {{ common.nav.dealers }}
+      <span class="site-header__cta-text">{{ common.nav.dealers }}</span>
     </a>
     <div class="lang-switch site-header__lang" role="group" aria-label="{{ common.nav.lang_label }}">
       <a href="{{ @href_it }}" hreflang="it" lang="it" data-lang="it">IT</a>
       <a href="{{ @href_en }}" hreflang="en" lang="en" data-lang="en">EN</a>
     </div>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
-      <span class="nav-toggle__icon" aria-hidden="true"></span>
-      <span class="visually-hidden nav-toggle__label" data-label-open="{{ common.nav.menu }}" data-label-close="{{ common.nav.close }}">{{ common.nav.menu }}</span>
-    </button>
   </div>
 
 </header>
+
+<!-- Mega menu (opened by the menu button and by "Modelli") -->
+<div class="megamenu" id="megamenu" role="dialog" aria-modal="true" aria-label="{{ common.menu.label }}" data-megamenu hidden>
+  <div class="megamenu__inner">
+
+    <div class="megamenu__tiles">
+      <a class="mtile mtile--tall" href="v27.html" style="--i: 1">
+        <img src="{{ @assets }}img/menu/v27-vertical-1000.jpg" srcset="{{ @assets }}img/menu/v27-vertical-600.jpg 600w, {{ @assets }}img/menu/v27-vertical-1000.jpg 1000w" sizes="(min-width: 1024px) 30vw, 50vw" alt="" width="600" height="1067" loading="lazy">
+        <span class="mtile__body"><span class="mtile__title"><span class="nocase">iCAUR</span> V27</span><span class="mtile__text">{{ common.menu.v27_text }}</span></span>
+      </a>
+      <a class="mtile" href="v25.html" style="--i: 2">
+        <img src="{{ @assets }}video/card-v25-poster.jpg" alt="" width="1280" height="520" loading="lazy">
+        <span class="mtile__body"><span class="mtile__title"><span class="nocase">iCAUR</span> V25</span><span class="mtile__text">{{ common.menu.v25_text }}</span></span>
+      </a>
+      <a class="mtile" href="chi-siamo.html" style="--i: 3">
+        <img src="{{ @assets }}img/home/life-768.jpg" alt="" width="768" height="428" loading="lazy">
+        <span class="mtile__body"><span class="mtile__title">{{ common.nav.life }}</span><span class="mtile__text">{{ common.menu.life_text }}</span></span>
+      </a>
+    </div>
+
+    <div class="megamenu__side">
+      <ul class="megamenu__links">
+        <li style="--i: 1"><a href="v27.html"{{ @current:v27.html }}><span class="nocase">iCAUR</span> V27</a></li>
+        <li style="--i: 2"><a href="v25.html"{{ @current:v25.html }}><span class="nocase">iCAUR</span> V25</a></li>
+        <li style="--i: 3"><a href="chi-siamo.html"{{ @current:chi-siamo.html }}>{{ common.nav.life }}</a></li>
+        <li style="--i: 4"><a href="#news">{{ common.nav.news }}</a></li>
+        <li style="--i: 5"><a href="contatti.html"{{ @current:contatti.html }}>{{ common.nav.contact }}</a></li>
+      </ul>
+      <div class="megamenu__foot">
+        <ul>
+          <li><a href="#concessionari">{{ common.nav.dealers }}</a></li>
+          <li><a href="index.html">{{ common.nav.home }}</a></li>
+        </ul>
+        <ul>
+          <li><a href="#legal">{{ common.footer.legal }}</a></li>
+          <li><a href="#cookies">{{ common.footer.cookies }}</a></li>
+          <li><a href="#privacy">{{ common.footer.privacy }}</a></li>
+        </ul>
+        <div class="lang-switch" role="group" aria-label="{{ common.nav.lang_label }}">
+          <a href="{{ @href_it }}" hreflang="it" lang="it" data-lang="it">IT</a>
+          <a href="{{ @href_en }}" hreflang="en" lang="en" data-lang="en">EN</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 <!-- ==================== /HEADER ==================== -->

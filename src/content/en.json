@@ -53,6 +53,15 @@
       "error_email": "Please enter a valid email address.",
       "error_privacy": "Please accept the privacy notice to continue.",
       "prototype_note": "Prototype: the form doesn't send data. In WordPress it will be connected to the chosen plugin (e.g. Contact Form 7 or Gravity Forms)."
+    },
+    "menu": {
+      "label": "Site menu",
+      "open": "Open menu",
+      "close": "Close menu",
+      "v27_text": "The all-round hybrid SUV",
+      "v25_text": "Coming soon",
+      "life_text": "One car, many worlds",
+      "more": "More"
     }
   },
   "home": {

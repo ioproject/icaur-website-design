@@ -2,7 +2,7 @@
    iCAUR — main.js (shared). Vanilla JS + GSAP/ScrollTrigger + Lenis.
    Every feature is opt-in through data attributes, so the same file works
    on all pages:
-     [data-header] [data-nav] [data-nav-toggle] [data-models]  navigation
+     [data-header] [data-megamenu] [data-menu-toggle]          header + mega menu
      [data-video] [data-autoplay] [data-video-toggle]            background videos
      [data-hover-video]                                         video on card hover
      [data-split-lines] [data-hero-fade]                        hero title reveal
@@ -57,59 +57,59 @@
 
   /* ---------- Header: hide on scroll down, show on scroll up ---------- */
   var header = document.querySelector('[data-header]');
-  var nav = document.querySelector('[data-nav]');
-  var navToggle = document.querySelector('[data-nav-toggle]');
-  var models = document.querySelector('[data-models]');
-  var modelsTrigger = document.querySelector('[data-models-trigger]');
-  var modelsPanel = document.querySelector('[data-models-panel]');
+  var menu = document.querySelector('[data-megamenu]');
+  var menuToggles = $$('[data-menu-toggle]');
+  var menuOpen = false;
 
   if (header) {
     var lastY = window.scrollY;
-    var onScroll = function () {
+    window.addEventListener('scroll', function () {
       var y = window.scrollY;
-      var menuOpen = nav && nav.classList.contains('is-open');
-      var panelOpen = modelsPanel && modelsPanel.classList.contains('is-open');
-      header.classList.toggle('is-hidden', y > 160 && y > lastY + 4 && !menuOpen && !panelOpen);
+      header.classList.toggle('is-hidden', y > 160 && y > lastY + 4 && !menuOpen);
       if (y < lastY - 4 || y < 160) header.classList.remove('is-hidden');
       lastY = y;
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
+    }, { passive: true });
   }
 
-  /* ---------- Navigation ---------- */
-  function setMenu(open) {
-    if (!nav || !navToggle) return;
-    nav.classList.toggle('is-open', open);
-    navToggle.setAttribute('aria-expanded', String(open));
-    var label = navToggle.querySelector('.nav-toggle__label');
-    if (label) label.textContent = open ? label.dataset.labelClose : label.dataset.labelOpen;
+  /* ---------- Mega menu [data-megamenu], opened by every [data-menu-toggle] ---------- */
+  var lastToggle = null;
+  function setMenu(open, focusBack) {
+    if (!menu || open === menuOpen) return;
+    menuOpen = open;
+    menuToggles.forEach(function (t) {
+      t.setAttribute('aria-expanded', String(open));
+      var label = t.querySelector('[data-menu-label]');
+      if (label) label.textContent = open ? t.dataset.labelClose : t.dataset.labelOpen;
+    });
+    root.classList.toggle('menu-open', open);
     if (lenis) open ? lenis.stop() : lenis.start();
+    if (open) {
+      header.classList.remove('is-hidden');
+      menu.hidden = false;
+      requestAnimationFrame(function () { requestAnimationFrame(function () { menu.classList.add('is-open'); }); });
+      var first = menu.querySelector('a');
+      if (first) setTimeout(function () { first.focus({ preventScroll: true }); }, 250);
+    } else {
+      menu.classList.remove('is-open');
+      setTimeout(function () { if (!menuOpen) menu.hidden = true; }, reduceMotion ? 0 : 450);
+      if (focusBack && lastToggle) lastToggle.focus();
+    }
   }
-  function setModels(open) {
-    if (!modelsPanel || !modelsTrigger) return;
-    modelsPanel.classList.toggle('is-open', open);
-    modelsTrigger.setAttribute('aria-expanded', String(open));
-  }
-  if (navToggle) navToggle.addEventListener('click', function () { setMenu(navToggle.getAttribute('aria-expanded') !== 'true'); });
-  if (modelsTrigger) modelsTrigger.addEventListener('click', function () { setModels(modelsTrigger.getAttribute('aria-expanded') !== 'true'); });
-
-  // desktop: open the models panel on hover too
-  if (models && finePointer) {
-    var closeTimer;
-    var desktop = function () { return window.matchMedia('(min-width: 1180px)').matches; };
-    models.addEventListener('mouseenter', function () { if (desktop()) { clearTimeout(closeTimer); setModels(true); } });
-    models.addEventListener('mouseleave', function () { if (desktop()) closeTimer = setTimeout(function () { setModels(false); }, 180); });
-  }
-  document.addEventListener('click', function (e) {
-    if (models && !models.contains(e.target)) setModels(false);
+  menuToggles.forEach(function (t) {
+    t.addEventListener('click', function () { lastToggle = t; setMenu(!menuOpen); });
   });
+  if (menu) {
+    // close when a link inside is used (also in-page anchors) or the empty area is clicked
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a') || e.target === menu) setMenu(false);
+    });
+    // keep keyboard focus inside header + menu while open
+    document.addEventListener('focusin', function (e) {
+      if (menuOpen && !menu.contains(e.target) && !header.contains(e.target)) { var a = menu.querySelector('a'); if (a) a.focus(); }
+    });
+  }
   document.addEventListener('keydown', function (e) {
-    if (e.key !== 'Escape') return;
-    if (modelsPanel && modelsPanel.classList.contains('is-open')) { setModels(false); modelsTrigger.focus(); }
-    else if (nav && nav.classList.contains('is-open')) { setMenu(false); navToggle.focus(); }
-  });
-  window.addEventListener('resize', function () {
-    if (window.matchMedia('(min-width: 1180px)').matches) setMenu(false);
+    if (e.key === 'Escape' && menuOpen) setMenu(false, true);
   });
 
   /* ---------- Videos ---------- */
@@ -156,6 +156,20 @@
     });
   });
   syncToggles();
+
+  // swap desktop/mobile source when the window crosses the breakpoint
+  var mqMobile = window.matchMedia('(max-width: 767px)');
+  var swapSources = function () {
+    $$('video[data-src-mobile][data-loaded]').forEach(function (v) {
+      var want = mqMobile.matches ? v.dataset.srcMobile : v.dataset.src;
+      if (v.getAttribute('src') === want) return;
+      var wasPlaying = !v.paused;
+      v.classList.remove('is-playing');
+      v.src = want;
+      if (wasPlaying) play(v);
+    });
+  };
+  if (mqMobile.addEventListener) mqMobile.addEventListener('change', swapSources);
 
   // card videos: play on hover (desktop) or when well in view (touch)
   $$('[data-hover-video]').forEach(function (card) {
