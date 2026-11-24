@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="{{ @lang }}">
+<head>
+  <title>{{ v25.meta.title }}</title>
+  <meta name="description" content="{{ v25.meta.description }}">
+{% include head %}
+  <link rel="stylesheet" href="{{ @assets }}css/soon.css">
+  <link rel="preload" as="image" href="{{ @assets }}video/v25-hero-poster.jpg" media="(min-width: 768px)">
+  <link rel="preload" as="image" href="{{ @assets }}video/v25-hero-mobile-poster.jpg" media="(max-width: 767px)">
+</head>
+<body class="page page--soon page--v25">
+{% include header %}
+
+<main id="main">
+
+  <!-- ===== HERO: teaser + countdown ===== -->
+  <section class="soon-hero" data-hero>
+    <div class="soon-hero__media" data-parallax="10">
+      <picture>
+        <source media="(max-width: 767px)" srcset="{{ @assets }}video/v25-hero-mobile-poster.jpg">
+        <img class="soon-hero__poster" src="{{ @assets }}video/v25-hero-poster.jpg" alt="" width="1600" height="650" fetchpriority="high">
+      </picture>
+      <video class="soon-hero__video" muted loop playsinline preload="none" aria-hidden="true"
+        data-video data-autoplay
+        data-src="{{ @assets }}video/v25-hero.mp4"
+        data-src-mobile="{{ @assets }}video/v25-hero-mobile.mp4"></video>
+    </div>
+    <div class="soon-hero__shade" aria-hidden="true"></div>
+
+    <div class="container soon-hero__content">
+      <p data-hero-fade><span class="badge badge--gold">{{ common.coming_soon }}</span></p>
+      <h1 class="soon-hero__title">
+        <span class="visually-hidden">iCAUR V25 — {{ common.coming_soon }}</span>
+        <img class="soon-hero__logo" src="{{ @assets }}img/brand/v25-logo.webp" alt="" width="464" height="64" data-hero-fade>
+      </h1>
+      <p class="soon-hero__line" data-split-lines>{{ v25.hero.line }}</p>
+
+      <div class="countdown" data-countdown="{{ v25.launch_date }}" data-hero-fade>
+        <p class="countdown__label" data-countdown-label>{{ v25.hero.date_label }}</p>
+        <dl class="countdown__grid" aria-label="{{ v25.countdown.label }}" data-countdown-grid hidden>
+          <div><dd data-unit="d">--</dd><dt>{{ v25.countdown.days }}</dt></div>
+          <div><dd data-unit="h">--</dd><dt>{{ v25.countdown.hours }}</dt></div>
+          <div><dd data-unit="m">--</dd><dt>{{ v25.countdown.minutes }}</dt></div>
+          <div><dd data-unit="s">--</dd><dt>{{ v25.countdown.seconds }}</dt></div>
+        </dl>
+      </div>
+
+      <div class="hero__actions" data-hero-fade>
+        <a class="btn btn--light" href="#avvisami">{{ v25.hero.cta }}</a>
+      </div>
+    </div>
+
+    <div class="container soon-hero__footer">
+      <button class="video-toggle" type="button" aria-pressed="false" data-video-toggle
+        data-label-pause="{{ common.video_pause }}" data-label-play="{{ common.video_play }}">
+        <svg class="icon icon--pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="1.8"/></svg>
+        <svg class="icon icon--play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg>
+        <span class="visually-hidden" data-video-toggle-label>{{ common.video_pause }}</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== NOTIFY FORM ===== -->
+  <section class="notify section section--paper" id="avvisami" aria-labelledby="notify-title">
+    <div class="container notify__inner">
+      <header>
+        <p class="eyebrow eyebrow--dark" data-reveal>{{ v25.notify.eyebrow }}</p>
+        <h2 class="section-title" id="notify-title" data-reveal>{{ v25.notify.title }}</h2>
+        <p class="notify__text" data-reveal>{{ v25.notify.text }}</p>
+      </header>
+
+      <!-- Prototipo: nessun invio reale. In WordPress collegare al plugin form scelto. -->
+      <form class="form" action="#" method="post" novalidate data-form data-reveal
+        data-msg-required="{{ common.form.error_required }}" data-msg-email="{{ common.form.error_email }}" data-msg-privacy="{{ common.form.error_privacy }}">
+        <input type="hidden" name="modello" value="V25">
+        <input type="hidden" name="motivo" value="avvisami">
+        <div class="form__row">
+          <div class="field">
+            <label class="field__label" for="n-name">{{ common.form.name }} *</label>
+            <input class="field__input" id="n-name" name="nome" type="text" autocomplete="given-name" required>
+            <p class="field__error" id="n-name-err" hidden></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="n-email">{{ common.form.email }} *</label>
+            <input class="field__input" id="n-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+            <p class="field__error" id="n-email-err" hidden></p>
+          </div>
+        </div>
+        <div class="check">
+          <input class="check__input" id="n-privacy" name="privacy" type="checkbox" required>
+          <label class="check__label" for="n-privacy">{{ common.form.privacy }}</label>
+          <p class="field__error" id="n-privacy-err" hidden></p>
+        </div>
+        <div class="check">
+          <input class="check__input" id="n-marketing" name="marketing" type="checkbox">
+          <label class="check__label" for="n-marketing">{{ common.form.marketing }}</label>
+        </div>
+        <div class="form__footer">
+          <button class="btn btn--dark" type="submit">{{ v25.notify.submit }}</button>
+          <p class="form__note">{{ common.form.required_note }}</p>
+        </div>
+        <p class="form__success" role="status" data-form-success hidden>{{ v25.notify.success }}</p>
+        <p class="form__proto">{{ common.form.prototype_note }}</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== NEXT: V27 + information ===== -->
+  <section class="split" aria-label="{{ v25.next.eyebrow }}">
+    <a class="split__tile" href="v27.html" data-cursor-target="{{ common.nav.explore }}">
+      <img src="{{ @assets }}img/home/v27-card-1280.jpg" srcset="{{ @assets }}img/home/v27-card-768.jpg 768w, {{ @assets }}img/home/v27-card-1280.jpg 1280w, {{ @assets }}img/home/v27-card-1920.jpg 1920w" sizes="(min-width: 768px) 50vw, 100vw" alt="{{ v25.next.v27_alt }}" width="1280" height="543" loading="lazy">
+      <span class="split__body">
+        <span class="eyebrow">{{ v25.next.eyebrow }}</span>
+        <span class="split__title">{{ v25.next.v27_title }}</span>
+        <span class="split__text">{{ v25.next.v27_text }}</span>
+        <span class="link-arrow">{{ common.explore_more }}<svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+      </span>
+    </a>
+    <a class="split__tile" href="contatti.html?modello=v25" data-cursor-target="{{ common.nav.contact }}">
+      <img src="{{ @assets }}img/home/contact-1280.jpg" srcset="{{ @assets }}img/home/contact-768.jpg 768w, {{ @assets }}img/home/contact-1280.jpg 1280w, {{ @assets }}img/home/contact-1920.jpg 1920w" sizes="(min-width: 768px) 50vw, 100vw" alt="{{ v25.next.info_alt }}" width="1280" height="853" loading="lazy">
+      <span class="split__body">
+        <span class="eyebrow">{{ common.nav.contact }}</span>
+        <span class="split__title">{{ v25.next.info_title }}</span>
+        <span class="split__text">{{ v25.next.info_text }}</span>
+        <span class="link-arrow">{{ common.explore_more }}<svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+      </span>
+    </a>
+  </section>
+
+</main>
+
+{% include footer %}
+{% include scripts %}
+</body>
+</html>

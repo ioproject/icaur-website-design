@@ -154,22 +154,5 @@
 
 @media (min-width: 768px) { .news__grid { grid-template-columns: repeat(3, 1fr); } }
 
-/* ---------- Split (About / Contact) ---------- */
-.split { display: grid; gap: 2px; background: var(--c-ink); }
-.split__tile { position: relative; overflow: hidden; isolation: isolate; min-height: 72svh; display: flex; align-items: flex-end; color: var(--c-white); }
-.split__tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; transition: transform 1.6s var(--ease-out); }
-.split__tile::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(20, 13, 11, 0.85), rgba(20, 13, 11, 0) 60%); }
-.split__tile:hover img { transform: scale(1.05); }
-.split__body { display: grid; gap: var(--space-sm); justify-items: start; padding: var(--space-lg) var(--gutter); }
-.split__title { font-size: var(--fs-xl); font-weight: 700; line-height: 1.02; text-transform: uppercase; }
-.split__tile .eyebrow { margin-bottom: 0; }
-.split__tile:focus-visible { outline-offset: -4px; }
-
-@media (min-width: 768px) {
-  .split { grid-template-columns: 1fr 1fr; }
-  .split__tile { min-height: 82vh; }
-  .split__body { padding: var(--space-xl) var(--space-lg) var(--space-lg); }
-}
-
 /* View transition: V27 card media morphs into the V27 page hero */
 .model-card--v27 .model-card__media { view-transition-name: v27-media; }

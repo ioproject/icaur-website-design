@@ -91,6 +91,9 @@ VIDEOS = [
     (f"{PKG}/HOME PAGE/PAGE 3-2 V25 coming soon引导至品牌页.mp4", "video/card-v25", 7, 6, 1280, 1500, 2.5, None),
     (f"{PKG}/HOME PAGE/PAGE3-3 V27视频.mp4", "video/v27-hero", 2, 14, 1600, 1800, 7, None),
     (f"{PKG}/HOME PAGE/PAGE3-3 V27视频.mp4", "video/v27-hero-mobile", 2, 14, 720, 1100, 7, 1280),
+    # V25 coming soon: dark teaser (eye, headlight, light blade) from the HQ "V25 coming soon" film
+    (f"{PKG}/HOME PAGE/PAGE 3-2 V25 coming soon引导至品牌页.mp4", "video/v25-hero", 5, 15, 1600, 1600, 1.5, None),
+    (f"{PKG}/HOME PAGE/PAGE 3-2 V25 coming soon引导至品牌页.mp4", "video/v25-hero-mobile", 5, 15, 720, 1000, 1.5, 1280),
 ]
 
 

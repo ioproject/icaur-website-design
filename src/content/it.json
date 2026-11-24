@@ -37,6 +37,21 @@
       "privacy": "Privacy",
       "copyright": "© 2026 iCAUR Italia — [Ragione sociale e P.IVA dell'importatore]",
       "disclaimer": "Le immagini hanno scopo illustrativo. Allestimenti e dotazioni possono variare in base al mercato."
+    },
+    "form": {
+      "name": "Nome",
+      "surname": "Cognome",
+      "email": "Email",
+      "phone": "Telefono",
+      "message": "Messaggio",
+      "optional": "facoltativo",
+      "required_note": "I campi con * sono obbligatori.",
+      "privacy": "Ho letto l'<a href=\"#privacy\">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere la risposta. *",
+      "marketing": "Voglio ricevere novità e offerte iCAUR (facoltativo).",
+      "error_required": "Questo campo è obbligatorio.",
+      "error_email": "Inserisci un indirizzo email valido.",
+      "error_privacy": "Per continuare devi accettare l'informativa privacy.",
+      "prototype_note": "Prototipo: il form non invia dati. In WordPress andrà collegato al plugin scelto (es. Contact Form 7 o Gravity Forms)."
     }
   },
   "home": {
@@ -646,5 +661,40 @@
       "alt": "V27 su un prato d'alta quota"
     },
     "disclaimer": "Le immagini hanno scopo illustrativo. Allestimenti e dotazioni dipendono dai modelli disponibili sul mercato italiano."
+  },
+  "v25": {
+    "meta": {
+      "title": "iCAUR V25 — Coming soon",
+      "description": "Il nuovo iCAUR V25 sta arrivando in Italia. Lascia la tua email e ti avvisiamo appena sarà disponibile."
+    },
+    "hero": {
+      "line": "Il nuovo SUV iCAUR sta arrivando in Italia.",
+      "date_label": "[Data di arrivo da annunciare]",
+      "cta": "Avvisami"
+    },
+    "countdown": {
+      "label": "Mancano",
+      "days": "giorni",
+      "hours": "ore",
+      "minutes": "minuti",
+      "seconds": "secondi"
+    },
+    "launch_date": "",
+    "notify": {
+      "eyebrow": "Coming soon",
+      "title": "Sii tra i primi<br>a vederlo",
+      "text": "Ti scriviamo una sola volta: quando il V25 arriva in concessionaria, con la data delle prime prove su strada.",
+      "submit": "Avvisami",
+      "success": "Fatto. Ti scriveremo appena il V25 sarà in Italia."
+    },
+    "next": {
+      "eyebrow": "Nel frattempo",
+      "v27_title": "Scopri<br>il V27",
+      "v27_text": "Il SUV ibrido a trazione integrale, già disponibile.",
+      "v27_alt": "iCAUR V27 color sabbia su una pista sterrata",
+      "info_title": "Richiedi<br>informazioni",
+      "info_text": "Hai domande sul V25 o sulla gamma? Scrivici.",
+      "info_alt": "Un uomo al telefono dentro una cabina telefonica rossa"
+    }
   }
 }

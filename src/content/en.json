@@ -37,6 +37,21 @@
       "privacy": "Privacy Policy",
       "copyright": "© 2026 iCAUR Italy — [Importer company name and VAT number]",
       "disclaimer": "Images are for illustrative purposes only. Trims and equipment may vary by market."
+    },
+    "form": {
+      "name": "First name",
+      "surname": "Last name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "optional": "optional",
+      "required_note": "Fields marked * are required.",
+      "privacy": "I have read the <a href=\"#privacy\">privacy notice</a> and agree to the processing of my data to receive a reply. *",
+      "marketing": "I'd like to receive iCAUR news and offers (optional).",
+      "error_required": "This field is required.",
+      "error_email": "Please enter a valid email address.",
+      "error_privacy": "Please accept the privacy notice to continue.",
+      "prototype_note": "Prototype: the form doesn't send data. In WordPress it will be connected to the chosen plugin (e.g. Contact Form 7 or Gravity Forms)."
     }
   },
   "home": {
@@ -646,5 +661,40 @@
       "alt": "V27 on a high meadow"
     },
     "disclaimer": "Visuals are for illustrative purposes only. Configuration details depend on the models available in the Italian market."
+  },
+  "v25": {
+    "meta": {
+      "title": "iCAUR V25 — Coming soon",
+      "description": "The new iCAUR V25 is coming to Italy. Leave your email and we'll let you know as soon as it's available."
+    },
+    "hero": {
+      "line": "The new iCAUR SUV is coming to Italy.",
+      "date_label": "[Arrival date to be announced]",
+      "cta": "Notify me"
+    },
+    "countdown": {
+      "label": "Coming in",
+      "days": "days",
+      "hours": "hours",
+      "minutes": "minutes",
+      "seconds": "seconds"
+    },
+    "launch_date": "",
+    "notify": {
+      "eyebrow": "Coming soon",
+      "title": "Be among the first<br>to see it",
+      "text": "We'll write to you just once: when the V25 reaches our dealers, with the date of the first test drives.",
+      "submit": "Notify me",
+      "success": "Done. We'll write to you as soon as the V25 arrives in Italy."
+    },
+    "next": {
+      "eyebrow": "In the meantime",
+      "v27_title": "Discover<br>the V27",
+      "v27_text": "The all-round hybrid SUV, available now.",
+      "v27_alt": "Sand-coloured iCAUR V27 on a dirt track",
+      "info_title": "Request<br>information",
+      "info_text": "Questions about the V25 or the lineup? Write to us.",
+      "info_alt": "A man on the phone inside a red phone box"
+    }
   }
 }

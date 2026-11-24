@@ -205,6 +205,66 @@
     });
   }
 
+  /* ---------- Countdown: [data-countdown="2027-03-01T09:00:00+01:00"] ----------
+     Empty value = date not announced: the placeholder label stays and the grid is hidden. */
+  $$('[data-countdown]').forEach(function (el) {
+    var target = Date.parse(el.dataset.countdown || '');
+    var grid = el.querySelector('[data-countdown-grid]');
+    if (!target || !grid) return;
+    grid.hidden = false;
+    var label = el.querySelector('[data-countdown-label]');
+    if (label) label.textContent = new Date(target).toLocaleDateString(root.lang || 'it', { day: 'numeric', month: 'long', year: 'numeric' });
+    var cells = {};
+    $$('[data-unit]', grid).forEach(function (c) { cells[c.dataset.unit] = c; });
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+    var tick = function () {
+      var s = Math.max(0, Math.floor((target - Date.now()) / 1000));
+      cells.d.textContent = Math.floor(s / 86400);
+      cells.h.textContent = pad(Math.floor(s / 3600) % 24);
+      cells.m.textContent = pad(Math.floor(s / 60) % 60);
+      cells.s.textContent = pad(s % 60);
+      if (s > 0) setTimeout(tick, 1000);
+    };
+    tick();
+  });
+
+  /* ---------- Forms [data-form]: client-side validation, success message ----------
+     Prototype only: nothing is sent. Messages come from data-msg-* attributes. */
+  $$('[data-form]').forEach(function (form) {
+    var success = form.querySelector('[data-form-success]');
+    var showError = function (input, msg) {
+      var err = document.getElementById(input.id + '-err');
+      input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+      if (err) {
+        err.textContent = msg || '';
+        err.hidden = !msg;
+        if (msg) input.setAttribute('aria-describedby', err.id); else input.removeAttribute('aria-describedby');
+      }
+    };
+    var check = function (input) {
+      var msg = '';
+      if (input.type === 'checkbox') { if (input.required && !input.checked) msg = form.dataset.msgPrivacy; }
+      else if (input.required && !input.value.trim()) msg = form.dataset.msgRequired;
+      else if (input.type === 'email' && input.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) msg = form.dataset.msgEmail;
+      showError(input, msg);
+      return !msg;
+    };
+    var inputs = $$('input, select, textarea', form).filter(function (i) { return i.type !== 'hidden'; });
+    inputs.forEach(function (i) {
+      i.addEventListener('blur', function () { if (i.getAttribute('aria-invalid') || i.value) check(i); });
+      i.addEventListener('change', function () { if (i.getAttribute('aria-invalid') === 'true') check(i); });
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var firstInvalid = null;
+      inputs.forEach(function (i) { if (!check(i) && !firstInvalid) firstInvalid = i; });
+      if (firstInvalid) { firstInvalid.focus(); return; }
+      form.reset();
+      inputs.forEach(function (i) { i.removeAttribute('aria-invalid'); });
+      if (success) { success.hidden = false; success.focus && success.setAttribute('tabindex', '-1'); success.focus(); }
+    });
+  });
+
   /* ---------- Text splitting helpers ---------- */
   function splitLines(el) {
     var parts = el.innerHTML.split(/<br\s*\/?>/i);
