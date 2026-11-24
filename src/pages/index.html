@@ -13,6 +13,9 @@
 
 <main id="main">
 
+  <!-- INTRO: the hero stays in place (sticky) while the next section slides over it -->
+  <div class="intro">
+
   <!-- HERO -->
   <section class="hero" data-hero>
     <div class="hero__frame">
@@ -50,10 +53,11 @@
     </div>
   </section>
 
-  <!-- STATEMENT -->
-  <section class="statement section section--light">
-    <div class="container container--narrow">
-      <p class="eyebrow eyebrow--dark" data-reveal>{{ home.statement.eyebrow }}</p>
+  <!-- STATEMENT: light background grows from inset/rounded to full width as it rises over the hero -->
+  <section class="statement statement--full section" aria-labelledby="statement-label">
+    <div class="statement__bg" aria-hidden="true" data-grow-bg></div>
+    <div class="container statement__inner">
+      <p class="tag" id="statement-label">{{ home.statement.eyebrow }}</p>
       <p class="statement__text" data-words>{{ home.statement.text }}</p>
       <a class="link-arrow link-arrow--dark" href="chi-siamo.html" data-reveal>
         {{ home.statement.cta }}
@@ -61,6 +65,8 @@
       </a>
     </div>
   </section>
+
+  </div><!-- /.intro -->
 
   <!-- MODELS -->
   <section class="models section section--dark" id="gamma" aria-labelledby="models-title">

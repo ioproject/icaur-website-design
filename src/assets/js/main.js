@@ -9,6 +9,7 @@
      [data-words]                                               words lighting up on scroll
      [data-reveal]                                              fade/slide in on enter
      [data-parallax="N"]                                        parallax, N = % of travel
+     [data-grow-bg]                                             section background grows to full width
      [data-count]                                               animated numbers
      [data-accordion]                                           horizontal accordion
      [data-cursor-target="Label"]                               custom cursor label
@@ -374,6 +375,26 @@
       scrollTrigger: { trigger: el, start: 'top 88%' }
     });
   });
+
+  // Growing background [data-grow-bg]: inset + rounded → full width while its section rises into view
+  if (!reduceMotion) {
+    $$('[data-grow-bg]').forEach(function (bg) {
+      var section = bg.parentElement;
+      var inset = window.matchMedia('(max-width: 767px)').matches ? 3 : 5;
+      gsap.fromTo(bg,
+        { clipPath: 'inset(0% ' + inset + '% 0% ' + inset + '% round 20px)' },
+        { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none',
+          scrollTrigger: { trigger: section, start: 'top bottom', end: 'top 10%', scrub: true } });
+      // the hero underneath dims slightly as it gets covered
+      var hero = section.previousElementSibling;
+      if (hero && hero.matches('[data-hero]')) {
+        gsap.to(hero.querySelector('.hero__frame') || hero, {
+          opacity: 0.45, ease: 'none',
+          scrollTrigger: { trigger: section, start: 'top bottom', end: 'top top', scrub: true }
+        });
+      }
+    });
+  }
 
   // Parallax
   if (!reduceMotion) {

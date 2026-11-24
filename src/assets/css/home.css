@@ -8,11 +8,28 @@
   position: relative; overflow: hidden;
   min-height: 100vh; min-height: 100svh;
   display: flex; flex-direction: column; justify-content: flex-end;
-  background: var(--c-white);           /* light frame around the image */
-  --frame: 8px;
+  background: var(--c-ink);
+  --frame: 0px;                         /* full-bleed hero (set e.g. 12px for a light frame) */
 }
-@media (min-width: 768px) { .hero { --frame: 12px; } }
-.hero__frame { position: absolute; inset: var(--frame); overflow: hidden; border-radius: 10px; background: var(--c-ink); isolation: isolate; }
+.hero__frame { position: absolute; inset: var(--frame); overflow: hidden; background: var(--c-ink); isolation: isolate; }
+
+/* Intro: the hero stays put while the statement slides over it */
+.intro { position: relative; }
+.intro .hero { position: sticky; top: 0; z-index: 0; }
+
+/* Statement over the hero: its light background grows from inset + rounded to full width (main.js [data-grow-bg]) */
+.statement--full { position: relative; z-index: 1; isolation: isolate; color: var(--c-black); padding-block: clamp(5rem, 3rem + 9vw, 11rem); }
+.statement__bg { position: absolute; inset: 0; z-index: -1; background: var(--c-white); will-change: clip-path; }
+.statement--full .statement__inner { position: relative; --st-size: clamp(1.875rem, 1rem + 3.6vw, 4.5rem); }
+.statement--full .statement__text {
+  font-size: var(--st-size); font-weight: 500; line-height: 1.08; letter-spacing: -0.02em;
+  margin-bottom: var(--space-lg);
+}
+.statement--full .tag { margin-bottom: var(--space-sm); }
+@media (min-width: 768px) {
+  .statement--full .tag { position: absolute; left: var(--gutter); top: calc(var(--st-size) * 0.54 - 11px); margin: 0; }
+  .statement--full .statement__text { text-indent: 7.5rem; }   /* room for the inline tag, as in the reference */
+}
 @media (min-height: 1100px) { .hero { min-height: 1100px; } }
 
 .hero__media { position: absolute; inset: -6% 0; will-change: transform; }
