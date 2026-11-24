@@ -25,9 +25,9 @@
   font-size: var(--st-size); font-weight: 500; line-height: 1.08; letter-spacing: -0.02em;
   margin-bottom: var(--space-lg);
 }
-.statement--full .tag { margin-bottom: var(--space-sm); }
+.statement--full .tag-stack { margin-bottom: var(--space-sm); }
 @media (min-width: 768px) {
-  .statement--full .tag { position: absolute; left: var(--gutter); top: calc(var(--st-size) * 0.54 - 11px); margin: 0; }
+  .statement--full .tag-stack { position: absolute; left: var(--gutter); top: calc(var(--st-size) * 0.54 - 11px - 28px); margin: 0; } /* filled label stays on the first line */
   .statement--full .statement__text { text-indent: 7.5rem; }   /* room for the inline tag, as in the reference */
 }
 @media (min-height: 1100px) { .hero { min-height: 1100px; } }

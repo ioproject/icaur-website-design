@@ -61,7 +61,10 @@
   <section class="statement statement--full section" id="manifesto" aria-labelledby="statement-label">
     <div class="statement__bg" aria-hidden="true" data-grow-bg></div>
     <div class="container statement__inner">
-      <p class="tag" id="statement-label">{{ home.statement.eyebrow }}</p>
+      <div class="tag-stack">
+        <span class="tag tag--index" aria-hidden="true"><span class="nocase">i</span>.01</span>
+        <p class="tag tag--fill" id="statement-label">{{ home.statement.eyebrow }}</p>
+      </div>
       <p class="statement__text" data-words>{{ home.statement.text }}</p>
       <a class="link-arrow link-arrow--dark" href="chi-siamo.html" data-reveal>
         {{ home.statement.cta }}

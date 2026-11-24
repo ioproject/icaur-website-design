@@ -140,6 +140,9 @@ input, select, textarea { font: inherit; }
   font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; line-height: 20px; white-space: nowrap;
   color: var(--c-brown);
 }
+/* stacked labels: outlined index box above a filled label (e.g. "i.01" / "iCAUR LIFE") */
+.tag-stack { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.tag--fill { background: var(--c-orange); border-color: var(--c-orange); color: var(--c-black); } /* dark text: white on orange fails AA */
 
 .section-head { margin-bottom: var(--space-lg); }
 .section-head--split { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-md); }
