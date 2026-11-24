@@ -146,11 +146,10 @@
   <!-- V25 (coming soon) -->
   <section class="models models--v25 section" aria-label="V25">
     <div class="models__grid">
-      <article class="model-card model-card--v25" data-cursor-target="{{ common.coming_soon }}" data-hover-video>
+      <article class="model-card model-card--v25" data-cursor-target="{{ common.coming_soon }}">
         <a class="model-card__link" href="v25.html" aria-label="V25 — {{ home.models.v25.cta }}"></a>
         <div class="model-card__media">
-          <img src="{{ @assets }}video/card-v25-poster.jpg" alt="{{ home.models.v25.alt }}" width="1280" height="520" loading="lazy">
-          <video muted loop playsinline preload="none" aria-hidden="true" data-video data-src="{{ @assets }}video/card-v25.mp4"></video>
+          <img src="{{ @assets }}img/home/v25-coast-1312.jpg" srcset="{{ @assets }}img/home/v25-coast-800.jpg 800w, {{ @assets }}img/home/v25-coast-1312.jpg 1312w" sizes="(min-width: 1140px) 1100px, 100vw" alt="{{ home.models.v25.alt }}" width="1312" height="1080" loading="lazy">
         </div>
         <div class="model-card__body">
           <span class="badge badge--gold">{{ common.coming_soon }}</span>
