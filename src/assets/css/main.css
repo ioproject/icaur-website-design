@@ -173,7 +173,7 @@ input, select, textarea { font: inherit; }
 .btn--sm::after { width: 28px; height: 28px; }
 .btn--light { background: var(--c-gold); color: var(--c-black); }   /* primary: Collection Gold #CAA87B */
 .btn--light:hover { background: var(--c-white); }
-.btn--ghost { color: var(--c-white); border-color: rgba(255, 255, 255, 0.45); }
+.btn--ghost { color: var(--c-white); border-color: #FFFFFF; }
 .btn--ghost:hover { border-color: var(--c-white); background: rgba(255, 255, 255, 0.1); }
 .btn--ghost-dark { color: #000; border-color: #000; }               /* outlined, on light backgrounds */
 .btn--ghost-dark:hover { background: #000; color: var(--c-white); }
