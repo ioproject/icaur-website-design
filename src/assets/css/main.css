@@ -239,10 +239,10 @@ input, select, textarea { font: inherit; }
 
 .nav-toggle {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 52px; height: 44px; border-radius: 6px; background: var(--panel-soft);
+  width: 52px; height: 44px; border-radius: 6px; background: none;
   transition: background var(--dur-fast);
 }
-.nav-toggle:hover { background: #E3DDD5; }
+.nav-toggle:hover { color: var(--c-brown); }
 .nav-toggle__icon, .nav-toggle__icon::before {
   display: block; width: 22px; height: 1.5px; background: currentColor; position: relative;
   transition: transform var(--dur) var(--ease-out);
