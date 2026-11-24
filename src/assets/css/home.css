@@ -27,7 +27,7 @@
 }
 .statement--full .tag-stack { margin-bottom: var(--space-sm); }
 @media (min-width: 768px) {
-  .statement--full .tag-stack { position: absolute; left: var(--gutter); top: calc(var(--st-size) * 0.897 - 50px); margin: 0; } /* bottom of the stack (50px) sits on the first line baseline */
+  .statement--full .tag-stack { position: absolute; left: var(--home-x); top: calc(var(--st-size) * 0.897 - 50px); margin: 0; } /* bottom of the stack (50px) sits on the first line baseline */
   .statement--full .statement__text { text-indent: 7.5rem; }   /* room for the inline tag, as in the reference */
 }
 @media (min-height: 1100px) { .hero { min-height: 1100px; } }
@@ -54,7 +54,7 @@
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-sm); }
 
 /* full-width hero content, aligned with the header edge */
-.hero { --hero-x: clamp(20px, 3.4vw, 64px); }
+.hero { --hero-x: var(--home-x); }
 .hero__content { padding-inline: var(--hero-x); }
 
 /* bottom bar: thin line, arrow down, "scroll to explore" */
@@ -104,7 +104,7 @@
   background: linear-gradient(to top, rgba(20, 13, 11, 0.9) 0%, rgba(20, 13, 11, 0.35) 40%, rgba(20, 13, 11, 0) 65%);
 }
 
-.model-card__body { position: relative; width: 100%; padding: var(--space-lg) var(--gutter); display: grid; gap: var(--space-sm); justify-items: start; }
+.model-card__body { position: relative; width: 100%; padding: var(--space-lg) var(--home-x); display: grid; gap: var(--space-sm); justify-items: start; }
 .model-card__logo { width: clamp(150px, 14vw, 220px); height: auto; }
 .model-card__line { font-size: var(--fs-md); font-weight: 300; }
 .model-card__text { color: var(--c-text-dim); max-width: 40ch; }
@@ -120,7 +120,7 @@
 @media (min-width: 1024px) {
   .models__grid { grid-template-columns: 1.35fr 1fr; }
   .model-card { min-height: 88vh; }
-  .model-card__body { padding: var(--space-xl) var(--space-lg) var(--space-lg); }
+  .model-card__body { padding: var(--space-xl) var(--home-x) var(--space-lg); }
 }
 
 /* ---------- Innovation (horizontal accordion on desktop) ---------- */
@@ -180,3 +180,8 @@
 
 /* View transition: V27 card media morphs into the V27 page hero */
 .model-card--v27 .model-card__media { view-transition-name: v27-media; }
+
+/* Full width: on the home every block uses the hero's side margin instead of the 1440px container */
+.page--home { --home-x: clamp(20px, 3.4vw, 64px); }
+.page--home main .container { max-width: none; padding-inline: var(--home-x); }
+.page--home .carousel { padding-inline: var(--home-x); scroll-padding-inline: var(--home-x); }
