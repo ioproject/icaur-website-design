@@ -104,7 +104,7 @@
   background: linear-gradient(to top, rgba(20, 13, 11, 0.9) 0%, rgba(20, 13, 11, 0.35) 40%, rgba(20, 13, 11, 0) 65%);
 }
 
-.model-card__body { position: relative; width: 100%; padding: var(--space-lg) var(--home-x); display: grid; gap: var(--space-sm); justify-items: start; }
+.model-card__body { position: relative; width: 100%; padding: var(--space-lg) var(--home-x) calc(var(--space-lg) + 40px); display: grid; gap: var(--space-sm); justify-items: start; }
 .model-card__logo { width: clamp(150px, 14vw, 220px); height: auto; }
 .model-card__line { font-size: var(--fs-md); font-weight: 300; }
 .model-card__text { color: var(--c-text-dim); max-width: 40ch; }
@@ -123,7 +123,7 @@
 @media (min-width: 1024px) {
   .model-card { min-height: 88vh; }
   .model-card--v27 { min-height: 100vh; min-height: 100svh; }
-  .model-card__body { padding: var(--space-xl) var(--home-x) var(--space-lg); }
+  .model-card__body { padding: var(--space-xl) var(--home-x) calc(var(--space-lg) + 40px); }
 }
 
 /* ---------- Innovation (horizontal accordion on desktop) ---------- */
