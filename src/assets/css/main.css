@@ -176,12 +176,11 @@ input, select, textarea { font: inherit; }
 .badge--gold { color: var(--c-gold); }
 .badge--quiet { opacity: 0.7; font-size: 0.625rem; margin-left: 0.4em; }
 
-/* 6. Header & nav — two light panels joined by small connectors
+/* 6. Header & nav — two light panels joined by an orange connector
       [ logo · menu ] —orange joint— [ language · CTA · menu button ]           */
 .site-header {
   --panel: #FFFFFF;
   --panel-soft: #EEEAE4;           /* button fill, light tint of the brand neutrals */
-  --tab: rgba(255, 255, 255, 0.6); /* side tabs */
   position: fixed; z-index: 100;
   top: var(--header-top); left: var(--gutter); right: var(--gutter);
   max-width: calc(var(--container) - 2 * var(--gutter)); margin-inline: auto;
@@ -190,14 +189,6 @@ input, select, textarea { font: inherit; }
   transition: transform var(--dur) var(--ease-out);
 }
 .site-header.is-hidden { transform: translateY(calc(-100% - var(--header-top) - 4px)); }
-
-/* side tabs sticking out of the outer edges */
-.site-header::before, .site-header::after {
-  content: ""; position: absolute; top: 50%; width: 12px; height: 4px; margin-top: -2px;
-  border-radius: 2px; background: var(--tab);
-}
-.site-header::before { left: -9px; }
-.site-header::after { right: -9px; }
 
 .site-header__main, .site-header__side {
   display: flex; align-items: center;
