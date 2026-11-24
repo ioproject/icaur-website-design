@@ -288,7 +288,7 @@ input, select, textarea { font: inherit; }
 .site-nav { display: none; }
 .site-nav__list { display: flex; align-items: center; gap: clamp(8px, 2.2vw, 36px); transition: gap 0.7s var(--ease-bar); }
 .site-header.is-solid .site-nav__list { gap: clamp(4px, 1.4vw, 24px); }   /* items come closer */
-.site-nav__push { margin-left: auto; }   /* News sits at the right end, right of the centred logo */
+.site-nav__push { margin-left: auto; margin-right: 10px; }   /* News sits at the right end, right of the centred logo */
 .site-nav__link {
   position: relative; display: inline-flex; align-items: center; gap: 4px;
   padding: 10px 8px;
