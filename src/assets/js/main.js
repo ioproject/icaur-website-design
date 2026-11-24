@@ -62,7 +62,9 @@
   var menuOpen = false;
 
   function updateHeader() {
-    if (header) header.classList.toggle('is-solid', window.scrollY > 24 || menuOpen);
+    if (!header) return;
+    header.classList.toggle('is-solid', window.scrollY > 24 && !menuOpen);   // compact bar with panels
+    header.classList.toggle('is-menu', menuOpen);                            // full bar over the open mega menu
   }
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();

@@ -178,7 +178,7 @@ input, select, textarea { font: inherit; }
 
 /* 6. Header, nav & mega menu
       Top of the page: full width, transparent, white over the hero.
-      .is-solid (after scrolling or with the menu open): the bar narrows, items come closer,
+      .is-solid (after scrolling): the bar narrows, items come closer,
       two light panels appear  [ menu · links ] —orange joint— [ dealers ]; logo centred on the bar. */
 .site-header {
   --panel: #FFFFFF;
@@ -200,7 +200,7 @@ input, select, textarea { font: inherit; }
 
 /* Panels: the white background is painted by ::before so it can carry a notch
    (a mask on the panel itself would also clip its content).
-   Notch = 8px deep, 5px high with round ends: same thickness as the orange joint. */
+   Notch = 8px deep, 4px high with round ends: same thickness as the orange joint. */
 .site-header__main, .site-header__side {
   position: relative; isolation: isolate;
   display: flex; align-items: center;
@@ -209,27 +209,27 @@ input, select, textarea { font: inherit; }
   content: ""; position: absolute; inset: 0; z-index: -1;
   background: var(--panel); border-radius: 6px;
   opacity: 0; transition: opacity 0.5s var(--ease-out) 0.15s;     /* panels appear in the solid state */
-  -webkit-mask: var(--notch) var(--notch-pos) / 8px 5px no-repeat, linear-gradient(#000 0 0);
+  -webkit-mask: var(--notch) var(--notch-pos) / 8px 4px no-repeat, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
-  mask: var(--notch) var(--notch-pos) / 8px 5px no-repeat exclude, linear-gradient(#000 0 0);
+  mask: var(--notch) var(--notch-pos) / 8px 4px no-repeat exclude, linear-gradient(#000 0 0);
 }
 .site-header.is-solid .site-header__main::before, .site-header.is-solid .site-header__side::before { opacity: 1; }
 .site-header__main {
   flex: 1 1 auto; min-width: 0; padding: 0 16px 0 18px; gap: 12px;
   --notch-pos: left center;
-  --notch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 5'%3E%3Crect x='-6' y='0' width='14' height='5' rx='2.5'/%3E%3C/svg%3E");
+  --notch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4'%3E%3Crect x='-6' y='0' width='14' height='4' rx='2'/%3E%3C/svg%3E");
 }
 .site-header__side {
   flex: 0 0 auto; justify-content: center; gap: 4px; padding: 0 10px;
   --notch-pos: right center;
-  --notch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 5'%3E%3Crect x='0' y='0' width='14' height='5' rx='2.5'/%3E%3C/svg%3E");
+  --notch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4'%3E%3Crect x='0' y='0' width='14' height='4' rx='2'/%3E%3C/svg%3E");
 }
 
 /* orange joint between the two panels (brand Vibrant Orange), above both panels */
 .site-header__joint { position: relative; z-index: 2; flex: 0 0 8px; }
 .site-header__joint::before {
-  content: ""; position: absolute; top: 50%; left: 50%; width: 30px; height: 5px;
-  margin: -2.5px 0 0 -15px; border-radius: 3px; background: var(--c-orange);
+  content: ""; position: absolute; top: 50%; left: 50%; width: 30px; height: 4px;
+  margin: -2px 0 0 -15px; border-radius: 2px; background: var(--c-orange);
   opacity: 0; transform: scaleX(0.3); transition: opacity 0.4s var(--ease-out) 0.25s, transform 0.5s var(--ease-out) 0.25s;
 }
 .site-header.is-solid .site-header__joint::before { opacity: 1; transform: none; }
@@ -238,6 +238,10 @@ input, select, textarea { font: inherit; }
 .site-header__logo { position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 .site-header__logo img { width: 100px; height: auto; filter: invert(1); transition: filter 0.4s var(--ease-out); }
 .site-header.is-solid .site-header__logo img { filter: none; }
+
+/* .is-menu (mega menu open): bar stays full width over the white sheet, dark text, no panels */
+.site-header.is-menu { color: var(--c-black); }
+.site-header.is-menu .site-header__logo img { filter: none; }
 
 /* menu button (hamburger → ×) */
 .menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: 2px; flex: none; }
@@ -296,15 +300,16 @@ input, select, textarea { font: inherit; }
 /* ---------- Mega menu: full-screen light sheet under the header ---------- */
 .megamenu {                          /* the white sheet itself scrolls */
   position: fixed; z-index: 99;
-  top: var(--header-top); left: var(--gutter); right: var(--gutter); bottom: var(--header-top);
-  max-width: calc(var(--container) - 2 * var(--gutter)); margin-inline: auto;
+  --frame: 8px;                        /* same thin frame as the heroes */
+  inset: var(--frame);
   overflow-y: auto; overscroll-behavior: contain;
-  background: var(--c-white); border-radius: 6px; box-shadow: 0 30px 80px rgba(20, 13, 11, 0.35);
+  background: var(--c-white); border-radius: 10px; box-shadow: 0 0 0 100vmax rgba(20, 13, 11, 0.25);
   color: var(--c-black);
-  clip-path: inset(0 0 100% 0 round 6px); transition: clip-path 0.6s var(--ease-out);   /* revealed from the top */
+  clip-path: inset(0 0 100% 0 round 10px); transition: clip-path 0.6s var(--ease-out);   /* revealed from the top */
 }
+@media (min-width: 768px) { .megamenu { --frame: 12px; } }
 .megamenu[hidden] { display: none; }
-.megamenu.is-open { clip-path: inset(0 0 0 0 round 6px); }
+.megamenu.is-open { clip-path: inset(0 0 0 0 round 10px); }
 
 .megamenu__inner {
   min-height: 100%;
