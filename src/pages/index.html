@@ -32,7 +32,7 @@
       <div class="hero__shade" aria-hidden="true"></div>
     </div>
 
-    <div class="container hero__content">
+    <div class="hero__content">
       <p class="eyebrow" data-hero-fade>{{ home.hero.eyebrow }}</p>
       <h1 class="hero__title" data-split-lines>{{ home.hero.title }}</h1>
       <p class="hero__text" data-hero-fade>{{ home.hero.text }}</p>
@@ -42,19 +42,16 @@
       </div>
     </div>
 
-    <div class="container hero__footer">
-      <button class="video-toggle" type="button" aria-pressed="false" data-video-toggle
-        data-label-pause="{{ common.video_pause }}" data-label-play="{{ common.video_play }}">
-        <svg class="icon icon--pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="1.8"/></svg>
-        <svg class="icon icon--play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg>
-        <span class="visually-hidden" data-video-toggle-label>{{ common.video_pause }}</span>
-      </button>
-      <span class="scroll-cue" aria-hidden="true">{{ common.scroll }}<span class="scroll-cue__line"></span></span>
+    <div class="hero__footer">
+      <a class="scroll-explore" href="#manifesto">
+        <svg class="scroll-explore__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m-4.5-4.5L8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>{{ common.scroll }}</span>
+      </a>
     </div>
   </section>
 
   <!-- STATEMENT: light background grows from inset/rounded to full width as it rises over the hero -->
-  <section class="statement statement--full section" aria-labelledby="statement-label">
+  <section class="statement statement--full section" id="manifesto" aria-labelledby="statement-label">
     <div class="statement__bg" aria-hidden="true" data-grow-bg></div>
     <div class="container statement__inner">
       <p class="tag" id="statement-label">{{ home.statement.eyebrow }}</p>
