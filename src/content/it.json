@@ -87,9 +87,9 @@
         "line": "SUV ibrido a trazione integrale",
         "stat1_value": "Classic",
         "stat1_label": "Design robusto e squadrato",
-        "stat2_value": "5,9 s",
+        "stat2_value": "5,9<span class=\"stats__unit\">s</span>",
         "stat2_label": "0–100 km/h",
-        "stat3_value": "505 N·m",
+        "stat3_value": "505<span class=\"stats__unit\">N·m</span>",
         "stat3_label": "Coppia massima dei motori",
         "cta": "Esplora V27",
         "alt": "iCAUR V27 color sabbia su una pista sterrata nel deserto"
