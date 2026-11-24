@@ -192,7 +192,7 @@
 .statement__more { display: grid; gap: var(--space-lg); margin-top: clamp(3rem, 2rem + 5vw, 7.5rem); }
 .statement__more-text { font-size: clamp(1.125rem, 0.95rem + 0.6vw, 1.5rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; max-width: 34ch; margin-bottom: var(--space-md); }
 .statement__more-media { overflow: hidden; border-radius: 8px; aspect-ratio: 4 / 5; }
-.statement__more-media img { width: 100%; height: 100%; object-fit: cover; }
+.statement__more-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 58%; }   /* keeps the car in frame */
 @media (min-width: 900px) {
   .statement__more { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
   .statement__more-copy { position: relative; }
