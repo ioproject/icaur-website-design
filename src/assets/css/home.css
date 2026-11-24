@@ -259,7 +259,7 @@
 .models--v25 { padding-block: var(--section-y, clamp(4rem, 2rem + 6vw, 8rem)); }
 .models--v25 .models__grid { margin-top: 0; padding-inline: var(--home-x); }
 .model-card--v25 {
-  width: min(100%, 1100px); margin-inline: auto; border-radius: 20px;
+  width: min(100%, 1440px); margin-inline: auto; border-radius: 20px;
   min-height: clamp(560px, 88vh, 920px); align-items: center; justify-content: center;
 }
 .model-card--v25 .model-card__body { justify-items: center; text-align: center; padding: var(--space-lg) var(--home-x); }
