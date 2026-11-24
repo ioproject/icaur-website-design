@@ -177,17 +177,26 @@ input, select, textarea { font: inherit; }
 .badge--quiet { opacity: 0.7; font-size: 0.625rem; margin-left: 0.4em; }
 
 /* 6. Header, nav & mega menu
-      [ menu button · links · logo (centred) ] —orange joint— [ dealers · language ]  */
+      Top of the page: full width, transparent, white over the hero.
+      .is-solid (after scrolling or with the menu open): the bar narrows, items come closer,
+      two light panels appear  [ menu · links ] —orange joint— [ dealers ]; logo centred on the bar. */
 .site-header {
   --panel: #FFFFFF;
+  --edge: 20px;                        /* distance from the viewport edge at the top of the page */
+  --ease-bar: cubic-bezier(0.65, 0, 0.35, 1);
   position: fixed; z-index: 100;
-  top: var(--header-top); left: var(--gutter); right: var(--gutter);
-  max-width: calc(var(--container) - 2 * var(--gutter)); margin-inline: auto;
+  top: var(--header-top); left: var(--edge); right: var(--edge);
+  max-width: calc(100vw - 2 * var(--edge)); margin-inline: auto;
   display: flex; align-items: stretch; height: var(--header-h);
-  color: var(--c-black);
-  transition: transform var(--dur) var(--ease-out);
+  color: var(--c-white);
+  transition: left 0.7s var(--ease-bar), right 0.7s var(--ease-bar), max-width 0.7s var(--ease-bar), color 0.4s var(--ease-out);
 }
-.site-header.is-hidden { transform: translateY(calc(-100% - var(--header-top) - 4px)); }
+@media (min-width: 768px) { .site-header { --edge: 28px; } }
+.site-header.is-solid {
+  left: var(--gutter); right: var(--gutter);
+  max-width: calc(var(--container) - 2 * var(--gutter));
+  color: var(--c-black);
+}
 
 /* Panels: the white background is painted by ::before so it can carry a notch
    (a mask on the panel itself would also clip its content).
@@ -199,10 +208,12 @@ input, select, textarea { font: inherit; }
 .site-header__main::before, .site-header__side::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background: var(--panel); border-radius: 6px;
+  opacity: 0; transition: opacity 0.5s var(--ease-out) 0.15s;     /* panels appear in the solid state */
   -webkit-mask: var(--notch) var(--notch-pos) / 8px 5px no-repeat, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask: var(--notch) var(--notch-pos) / 8px 5px no-repeat exclude, linear-gradient(#000 0 0);
 }
+.site-header.is-solid .site-header__main::before, .site-header.is-solid .site-header__side::before { opacity: 1; }
 .site-header__main {
   flex: 1 1 auto; min-width: 0; padding: 0 16px 0 18px; gap: 12px;
   --notch-pos: left center;
@@ -219,11 +230,14 @@ input, select, textarea { font: inherit; }
 .site-header__joint::before {
   content: ""; position: absolute; top: 50%; left: 50%; width: 30px; height: 5px;
   margin: -2.5px 0 0 -15px; border-radius: 3px; background: var(--c-orange);
+  opacity: 0; transform: scaleX(0.3); transition: opacity 0.4s var(--ease-out) 0.25s, transform 0.5s var(--ease-out) 0.25s;
 }
+.site-header.is-solid .site-header__joint::before { opacity: 1; transform: none; }
 
-/* logo centred in the main panel */
-.site-header__logo { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-.site-header__logo img { width: 88px; height: auto; }
+/* logo centred on the whole bar; white at the top of the page (black SVG inverted) */
+.site-header__logo { position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.site-header__logo img { width: 88px; height: auto; filter: invert(1); transition: filter 0.4s var(--ease-out); }
+.site-header.is-solid .site-header__logo img { filter: none; }
 
 /* menu button (hamburger → ×) */
 .menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: 2px; flex: none; }
@@ -233,18 +247,19 @@ input, select, textarea { font: inherit; }
 }
 .menu-btn__icon { transform: translateY(-3px); }
 .menu-btn__icon::before { content: ""; position: absolute; top: 6px; left: 0; }
-.menu-btn:hover { color: var(--c-brown); }
+.site-header.is-solid .menu-btn:hover { color: var(--c-brown); }
 .menu-btn[aria-expanded="true"] .menu-btn__icon { transform: translateY(0) rotate(45deg); }
 .menu-btn[aria-expanded="true"] .menu-btn__icon::before { top: 0; transform: rotate(-90deg); }
 
 /* inline links: shown from 1180px, otherwise everything is in the mega menu */
 .site-nav { display: none; }
-.site-nav__list { display: flex; align-items: center; gap: clamp(4px, 1.4vw, 24px); }
+.site-nav__list { display: flex; align-items: center; gap: clamp(8px, 2.2vw, 36px); transition: gap 0.7s var(--ease-bar); }
+.site-header.is-solid .site-nav__list { gap: clamp(4px, 1.4vw, 24px); }   /* items come closer */
 .site-nav__push { margin-left: auto; }   /* News + Contatti sit right of the centred logo */
 .site-nav__link {
-  position: relative; display: inline-flex; align-items: center; gap: 8px;
+  position: relative; display: inline-flex; align-items: center; gap: 4px;
   padding: 10px 8px;
-  font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap;
+  font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; white-space: nowrap;
 }
 .icon--plus { width: 11px; height: 11px; transition: transform var(--dur) var(--ease-out); }
 .site-nav__trigger[aria-expanded="true"] .icon--plus { transform: rotate(45deg); } /* + becomes × */
@@ -260,7 +275,7 @@ input, select, textarea { font: inherit; }
 .site-header__cta {
   position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   min-width: 44px; height: 44px; padding: 0 8px;
-  font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap;
+  font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; white-space: nowrap;
 }
 .site-header__cta-text { display: none; }
 .site-header__cta::after { bottom: 8px; }

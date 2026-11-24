@@ -55,21 +55,17 @@
     if (a.dataset.lang === root.lang) a.setAttribute('aria-current', 'true');
   });
 
-  /* ---------- Header: hide on scroll down, show on scroll up ---------- */
+  /* ---------- Header: transparent and full width at the top, .is-solid once scrolled ---------- */
   var header = document.querySelector('[data-header]');
   var menu = document.querySelector('[data-megamenu]');
   var menuToggles = $$('[data-menu-toggle]');
   var menuOpen = false;
 
-  if (header) {
-    var lastY = window.scrollY;
-    window.addEventListener('scroll', function () {
-      var y = window.scrollY;
-      header.classList.toggle('is-hidden', y > 160 && y > lastY + 4 && !menuOpen);
-      if (y < lastY - 4 || y < 160) header.classList.remove('is-hidden');
-      lastY = y;
-    }, { passive: true });
+  function updateHeader() {
+    if (header) header.classList.toggle('is-solid', window.scrollY > 24 || menuOpen);
   }
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
 
   /* ---------- Mega menu [data-megamenu], opened by every [data-menu-toggle] ---------- */
   var lastToggle = null;
@@ -82,9 +78,9 @@
       if (label) label.textContent = open ? t.dataset.labelClose : t.dataset.labelOpen;
     });
     root.classList.toggle('menu-open', open);
+    updateHeader();
     if (lenis) open ? lenis.stop() : lenis.start();
     if (open) {
-      header.classList.remove('is-hidden');
       menu.hidden = false;
       requestAnimationFrame(function () { requestAnimationFrame(function () { menu.classList.add('is-open'); }); });
       var first = menu.querySelector('a');

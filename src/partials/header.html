@@ -1,6 +1,7 @@
 <!-- ==================== HEADER (→ header.php) ====================
-     Two light panels joined by an orange connector:
-     [ menu button · links · (logo centred) ] —— [ dealers ]  (language switch: in the footer)
+     At the top of the page: full width, transparent, white text over the hero.
+     After scrolling (.is-solid): the bar narrows and two light panels appear, joined by an orange connector:
+     [ menu button · links ] —— [ dealers ]   logo always centred on the bar   (language switch: in the footer)
      The menu button and "Modelli" both open the full mega menu below. -->
 <a class="skip-link" href="#main">{{ common.skip }}</a>
 
@@ -28,9 +29,6 @@
       </ul>
     </nav>
 
-    <a class="site-header__logo" href="index.html" aria-label="iCAUR — {{ common.nav.home }}">
-      <img src="{{ @assets }}img/brand/icaur-logo-black.svg" alt="" width="112" height="20">
-    </a>
   </div>
 
   <span class="site-header__joint" aria-hidden="true"></span>
@@ -42,6 +40,10 @@
       <span class="site-header__cta-text">{{ common.nav.dealers }}</span>
     </a>
   </div>
+
+  <a class="site-header__logo" href="index.html" aria-label="iCAUR — {{ common.nav.home }}">
+    <img src="{{ @assets }}img/brand/icaur-logo-black.svg" alt="" width="112" height="20">
+  </a>
 
 </header>
 
