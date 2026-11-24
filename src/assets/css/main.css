@@ -268,7 +268,7 @@ input, select, textarea { font: inherit; }
 .site-nav__link {
   position: relative; display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%;
   padding: 16px 4px; text-align: left;
-  font-size: var(--fs-sm); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: var(--fs-sm); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
   transition: color var(--dur-fast);
 }
 .site-nav__link:hover, .site-nav__link[aria-current] { color: var(--c-brown); }
