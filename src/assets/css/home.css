@@ -59,13 +59,22 @@
 
 /* bottom bar: thin line, arrow down, "scroll to explore" */
 .hero__footer { position: absolute; left: var(--hero-x); right: var(--hero-x); bottom: clamp(16px, 2.4vh, 28px); }
+.hero__footer { display: flex; align-items: center; gap: 8px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.38); }
 .scroll-explore {
-  display: flex; align-items: center; justify-content: space-between;
-  padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.38);
+  flex: 1; display: flex; align-items: center; justify-content: space-between; min-height: 32px;
   font-size: 0.875rem; letter-spacing: -0.005em; color: rgba(255, 255, 255, 0.9);
 }
 .scroll-explore__arrow { width: 16px; height: 16px; animation: nudge 2.4s var(--ease-out) infinite; }
 .scroll-explore:hover { color: var(--c-white); }
+/* discreet video pause button, after the label */
+.video-mini {
+  display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; margin-right: -8px;
+  color: rgba(255, 255, 255, 0.7); border-radius: 50%; transition: color var(--dur-fast), background var(--dur-fast);
+}
+.video-mini:hover { color: var(--c-white); background: rgba(255, 255, 255, 0.1); }
+.video-mini .icon { width: 14px; height: 14px; }
+.video-mini .icon--play, .video-mini[aria-pressed="true"] .icon--pause { display: none; }
+.video-mini[aria-pressed="true"] .icon--play { display: block; }
 @keyframes nudge { 0%, 60%, 100% { transform: none; } 30% { transform: translateY(4px); } }
 
 /* ---------- Models ---------- */
