@@ -49,15 +49,6 @@
 }
 @keyframes cue { 0% { transform: translateX(-100%); } 60%, 100% { transform: translateX(100%); } }
 
-/* ---------- Statement ---------- */
-.statement { padding-block: clamp(5rem, 3rem + 10vw, 12rem); }
-.statement__text {
-  font-size: clamp(1.5rem, 1rem + 2.4vw, 3.25rem); font-weight: 300; line-height: 1.22;
-  letter-spacing: -0.01em; margin-bottom: var(--space-lg);
-}
-.statement__text .word { opacity: 0.16; }
-.no-js .statement__text .word, html:not(.js) .statement__text .word { opacity: 1; }
-
 /* ---------- Models ---------- */
 .models { padding-bottom: 0; }
 .models__grid { display: grid; gap: 2px; }

@@ -367,6 +367,15 @@ select.field__input { appearance: none; background-image: url("data:image/svg+xm
 .form__success { padding: 14px 18px; border-radius: 10px; background: rgba(92, 54, 41, 0.1); color: var(--c-brown); font-weight: 500; }
 .form__proto { font-size: var(--fs-xs); color: var(--c-gray); border-top: 1px dashed var(--c-line-light); padding-top: var(--space-sm); }
 
+/* Statement: large text, words light up on scroll [data-words] */
+.statement { padding-block: clamp(5rem, 3rem + 10vw, 12rem); }
+.statement__text {
+  font-size: clamp(1.5rem, 1rem + 2.4vw, 3.25rem); font-weight: 300; line-height: 1.22;
+  letter-spacing: -0.01em; margin-bottom: var(--space-lg);
+}
+.statement__text .word { opacity: 0.16; }
+.no-js .statement__text .word, html:not(.js) .statement__text .word { opacity: 1; }
+
 /* 7. Footer */
 .site-footer { background: var(--c-ink); color: var(--c-white); padding-block: var(--space-xl) var(--space-lg); font-size: var(--fs-sm); }
 .site-footer__top { display: grid; gap: var(--space-lg); padding-bottom: var(--space-lg); border-bottom: 1px solid var(--c-line-dark); }

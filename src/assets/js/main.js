@@ -265,6 +265,32 @@
     });
   });
 
+  /* ---------- Hover reveal: an image follows the cursor over list rows ----------
+     <section data-hover-reveal> rows [data-hover-img="src"] + frame [data-hover-reveal-frame] */
+  if (finePointer && !reduceMotion) {
+    $$('[data-hover-reveal]').forEach(function (root) {
+      var frame = root.querySelector('[data-hover-reveal-frame]');
+      var img = root.querySelector('[data-hover-reveal-img]');
+      if (!frame || !img) return;
+      var x = 0, y = 0, fx = 0, fy = 0, running = false;
+      var loop = function () {
+        fx += (x - fx) * 0.14; fy += (y - fy) * 0.14;
+        frame.style.transform = 'translate3d(' + fx + 'px,' + fy + 'px,0) rotate(' + Math.max(-6, Math.min(6, (x - fx) * 0.05)) + 'deg)';
+        if (frame.classList.contains('is-active') || Math.abs(x - fx) > 0.5) requestAnimationFrame(loop); else running = false;
+      };
+      $$('[data-hover-img]', root).forEach(function (row) {
+        row.addEventListener('mouseenter', function (e) {
+          img.src = row.dataset.hoverImg;
+          if (!frame.classList.contains('is-active')) { fx = x = e.clientX; fy = y = e.clientY; }
+          frame.classList.add('is-active');
+          if (!running) { running = true; requestAnimationFrame(loop); }
+        });
+        row.addEventListener('mousemove', function (e) { x = e.clientX; y = e.clientY; });
+        row.addEventListener('mouseleave', function () { frame.classList.remove('is-active'); });
+      });
+    });
+  }
+
   /* ---------- Text splitting helpers ---------- */
   function splitLines(el) {
     var parts = el.innerHTML.split(/<br\s*\/?>/i);

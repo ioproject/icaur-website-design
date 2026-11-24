@@ -696,5 +696,158 @@
       "info_text": "Questions about the V25 or the lineup? Write to us.",
       "info_alt": "A man on the phone inside a red phone box"
     }
+  },
+  "about": {
+    "meta": {
+      "title": "About us — iCAUR Italy",
+      "description": "iCAUR believes true classics are neither retro nor trend driven. Lasting design, electric technology and a car made to stay with you for years."
+    },
+    "hero": {
+      "eyebrow": "About us",
+      "title": "Classic<br>Never Fades",
+      "text": "Letting classics move forward in the new energy era."
+    },
+    "story": {
+      "eyebrow": "Our story",
+      "text": "We believe true classics are neither retro nor trend driven. Time proves them: lasting appeal that transcends eras, and reliability that grows stronger with the years. Chosen by a few, but held with conviction."
+    },
+    "manifesto": {
+      "eyebrow": "For those unwilling to settle",
+      "title": "As technology chases what's newer and faster,<br>we care about what time chooses to keep.",
+      "items": [
+        {
+          "text": "For those who choose understated design over showy looks, and know that proportions, lines and balance never go out of style."
+        },
+        {
+          "text": "For those who enjoy the ease technology brings, yet refuse to be carried away by numbers and fleeting hype."
+        },
+        {
+          "text": "For those who don't follow the crowd, and value trust built over time."
+        }
+      ],
+      "promise": "We don't chase extreme specs at the expense of real experience. We don't trade safety for a fashionable outline. And we don't overload features at the cost of long-term reliability.",
+      "alt": "Turntable needle on a vinyl record in warm light"
+    },
+    "tags": {
+      "eyebrow": "Our pillars",
+      "title": "Three ideas, one car",
+      "items": [
+        {
+          "img": "tag-design",
+          "title": "Classic design",
+          "text": "Timeless aesthetics, refined taste and a quality you can see and feel: a car to be proud of.",
+          "alt": "Sand-coloured V27 in front of a historic building with columns"
+        },
+        {
+          "img": "tag-tech",
+          "title": "Thoughtful technology",
+          "text": "Smart electrification breathes new life into classic design: a drive that is safe, caring and intuitive.",
+          "alt": "Top view of a V27 with driver assistance sensors highlighted"
+        },
+        {
+          "img": "tag-eco",
+          "title": "Open ecosystem",
+          "text": "Open platforms and standard interfaces to personalise the car and co-create new experiences with its drivers.",
+          "alt": "Showroom with iCAUR accessories: seat, bicycle and inflatable boat"
+        }
+      ]
+    },
+    "values": {
+      "eyebrow": "Our values",
+      "title": "What drives us",
+      "items": [
+        {
+          "img": "value-user",
+          "title": "User-centric",
+          "text": "Start with people. Listen first, then design with purpose.",
+          "alt": "Team meeting with colleagues in person and on a video call"
+        },
+        {
+          "img": "value-design",
+          "title": "Design-led",
+          "text": "Timeless aesthetics that move you. Design defines our character.",
+          "alt": "Technicians working on a driving simulator"
+        },
+        {
+          "img": "value-innovation",
+          "title": "Innovation first",
+          "text": "Push the boundaries of new energy. Make advanced tech feel effortless and human.",
+          "alt": "Engineer with a tablet in a lab"
+        },
+        {
+          "img": "value-safety",
+          "title": "Safety matters",
+          "text": "Peace of mind, engineered to the highest global standards and proven through reliability.",
+          "alt": "Welding robots working on a car body in a factory"
+        },
+        {
+          "img": "value-global",
+          "title": "Global outlook",
+          "text": "Open to the world. Grow with partners and move mobility forward, together.",
+          "alt": "Earth seen from space at night, with city lights"
+        }
+      ]
+    },
+    "mission": {
+      "eyebrow": "Our mission",
+      "text": "To create a freer, more enjoyable and more trustworthy mobility experience for drivers worldwide, through timeless design and intelligent technology.",
+      "alt": "Aerial view of a waterfront city at sunset"
+    },
+    "life": {
+      "eyebrow": "<span class=\"nocase\">iCAUR</span> Life",
+      "title": "One car,<br>many worlds",
+      "text": "Timeless design meets refined craft, weaving wanderlust, exploration and the quiet pleasures of daily life into your own story. No rigid scripts: set your own rhythm and let the open road do the rest.",
+      "lounge_alt": "Vintage-style lounge with leather sofa, surfboard and motorcycle",
+      "worlds": [
+        {
+          "img": "img/v27/color-auric-gold-800.jpg",
+          "label": "Sea",
+          "alt": "Yellow V27 on a beach at sunset"
+        },
+        {
+          "img": "img/v27/color-deep-emerald-800.jpg",
+          "label": "Forest",
+          "alt": "Green V27 by a lake in the woods"
+        },
+        {
+          "img": "img/v27/color-glacier-silver-800.jpg",
+          "label": "Ice",
+          "alt": "Silver V27 in front of a glacier"
+        },
+        {
+          "img": "img/home/life-768.jpg",
+          "label": "City",
+          "alt": "Yellow V27 parked on a clay tennis court"
+        }
+      ]
+    },
+    "service": {
+      "eyebrow": "i-CARE service",
+      "title": "With you, always",
+      "alt": "Reception area of an iCAUR service centre",
+      "items": [
+        {
+          "title": "All-time",
+          "text": "Roadside assistance and call centre, 24 hours a day, 7 days a week."
+        },
+        {
+          "title": "All-place",
+          "text": "Home delivery, charger installation and door-to-door service."
+        },
+        {
+          "title": "All-care",
+          "text": "Certified EV technicians, genuine parts and long-term warranty."
+        }
+      ],
+      "note": "Services and terms for the Italian market to be confirmed."
+    },
+    "next": {
+      "eyebrow": "Discover",
+      "v27_title": "The V27",
+      "v27_alt": "Sand-coloured iCAUR V27 on a dirt track",
+      "contact_eyebrow": "Contact",
+      "contact_title": "Let's talk",
+      "contact_alt": "A man on the phone inside a red phone box"
+    }
   }
 }

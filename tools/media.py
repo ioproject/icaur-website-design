@@ -82,6 +82,24 @@ for prefix, slug in [("Desert Bronze", "desert-bronze"), ("Moonstone White", "mo
     if match:
         IMAGES.append((os.path.join(COLORS, match[0]), f"img/v27/color-{slug}", L))
 
+# About us (+ part of iCAUR Life). Life photos/video showing the V23 are deliberately not used.
+ABOUT, LIFE = f"{PKG}/ABOUT iCAUR", f"{PKG}/iCAUR LIFE"
+IMAGES += [
+    (f"{ABOUT}/PAGE 2.jpg", "img/about/hero", L),
+    (f"{ABOUT}/PAGE 3.jpg", "img/about/vinyl", M),
+    (f"{ABOUT}/PAGE 4-1.png", "img/about/tag-design", M),
+    (f"{ABOUT}/PAGE 4-2.png", "img/about/tag-tech", M),
+    (f"{ABOUT}/PAGE 4-3.jpg", "img/about/tag-eco", M),
+    (f"{ABOUT}/PAGE 5-1.png", "img/about/value-user", M),
+    (f"{ABOUT}/PAGE 5-2.png", "img/about/value-design", M),
+    (f"{ABOUT}/PAGE 5-3.jpg", "img/about/value-innovation", M),
+    (f"{ABOUT}/PAGE 5-4.png", "img/about/value-safety", M),
+    (f"{ABOUT}/PAGE 5-5.jpg", "img/about/value-global", M),
+    (f"{ABOUT}/PAGE 6.jpg", "img/about/mission", L),
+    (f"{LIFE}/PAGE 1.png", "img/about/life-lounge", L),
+    (f"{LIFE}/PAGE 6.jpeg", "img/about/service", M),
+]
+
 # (source, output name, start s, duration s, width, kbps, poster at s (relative to start), height or None)
 # height set = center-cropped to that frame (used for portrait mobile versions)
 VIDEOS = [

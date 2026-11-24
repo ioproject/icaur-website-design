@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="{{ @lang }}">
+<head>
+  <title>{{ about.meta.title }}</title>
+  <meta name="description" content="{{ about.meta.description }}">
+{% include head %}
+  <link rel="stylesheet" href="{{ @assets }}css/about.css">
+  <link rel="preload" as="image" href="{{ @assets }}img/about/hero-1440.jpg" imagesrcset="{{ @assets }}img/about/hero-800.jpg 800w, {{ @assets }}img/about/hero-1440.jpg 1440w, {{ @assets }}img/about/hero-2048.jpg 2048w" imagesizes="100vw">
+</head>
+<body class="page page--about">
+{% include header %}
+
+<main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section class="phero" data-hero>
+    <div class="phero__media" data-parallax="14">
+      <img src="{{ @assets }}img/about/hero-1440.jpg" srcset="{{ @assets }}img/about/hero-800.jpg 800w, {{ @assets }}img/about/hero-1440.jpg 1440w, {{ @assets }}img/about/hero-2048.jpg 2048w" sizes="100vw" alt="" width="1440" height="540" fetchpriority="high">
+    </div>
+    <div class="phero__shade" aria-hidden="true"></div>
+    <div class="container phero__content">
+      <p class="eyebrow" data-hero-fade>{{ about.hero.eyebrow }}</p>
+      <h1 class="phero__title" data-split-lines>{{ about.hero.title }}</h1>
+      <p class="phero__text" data-hero-fade>{{ about.hero.text }}</p>
+    </div>
+  </section>
+
+  <!-- ===== STORY ===== -->
+  <section class="statement section section--light">
+    <div class="container container--narrow">
+      <p class="eyebrow eyebrow--dark" data-reveal>{{ about.story.eyebrow }}</p>
+      <p class="statement__text" data-words>{{ about.story.text }}</p>
+    </div>
+  </section>
+
+  <!-- ===== MANIFESTO ===== -->
+  <section class="manifesto section section--dark" aria-labelledby="manifesto-title">
+    <div class="container manifesto__inner">
+      <figure class="manifesto__media">
+        <img src="{{ @assets }}img/about/vinyl-1440.jpg" srcset="{{ @assets }}img/about/vinyl-800.jpg 800w, {{ @assets }}img/about/vinyl-1440.jpg 1440w" sizes="(min-width: 1024px) 40vw, 100vw" alt="{{ about.manifesto.alt }}" width="1440" height="960" loading="lazy" data-parallax="-8">
+      </figure>
+      <div class="manifesto__body">
+        <p class="eyebrow" data-reveal>{{ about.manifesto.eyebrow }}</p>
+        <h2 class="manifesto__title" id="manifesto-title" data-reveal>{{ about.manifesto.title }}</h2>
+        <ol class="manifesto__list">
+          {% for m in about.manifesto.items %}
+          <li data-reveal>{{ m.text }}</li>
+          {% endfor %}
+        </ol>
+        <p class="manifesto__promise" data-reveal>{{ about.manifesto.promise }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PILLARS ===== -->
+  <section class="tags section section--paper" aria-labelledby="tags-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow eyebrow--dark" data-reveal>{{ about.tags.eyebrow }}</p>
+        <h2 class="section-title" id="tags-title" data-reveal>{{ about.tags.title }}</h2>
+      </header>
+      <ul class="tags__grid">
+        {% for t in about.tags.items %}
+        <li class="tag-card" data-reveal>
+          <div class="tag-card__media"><img src="{{ @assets }}img/about/{{ t.img }}-800.jpg" srcset="{{ @assets }}img/about/{{ t.img }}-800.jpg 800w, {{ @assets }}img/about/{{ t.img }}-1440.jpg 1440w" sizes="(min-width: 1024px) 33vw, 100vw" alt="{{ t.alt }}" width="800" height="1000" loading="lazy"></div>
+          <h3 class="tag-card__title">{{ t.title }}</h3>
+          <p class="tag-card__text">{{ t.text }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== VALUES (image follows the cursor on desktop) ===== -->
+  <section class="values section section--light" aria-labelledby="values-title" data-hover-reveal>
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow eyebrow--dark" data-reveal>{{ about.values.eyebrow }}</p>
+        <h2 class="section-title" id="values-title" data-reveal>{{ about.values.title }}</h2>
+      </header>
+      <ol class="values__list">
+        {% for v in about.values.items %}
+        <li class="value" data-reveal data-hover-img="{{ @assets }}img/about/{{ v.img }}-800.jpg">
+          <img class="value__thumb" src="{{ @assets }}img/about/{{ v.img }}-800.jpg" alt="{{ v.alt }}" width="800" height="450" loading="lazy">
+          <h3 class="value__title">{{ v.title }}</h3>
+          <p class="value__text">{{ v.text }}</p>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    <div class="hover-reveal" aria-hidden="true" data-hover-reveal-frame><img alt="" data-hover-reveal-img></div>
+  </section>
+
+  <!-- ===== MISSION ===== -->
+  <section class="mission" aria-labelledby="mission-title">
+    <div class="mission__media" data-parallax="12">
+      <img src="{{ @assets }}img/about/mission-1440.jpg" srcset="{{ @assets }}img/about/mission-800.jpg 800w, {{ @assets }}img/about/mission-1440.jpg 1440w, {{ @assets }}img/about/mission-2048.jpg 2048w" sizes="100vw" alt="{{ about.mission.alt }}" width="1440" height="810" loading="lazy">
+    </div>
+    <div class="container container--narrow mission__content">
+      <p class="eyebrow" id="mission-title" data-reveal>{{ about.mission.eyebrow }}</p>
+      <p class="mission__text" data-words>{{ about.mission.text }}</p>
+    </div>
+  </section>
+
+  <!-- ===== iCAUR LIFE ===== -->
+  <section class="life section section--paper" aria-labelledby="life-title">
+    <div class="container">
+      <header class="section-head section-head--split">
+        <div>
+          <p class="eyebrow eyebrow--dark" data-reveal>{{ about.life.eyebrow }}</p>
+          <h2 class="section-title" id="life-title" data-split-lines>{{ about.life.title }}</h2>
+        </div>
+        <p class="life__text" data-reveal>{{ about.life.text }}</p>
+      </header>
+    </div>
+    <div class="life__lounge" data-expand>
+      <img src="{{ @assets }}img/about/life-lounge-1440.jpg" srcset="{{ @assets }}img/about/life-lounge-800.jpg 800w, {{ @assets }}img/about/life-lounge-1440.jpg 1440w, {{ @assets }}img/about/life-lounge-2048.jpg 2048w" sizes="100vw" alt="{{ about.life.lounge_alt }}" width="1440" height="810" loading="lazy">
+    </div>
+    <div class="container">
+      <ul class="worlds">
+        {% for w in about.life.worlds %}
+        <li class="world" data-reveal>
+          <img src="{{ @assets }}{{ w.img }}" alt="{{ w.alt }}" width="800" height="450" loading="lazy">
+          <span class="world__label">{{ w.label }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE ===== -->
+  <section class="service section section--dark" aria-labelledby="service-title">
+    <div class="container service__inner">
+      <figure class="service__media" data-reveal>
+        <img src="{{ @assets }}img/about/service-1440.jpg" srcset="{{ @assets }}img/about/service-800.jpg 800w, {{ @assets }}img/about/service-1440.jpg 1440w" sizes="(min-width: 1024px) 50vw, 100vw" alt="{{ about.service.alt }}" width="1440" height="810" loading="lazy">
+      </figure>
+      <div>
+        <p class="eyebrow" data-reveal>{{ about.service.eyebrow }}</p>
+        <h2 class="section-title" id="service-title" data-reveal>{{ about.service.title }}</h2>
+        <ul class="service__list">
+          {% for s in about.service.items %}
+          <li data-reveal><h3>{{ s.title }}</h3><p>{{ s.text }}</p></li>
+          {% endfor %}
+        </ul>
+        <p class="service__note">{{ about.service.note }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEXT ===== -->
+  <section class="split" aria-label="{{ about.next.eyebrow }}">
+    <a class="split__tile" href="v27.html" data-cursor-target="{{ common.nav.explore }}">
+      <img src="{{ @assets }}img/home/v27-card-1280.jpg" srcset="{{ @assets }}img/home/v27-card-768.jpg 768w, {{ @assets }}img/home/v27-card-1280.jpg 1280w, {{ @assets }}img/home/v27-card-1920.jpg 1920w" sizes="(min-width: 768px) 50vw, 100vw" alt="{{ about.next.v27_alt }}" width="1280" height="543" loading="lazy">
+      <span class="split__body">
+        <span class="eyebrow">{{ about.next.eyebrow }}</span>
+        <span class="split__title">{{ about.next.v27_title }}</span>
+        <span class="link-arrow">{{ common.explore_more }}<svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+      </span>
+    </a>
+    <a class="split__tile" href="contatti.html" data-cursor-target="{{ common.nav.contact }}">
+      <img src="{{ @assets }}img/home/contact-1280.jpg" srcset="{{ @assets }}img/home/contact-768.jpg 768w, {{ @assets }}img/home/contact-1280.jpg 1280w, {{ @assets }}img/home/contact-1920.jpg 1920w" sizes="(min-width: 768px) 50vw, 100vw" alt="{{ about.next.contact_alt }}" width="1280" height="853" loading="lazy">
+      <span class="split__body">
+        <span class="eyebrow">{{ about.next.contact_eyebrow }}</span>
+        <span class="split__title">{{ about.next.contact_title }}</span>
+        <span class="link-arrow">{{ common.explore_more }}<svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+      </span>
+    </a>
+  </section>
+
+</main>
+
+{% include footer %}
+{% include scripts %}
+<script src="{{ @assets }}js/model.js" defer></script>
+</body>
+</html>

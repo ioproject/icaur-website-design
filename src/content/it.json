@@ -696,5 +696,158 @@
       "info_text": "Hai domande sul V25 o sulla gamma? Scrivici.",
       "info_alt": "Un uomo al telefono dentro una cabina telefonica rossa"
     }
+  },
+  "about": {
+    "meta": {
+      "title": "Chi siamo — iCAUR Italia",
+      "description": "iCAUR crede che i veri classici non siano né retrò né di moda. Design che dura, tecnologia elettrica e un'auto pensata per accompagnarti a lungo."
+    },
+    "hero": {
+      "eyebrow": "Chi siamo",
+      "title": "Classic<br>Never Fades",
+      "text": "Portiamo i classici avanti, nell'era dell'energia nuova."
+    },
+    "story": {
+      "eyebrow": "La nostra storia",
+      "text": "Crediamo che i veri classici non siano né retrò né di moda. Li riconosci dal tempo: un fascino che attraversa le epoche e un'affidabilità che cresce con gli anni. Scelti da pochi, ma con convinzione."
+    },
+    "manifesto": {
+      "eyebrow": "Per chi non si accontenta",
+      "title": "Mentre la tecnologia insegue il nuovo,<br>a noi interessa ciò che il tempo sceglie di tenere.",
+      "items": [
+        {
+          "text": "Per chi preferisce un design sobrio all'apparenza, e sa che proporzioni, linee ed equilibrio non passano di moda."
+        },
+        {
+          "text": "Per chi apprezza la comodità della tecnologia, ma non si lascia guidare dai numeri e dalle mode del momento."
+        },
+        {
+          "text": "Per chi non segue la folla, e dà valore a una fiducia costruita nel tempo."
+        }
+      ],
+      "promise": "Non inseguiamo specifiche estreme a scapito dell'esperienza reale. Non sacrifichiamo la sicurezza per una linea alla moda. E non riempiamo l'auto di funzioni a scapito dell'affidabilità.",
+      "alt": "Puntina di un giradischi su un vinile in luce calda"
+    },
+    "tags": {
+      "eyebrow": "I nostri pilastri",
+      "title": "Tre idee, un'auto",
+      "items": [
+        {
+          "img": "tag-design",
+          "title": "Design classico",
+          "text": "Estetica senza tempo, gusto raffinato e una qualità che si vede e si sente: un'auto di cui essere orgogliosi.",
+          "alt": "V27 color sabbia davanti a un edificio storico con colonne"
+        },
+        {
+          "img": "tag-tech",
+          "title": "Tecnologia gentile",
+          "text": "L'elettrificazione intelligente dà nuova vita al design classico: una guida sicura, attenta e intuitiva.",
+          "alt": "Vista dall'alto di un V27 con i sensori di assistenza alla guida evidenziati"
+        },
+        {
+          "img": "tag-eco",
+          "title": "Ecosistema aperto",
+          "text": "Piattaforme aperte e interfacce standard per personalizzare l'auto e creare esperienze nuove insieme a chi la guida.",
+          "alt": "Showroom con accessori iCAUR: sedile, bicicletta e canotto"
+        }
+      ]
+    },
+    "values": {
+      "eyebrow": "I nostri valori",
+      "title": "Cosa ci guida",
+      "items": [
+        {
+          "img": "value-user",
+          "title": "Le persone prima di tutto",
+          "text": "Prima ascoltiamo, poi progettiamo con uno scopo.",
+          "alt": "Riunione di lavoro con colleghi in presenza e in videochiamata"
+        },
+        {
+          "img": "value-design",
+          "title": "Il design come guida",
+          "text": "Un'estetica che emoziona e dura. Il design definisce il nostro carattere.",
+          "alt": "Tecnici al lavoro su un simulatore di guida"
+        },
+        {
+          "img": "value-innovation",
+          "title": "Prima l'innovazione",
+          "text": "Spingiamo più in là l'energia nuova, per rendere semplice e umana la tecnologia avanzata.",
+          "alt": "Ingegnere con un tablet in un laboratorio"
+        },
+        {
+          "img": "value-safety",
+          "title": "La sicurezza conta",
+          "text": "Tranquillità progettata secondo i più alti standard globali e dimostrata dall'affidabilità.",
+          "alt": "Robot di saldatura su una scocca in fabbrica"
+        },
+        {
+          "img": "value-global",
+          "title": "Sguardo globale",
+          "text": "Aperti al mondo, cresciamo con i nostri partner e facciamo avanzare la mobilità insieme.",
+          "alt": "La Terra vista dallo spazio di notte, con le luci delle città"
+        }
+      ]
+    },
+    "mission": {
+      "eyebrow": "La nostra missione",
+      "text": "Offrire a chi guida, in tutto il mondo, una mobilità più libera, più piacevole e più affidabile, grazie a un design senza tempo e a una tecnologia intelligente.",
+      "alt": "Veduta aerea di una città sull'acqua al tramonto"
+    },
+    "life": {
+      "eyebrow": "<span class=\"nocase\">iCAUR</span> Life",
+      "title": "Una sola auto,<br>tanti mondi",
+      "text": "Design senza tempo e cura artigianale, per unire la voglia di partire, l'esplorazione e i piccoli piaceri di ogni giorno. Nessun copione da seguire: scegli tu il ritmo, e lascia che la strada faccia il resto.",
+      "lounge_alt": "Salotto in stile vintage con divano in pelle, tavola da surf e motocicletta",
+      "worlds": [
+        {
+          "img": "img/v27/color-auric-gold-800.jpg",
+          "label": "Mare",
+          "alt": "V27 giallo su una spiaggia al tramonto"
+        },
+        {
+          "img": "img/v27/color-deep-emerald-800.jpg",
+          "label": "Bosco",
+          "alt": "V27 verde in riva a un lago nel bosco"
+        },
+        {
+          "img": "img/v27/color-glacier-silver-800.jpg",
+          "label": "Ghiaccio",
+          "alt": "V27 argento davanti a un ghiacciaio"
+        },
+        {
+          "img": "img/home/life-768.jpg",
+          "label": "Città",
+          "alt": "V27 giallo parcheggiato su un campo da tennis in terra rossa"
+        }
+      ]
+    },
+    "service": {
+      "eyebrow": "Assistenza i-CARE",
+      "title": "Con te, sempre",
+      "alt": "Area accoglienza di un centro assistenza iCAUR",
+      "items": [
+        {
+          "title": "In ogni momento",
+          "text": "Assistenza stradale e call center attivi 7 giorni su 7, 24 ore su 24."
+        },
+        {
+          "title": "Ovunque tu sia",
+          "text": "Consegna a domicilio, installazione del caricatore e servizio porta a porta."
+        },
+        {
+          "title": "In ogni dettaglio",
+          "text": "Tecnici certificati per veicoli elettrici, ricambi originali e garanzia a lungo termine."
+        }
+      ],
+      "note": "Servizi e modalità per il mercato italiano da confermare."
+    },
+    "next": {
+      "eyebrow": "Scopri",
+      "v27_title": "Il V27",
+      "v27_alt": "iCAUR V27 color sabbia su una pista sterrata",
+      "contact_eyebrow": "Contatti",
+      "contact_title": "Parliamone",
+      "contact_alt": "Un uomo al telefono dentro una cabina telefonica rossa"
+    }
   }
 }
