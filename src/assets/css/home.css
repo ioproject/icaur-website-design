@@ -199,10 +199,10 @@
   .statement__more-copy .statement__drift { padding-left: calc(25% - 90px); }
 }
 
-/* Slogan across the full content width: 100cqw = content box, K = width of the text at 1px font size */
-.statement--full .statement__inner { container-type: inline-size; }
+/* Slogan across the viewport with 20px on each side: the wrapper widens past the side margin, 100cqw = its width, K = width of the text at 1px font size */
+.statement__big-wrap { container-type: inline-size; margin-inline: calc(20px - var(--home-x)); }
 .statement__big {
-  --k: 11.28;   /* "CLASSIC NEVER FADES" (uppercase) in Gotham Medium at -0.045em; re-measure if the text changes */
+  --k: 11.27;   /* "CLASSIC NEVER FADES" (uppercase) in Gotham Medium at -0.045em; re-measure if the text changes */
   margin-top: clamp(4rem, 2rem + 8vw, 10rem); margin-bottom: -0.092em;   /* line box ends on the baseline (caps only), so the 90px below is measured from the letters */
   font-size: calc(100cqw / var(--k)); font-weight: 500; line-height: 0.9; letter-spacing: -0.045em;
   white-space: nowrap; text-transform: uppercase;
