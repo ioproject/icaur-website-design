@@ -279,7 +279,6 @@ input, select, textarea { font: inherit; }
   .site-nav { display: block; flex: 1; }
   .site-header__cta { padding: 0 clamp(12px, 1.4vw, 24px); }
   .site-header__cta-text { display: inline; }
-  .site-header__lang { display: flex; }
 }
 
 /* ---------- Mega menu: full-screen light sheet under the header ---------- */
