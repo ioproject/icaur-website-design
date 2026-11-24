@@ -110,32 +110,35 @@
     </div>
   </section>
 
-  <!-- INNOVATION -->
-  <section class="innovation section section--light" aria-labelledby="innovation-title">
-    <div class="container">
-      <header class="section-head section-head--split">
-        <div>
-          <p class="eyebrow eyebrow--dark" data-reveal>{{ home.innovation.eyebrow }}</p>
-          <h2 class="section-title" id="innovation-title" data-reveal>{{ home.innovation.title }}</h2>
-        </div>
-        <a class="link-arrow link-arrow--dark" href="v27.html#tecnologia" data-reveal>{{ home.innovation.cta }}
-          <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-        </a>
-      </header>
-
-      <div class="accordion" data-accordion>
+  <!-- INNOVATION: dark section; on desktop it stays pinned while the image changes and the titles scroll up
+       (main.js [data-tech]). Without JS, on mobile or with reduced motion: a simple list, image above each item. -->
+  <section class="tech section section--ink" aria-labelledby="innovation-title" data-tech>
+    <div class="tech__sticky">
+      <div class="tech__media" aria-hidden="true">
         {% for item in home.innovation.items %}
-        <article class="accordion__panel" tabindex="0" data-accordion-panel>
-          <img class="accordion__img" src="{{ @assets }}img/home/{{ item.img }}-1280.jpg" alt="{{ item.alt }}"
-            srcset="{{ @assets }}img/home/{{ item.img }}-768.jpg 768w, {{ @assets }}img/home/{{ item.img }}-1280.jpg 1280w, {{ @assets }}img/home/{{ item.img }}-1920.jpg 1920w"
-            sizes="(min-width: 1024px) 60vw, 100vw" width="1280" height="720" loading="lazy">
-          <div class="accordion__body">
-            <p class="accordion__label">{{ item.label }}</p>
-            <h3 class="accordion__title">{{ item.title }}</h3>
-            <p class="accordion__text">{{ item.text }}</p>
-          </div>
-        </article>
+        <img class="tech__img" src="{{ @assets }}img/home/{{ item.img }}-1280.jpg" srcset="{{ @assets }}img/home/{{ item.img }}-768.jpg 768w, {{ @assets }}img/home/{{ item.img }}-1280.jpg 1280w, {{ @assets }}img/home/{{ item.img }}-1920.jpg 1920w" sizes="60vw" alt="" width="1280" height="720" loading="lazy" data-tech-img>
         {% endfor %}
+      </div>
+
+      <div class="tech__copy">
+        <p class="eyebrow tech__eyebrow">{{ home.innovation.eyebrow }}</p>
+        <h2 class="visually-hidden" id="innovation-title">{{ home.innovation.title }}</h2>
+        <div class="tech__viewport">
+          <ol class="tech__list" data-tech-list>
+            {% for item in home.innovation.items %}
+            <li class="tech__item" data-tech-item>
+              <img class="tech__item-img" src="{{ @assets }}img/home/{{ item.img }}-768.jpg" alt="{{ item.alt }}" width="768" height="432" loading="lazy">
+              <h3 class="tech__title"><span class="tech__label">{{ item.label }}</span>{{ item.title }}</h3>
+              <div class="tech__body">
+                <div>
+                  <p class="tech__text">{{ item.text }}</p>
+                  <a class="btn btn--text btn--text-light" href="v27.html#tecnologia"><span>{{ home.innovation.more }}</span></a>
+                </div>
+              </div>
+            </li>
+            {% endfor %}
+          </ol>
+        </div>
       </div>
     </div>
   </section>

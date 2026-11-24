@@ -10,6 +10,7 @@
      [data-reveal]                                              fade/slide in on enter
      [data-drift]                                               block slides down its column on scroll
      [data-grow-box]                                            centred box grows to full width on scroll
+     [data-tech] [data-tech-item] [data-tech-img]               pinned stage: image + titles change on scroll
      [data-parallax="N"]                                        parallax, N = % of travel
      [data-grow-bg]                                             section background grows to full width
      [data-count]                                               animated numbers
@@ -242,6 +243,42 @@
     window.addEventListener('resize', function () { buildDots(); sync(); });
     buildDots();
     sync();
+  });
+
+  /* ---------- Pinned tech stage [data-tech]: one step per screen of scrolling ---------- */
+  $$('[data-tech]').forEach(function (sec) {
+    var items = $$('[data-tech-item]', sec), imgs = $$('[data-tech-img]', sec);
+    var list = sec.querySelector('[data-tech-list]');
+    var mq = window.matchMedia('(min-width: 1024px)');
+    var current = -1;
+    sec.style.setProperty('--tech-steps', items.length);
+    var setStep = function (i) {
+      if (i === current) return;
+      current = i;
+      items.forEach(function (el, k) { el.classList.toggle('is-active', k === i); el.classList.toggle('is-past', k < i); });
+      imgs.forEach(function (el, k) { el.classList.toggle('is-active', k === i); });
+      // offset = collapsed height of the items above (only titles: their text closes when they become inactive)
+      var gap = parseFloat(getComputedStyle(list).rowGap) || 0, y = 0;
+      for (var k = 0; k < i; k++) y += items[k].querySelector('.tech__title').offsetHeight + gap;
+      list.style.transform = 'translateY(' + (-y) + 'px)';
+    };
+    var onScroll = function () {
+      if (!sec.classList.contains('is-pinned')) return;
+      var r = sec.getBoundingClientRect();
+      var p = Math.min(0.999, Math.max(0, -r.top / Math.max(1, r.height - window.innerHeight)));
+      setStep(Math.floor(p * items.length));
+    };
+    var apply = function () {
+      var on = mq.matches && !reduceMotion;
+      sec.classList.toggle('is-pinned', on);
+      current = -1;
+      if (on) onScroll();
+      else { list.style.transform = ''; items.concat(imgs).forEach(function (el) { el.classList.remove('is-active', 'is-past'); }); }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', function () { current = -1; onScroll(); });
+    if (mq.addEventListener) mq.addEventListener('change', apply);
+    apply();
   });
 
   /* ---------- Drag to scroll (mouse only; touch scrolls natively) ---------- */
