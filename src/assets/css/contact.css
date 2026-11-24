@@ -5,15 +5,15 @@
 /* ---------- Compact hero ---------- */
 .chero { background: var(--c-black); padding-block: calc(var(--header-top) + var(--header-h) + var(--space-xl)) var(--space-xl); }
 .chero__inner { display: grid; gap: var(--space-lg); align-items: end; }
-.chero__title { font-size: var(--fs-hero); font-weight: 700; line-height: 0.92; text-transform: uppercase; margin-bottom: var(--space-md); }
-.chero__lead { font-size: var(--fs-md); font-weight: 300; color: var(--c-text-dim); max-width: 40ch; }
+.chero__title { font-size: clamp(2.75rem, 1.4rem + 5.2vw, 7rem); font-weight: 500; line-height: 0.98; letter-spacing: -0.035em; margin-bottom: var(--space-sm); }
+.chero__lead { font-size: clamp(1.125rem, 0.85rem + 0.9vw, 1.75rem); font-weight: 400; line-height: 1.3; letter-spacing: -0.01em; color: rgba(255, 255, 255, 0.92); max-width: 40ch; }
 .chero__media { overflow: hidden; border-radius: var(--radius); aspect-ratio: 3 / 2; }
 .chero__media img { width: 100%; height: 100%; object-fit: cover; }
 @media (min-width: 1024px) { .chero__inner { grid-template-columns: 1.1fr 1fr; gap: var(--space-xl); } }
 
 /* ---------- Form + info ---------- */
 .contact__inner { display: grid; gap: var(--space-xl); align-items: start; }
-.contact__title { font-size: var(--fs-xl); font-weight: 700; text-transform: uppercase; margin-bottom: var(--space-lg); }
+.contact__title { font-size: var(--fs-xl); font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; margin-bottom: var(--space-lg); }
 .contact__subtitle { font-size: var(--fs-md); font-weight: 500; margin-bottom: var(--space-md); }
 .field__opt { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--c-gray); }
 

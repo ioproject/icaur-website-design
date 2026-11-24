@@ -144,8 +144,8 @@ input, select, textarea { font: inherit; }
 .section-head { margin-bottom: var(--space-lg); }
 .section-head--split { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-md); }
 .section-title {
-  font-size: var(--fs-xl); font-weight: 700; line-height: 1.05;
-  text-transform: uppercase; letter-spacing: 0.01em;
+  font-size: var(--fs-xl); font-weight: 500; line-height: 1.02;
+  letter-spacing: -0.03em;                 /* medium, natural case, tight */
 }
 
 /* 5. Buttons, links, badges */
@@ -425,7 +425,7 @@ html.menu-open { overflow: hidden; }
 .split__tile::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(20, 13, 11, 0.85), rgba(20, 13, 11, 0) 60%); }
 .split__tile:hover img { transform: scale(1.05); }
 .split__body { display: grid; gap: var(--space-sm); justify-items: start; padding: var(--space-lg) var(--gutter); }
-.split__title { font-size: var(--fs-xl); font-weight: 700; line-height: 1.02; text-transform: uppercase; }
+.split__title { font-size: var(--fs-xl); font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; }
 .split__tile .eyebrow { margin-bottom: 0; }
 .split__tile:focus-visible { outline-offset: -4px; }
 
