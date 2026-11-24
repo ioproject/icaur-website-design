@@ -78,7 +78,7 @@
 @keyframes nudge { 0%, 60%, 100% { transform: none; } 30% { transform: translateY(4px); } }
 
 /* ---------- Models ---------- */
-.models { padding-block: 0; }   /* no heading: the cards start right after the statement */
+.models { padding-block: 0; background: var(--c-white); }   /* no heading: the cards start right after the statement */
 .models__grid { display: grid; gap: 2px; }
 
 .model-card {
@@ -117,9 +117,10 @@
 .stats dd { font-size: var(--fs-md); font-weight: 500; }
 .stats dt { font-size: var(--fs-xs); color: var(--c-text-dim); }
 
+.model-card--v27 { min-height: 100vh; min-height: 100svh; margin-inline: auto; will-change: width; }
 @media (min-width: 1024px) {
-  .models__grid { grid-template-columns: 1.35fr 1fr; }
   .model-card { min-height: 88vh; }
+  .model-card--v27 { min-height: 100vh; min-height: 100svh; }
   .model-card__body { padding: var(--space-xl) var(--home-x) var(--space-lg); }
 }
 

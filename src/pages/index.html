@@ -88,13 +88,14 @@
   </div><!-- /.intro -->
 
   <!-- MODELS -->
-  <section class="models section section--dark" id="gamma" aria-label="{{ home.models.eyebrow }}">
+  <section class="models section" id="gamma" aria-label="{{ home.models.eyebrow }}">
+    <!-- the V27 box starts centred and grows to full screen while scrolling (main.js [data-grow-box]) -->
     <div class="models__grid">
-      <article class="model-card model-card--v27" data-cursor-target="{{ common.nav.explore }}" data-hover-video>
+      <article class="model-card model-card--v27" data-grow-box data-cursor-target="{{ common.nav.explore }}" data-hover-video>
         <a class="model-card__link" href="v27.html" aria-label="{{ home.models.v27.cta }}"></a>
         <div class="model-card__media">
           <img src="{{ @assets }}video/card-v27-poster.jpg" alt="{{ home.models.v27.alt }}" width="1280" height="720" loading="lazy"
-            srcset="{{ @assets }}img/home/v27-card-768.jpg 768w, {{ @assets }}video/card-v27-poster.jpg 1280w" sizes="(min-width: 1024px) 50vw, 100vw">
+            srcset="{{ @assets }}img/home/v27-card-768.jpg 768w, {{ @assets }}video/card-v27-poster.jpg 1280w" sizes="100vw">
           <video muted loop playsinline preload="none" aria-hidden="true" data-video data-src="{{ @assets }}video/card-v27.mp4"></video>
         </div>
         <div class="model-card__body">
@@ -106,23 +107,6 @@
             <div><dt>{{ home.models.v27.stat3_label }}</dt><dd>{{ home.models.v27.stat3_value }}</dd></div>
           </dl>
           <span class="link-arrow" aria-hidden="true">{{ home.models.v27.cta }}
-            <svg class="icon" viewBox="0 0 20 20"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          </span>
-        </div>
-      </article>
-
-      <article class="model-card model-card--v25" data-cursor-target="{{ common.coming_soon }}" data-hover-video>
-        <a class="model-card__link" href="v25.html" aria-label="V25 — {{ home.models.v25.cta }}"></a>
-        <div class="model-card__media">
-          <img src="{{ @assets }}video/card-v25-poster.jpg" alt="{{ home.models.v25.alt }}" width="1280" height="520" loading="lazy">
-          <video muted loop playsinline preload="none" aria-hidden="true" data-video data-src="{{ @assets }}video/card-v25.mp4"></video>
-        </div>
-        <div class="model-card__body">
-          <span class="badge badge--gold">{{ common.coming_soon }}</span>
-          <img class="model-card__logo" src="{{ @assets }}img/brand/v25-logo.webp" alt="V25" width="232" height="32" loading="lazy">
-          <p class="model-card__line">{{ home.models.v25.line }}</p>
-          <p class="model-card__text">{{ home.models.v25.text }}</p>
-          <span class="link-arrow" aria-hidden="true">{{ home.models.v25.cta }}
             <svg class="icon" viewBox="0 0 20 20"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
           </span>
         </div>
@@ -157,6 +141,28 @@
         </article>
         {% endfor %}
       </div>
+    </div>
+  </section>
+
+  <!-- V25 (coming soon) -->
+  <section class="models models--v25 section" aria-label="V25">
+    <div class="models__grid">
+      <article class="model-card model-card--v25" data-cursor-target="{{ common.coming_soon }}" data-hover-video>
+        <a class="model-card__link" href="v25.html" aria-label="V25 — {{ home.models.v25.cta }}"></a>
+        <div class="model-card__media">
+          <img src="{{ @assets }}video/card-v25-poster.jpg" alt="{{ home.models.v25.alt }}" width="1280" height="520" loading="lazy">
+          <video muted loop playsinline preload="none" aria-hidden="true" data-video data-src="{{ @assets }}video/card-v25.mp4"></video>
+        </div>
+        <div class="model-card__body">
+          <span class="badge badge--gold">{{ common.coming_soon }}</span>
+          <img class="model-card__logo" src="{{ @assets }}img/brand/v25-logo.webp" alt="V25" width="232" height="32" loading="lazy">
+          <p class="model-card__line">{{ home.models.v25.line }}</p>
+          <p class="model-card__text">{{ home.models.v25.text }}</p>
+          <span class="link-arrow" aria-hidden="true">{{ home.models.v25.cta }}
+            <svg class="icon" viewBox="0 0 20 20"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+        </div>
+      </article>
     </div>
   </section>
 

@@ -9,6 +9,7 @@
      [data-words]                                               words lighting up on scroll
      [data-reveal]                                              fade/slide in on enter
      [data-drift]                                               block slides down its column on scroll
+     [data-grow-box]                                            centred box grows to full width on scroll
      [data-parallax="N"]                                        parallax, N = % of travel
      [data-grow-bg]                                             section background grows to full width
      [data-count]                                               animated numbers
@@ -435,6 +436,18 @@
       scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 45%', scrub: true }
     });
   });
+
+  // Grow box: starts as a centred rounded box, becomes full width while it scrolls into view
+  if (!reduceMotion) {
+    gsap.matchMedia().add({ desk: '(min-width: 768px)', mob: '(max-width: 767px)' }, function (ctx) {
+      $$('[data-grow-box]').forEach(function (el) {
+        gsap.fromTo(el, { width: ctx.conditions.desk ? '72%' : '88%', borderRadius: 20 }, {
+          width: '100%', borderRadius: 0, ease: 'none',
+          scrollTrigger: { trigger: el, start: 'top 95%', end: 'top 5%', scrub: true }
+        });
+      });
+    });
+  }
 
   // Drift: the block slides down its column while the section scrolls by (desktop only)
   if (!reduceMotion) {
