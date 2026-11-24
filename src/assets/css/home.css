@@ -18,7 +18,7 @@
 .intro .hero { position: sticky; top: 0; z-index: 0; }
 
 /* Statement over the hero: its light background grows from inset + rounded to full width (main.js [data-grow-bg]) */
-.statement--full { position: relative; z-index: 1; isolation: isolate; color: var(--c-black); padding-block: clamp(5rem, 3rem + 9vw, 11rem); }
+.statement--full { position: relative; z-index: 1; isolation: isolate; color: var(--c-black); padding-block: clamp(5rem, 3rem + 9vw, 11rem) 90px; }   /* 90px between the slogan and the V27 box */
 .statement__bg { position: absolute; inset: 0; z-index: -1; background: var(--c-white); will-change: clip-path; }
 .statement--full .statement__inner { position: relative; --st-size: clamp(1.875rem, 1rem + 3.6vw, 4.5rem); }
 .statement--full .statement__text {
@@ -203,7 +203,7 @@
 .statement--full .statement__inner { container-type: inline-size; }
 .statement__big {
   --k: 11.28;   /* "CLASSIC NEVER FADES" (uppercase) in Gotham Medium at -0.045em; re-measure if the text changes */
-  margin-top: clamp(4rem, 2rem + 8vw, 10rem);
+  margin-top: clamp(4rem, 2rem + 8vw, 10rem); margin-bottom: -0.092em;   /* line box ends on the baseline (caps only), so the 90px below is measured from the letters */
   font-size: calc(100cqw / var(--k)); font-weight: 500; line-height: 0.9; letter-spacing: -0.045em;
   white-space: nowrap; text-transform: uppercase;
 }
