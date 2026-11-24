@@ -195,5 +195,5 @@
 @media (min-width: 900px) {
   .statement__more { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
   .statement__more-copy { position: relative; }
-  .statement__more-copy .statement__drift { padding-left: 25%; }
+  .statement__more-copy .statement__drift { padding-left: calc(25% - 90px); }
 }
