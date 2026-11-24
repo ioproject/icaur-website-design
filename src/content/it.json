@@ -849,5 +849,75 @@
       "contact_title": "Parliamone",
       "contact_alt": "Un uomo al telefono dentro una cabina telefonica rossa"
     }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contatti — iCAUR Italia",
+      "description": "Scrivi a iCAUR Italia per informazioni, preventivi o per prenotare un test drive del V27."
+    },
+    "hero": {
+      "eyebrow": "Contatti",
+      "title": "Parliamone",
+      "text": "Informazioni, un preventivo o un test drive: compila il form e ti rispondiamo entro [X giorni lavorativi].",
+      "alt": "Un uomo al telefono dentro una cabina telefonica rossa"
+    },
+    "info": {
+      "title": "Altri modi per raggiungerci",
+      "phone_label": "Telefono",
+      "phone": "[+39 000 000 0000]",
+      "phone_hours": "[Lun–Ven, 9:00–18:00]",
+      "email_label": "Email",
+      "email": "[info@icaur.it]",
+      "address_label": "Sede",
+      "address": "[Ragione sociale importatore]<br>[Indirizzo, CAP Città]",
+      "dealers_title": "Cerchi una concessionaria?",
+      "dealers_text": "Trova lo showroom iCAUR più vicino per vedere il V27 dal vivo.",
+      "dealers_cta": "Trova concessionario"
+    },
+    "form": {
+      "title": "Scrivici",
+      "reason": "Motivo del contatto",
+      "reasons": [
+        {
+          "value": "informazioni",
+          "label": "Richiesta informazioni"
+        },
+        {
+          "value": "test-drive",
+          "label": "Prenota un test drive"
+        },
+        {
+          "value": "preventivo",
+          "label": "Richiesta preventivo"
+        },
+        {
+          "value": "assistenza",
+          "label": "Assistenza"
+        },
+        {
+          "value": "altro",
+          "label": "Altro"
+        }
+      ],
+      "model": "Modello di interesse",
+      "models": [
+        {
+          "value": "v27",
+          "label": "iCAUR V27"
+        },
+        {
+          "value": "v25",
+          "label": "iCAUR V25 (coming soon)"
+        },
+        {
+          "value": "nessuno",
+          "label": "Non so ancora"
+        }
+      ],
+      "select": "Seleziona",
+      "province": "Provincia",
+      "submit": "Invia richiesta",
+      "success": "Grazie, abbiamo ricevuto la tua richiesta. Ti risponderemo al più presto."
+    }
   }
 }

@@ -849,5 +849,75 @@
       "contact_title": "Let's talk",
       "contact_alt": "A man on the phone inside a red phone box"
     }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact — iCAUR Italy",
+      "description": "Write to iCAUR Italy for information, a quote or to book a V27 test drive."
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Let's talk",
+      "text": "Information, a quote or a test drive: fill in the form and we'll reply within [X working days].",
+      "alt": "A man on the phone inside a red phone box"
+    },
+    "info": {
+      "title": "Other ways to reach us",
+      "phone_label": "Phone",
+      "phone": "[+39 000 000 0000]",
+      "phone_hours": "[Mon–Fri, 9:00–18:00]",
+      "email_label": "Email",
+      "email": "[info@icaur.it]",
+      "address_label": "Head office",
+      "address": "[Importer company name]<br>[Address, Postcode City]",
+      "dealers_title": "Looking for a dealer?",
+      "dealers_text": "Find your nearest iCAUR showroom and see the V27 in person.",
+      "dealers_cta": "Find a dealer"
+    },
+    "form": {
+      "title": "Write to us",
+      "reason": "Reason for contact",
+      "reasons": [
+        {
+          "value": "informazioni",
+          "label": "Request information"
+        },
+        {
+          "value": "test-drive",
+          "label": "Book a test drive"
+        },
+        {
+          "value": "preventivo",
+          "label": "Request a quote"
+        },
+        {
+          "value": "assistenza",
+          "label": "Service"
+        },
+        {
+          "value": "altro",
+          "label": "Other"
+        }
+      ],
+      "model": "Model of interest",
+      "models": [
+        {
+          "value": "v27",
+          "label": "iCAUR V27"
+        },
+        {
+          "value": "v25",
+          "label": "iCAUR V25 (coming soon)"
+        },
+        {
+          "value": "nessuno",
+          "label": "Not sure yet"
+        }
+      ],
+      "select": "Select",
+      "province": "Province",
+      "submit": "Send request",
+      "success": "Thank you, we've received your request. We'll get back to you soon."
+    }
   }
 }

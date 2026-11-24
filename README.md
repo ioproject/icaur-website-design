@@ -17,7 +17,7 @@ cd dist && python3 -m http.server 8080  # in un altro terminale → http://local
 | `chi-siamo.html` — Chi siamo + iCAUR Life | ✅ |
 | `v27.html` — V27, pagina modello completa | ✅ |
 | `v25.html` — V25 coming soon | ✅ (data di lancio in `v25.launch_date`, vuota = "da annunciare") |
-| `contatti.html` — Contatti con form | in lavorazione |
+| `contatti.html` — Contatti con form | ✅ (motivo e modello precompilati da URL: `?motivo=test-drive&modello=v27`) |
 
 Concessionari e News saranno realizzate in WordPress: nel menu hanno link provvisori (`#concessionari`, `#news`).
 

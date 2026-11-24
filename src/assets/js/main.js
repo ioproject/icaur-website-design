@@ -232,6 +232,15 @@
      Prototype only: nothing is sent. Messages come from data-msg-* attributes. */
   $$('[data-form]').forEach(function (form) {
     var success = form.querySelector('[data-form-success]');
+    // [data-prefill]: fields named like a URL parameter take its value (?motivo=test-drive&modello=v27)
+    if (form.hasAttribute('data-prefill') && window.URLSearchParams) {
+      new URLSearchParams(window.location.search).forEach(function (val, key) {
+        var field = form.querySelector('[name="' + key.replace(/[^\w-]/g, '') + '"]');
+        if (!field || field.type === 'checkbox' || field.type === 'hidden') return;
+        if (field.tagName === 'SELECT' && !field.querySelector('option[value="' + val.replace(/[^\w-]/g, '') + '"]')) return;
+        field.value = val;
+      });
+    }
     var showError = function (input, msg) {
       var err = document.getElementById(input.id + '-err');
       input.setAttribute('aria-invalid', msg ? 'true' : 'false');

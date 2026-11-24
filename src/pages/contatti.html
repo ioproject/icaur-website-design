@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="{{ @lang }}">
+<head>
+  <title>{{ contact.meta.title }}</title>
+  <meta name="description" content="{{ contact.meta.description }}">
+{% include head %}
+  <link rel="stylesheet" href="{{ @assets }}css/contact.css">
+</head>
+<body class="page page--contact">
+{% include header %}
+
+<main id="main">
+
+  <!-- ===== HERO (compact) ===== -->
+  <section class="chero" data-hero>
+    <div class="container chero__inner">
+      <div class="chero__text">
+        <p class="eyebrow" data-hero-fade>{{ contact.hero.eyebrow }}</p>
+        <h1 class="chero__title" data-split-lines>{{ contact.hero.title }}</h1>
+        <p class="chero__lead" data-hero-fade>{{ contact.hero.text }}</p>
+      </div>
+      <figure class="chero__media" data-hero-fade>
+        <img src="{{ @assets }}img/home/contact-1280.jpg" srcset="{{ @assets }}img/home/contact-768.jpg 768w, {{ @assets }}img/home/contact-1280.jpg 1280w" sizes="(min-width: 1024px) 45vw, 100vw" alt="{{ contact.hero.alt }}" width="1280" height="853" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== FORM + INFO ===== -->
+  <section class="contact section section--paper" aria-labelledby="form-title">
+    <div class="container contact__inner">
+
+      <div class="contact__form">
+        <h2 class="contact__title" id="form-title">{{ contact.form.title }}</h2>
+
+        <!-- Prototipo: nessun invio reale. In WordPress collegare al plugin form scelto.
+             Motivo e modello si precompilano da URL: contatti.html?motivo=test-drive&modello=v27 -->
+        <form class="form" action="#" method="post" novalidate data-form data-prefill
+          data-msg-required="{{ common.form.error_required }}" data-msg-email="{{ common.form.error_email }}" data-msg-privacy="{{ common.form.error_privacy }}">
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="c-reason">{{ contact.form.reason }} *</label>
+              <select class="field__input" id="c-reason" name="motivo" required>
+                <option value="">{{ contact.form.select }}</option>
+                {% for r in contact.form.reasons %}<option value="{{ r.value }}">{{ r.label }}</option>{% endfor %}
+              </select>
+              <p class="field__error" id="c-reason-err" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="c-model">{{ contact.form.model }}</label>
+              <select class="field__input" id="c-model" name="modello">
+                <option value="">{{ contact.form.select }}</option>
+                {% for m in contact.form.models %}<option value="{{ m.value }}">{{ m.label }}</option>{% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="c-name">{{ common.form.name }} *</label>
+              <input class="field__input" id="c-name" name="nome" type="text" autocomplete="given-name" required>
+              <p class="field__error" id="c-name-err" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="c-surname">{{ common.form.surname }} *</label>
+              <input class="field__input" id="c-surname" name="cognome" type="text" autocomplete="family-name" required>
+              <p class="field__error" id="c-surname-err" hidden></p>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="c-email">{{ common.form.email }} *</label>
+              <input class="field__input" id="c-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+              <p class="field__error" id="c-email-err" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="c-phone">{{ common.form.phone }} <span class="field__opt">({{ common.form.optional }})</span></label>
+              <input class="field__input" id="c-phone" name="telefono" type="tel" autocomplete="tel" inputmode="tel">
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="c-province">{{ contact.form.province }} <span class="field__opt">({{ common.form.optional }})</span></label>
+            <input class="field__input" id="c-province" name="provincia" type="text" autocomplete="address-level2">
+          </div>
+          <div class="field">
+            <label class="field__label" for="c-message">{{ common.form.message }} <span class="field__opt">({{ common.form.optional }})</span></label>
+            <textarea class="field__input" id="c-message" name="messaggio" rows="5"></textarea>
+          </div>
+          <div class="check">
+            <input class="check__input" id="c-privacy" name="privacy" type="checkbox" required>
+            <label class="check__label" for="c-privacy">{{ common.form.privacy }}</label>
+            <p class="field__error" id="c-privacy-err" hidden></p>
+          </div>
+          <div class="check">
+            <input class="check__input" id="c-marketing" name="marketing" type="checkbox">
+            <label class="check__label" for="c-marketing">{{ common.form.marketing }}</label>
+          </div>
+          <div class="form__footer">
+            <button class="btn btn--dark" type="submit">{{ contact.form.submit }}</button>
+            <p class="form__note">{{ common.form.required_note }}</p>
+          </div>
+          <p class="form__success" role="status" data-form-success hidden>{{ contact.form.success }}</p>
+          <p class="form__proto">{{ common.form.prototype_note }}</p>
+        </form>
+      </div>
+
+      <aside class="contact__info" aria-labelledby="info-title">
+        <h2 class="contact__subtitle" id="info-title">{{ contact.info.title }}</h2>
+        <dl class="info-list">
+          <div>
+            <dt>{{ contact.info.phone_label }}</dt>
+            <dd><a href="tel:+390000000000">{{ contact.info.phone }}</a><span>{{ contact.info.phone_hours }}</span></dd>
+          </div>
+          <div>
+            <dt>{{ contact.info.email_label }}</dt>
+            <dd><a href="mailto:info@example.com">{{ contact.info.email }}</a></dd>
+          </div>
+          <div>
+            <dt>{{ contact.info.address_label }}</dt>
+            <dd>{{ contact.info.address }}</dd>
+          </div>
+        </dl>
+        <div class="dealer-box">
+          <h3>{{ contact.info.dealers_title }}</h3>
+          <p>{{ contact.info.dealers_text }}</p>
+          <a class="btn btn--light" href="#concessionari">
+            <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-5.6 6-10.2A6 6 0 0 0 4 7.8C4 12.4 10 18 10 18Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            {{ contact.info.dealers_cta }}
+          </a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+{% include footer %}
+{% include scripts %}
+</body>
+</html>
