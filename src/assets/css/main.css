@@ -190,27 +190,30 @@ input, select, textarea { font: inherit; }
 }
 .site-header.is-hidden { transform: translateY(calc(-100% - var(--header-top) - 4px)); }
 
+/* Panels: the white background is painted by ::before so it can carry a notch
+   (a mask on the panel itself would also clip the menus inside it).
+   Notch = 8px deep, 5px high with round ends: same thickness as the orange joint. */
 .site-header__main, .site-header__side {
+  position: relative; isolation: isolate;
   display: flex; align-items: center;
+}
+.site-header__main::before, .site-header__side::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
   background: var(--panel); border-radius: 6px;
-  box-shadow: 0 6px 24px rgba(20, 13, 11, 0.12);
+  -webkit-mask: var(--notch) var(--notch-pos) / 8px 5px no-repeat, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: var(--notch) var(--notch-pos) / 8px 5px no-repeat exclude, linear-gradient(#000 0 0);
 }
 .site-header__main {
   flex: 1 1 auto; min-width: 0; padding: 0 16px 0 20px;
-  position: relative; isolation: isolate;
-  background: none; box-shadow: none;       /* the panel is painted by ::before */
+  --notch-pos: left center;     /* notch on the outer left edge */
+  --notch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 5'%3E%3Crect x='-6' y='0' width='14' height='5' rx='2.5'/%3E%3C/svg%3E");
 }
-/* panel background with a small rounded notch cut into the middle of the left edge.
-   The mask sits on a pseudo-element so menus inside the panel are never clipped. */
-.site-header__main::before {
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background: var(--panel); border-radius: 6px;
-  --notch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12'%3E%3Crect x='-6' y='0' width='14' height='12' rx='4'/%3E%3C/svg%3E");
-  -webkit-mask: var(--notch) left center / 8px 12px no-repeat, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask: var(--notch) left center / 8px 12px no-repeat exclude, linear-gradient(#000 0 0);
+.site-header__side {
+  flex: 0 0 auto; gap: 8px; padding: 0 8px 0 8px;
+  --notch-pos: right center;    /* notch on the outer right edge */
+  --notch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 5'%3E%3Crect x='0' y='0' width='14' height='5' rx='2.5'/%3E%3C/svg%3E");
 }
-.site-header__side { flex: 0 0 auto; gap: 8px; padding: 0 8px 0 8px; }
 
 /* orange joint between the two panels (brand Vibrant Orange) */
 .site-header__joint { position: relative; flex: 0 0 8px; }
