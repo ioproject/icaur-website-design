@@ -199,9 +199,9 @@
   .statement__more-copy .statement__drift { padding-left: calc(25% - 90px); }
 }
 
-/* Slogan across the viewport with 20px on each side: the wrapper widens past the side margin, 100cqw = its width, K = width of the text at 1px font size */
+/* Slogan across the viewport with 10px on each side: the wrapper widens past the side margin, 100cqw = its width, K = width of the text at 1px font size */
 .statement__big-wrap {
-  container-type: inline-size; margin-inline: 20px;
+  container-type: inline-size; margin-inline: 10px;
   position: sticky; top: calc(50vh - 3.9vw - 60px);   /* text height ≈ 7.8vw: stays just above the centre while the box slides over it */
   margin-top: -60px; z-index: 2;   /* above the white statement section it overlaps */
 }
