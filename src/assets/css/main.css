@@ -287,7 +287,7 @@ input, select, textarea { font: inherit; }
 @media (min-width: 1180px) {
   .site-header__main { padding: 0 16px 0 22px; }
   .site-header__side { padding: 0 16px 0 14px; }
-  .site-header__logo img { width: 118px; }
+  .site-header__logo img { width: 130px; }
   .site-nav { display: block; flex: 1; }
   .site-header__cta { padding: 0 clamp(12px, 1.4vw, 24px); }
   .site-header__cta-text { display: inline; }
