@@ -203,7 +203,7 @@
 .statement__big-wrap {
   container-type: inline-size; margin-inline: 20px;
   position: sticky; top: calc(50vh - 3.9vw - 60px);   /* text height ≈ 7.8vw: stays just above the centre while the box slides over it */
-  margin-top: -60px;
+  margin-top: -60px; z-index: 2;   /* above the white statement section it overlaps */
 }
 .statement__big {
   --k: 11.27;   /* "CLASSIC NEVER FADES" (uppercase) in Gotham Medium at -0.045em; re-measure if the text changes */
@@ -212,4 +212,4 @@
 }
 
 /* V27 box: starts 40px under the slogan, then rises over it */
-.models__grid { position: relative; z-index: 1; margin-top: calc(40px - 0.82vw); }   /* 40px below the letters (the line box ends ≈0.82vw under the baseline) */
+.models__grid { position: relative; z-index: 3; margin-top: calc(40px - 0.82vw); }   /* 40px below the letters (the line box ends ≈0.82vw under the baseline) */
