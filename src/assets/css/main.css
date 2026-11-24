@@ -177,6 +177,9 @@ input, select, textarea { font: inherit; }
 .btn--ghost:hover { border-color: var(--c-white); background: rgba(255, 255, 255, 0.1); }
 .btn--ghost-dark { color: #000; border-color: #000; }               /* outlined, on light backgrounds */
 .btn--ghost-dark:hover { background: #000; color: var(--c-white); }
+.btn--text { min-height: 44px; padding: 0; gap: 12px; border-color: transparent; color: var(--c-black); }   /* label + circled arrow, no pill */
+.btn--text::after { width: 30px; height: 30px; transition: transform var(--dur-fast) var(--ease-out); }
+.btn--text:hover::after { transform: translateX(4px); }
 .btn--dark { background: var(--c-black); color: var(--c-white); }
 .btn--dark:hover { background: var(--c-brown); }
 
