@@ -371,6 +371,7 @@ input, select, textarea { font: inherit; }
   background: var(--c-orange); transform: scaleX(0); transform-origin: left; transition: transform var(--dur) var(--ease-out);
 }
 .megamenu__links a:hover::after, .megamenu__links a[aria-current]::after { transform: scaleX(1); }
+.megamenu__badge { margin-left: 12px; color: var(--c-gray); }   /* small "Coming soon" next to V25 */
 
 .megamenu__foot { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-top: var(--space-lg); font-size: var(--fs-sm); }
 .megamenu__foot li + li { margin-top: 4px; }
