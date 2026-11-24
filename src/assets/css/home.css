@@ -183,5 +183,6 @@
 
 /* Full width: on the home every block uses the hero's side margin instead of the 1440px container */
 .page--home { --home-x: clamp(20px, 3.4vw, 64px); }
-.page--home main .container { max-width: none; padding-inline: var(--home-x); }
+.page--home main .container,
+.page--home .site-footer .container { max-width: none; padding-inline: var(--home-x); }
 .page--home .carousel { padding-inline: var(--home-x); scroll-padding-inline: var(--home-x); }
