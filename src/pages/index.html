@@ -66,7 +66,19 @@
         <p class="tag tag--fill" id="statement-label">{{ home.statement.eyebrow }}</p>
       </div>
       <p class="statement__text" data-words>{{ home.statement.text }}</p>
-      <a class="btn btn--ghost-dark" href="chi-siamo.html" data-reveal>{{ home.statement.cta }}</a>
+
+      <!-- short paragraph that drifts down beside a tall image (main.js [data-drift]) -->
+      <div class="statement__more">
+        <div class="statement__more-copy">
+          <div class="statement__drift" data-drift>
+            <p class="statement__more-text">{{ home.statement.more }}</p>
+            <a class="btn btn--ghost-dark" href="chi-siamo.html">{{ home.statement.cta }}</a>
+          </div>
+        </div>
+        <figure class="statement__more-media">
+          <img src="{{ @assets }}img/about/tag-design-800.jpg" srcset="{{ @assets }}img/about/tag-design-800.jpg 800w, {{ @assets }}img/about/tag-design-1440.jpg 1440w" sizes="(min-width: 900px) 45vw, 100vw" alt="{{ home.statement.more_alt }}" width="800" height="998" loading="lazy">
+        </figure>
+      </div>
     </div>
   </section>
 

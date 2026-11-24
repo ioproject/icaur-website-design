@@ -22,12 +22,12 @@
 .statement__bg { position: absolute; inset: 0; z-index: -1; background: var(--c-white); will-change: clip-path; }
 .statement--full .statement__inner { position: relative; --st-size: clamp(1.875rem, 1rem + 3.6vw, 4.5rem); }
 .statement--full .statement__text {
-  font-size: var(--st-size); font-weight: 500; line-height: 1.08; letter-spacing: -0.02em;
+  font-size: var(--st-size); font-weight: 500; line-height: 1; letter-spacing: -0.02em;
   margin-bottom: var(--space-lg);
 }
 .statement--full .tag-stack { margin-bottom: var(--space-sm); }
 @media (min-width: 768px) {
-  .statement--full .tag-stack { position: absolute; left: var(--home-x); top: calc(var(--st-size) * 0.897 - 50px); margin: 0; } /* bottom of the stack (50px) sits on the first line baseline */
+  .statement--full .tag-stack { position: absolute; left: var(--home-x); top: calc(var(--st-size) * 0.857 - 50px); margin: 0; } /* bottom of the stack (50px) sits on the first line baseline */
   .statement--full .statement__text { text-indent: 7.5rem; }   /* room for the inline tag, as in the reference */
 }
 @media (min-height: 1100px) { .hero { min-height: 1100px; } }
@@ -186,3 +186,14 @@
 .page--home main .container,
 .page--home .site-footer .container { max-width: none; padding-inline: var(--home-x); }
 .page--home .carousel { padding-inline: var(--home-x); scroll-padding-inline: var(--home-x); }
+
+/* Statement: short paragraph drifting down next to a tall image */
+.statement__more { display: grid; gap: var(--space-lg); margin-top: clamp(3rem, 2rem + 5vw, 7.5rem); }
+.statement__more-text { font-size: clamp(1.125rem, 0.95rem + 0.6vw, 1.5rem); font-weight: 500; line-height: 1.3; letter-spacing: -0.01em; max-width: 34ch; margin-bottom: var(--space-md); }
+.statement__more-media { overflow: hidden; border-radius: 8px; aspect-ratio: 4 / 5; }
+.statement__more-media img { width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 900px) {
+  .statement__more { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+  .statement__more-copy { position: relative; }
+  .statement__more-copy .statement__drift { padding-left: 25%; }
+}

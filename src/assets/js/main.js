@@ -8,6 +8,7 @@
      [data-split-lines] [data-hero-fade]                        hero title reveal
      [data-words]                                               words lighting up on scroll
      [data-reveal]                                              fade/slide in on enter
+     [data-drift]                                               block slides down its column on scroll
      [data-parallax="N"]                                        parallax, N = % of travel
      [data-grow-bg]                                             section background grows to full width
      [data-count]                                               animated numbers
@@ -430,10 +431,23 @@
     var words = splitWords(el);
     if (reduceMotion) { gsap.set(words, { opacity: 1 }); gsap.from(el, { opacity: 0, duration: 0.8, scrollTrigger: { trigger: el, start: 'top 85%' } }); return; }
     gsap.to(words, {
-      opacity: 1, ease: 'none', stagger: 0.1,
+      opacity: 1, ease: 'none', stagger: 0.4,   /* larger stagger = fewer half-lit words, sharper edge */
       scrollTrigger: { trigger: el, start: 'top 80%', end: 'bottom 45%', scrub: true }
     });
   });
+
+  // Drift: the block slides down its column while the section scrolls by (desktop only)
+  if (!reduceMotion) {
+    gsap.matchMedia().add('(min-width: 900px)', function () {
+      $$('[data-drift]').forEach(function (el) {
+        var col = el.parentElement;
+        gsap.fromTo(el, { y: 0 }, {
+          y: function () { return Math.max(0, col.clientHeight - el.offsetHeight); }, ease: 'none',
+          scrollTrigger: { trigger: col, start: 'top 75%', end: 'bottom 75%', scrub: true, invalidateOnRefresh: true }
+        });
+      });
+    });
+  }
 
   // Simple reveal
   $$('[data-reveal]').forEach(function (el) {
