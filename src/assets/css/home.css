@@ -78,7 +78,7 @@
 @keyframes nudge { 0%, 60%, 100% { transform: none; } 30% { transform: translateY(4px); } }
 
 /* ---------- Models ---------- */
-.models { padding-bottom: 0; }
+.models { padding-block: 0; }   /* no heading: the cards start right after the statement */
 .models__grid { display: grid; gap: 2px; }
 
 .model-card {
