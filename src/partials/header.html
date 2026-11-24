@@ -11,12 +11,11 @@
 
     <nav class="site-nav" id="site-nav" aria-label="{{ common.nav.label }}" data-nav>
       <ul class="site-nav__list">
-        <li><a class="site-nav__link" href="index.html"{{ @current:index.html }}>{{ common.nav.home }}</a></li>
-        <li><a class="site-nav__link" href="chi-siamo.html"{{ @current:chi-siamo.html }}>{{ common.nav.about }}</a></li>
+        <li><a class="site-nav__link" href="chi-siamo.html"{{ @current:chi-siamo.html }}><span>{{ common.nav.life }}</span></a></li>
         <li class="site-nav__item site-nav__item--models" data-models>
           <button class="site-nav__link site-nav__trigger" type="button" aria-expanded="false" aria-controls="models-panel" data-models-trigger>
             {{ common.nav.models }}
-            <svg class="icon icon--chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <svg class="icon icon--plus" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5v9M1.5 6h9" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
           </button>
           <div class="models-panel" id="models-panel" data-models-panel>
             <a class="model-tile" href="v27.html"{{ @current:v27.html }}>
