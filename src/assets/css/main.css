@@ -182,8 +182,12 @@ input, select, textarea { font: inherit; }
   min-height: 44px; padding: 0; gap: 4px; border-color: transparent; color: var(--c-black);
 }
 .btn--text::after { width: 20px; height: 20px; }
-.btn--text > span { text-decoration: underline 2px transparent; text-underline-offset: 5px; transition: text-decoration-color var(--dur-fast); }
-.btn--text:hover > span, .btn--text:focus-visible > span { text-decoration-color: var(--c-orange); }
+.btn--text > span { position: relative; text-transform: uppercase; letter-spacing: 0.02em; }
+.btn--text > span::after {          /* same orange underline as the navbar links: grows from the left */
+  content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; border-radius: 1px;
+  background: var(--c-orange); transform: scaleX(0); transform-origin: left; transition: transform var(--dur) var(--ease-out);
+}
+.btn--text:hover > span::after, .btn--text:focus-visible > span::after { transform: scaleX(1); }
 .btn--dark { background: var(--c-black); color: var(--c-white); }
 .btn--dark:hover { background: var(--c-brown); }
 
