@@ -378,7 +378,7 @@
       "eyebrow": "Interni",
       "title": "Tecnologia avanzata,<br>calore da salotto",
       "text": "Pelle color cuoio, linee orizzontali e uno schermo centrale da 15,4 pollici. Tutto è dove te lo aspetti.",
-      "alt": "Plancia e sedili anteriori del V27 in pelle color cuoio",
+      "alt": "Plancia del V27 vista dal posto di guida, con volante e schermo centrale in pelle color cuoio",
       "card_label": "Dettaglio",
       "close": "Chiudi",
       "prev": "Dettaglio precedente",
@@ -387,9 +387,9 @@
       "cabin_alt": "Abitacolo del V27 visto di lato, con i sedili in pelle color cuoio",
       "cockpit": [
         {
-          "x": "50",
-          "y": "36",
-          "img": "int-cockpit",
+          "x": "53",
+          "y": "58",
+          "img": "int-card-screen",
           "tag": "Infotainment",
           "label": "Schermo centrale da 15,4 pollici",
           "title": "Schermo 15,4\" 2.5K",
@@ -397,9 +397,9 @@
           "alt": "Plancia del V27 con lo schermo centrale"
         },
         {
-          "x": "48",
-          "y": "55",
-          "img": "int-console",
+          "x": "46",
+          "y": "75",
+          "img": "int-card-modes",
           "tag": "Modalità",
           "label": "Sette modalità con un tocco",
           "title": "Sette modalità, un tocco",
@@ -407,9 +407,9 @@
           "alt": "Console centrale del V27"
         },
         {
-          "x": "30",
-          "y": "70",
-          "img": "int-seat",
+          "x": "16",
+          "y": "84",
+          "img": "int-card-seat",
           "tag": "Comfort",
           "label": "Sedile guida elettrico",
           "title": "Sedile guida elettrico",
@@ -417,9 +417,9 @@
           "alt": "Sedile del guidatore in pelle color cuoio"
         },
         {
-          "x": "70",
-          "y": "25",
-          "img": "turn-top",
+          "x": "24",
+          "y": "14",
+          "img": "int-card-roof",
           "tag": "Tetto vetrato",
           "label": "Tetto Starry Sky",
           "title": "Tetto Starry Sky",
@@ -429,9 +429,9 @@
       ],
       "cabin": [
         {
-          "x": "7",
-          "y": "44",
-          "img": "int-trunk",
+          "x": "6",
+          "y": "24",
+          "img": "int-card-trunk",
           "tag": "Bagagliaio",
           "label": "Bagagliaio",
           "title": "Il bagagliaio più grande della categoria",
@@ -439,9 +439,9 @@
           "alt": "Bagagliaio del V27 aperto"
         },
         {
-          "x": "19",
-          "y": "52",
-          "img": "int-rear",
+          "x": "22",
+          "y": "41",
+          "img": "int-card-rear",
           "tag": "Seconda fila",
           "label": "Spazio in seconda fila",
           "title": "La seconda fila più spaziosa della categoria",
@@ -449,9 +449,9 @@
           "alt": "Divano posteriore del V27"
         },
         {
-          "x": "31",
-          "y": "67",
-          "img": "int-flat",
+          "x": "27",
+          "y": "70",
+          "img": "int-card-flat",
           "tag": "Campeggio",
           "label": "Sedili abbattibili in piano",
           "title": "Seconda fila giù, camera da letto su",

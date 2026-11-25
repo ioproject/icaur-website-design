@@ -378,7 +378,7 @@
       "eyebrow": "Interior",
       "title": "Advanced tech,<br>living-room warmth",
       "text": "Tan leather, horizontal lines and a 15.4-inch centre screen. Everything is where you expect it.",
-      "alt": "V27 dashboard and front seats in tan leather",
+      "alt": "V27 dashboard seen from the driver's side, with tan leather steering wheel and central screen",
       "card_label": "Detail",
       "close": "Close",
       "prev": "Previous detail",
@@ -387,9 +387,9 @@
       "cabin_alt": "Side view of the V27 cabin with tan leather seats",
       "cockpit": [
         {
-          "x": "50",
-          "y": "36",
-          "img": "int-cockpit",
+          "x": "53",
+          "y": "58",
+          "img": "int-card-screen",
           "tag": "Infotainment",
           "label": "15.4-inch central screen",
           "title": "15.4\" 2.5K screen",
@@ -397,9 +397,9 @@
           "alt": "V27 dashboard with the central screen"
         },
         {
-          "x": "48",
-          "y": "55",
-          "img": "int-console",
+          "x": "46",
+          "y": "75",
+          "img": "int-card-modes",
           "tag": "Modes",
           "label": "Seven one-tap modes",
           "title": "Seven modes, one tap",
@@ -407,9 +407,9 @@
           "alt": "V27 centre console"
         },
         {
-          "x": "30",
-          "y": "70",
-          "img": "int-seat",
+          "x": "16",
+          "y": "84",
+          "img": "int-card-seat",
           "tag": "Comfort",
           "label": "Power driver's seat",
           "title": "Power driver's seat",
@@ -417,9 +417,9 @@
           "alt": "Driver's seat in tan leather"
         },
         {
-          "x": "70",
-          "y": "25",
-          "img": "turn-top",
+          "x": "24",
+          "y": "14",
+          "img": "int-card-roof",
           "tag": "Glass roof",
           "label": "Starry Sky roof",
           "title": "Starry Sky roof",
@@ -429,9 +429,9 @@
       ],
       "cabin": [
         {
-          "x": "7",
-          "y": "44",
-          "img": "int-trunk",
+          "x": "6",
+          "y": "24",
+          "img": "int-card-trunk",
           "tag": "Trunk",
           "label": "Trunk",
           "title": "Largest trunk in its class",
@@ -439,9 +439,9 @@
           "alt": "V27 with the tailgate open"
         },
         {
-          "x": "19",
-          "y": "52",
-          "img": "int-rear",
+          "x": "22",
+          "y": "41",
+          "img": "int-card-rear",
           "tag": "Second row",
           "label": "Second-row space",
           "title": "Largest second row in its class",
@@ -449,9 +449,9 @@
           "alt": "V27 rear bench"
         },
         {
-          "x": "31",
-          "y": "67",
-          "img": "int-flat",
+          "x": "27",
+          "y": "70",
+          "img": "int-card-flat",
           "tag": "Camping",
           "label": "Flat-folding seats",
           "title": "Second row down, bedroom up",

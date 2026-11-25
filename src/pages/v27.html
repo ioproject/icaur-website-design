@@ -149,9 +149,9 @@
   <!-- ===== INTERIOR: two full-screen views with hotspots; a click opens the detail card on the right (model.js [data-hotspots]) ===== -->
   <section class="interior" id="interni" aria-labelledby="interior-title">
     <div class="ipanel" data-hotspots>
-      <div class="ipanel__stage" style="--r: 1.3333">
-        <img src="{{ @assets }}img/v27/int-cockpit-1440.jpg" srcset="{{ @assets }}img/v27/int-cockpit-800.jpg 800w, {{ @assets }}img/v27/int-cockpit-1440.jpg 1440w, {{ @assets }}img/v27/int-cockpit-2048.jpg 2048w"
-          sizes="100vw" alt="{{ v27.interior.alt }}" width="1440" height="1080" loading="lazy">
+      <div class="ipanel__stage" style="--r: 1.7778">
+        <img src="{{ @assets }}img/v27/int-dash-1440.jpg" srcset="{{ @assets }}img/v27/int-dash-800.jpg 800w, {{ @assets }}img/v27/int-dash-1440.jpg 1440w, {{ @assets }}img/v27/int-dash-1920.jpg 1920w"
+          sizes="100vw" alt="{{ v27.interior.alt }}" width="1920" height="1080" loading="lazy">
         {% for s in v27.interior.cockpit %}
         <button class="hotspot" type="button" data-spot style="left: {{ s.x }}%; top: {{ s.y }}%" aria-expanded="false" aria-label="{{ v27.interior.spot }} {{ s.label }}"><span aria-hidden="true"></span></button>
         {% endfor %}
@@ -165,7 +165,7 @@
         </button>
         {% for s in v27.interior.cockpit %}
         <article class="spotcard__slide" data-spot-slide hidden>
-          <img class="spotcard__img" src="{{ @assets }}img/v27/{{ s.img }}-800.jpg" alt="{{ s.alt }}" width="800" height="450" loading="lazy">
+          <img class="spotcard__img" src="{{ @assets }}img/v27/{{ s.img }}.jpg" alt="{{ s.alt }}" width="800" height="508" loading="lazy">
           <div class="spotcard__body">
             <p class="spotcard__tag">{{ s.tag }}</p>
             <h3 class="spotcard__title">{{ s.title }}</h3>
@@ -186,8 +186,8 @@
     </div>
     <div class="ipanel" data-hotspots>
       <div class="ipanel__stage" style="--r: 1.7778">
-        <img src="{{ @assets }}img/v27/int-cabin-1440.jpg" srcset="{{ @assets }}img/v27/int-cabin-800.jpg 800w, {{ @assets }}img/v27/int-cabin-1440.jpg 1440w"
-          sizes="100vw" alt="{{ v27.interior.cabin_alt }}" width="1440" height="810" loading="lazy">
+        <img src="{{ @assets }}img/v27/int-side-1440.jpg" srcset="{{ @assets }}img/v27/int-side-800.jpg 800w, {{ @assets }}img/v27/int-side-1440.jpg 1440w, {{ @assets }}img/v27/int-side-1920.jpg 1920w"
+          sizes="100vw" alt="{{ v27.interior.cabin_alt }}" width="1920" height="1080" loading="lazy">
         {% for s in v27.interior.cabin %}
         <button class="hotspot" type="button" data-spot style="left: {{ s.x }}%; top: {{ s.y }}%" aria-expanded="false" aria-label="{{ v27.interior.spot }} {{ s.label }}"><span aria-hidden="true"></span></button>
         {% endfor %}
@@ -198,7 +198,7 @@
         </button>
         {% for s in v27.interior.cabin %}
         <article class="spotcard__slide" data-spot-slide hidden>
-          <img class="spotcard__img" src="{{ @assets }}img/v27/{{ s.img }}-800.jpg" alt="{{ s.alt }}" width="800" height="450" loading="lazy">
+          <img class="spotcard__img" src="{{ @assets }}img/v27/{{ s.img }}.jpg" alt="{{ s.alt }}" width="800" height="508" loading="lazy">
           <div class="spotcard__body">
             <p class="spotcard__tag">{{ s.tag }}</p>
             <h3 class="spotcard__title">{{ s.title }}</h3>
