@@ -223,19 +223,19 @@
   </section>
 
   <!-- ===== SPACE ===== -->
-  <section class="space section section--light" aria-labelledby="space-title">
+  <section class="space section" aria-labelledby="space-title">   <!-- dark brown, continues the interior image above -->
     <div class="container">
       <header class="section-head">
-        <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.space.eyebrow }}</p>
+        <p class="eyebrow" data-reveal>{{ v27.space.eyebrow }}</p>
         <h2 class="section-title" id="space-title" data-reveal>{{ v27.space.title }}</h2>
       </header>
-      <dl class="bignums bignums--dark">
+      <dl class="bignums">
         {% for s in v27.space.stats %}
         <div data-reveal><dd><span data-count="{{ s.count }}">{{ s.count }}</span><small>{{ s.unit }}</small></dd><dt>{{ s.label }}</dt></div>
         {% endfor %}
       </dl>
       <p class="space__head" data-reveal>{{ v27.space.head }}</p>
-      <p class="note">{{ v27.space.note }}</p>   <!-- source of the figures above -->
+      <p class="note note--dim">{{ v27.space.note }}</p>   <!-- source of the figures above -->
     </div>
   </section>
 
