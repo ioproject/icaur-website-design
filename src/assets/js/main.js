@@ -347,10 +347,33 @@
     tick();
   });
 
+  /* ---------- Hand-off forms [data-handoff]: keep the values for the next page, without putting them in the URL ---------- */
+  $$('form[data-handoff]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      if (!f.checkValidity()) return;
+      var data = {};
+      $$('input, select, textarea', f).forEach(function (el) { if (el.name && el.value) data[el.name] = el.value; });
+      try { sessionStorage.setItem('icaur-prefill', JSON.stringify(data)); } catch (err) { return; }   // no storage: plain GET fallback
+      e.preventDefault();
+      window.location.href = f.getAttribute('action');
+    });
+  });
+
   /* ---------- Forms [data-form]: client-side validation, success message ----------
      Prototype only: nothing is sent. Messages come from data-msg-* attributes. */
   $$('[data-form]').forEach(function (form) {
     var success = form.querySelector('[data-form-success]');
+    // [data-prefill]: values handed over by a short form elsewhere ([data-handoff], kept in sessionStorage)
+    if (form.hasAttribute('data-prefill')) {
+      try {
+        var handed = JSON.parse(sessionStorage.getItem('icaur-prefill') || 'null');
+        sessionStorage.removeItem('icaur-prefill');
+        if (handed) Object.keys(handed).forEach(function (key) {
+          var f = form.querySelector('[name="' + key.replace(/[^\w-]/g, '') + '"]');
+          if (f && f.type !== 'checkbox' && f.type !== 'hidden') f.value = handed[key];
+        });
+      } catch (e) {}
+    }
     // [data-prefill]: fields named like a URL parameter take its value (?motivo=test-drive&modello=v27)
     if (form.hasAttribute('data-prefill') && window.URLSearchParams) {
       new URLSearchParams(window.location.search).forEach(function (val, key) {

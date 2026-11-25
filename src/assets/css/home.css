@@ -274,6 +274,39 @@
 /* 130px between the V25 box and the News title */
 .models--v25 { padding-bottom: 0; }
 .news { padding-top: 130px; }
-/* Contacts tile before the footer: one tile, full width, text aligned to the page margin */
-.split--single .split__body { padding-inline: var(--home-x); }
-.split--single { grid-template-columns: 1fr; }
+
+/* ---------- Pre-footer contact panel ---------- */
+.cta-panel { padding: 10px; background: var(--c-white); }
+.cta-panel__inner {
+  --cta-bg: #EDE6DA;   /* beige */
+  display: grid; gap: var(--space-lg);
+  padding: clamp(2rem, 1rem + 5vw, 6.5rem) var(--home-x);
+  border-radius: 12px; color: var(--c-black);
+  background-color: var(--cta-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='98' height='98' viewBox='0 0 98 98'%3E%3Cpath d='M49 43v12M43 49h12' stroke='%23C9BCA6' stroke-width='1'/%3E%3C/svg%3E");
+  background-position: -10px -10px;
+}
+.cta-panel__copy { display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-lg); }
+.cta-panel__eyebrow { font-size: var(--fs-sm); font-weight: 500; color: var(--c-gray); margin-bottom: var(--space-sm); }
+.cta-panel__title { font-size: clamp(1.625rem, 1.1rem + 1.6vw, 2.5rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.025em; max-width: 22ch; }
+.cta-panel__media { overflow: hidden; border-radius: 12px; aspect-ratio: 16 / 10; }
+.cta-panel__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.cta-form { display: grid; gap: 8px; max-width: 34rem; }
+.cta-form__row { position: relative; }
+.cta-form__input {
+  width: 100%; height: 56px; padding: 0 24px; border-radius: var(--radius-pill);
+  border: 1px solid rgba(35, 24, 21, 0.12); background: var(--c-white); color: var(--c-black); font: inherit; font-size: var(--fs-sm);
+}
+.cta-form__input::placeholder { color: var(--c-gray); }
+.cta-form__input:focus-visible { outline: 2px solid var(--c-brown); outline-offset: 2px; }
+.cta-form__row .cta-form__input { padding-right: 230px; }
+.cta-form__btn { position: absolute; top: 4px; right: 4px; bottom: 4px; min-height: 0; }
+@media (max-width: 559px) {
+  .cta-form__row .cta-form__input { padding-right: 24px; }
+  .cta-form__btn { position: static; width: 100%; margin-top: 8px; min-height: 48px; }
+}
+@media (min-width: 900px) {
+  .cta-panel__inner { grid-template-columns: 1fr 1.45fr; gap: clamp(2rem, 1rem + 5vw, 8rem); }
+  .cta-panel__media { aspect-ratio: auto; min-height: 100%; }
+}
