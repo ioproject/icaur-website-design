@@ -517,6 +517,8 @@ select.field__input { appearance: none; background-image: url("data:image/svg+xm
 .site-footer__input:focus-visible { outline: 2px solid var(--c-gold); outline-offset: 2px; }
 .site-footer__email .site-footer__input { padding-right: 150px; }
 .site-footer__submit { position: absolute; top: 4px; right: 4px; bottom: 4px; min-height: 0; }
+.site-footer__error { margin-top: 10px; font-size: var(--fs-xs); color: #F2A07A; }
+.site-footer__ok { margin-top: 10px; font-size: var(--fs-sm); color: var(--c-gold); }
 .site-footer__note { margin-top: 10px; font-size: var(--fs-xs); color: rgba(255, 255, 255, 0.45); }
 
 .site-footer__cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-md); }

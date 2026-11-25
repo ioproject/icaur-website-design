@@ -45,7 +45,8 @@
       "email_ph": "name@email.com",
       "subscribe": "Subscribe",
       "newsletter_note": "By subscribing you accept the privacy policy.",
-      "test_drive": "Test drive"
+      "test_drive": "Test drive",
+      "newsletter_ok": "Thank you, you're subscribed."
     },
     "form": {
       "name": "First name",

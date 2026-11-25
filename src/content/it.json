@@ -45,7 +45,8 @@
       "email_ph": "nome@email.it",
       "subscribe": "Iscriviti",
       "newsletter_note": "Iscrivendoti accetti l'informativa privacy.",
-      "test_drive": "Test drive"
+      "test_drive": "Test drive",
+      "newsletter_ok": "Grazie, iscrizione ricevuta."
     },
     "form": {
       "name": "Nome",

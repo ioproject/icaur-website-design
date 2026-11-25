@@ -24,7 +24,8 @@
 
     <div class="site-footer__row site-footer__row--mid">
       <!-- Newsletter: segnaposto, da collegare al servizio di invio scelto -->
-      <form class="site-footer__news" action="#" method="post" aria-labelledby="footer-news-title">
+      <form class="site-footer__news" action="#" method="post" novalidate data-form aria-labelledby="footer-news-title"
+        data-msg-required="{{ common.form.error_required }}" data-msg-email="{{ common.form.error_email }}">
         <p class="site-footer__label" id="footer-news-title">{{ common.footer.newsletter }}</p>
         <div class="site-footer__fields">
           <label class="visually-hidden" for="fn-province">{{ common.footer.province_ph }}</label>
@@ -35,7 +36,9 @@
             <button class="btn btn--light btn--sm btn--noicon site-footer__submit" type="submit">{{ common.footer.subscribe }}</button>
           </div>
         </div>
+        <p class="site-footer__error" id="fn-email-err" role="alert" hidden></p>
         <p class="site-footer__note">{{ common.footer.newsletter_note }}</p>
+        <p class="site-footer__ok" role="status" data-form-success hidden>{{ common.footer.newsletter_ok }}</p>
       </form>
 
       <div class="site-footer__links">
