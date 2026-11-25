@@ -110,7 +110,7 @@
           "label": "i-AWD",
           "title": "One motor per axle",
           "text": "150 kW at the front, 185 kW at the rear. All-wheel drive splits the power on its own, on tarmac and on sand.",
-          "img": "innovation-awd",
+          "img": "tech-awd",
           "alt": "Top view of the V27 platform with its two electric motors"
         },
         {
@@ -118,7 +118,7 @@
           "label": "REEV",
           "title": "Electric, without range anxiety",
           "text": "The Golden REEV system takes the V27 from 0 to 100 km/h in 5.9 seconds. The engine reaches 45.79% thermal efficiency and only works to recharge the battery.",
-          "img": "innovation-reev",
+          "img": "tech-reev",
           "alt": "Engine of the Golden REEV range extender system"
         },
         {
@@ -126,7 +126,7 @@
           "label": "Safety",
           "title": "A steel cage around you",
           "text": "11 transverse and 11 longitudinal beams, hot-formed steel at 39 key points and 32,186 N·m/deg of torsional rigidity.",
-          "img": "innovation-safety",
+          "img": "tech-safety",
           "alt": "High-rigidity cage body of the V27"
         }
       ],

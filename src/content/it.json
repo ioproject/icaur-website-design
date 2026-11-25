@@ -110,7 +110,7 @@
           "label": "i-AWD",
           "title": "Un motore per asse",
           "text": "150 kW all'anteriore, 185 kW al posteriore. La trazione integrale distribuisce la spinta da sola, su asfalto come sulla sabbia.",
-          "img": "innovation-awd",
+          "img": "tech-awd",
           "alt": "Pianale del V27 visto dall'alto con i due motori elettrici"
         },
         {
@@ -118,7 +118,7 @@
           "label": "REEV",
           "title": "Elettrico, senza ansia da ricarica",
           "text": "Il sistema Golden REEV porta il V27 da 0 a 100 km/h in 5,9 secondi. Il motore termico ha un rendimento del 45,79% e lavora solo per ricaricare la batteria.",
-          "img": "innovation-reev",
+          "img": "tech-reev",
           "alt": "Motore termico del sistema range extender Golden REEV"
         },
         {
@@ -126,7 +126,7 @@
           "label": "Sicurezza",
           "title": "Una gabbia d'acciaio intorno a te",
           "text": "11 traverse e 11 longheroni, acciaio stampato a caldo in 39 punti chiave e una rigidità torsionale di 32.186 N·m/grado.",
-          "img": "innovation-safety",
+          "img": "tech-safety",
           "alt": "Scocca a gabbia ad alta rigidità del V27"
         }
       ],
