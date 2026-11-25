@@ -189,6 +189,8 @@ input, select, textarea { font: inherit; }
   background: var(--c-orange); transform: scaleX(0); transform-origin: left; transition: transform var(--dur) var(--ease-out);
 }
 .btn--text:hover > span::after, .btn--text:focus-visible > span::after { transform: scaleX(1); }
+.btn--noicon { padding-inline: 24px; }   /* label only, no arrow circle */
+.btn--noicon::after { display: none; }
 .btn--dark { background: var(--c-black); color: var(--c-white); }
 .btn--dark:hover { background: var(--c-brown); }
 
