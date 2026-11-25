@@ -106,7 +106,7 @@
 
 .model-card__body { position: relative; width: 100%; padding: var(--space-lg) var(--home-x) calc(var(--space-lg) + 40px); display: grid; gap: var(--space-sm); justify-items: start; }
 .model-card__logo { width: clamp(150px, 14vw, 220px); height: auto; }
-.model-card__line { font-size: var(--fs-md); font-weight: 300; }
+.model-card__line { font-size: var(--fs-md); font-weight: 500; }
 .model-card__text { color: var(--c-text-dim); max-width: 40ch; }
 .model-card .link-arrow { margin-top: var(--space-xs); }
 .model-card:hover .link-arrow .icon { transform: translateX(6px); }
