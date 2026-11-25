@@ -496,7 +496,7 @@ select.field__input { appearance: none; background-image: url("data:image/svg+xm
 .site-footer__row--mid { margin-top: clamp(3rem, 2rem + 6vw, 9rem); }
 .site-footer__logo { width: 112px; margin-bottom: var(--space-md); }
 .site-footer__tagline { font-size: clamp(1.125rem, 1rem + 0.5vw, 1.5rem); font-weight: 500; letter-spacing: -0.01em; }
-.site-footer__text { font-size: clamp(1.125rem, 1rem + 0.5vw, 1.5rem); line-height: 1.3; letter-spacing: -0.01em; color: rgba(255, 255, 255, 0.5); max-width: 30ch; }
+.site-footer__text { font-size: calc(clamp(1.125rem, 1rem + 0.5vw, 1.5rem) - 6px); line-height: 1.3; letter-spacing: -0.01em; color: rgba(255, 255, 255, 0.5); max-width: 30ch; }
 
 .site-footer__big { border-top: 0; }
 .site-footer__big li { border-bottom: 1px solid var(--c-line-dark); }
