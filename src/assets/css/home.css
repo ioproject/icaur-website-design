@@ -327,3 +327,10 @@
 .hero__pause .icon--play, .hero__pause[aria-pressed="true"] .icon--pause { display: none; }
 .hero__pause[aria-pressed="true"] .icon--play { display: block; }
 @media (max-width: 767px) { .hero__pause { width: 44px; height: 44px; } }
+
+/* Hero slide labels: small beige block with oblique stripes in front of the text */
+.hero__content .eyebrow { display: flex; align-items: center; gap: 10px; }
+.hero__content .eyebrow::before {
+  content: ""; flex: none; width: 48px; height: 12px;
+  background: repeating-linear-gradient(-32deg, var(--c-gold) 0 3.4px, transparent 3.4px 5.2px);   /* shallow stripes rising to the right */
+}
