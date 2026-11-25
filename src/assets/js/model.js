@@ -125,8 +125,11 @@
       });
       setOrigin();
       if (cover) {
+        // the title and the first caption stay hidden under the word and appear once the cover has gone
+        var head = section.querySelector('.turn__head');
         tl.fromTo(cover, { scale: 1, autoAlpha: 1 }, { scale: 90, ease: 'power3.in', duration: lead }, 0)
-          .to(cover, { autoAlpha: 0, duration: 0.1 });
+          .to(cover, { autoAlpha: 0, duration: 0.1 })
+          .fromTo([head, caps[0]], { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out', immediateRender: true }, lead + 0.1);
       }
       // the first view settles in (zoom out), then each view replaces the previous one
       tl.fromTo(imgs[0], { scale: 1.18 }, { scale: 1, duration: 1 + lead }, 0);
@@ -139,7 +142,7 @@
 
       return function () {
         section.classList.remove('is-pinned');
-        gsap.set(imgs.concat(caps, cover ? [cover] : []), { clearProps: 'all' });
+        gsap.set(imgs.concat(caps, cover ? [cover, section.querySelector('.turn__head')] : []), { clearProps: 'all' });
       };
     });
 
