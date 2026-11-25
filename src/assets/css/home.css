@@ -243,7 +243,7 @@
 .tech.is-pinned .tech__img.is-active { opacity: 1; transform: none; }
 .tech.is-pinned .tech__copy { grid-column: 2; z-index: 1; }
 .tech.is-pinned .tech__copy { position: relative; height: 100vh; }
-.tech.is-pinned .tech__sticky::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, transparent 45%, rgba(0, 0, 0, 0.35)); pointer-events: none; }   /* a bit more depth behind the text */
+.tech.is-pinned .tech__sticky::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 200px), linear-gradient(to right, transparent 45%, rgba(0, 0, 0, 0.35)); pointer-events: none; }   /* black fade from the top (200px) + depth behind the text */
 .tech.is-pinned .tech__eyebrow { position: absolute; top: calc(var(--header-top) + var(--header-h) + var(--space-lg)); left: 0; }
 .tech.is-pinned .tech__viewport { position: absolute; inset: 0; }
 .tech.is-pinned .tech__list { position: absolute; left: 0; right: 0; top: 34vh; gap: var(--space-lg); transition: transform 0.9s var(--ease-out); }
