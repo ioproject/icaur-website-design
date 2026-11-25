@@ -2,7 +2,7 @@
      At the top of the page: full width, transparent, white text over the hero.
      After scrolling (.is-solid): the bar narrows and two light panels appear, joined by an orange connector:
      [ menu button · links ] —— [ dealers ]   logo always centred on the bar   (language switch: in the footer)
-     The menu button and "Modelli" both open the full mega menu below. -->
+     The menu button opens the full mega menu below. -->
 <a class="skip-link" href="#main">{{ common.skip }}</a>
 
 <header class="site-header" data-header>
@@ -17,12 +17,7 @@
     <nav class="site-nav" aria-label="{{ common.nav.label }}">
       <ul class="site-nav__list">
         <li><a class="site-nav__link" href="chi-siamo.html"{{ @current:chi-siamo.html }}><span>{{ common.nav.life }}</span></a></li>
-        <li>
-          <button class="site-nav__link site-nav__trigger" type="button" aria-expanded="false" aria-controls="megamenu" data-menu-toggle>
-            {{ common.nav.models }}
-            <svg class="icon icon--plus" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5v9M1.5 6h9" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          </button>
-        </li>
+        <li><a class="site-nav__link" href="v27.html"{{ @current:v27.html }}><span><span class="nocase">iCAUR</span> V27</span></a></li>
         <!-- News: pagina WordPress, link provvisorio -->
         <li class="site-nav__push"><a class="site-nav__link" href="#news">{{ common.nav.news }}</a></li>
       </ul>
@@ -46,7 +41,7 @@
 
 </header>
 
-<!-- Mega menu (opened by the menu button and by "Modelli") -->
+<!-- Mega menu (opened by the menu button) -->
 <div class="megamenu" id="megamenu" role="dialog" aria-modal="true" aria-label="{{ common.menu.label }}" data-megamenu hidden>
   <div class="megamenu__inner">
 
