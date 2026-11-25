@@ -40,18 +40,39 @@
       </div>
     </div>
 
-    <div class="container mhero__bottom">
-      <dl class="mhero__stats" data-hero-fade>
-        {% for s in v27.hero.stats %}
-        <div><dt>{{ s.label }}</dt><dd><span data-count="{{ s.count }}" data-decimals="{{ s.dec }}">{{ s.value }}</span><small>{{ s.unit }}</small></dd></div>
-        {% endfor %}
-      </dl>
+    <div class="container mhero__bottom mhero__bottom--end">
       <button class="video-toggle" type="button" aria-pressed="false" data-video-toggle
         data-label-pause="{{ common.video_pause }}" data-label-play="{{ common.video_play }}">
         <svg class="icon icon--pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="1.8"/></svg>
         <svg class="icon icon--play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg>
         <span class="visually-hidden" data-video-toggle-label>{{ common.video_pause }}</span>
       </button>
+    </div>
+  </section>
+
+  <!-- ===== KEY FIGURES (brown band) + DESIGN mask: the word is cut out of the brown and grows on scroll (main.js [data-mask-zoom]) ===== -->
+  <section class="vstats" aria-label="{{ v27.hero.stats_label }}">
+    <dl class="vstats__grid">
+      {% for s in v27.hero.stats %}
+      <div class="vstats__item"><dt>{{ s.label }}</dt><dd><span data-count="{{ s.count }}" data-decimals="{{ s.dec }}">{{ s.value }}</span><small>{{ s.unit }}</small></dd></div>
+      {% endfor %}
+    </dl>
+  </section>
+
+  <section class="maskzoom" data-mask-zoom>
+    <div class="maskzoom__sticky">
+      <img class="maskzoom__img" src="{{ @assets }}img/v27/out-canyon-1440.jpg"
+        srcset="{{ @assets }}img/v27/out-canyon-800.jpg 800w, {{ @assets }}img/v27/out-canyon-1440.jpg 1440w, {{ @assets }}img/v27/out-canyon-2048.jpg 2048w"
+        sizes="100vw" alt="{{ v27.hero.mask_alt }}" width="2048" height="1152" loading="lazy" data-mask-img>
+      <svg class="maskzoom__cover" aria-hidden="true" data-mask-cover>
+        <defs>
+          <mask id="maskzoom-word" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
+            <rect width="100%" height="100%" fill="#fff"/>
+            <text class="maskzoom__word" x="50%" y="50%" text-anchor="middle" dominant-baseline="central" fill="#000" data-mask-word>{{ v27.hero.mask_word }}</text>
+          </mask>
+        </defs>
+        <rect width="100%" height="100%" fill="currentColor" mask="url(#maskzoom-word)"/>
+      </svg>
     </div>
   </section>
 

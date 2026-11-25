@@ -261,7 +261,10 @@
           "unit": "L",
           "label": "Boot, 5 seats up"
         }
-      ]
+      ],
+      "stats_label": "Key figures",
+      "mask_word": "DESIGN",
+      "mask_alt": "The ivory V27 driving on a dirt track between canyon rocks"
     },
     "turn": {
       "eyebrow": "Design",

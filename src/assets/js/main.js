@@ -11,6 +11,7 @@
      [data-reveal]                                              fade/slide in on enter
      [data-drift]                                               block slides down its column on scroll
      [data-grow-box]                                            centred box grows to full width on scroll
+     [data-mask-zoom] [data-mask-cover] [data-mask-word]        word cut out of a cover, zooms through on scroll
      [data-tech] [data-tech-item] [data-tech-img]               pinned stage: image + titles change on scroll
      [data-parallax="N"]                                        parallax, N = % of travel
      [data-grow-bg]                                             section background grows to full width
@@ -565,6 +566,27 @@
           scrollTrigger: { trigger: el, start: 'top 95%', end: 'top 5%', scrub: true }
         });
       });
+    });
+  }
+
+  // Mask zoom: the cover with the cut-out word scales up from the middle of the "I" until the image below is fully visible
+  if (!reduceMotion) {
+    $$('[data-mask-zoom]').forEach(function (sec) {
+      var cover = sec.querySelector('[data-mask-cover]'), word = sec.querySelector('[data-mask-word]');
+      var img = sec.querySelector('[data-mask-img]');
+      if (!cover || !word) return;
+      var origin = function () {
+        var txt = word.textContent, i = txt.indexOf('I'), box;
+        try { box = word.getExtentOfChar(i < 0 ? Math.floor(txt.length / 2) : i); } catch (e) { box = null; }
+        return box ? (box.x + box.width / 2) + 'px ' + (box.y + box.height * 0.55) + 'px' : '50% 50%';
+      };
+      var setOrigin = function () { gsap.set(cover, { transformOrigin: origin() }); };
+      setOrigin();
+      var tl = gsap.timeline({ scrollTrigger: { trigger: sec, start: 'top top', end: 'bottom bottom', scrub: true, onRefresh: setOrigin } });
+      tl.fromTo(cover, { scale: 1 }, { scale: 90, ease: 'power3.in', duration: 1 }, 0.15)
+        .to(cover, { autoAlpha: 0, duration: 0.08 }, 1.07);
+      if (img) tl.fromTo(img, { scale: 1.15 }, { scale: 1, ease: 'none', duration: 1.15 }, 0);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
     });
   }
 
