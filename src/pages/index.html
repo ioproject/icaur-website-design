@@ -145,7 +145,7 @@
   <!-- V25 (coming soon) -->
   <section class="models models--v25 section" aria-label="V25">
     <div class="models__grid">
-      <article class="model-card model-card--v25" data-cursor-target="{{ common.coming_soon }}">
+      <article class="model-card model-card--v25">
         <a class="model-card__link" href="v25.html" aria-label="V25 — {{ home.models.v25.cta }}"></a>
         <div class="model-card__media">
           <img src="{{ @assets }}img/home/v25-coast-1312.jpg" srcset="{{ @assets }}img/home/v25-coast-800.jpg 800w, {{ @assets }}img/home/v25-coast-1312.jpg 1312w" sizes="(min-width: 1500px) 1440px, 100vw" alt="{{ home.models.v25.alt }}" width="1312" height="1080" loading="lazy">
@@ -154,10 +154,7 @@
           <span class="badge badge--gold">{{ common.coming_soon }}</span>
           <img class="model-card__logo" src="{{ @assets }}img/brand/v25-logo.webp" alt="V25" width="232" height="32" loading="lazy">
           <p class="model-card__line">{{ home.models.v25.line }}</p>
-          <p class="model-card__text">{{ home.models.v25.text }}</p>
-          <span class="link-arrow" aria-hidden="true">{{ home.models.v25.cta }}
-            <svg class="icon" viewBox="0 0 20 20"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          </span>
+          <span class="btn btn--text btn--text-light model-card__cta" aria-hidden="true"><span>{{ home.models.v25.cta }}</span></span>
         </div>
       </article>
     </div>
