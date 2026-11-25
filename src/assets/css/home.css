@@ -227,6 +227,7 @@
 .tech__label { display: block; font-size: var(--fs-xs); font-weight: 500; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--c-gold); margin-bottom: var(--space-xs); }
 .tech__text { margin: var(--space-sm) 0 var(--space-xs); max-width: 40ch; color: rgba(255, 255, 255, 0.82); font-size: clamp(1rem, 0.9rem + 0.4vw, 20px); line-height: 1.3; }
 .btn--text-light { color: var(--c-white); }
+.tech .btn--text { font-size: 14px; }
 
 /* pinned version (class added by main.js on desktop, without reduced motion) */
 .tech.is-pinned { padding-block: 0; height: calc(100vh * var(--tech-steps, 3)); }
