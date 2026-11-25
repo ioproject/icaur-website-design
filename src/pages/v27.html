@@ -225,9 +225,7 @@
   <!-- ===== SPACE ===== -->
   <section class="space section" aria-labelledby="space-title">   <!-- dark brown, continues the interior image above -->
     <div class="container">
-      <header class="section-head">
-        <h2 class="section-title" id="space-title" data-reveal>{{ v27.space.title }}</h2>
-      </header>
+      <h2 class="visually-hidden" id="space-title">{{ v27.space.title }}</h2>   <!-- heading kept for screen readers only -->
       <dl class="bignums">
         {% for s in v27.space.stats %}
         <div data-reveal><dd><span data-count="{{ s.count }}">{{ s.count }}</span><small>{{ s.unit }}</small></dd><dt>{{ s.label }}</dt></div>
