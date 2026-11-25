@@ -306,10 +306,10 @@
 .hero__slide + .hero__slide.is-active .hero__content > :nth-child(4) { transition-delay: 0.24s; }
 .hero__slide + .hero__slide .hero__poster { object-position: 50% 45%; }
 
-.hero__footer { z-index: 2; border-top: 0; padding-top: 0; justify-content: space-between; }
+.hero__footer { z-index: 2; border-top: 0; padding-top: 0; justify-content: flex-end; gap: 20px; }   /* steps right next to the pause button */
 .hero__steps { display: flex; gap: 12px; }
 .hero__step { position: relative; width: clamp(56px, 6vw, 100px); height: 32px; }   /* tall hit area, thin bar */
-.hero__step::before, .hero__step-fill { content: ""; position: absolute; left: 0; top: 50%; height: 10px; margin-top: -5px; border-radius: 5px; }
+.hero__step::before, .hero__step-fill { content: ""; position: absolute; left: 0; top: 50%; height: 4px; margin-top: -2px; border-radius: 2px; }
 .hero__step::before { right: 0; background: rgba(255, 255, 255, 0.3); }
 .hero__step-fill { width: 0; background: var(--c-white); }
 .hero__step.is-done .hero__step-fill { width: 100%; }
