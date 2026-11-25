@@ -271,3 +271,6 @@
 .model-card--v25 .badge { margin-bottom: 20px; }
 .model-card--v25 .model-card__logo { margin-bottom: 15px; }
 @media (max-width: 767px) { .model-card--v25 { aspect-ratio: auto; min-height: 440px; } }   /* 16:9 is too short for the text on phones */
+/* 130px between the V25 box and the News title */
+.models--v25 { padding-bottom: 0; }
+.news { padding-top: 130px; }
