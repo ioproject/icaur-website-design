@@ -610,3 +610,11 @@ select.field__input { appearance: none; background-image: url("data:image/svg+xm
 .carousel-dots button { width: 20px; height: 32px; display: inline-flex; align-items: center; justify-content: center; }
 .carousel-dots button::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-black); opacity: 0.18; transition: opacity var(--dur-fast); }
 .carousel-dots button[aria-current="true"]::before { opacity: 0.8; }
+
+/* Footer, middle row: "Newsletter" sits above the fields, so the fields start on the row line;
+   the link columns are pushed down so their first baseline lines up with the bottom of the fields */
+@media (min-width: 900px) {
+  .site-footer__news { position: relative; }
+  .site-footer__news .site-footer__label { position: absolute; bottom: 100%; left: 0; margin-bottom: var(--space-sm); }
+  .site-footer__links { padding-top: var(--footer-links-offset, 30px); }
+}
