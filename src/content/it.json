@@ -418,7 +418,7 @@
         },
         {
           "x": "24",
-          "y": "21",
+          "y": "27",
           "img": "int-card-roof",
           "tag": "Tetto vetrato",
           "label": "Tetto Starry Sky",
@@ -430,7 +430,7 @@
       "cabin": [
         {
           "x": "6",
-          "y": "24",
+          "y": "29",
           "img": "int-card-trunk",
           "tag": "Bagagliaio",
           "label": "Bagagliaio",

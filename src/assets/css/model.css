@@ -328,7 +328,7 @@
   padding: clamp(4rem, 3rem + 4vw, 7rem) var(--home-x, var(--gutter)) var(--space-sm);
 }
 .ipanel__head::after {
-  content: ""; position: absolute; left: 0; right: 0; top: 100%; height: clamp(70px, 7vw, 105px); pointer-events: none;
+  content: ""; position: absolute; left: 0; right: 0; top: 100%; height: calc(clamp(70px, 7vw, 105px) + 50px); pointer-events: none;
   background: linear-gradient(to bottom, #24170f, rgba(36, 23, 15, 0));
 }
 .ipanel__head .section-title { margin-inline: auto; }
