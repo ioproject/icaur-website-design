@@ -115,7 +115,7 @@
         <p class="colors__name" aria-live="polite" data-color-name>{{ v27.colors.items.0.name }}</p>
         <div class="swatches" role="radiogroup" aria-label="{{ v27.colors.label }}" data-swatches>
           {% for c in v27.colors.items %}
-          <button class="swatch" type="button" role="radio" aria-checked="false" data-color="{{ c.slug }}" data-name="{{ c.name }}" style="--swatch: {{ c.hex }}">
+          <button class="swatch" type="button" role="radio" aria-checked="false" data-color="{{ c.slug }}" data-name="{{ c.name }}" style="--swatch: {{ c.hex }}; background-image: url({{ @assets }}img/v27/swatch-{{ c.slug }}.jpg)">
             <span class="visually-hidden">{{ c.name }}</span>
             <span class="swatch__label" aria-hidden="true">{{ c.name }}</span>
           </button>

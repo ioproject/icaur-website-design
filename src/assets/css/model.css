@@ -308,16 +308,6 @@
 
 /* ---------- Colours, full screen: no heading, big swatches, name under the active one ---------- */
 .colors.section { padding: 0; }
-.swatch { background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 50%, rgba(0, 0, 0, 0.06) 50%), var(--swatch); }   /* soft diagonal sheen */
-.swatch {   /* metallic paint chip: dark edges, a bright streak across the upper third, built from each colour */
-  background: linear-gradient(160deg,
-    color-mix(in srgb, var(--swatch) 55%, #000) 0%,
-    color-mix(in srgb, var(--swatch) 85%, #000) 20%,
-    color-mix(in srgb, var(--swatch) 55%, #fff) 29%,
-    var(--swatch) 36%,
-    color-mix(in srgb, var(--swatch) 80%, #000) 62%,
-    color-mix(in srgb, var(--swatch) 50%, #000) 100%);
-}
 .swatch__label { display: none; }
 @media (min-width: 768px) {
   .colors__stage { aspect-ratio: auto; height: 100vh; height: 100svh; min-height: 560px; max-height: none; }
@@ -335,3 +325,6 @@
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
   }
 }
+
+/* Swatch chips: real paint photos set inline as background-image (80px, shown at 40px); the hex colour stays as fallback */
+.swatch { background: var(--swatch) center / cover no-repeat; }
