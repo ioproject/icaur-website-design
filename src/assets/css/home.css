@@ -274,3 +274,6 @@
 /* 130px between the V25 box and the News title */
 .models--v25 { padding-bottom: 0; }
 .news { padding-top: 130px; }
+/* Contacts tile before the footer: one tile, full width, text aligned to the page margin */
+.split--single .split__body { padding-inline: var(--home-x); }
+.split--single { grid-template-columns: 1fr; }
