@@ -4,7 +4,7 @@
   <title>{{ about.meta.title }}</title>
   <meta name="description" content="{{ about.meta.description }}">
 {% include head %}
-  <link rel="stylesheet" href="{{ @assets }}css/about.css">
+  <link rel="stylesheet" href="{{ @assets }}css/about.css?v={{ @v }}">
   <link rel="preload" as="image" href="{{ @assets }}img/about/hero-1440.jpg" imagesrcset="{{ @assets }}img/about/hero-800.jpg 800w, {{ @assets }}img/about/hero-1440.jpg 1440w, {{ @assets }}img/about/hero-2048.jpg 2048w" imagesizes="100vw">
 </head>
 <body class="page page--about">
@@ -171,6 +171,6 @@
 
 {% include footer %}
 {% include scripts %}
-<script src="{{ @assets }}js/model.js" defer></script>
+<script src="{{ @assets }}js/model.js?v={{ @v }}" defer></script>
 </body>
 </html>

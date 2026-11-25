@@ -4,7 +4,7 @@
   <title>{{ v27.meta.title }}</title>
   <meta name="description" content="{{ v27.meta.description }}">
 {% include head %}
-  <link rel="stylesheet" href="{{ @assets }}css/model.css">
+  <link rel="stylesheet" href="{{ @assets }}css/model.css?v={{ @v }}">
   <link rel="preload" as="image" href="{{ @assets }}video/v27-hero-poster.jpg" media="(min-width: 768px)">
   <link rel="preload" as="image" href="{{ @assets }}video/v27-hero-mobile-poster.jpg" media="(max-width: 767px)">
 </head>
@@ -350,6 +350,6 @@
 
 {% include footer %}
 {% include scripts %}
-<script src="{{ @assets }}js/model.js" defer></script>
+<script src="{{ @assets }}js/model.js?v={{ @v }}" defer></script>
 </body>
 </html>

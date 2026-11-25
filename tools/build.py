@@ -17,11 +17,13 @@ Template syntax
     {{ home.hero.title }}            text from the language JSON (raw HTML allowed)
     {% include header %}             src/partials/header.html
     {% for item in home.news.items %} ... {{ item.title }} ... {% endfor %}   (list in the JSON, not nested)
+    {{ @v }}       build timestamp, appended to CSS/JS URLs so browsers fetch the new files
     {{ @assets }}  path prefix to dist/assets/      {{ @lang }}  current language code
     {{ @page }}    current page file name           {{ @href_en }}  this page in English (same for every language)
     {{ @current:v27.html }}  -> ' aria-current="page"' when on that page
 """
 import json, os, re, shutil, sys, time
+import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC, DIST = os.path.join(ROOT, "src"), os.path.join(ROOT, "dist")
@@ -77,6 +79,7 @@ def render(tpl, content, ctx, where):
 
 
 def build():
+    version = str(int(time.time()))   # new value on every build (also in --watch mode)
     t0 = time.time()
     if os.path.isdir(DIST):
         shutil.rmtree(DIST)
@@ -92,7 +95,7 @@ def build():
             with open(os.path.join(SRC, "pages", page), encoding="utf-8") as f:
                 tpl = f.read()
             up = "" if lang == DEFAULT else "../"
-            ctx = {"@lang": lang, "@page": page, "@assets": up + "assets/"}
+            ctx = {"@lang": lang, "@page": page, "@assets": up + "assets/", "@v": version}
             for l in LANGS:  # {{ @href_it }}, {{ @href_en }}: this page in each language
                 ctx[f"@href_{l}"] = up + (page if l == DEFAULT else f"{l}/{page}")
             html = render(tpl, content, ctx, f"{lang}/{page}")

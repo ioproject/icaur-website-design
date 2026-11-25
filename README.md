@@ -58,6 +58,7 @@ mater/          materiale originale HQ, 8 GB (non versionato)
 - Le interazioni si attivano con attributi `data-*` documentati in testa a `main.js`; nessuna dipendenza dall'ordine delle sezioni.
 - `prefers-reduced-motion` è rispettato: niente scroll fluido né effetti forti, solo dissolvenze.
 - Il nome del brand si scrive sempre **iCAUR**: dentro testi in maiuscolo va avvolto in `<span class="nocase">`.
+- CSS e JS sono richiamati con `?v=<timestamp>` (generato a ogni build), così i browser non usano file vecchi in cache. In WordPress si ottiene lo stesso con il parametro `ver` di `wp_enqueue_style` / `wp_enqueue_script` (es. `filemtime()` del file).
 
 ## Rigenerare i media
 

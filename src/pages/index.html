@@ -4,7 +4,7 @@
   <title>{{ meta.home_title }}</title>
   <meta name="description" content="{{ meta.home_description }}">
 {% include head %}
-  <link rel="stylesheet" href="{{ @assets }}css/home.css">
+  <link rel="stylesheet" href="{{ @assets }}css/home.css?v={{ @v }}">
   <link rel="preload" as="image" href="{{ @assets }}video/home-hero-poster.jpg" media="(min-width: 768px)">
   <link rel="preload" as="image" href="{{ @assets }}video/home-hero-mobile-poster.jpg" media="(max-width: 767px)">
 </head>
