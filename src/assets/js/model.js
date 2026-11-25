@@ -115,24 +115,26 @@
         try { box = word.getExtentOfChar(i < 0 ? Math.floor(txt.length / 2) : i); } catch (e) {}
         gsap.set(cover, { transformOrigin: box ? (box.x + box.width / 2) + 'px ' + (box.y + box.height * 0.55) + 'px' : '50% 50%' });
       };
-      var lead = cover ? 1.6 : 0;
+      // with a cover, the reveal plays on its own (not scrubbed) as soon as the section reaches the top, and rewinds when scrolling back above it
+      var head = section.querySelector('.turn__head');
+      var intro = cover ? gsap.timeline({ paused: true })
+        .fromTo(cover, { scale: 1, autoAlpha: 1 }, { scale: 90, ease: 'power3.in', duration: 1.3 }, 0)
+        .to(cover, { autoAlpha: 0, duration: 0.15 })
+        .fromTo(imgs[0], { scale: 1.18 }, { scale: 1, ease: 'power2.out', duration: 1.8 }, 0)
+        .fromTo([head, caps[0]], { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out', immediateRender: true }, 1.35) : null;
       var tl = gsap.timeline({
         defaults: { ease: 'power2.inOut' },
         scrollTrigger: {
-          trigger: section, start: 'top top', end: '+=' + ((steps.length + lead) * 90) + '%',
-          pin: true, scrub: 0.6, anticipatePin: 1, onRefresh: setOrigin
+          trigger: section, start: 'top top', end: '+=' + (steps.length * 90) + '%',
+          pin: true, scrub: 0.6, anticipatePin: 1, onRefresh: setOrigin,
+          onEnter: function () { if (intro) intro.timeScale(1).play(); },
+          onLeaveBack: function () { if (intro) intro.timeScale(1.6).reverse(); }
         }
       });
       setOrigin();
-      if (cover) {
-        // the title and the first caption stay hidden under the word and appear once the cover has gone
-        var head = section.querySelector('.turn__head');
-        tl.fromTo(cover, { scale: 1, autoAlpha: 1 }, { scale: 90, ease: 'power3.in', duration: lead }, 0)
-          .to(cover, { autoAlpha: 0, duration: 0.1 })
-          .fromTo([head, caps[0]], { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power2.out', immediateRender: true }, lead + 0.1);
-      }
-      // the first view settles in (zoom out), then each view replaces the previous one
-      tl.fromTo(imgs[0], { scale: 1.18 }, { scale: 1, duration: 1 + lead }, 0);
+      // without a cover the first view settles in (zoom out) with the scroll; then each view replaces the previous one
+      if (cover) tl.to({}, { duration: 0.6 });
+      else tl.fromTo(imgs[0], { scale: 1.18 }, { scale: 1, duration: 1 }, 0);
       for (var i = 1; i < steps.length; i++) {
         tl.to(caps[i - 1], { opacity: 0, y: -30, duration: 0.4 }, '+=0.5')
           .fromTo(imgs[i], { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 1 }, '<')
@@ -142,7 +144,8 @@
 
       return function () {
         section.classList.remove('is-pinned');
-        gsap.set(imgs.concat(caps, cover ? [cover, section.querySelector('.turn__head')] : []), { clearProps: 'all' });
+        if (intro) intro.kill();
+        gsap.set(imgs.concat(caps, cover ? [cover, head] : []), { clearProps: 'all' });
       };
     });
 
