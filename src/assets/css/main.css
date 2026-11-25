@@ -533,7 +533,7 @@ select.field__input { appearance: none; background-image: url("data:image/svg+xm
 .site-footer__cols a { font-size: var(--fs-md); }
 .site-footer__cols a:hover, .site-footer__legal a:hover, .site-footer__social a:hover { color: var(--c-gold); }
 
-.site-footer__links { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: var(--space-md); }
+.site-footer__links { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-md); }
 .site-footer__cols { flex: 1 1 auto; max-width: 30rem; }
 .site-footer__social { display: flex; gap: 18px; }
 .site-footer__social a { display: inline-flex; color: var(--c-white); transition: color var(--dur-fast); }
