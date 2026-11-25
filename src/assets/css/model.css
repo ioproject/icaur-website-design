@@ -388,4 +388,4 @@
 .space .eyebrow { color: var(--c-gold); }
 .space .bignums div { border-top-color: rgba(255, 255, 255, 0.18); }
 .space .bignums dt { color: rgba(255, 255, 255, 0.7); }
-.space__head { color: rgba(255, 255, 255, 0.8); }
+.space__head { color: rgba(255, 255, 255, 0.8); max-width: none; }   /* one line on desktop */
