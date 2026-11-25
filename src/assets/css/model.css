@@ -317,11 +317,11 @@
   }
   .colors__name { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }   /* still announced */
   .colors__picker .swatches { flex-wrap: nowrap; gap: 40px; }
-  .colors__picker .swatch { width: 40px; height: 40px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); }
+  .colors__picker .swatch { width: 35px; height: 35px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); }
   .colors__picker .swatch::after { inset: -7px; border-width: 2px; }
   .swatch[aria-checked="true"] .swatch__label {
     display: block; position: absolute; top: calc(100% + 22px); left: 50%; transform: translateX(-50%);
-    font-size: 18px; font-weight: 400; white-space: nowrap; color: var(--c-white);
+    font-size: 16px; font-weight: 500; white-space: nowrap; color: var(--c-white);
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
   }
 }
