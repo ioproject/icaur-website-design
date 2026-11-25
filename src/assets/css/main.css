@@ -304,7 +304,7 @@ input, select, textarea { font: inherit; }
 
 /* hover underline (orange), shared by every header link; also marks the current page */
 .site-nav__link::after, .site-header__cta::after {
-  content: ""; position: absolute; left: 8px; right: 8px; bottom: 2px; height: 2px; border-radius: 1px;
+  content: ""; position: absolute; left: 8px; right: 8px; bottom: 7px; height: 2px; border-radius: 1px;
   background: var(--c-orange); transform: scaleX(0); transform-origin: left; transition: transform var(--dur) var(--ease-out);
 }
 .site-nav__link:hover::after, .site-nav__link[aria-current]::after,
