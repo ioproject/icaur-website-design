@@ -16,44 +16,63 @@
   <!-- INTRO: the hero stays in place (sticky) while the next section slides over it -->
   <div class="intro">
 
-  <!-- HERO -->
-  <section class="hero" data-hero>
-    <div class="hero__frame">
-      <div class="hero__media" data-parallax="18">
-        <picture>
-          <source media="(max-width: 767px)" srcset="{{ @assets }}video/home-hero-mobile-poster.jpg">
-          <img class="hero__poster" src="{{ @assets }}video/home-hero-poster.jpg" alt="" width="1600" height="650" fetchpriority="high">
-        </picture>
-        <video class="hero__video" muted loop playsinline preload="none" aria-hidden="true"
-          data-video data-autoplay
-          data-src="{{ @assets }}video/home-hero.mp4"
-          data-src-mobile="{{ @assets }}video/home-hero-mobile.mp4"></video>
+  <!-- HERO: two slides that change automatically (main.js [data-slider]); progress steps + pause button at the bottom (WCAG 2.2.2) -->
+  <section class="hero" data-hero data-slider data-interval="8000" aria-roledescription="carousel" aria-label="{{ home.hero.slides_label }}">
+
+    <div class="hero__slide is-active" data-slide role="group" aria-roledescription="slide" aria-label="{{ home.hero.slide_label }} 1 {{ home.hero.of }} 2">
+      <div class="hero__frame">
+        <div class="hero__media" data-parallax="18">
+          <picture>
+            <source media="(max-width: 767px)" srcset="{{ @assets }}video/home-hero-mobile-poster.jpg">
+            <img class="hero__poster" src="{{ @assets }}video/home-hero-poster.jpg" alt="" width="1600" height="650" fetchpriority="high">
+          </picture>
+          <video class="hero__video" muted loop playsinline preload="none" aria-hidden="true"
+            data-video data-autoplay
+            data-src="{{ @assets }}video/home-hero.mp4"
+            data-src-mobile="{{ @assets }}video/home-hero-mobile.mp4"></video>
+        </div>
+        <div class="hero__shade" aria-hidden="true"></div>
       </div>
-      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="eyebrow" data-hero-fade>{{ home.hero.eyebrow }}</p>
+        <h1 class="hero__title" data-split-lines>{{ home.hero.title }}</h1>
+        <p class="hero__text" data-hero-fade>{{ home.hero.text }}</p>
+        <div class="hero__actions" data-hero-fade>
+          <a class="btn btn--light" href="v27.html">{{ home.hero.cta_primary }}</a>
+          <!-- Concessionari: pagina WordPress, link provvisorio -->
+          <a class="btn btn--ghost" href="#concessionari">{{ common.nav.dealers }}</a>
+        </div>
+      </div>
     </div>
 
-    <div class="hero__content">
-      <p class="eyebrow" data-hero-fade>{{ home.hero.eyebrow }}</p>
-      <h1 class="hero__title" data-split-lines>{{ home.hero.title }}</h1>
-      <p class="hero__text" data-hero-fade>{{ home.hero.text }}</p>
-      <div class="hero__actions" data-hero-fade>
-        <a class="btn btn--light" href="v27.html">{{ home.hero.cta_primary }}</a>
-        <!-- Concessionari: pagina WordPress, link provvisorio -->
-        <a class="btn btn--ghost" href="#concessionari">{{ common.nav.dealers }}</a>
+    <div class="hero__slide" data-slide role="group" aria-roledescription="slide" aria-label="{{ home.hero.slide_label }} 2 {{ home.hero.of }} 2" aria-hidden="true" inert>
+      <div class="hero__frame">
+        <div class="hero__media">
+          <img class="hero__poster" src="{{ @assets }}img/home/life-1920.jpg" srcset="{{ @assets }}img/home/life-768.jpg 768w, {{ @assets }}img/home/life-1280.jpg 1280w, {{ @assets }}img/home/life-1920.jpg 1920w" sizes="100vw" alt="{{ home.hero.life_alt }}" width="1920" height="1071" loading="lazy">
+        </div>
+        <div class="hero__shade" aria-hidden="true"></div>
+      </div>
+      <div class="hero__content">
+        <p class="eyebrow">{{ home.hero.life_eyebrow }}</p>
+        <h2 class="hero__title">{{ home.hero.life_title }}</h2>
+        <p class="hero__text">{{ home.hero.life_text }}</p>
+        <div class="hero__actions">
+          <a class="btn btn--light" href="#manifesto"><span>{{ home.hero.life_cta }}</span></a>
+        </div>
       </div>
     </div>
 
     <div class="hero__footer">
-      <a class="scroll-explore" href="#manifesto">
-        <svg class="scroll-explore__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m-4.5-4.5L8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>{{ common.scroll }}</span>
-      </a>
-      <!-- discreet pause control for the background video (WCAG 2.2.2) -->
-      <button class="video-mini" type="button" aria-pressed="false" data-video-toggle
-        data-label-pause="{{ common.video_pause }}" data-label-play="{{ common.video_play }}">
-        <svg class="icon icon--pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.5v9M10.5 3.5v9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-        <svg class="icon icon--play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
-        <span class="visually-hidden" data-video-toggle-label>{{ common.video_pause }}</span>
+      <div class="hero__steps">
+        <button class="hero__step is-active" type="button" data-slide-to="0" aria-label="{{ home.hero.slide_label }} 1" aria-current="true"><span class="hero__step-fill"></span></button>
+        <button class="hero__step" type="button" data-slide-to="1" aria-label="{{ home.hero.slide_label }} 2"><span class="hero__step-fill"></span></button>
+      </div>
+      <!-- pauses the slideshow and the background video -->
+      <button class="hero__pause" type="button" aria-pressed="false" data-video-toggle
+        data-label-pause="{{ home.hero.pause }}" data-label-play="{{ home.hero.play }}">
+        <svg class="icon icon--pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.5v9M10.5 3.5v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg class="icon icon--play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z" fill="currentColor"/></svg>
+        <span class="visually-hidden" data-video-toggle-label>{{ home.hero.pause }}</span>
       </button>
     </div>
   </section>

@@ -79,7 +79,17 @@
       "title": "Always in<br>our element",
       "text": "Scopri un SUV che unisce design distintivo, interni spaziosi e guida elettrica ad autonomia estesa.",
       "cta_primary": "Scopri V27",
-      "cta_secondary": "La gamma"
+      "cta_secondary": "La gamma",
+      "slide_label": "Slide",
+      "of": "di",
+      "life_eyebrow": "<span class=\"nocase\">iCAUR</span> Life",
+      "life_title": "Una sola auto,<br>tanti mondi",
+      "life_text": "Un classico vero non sbiadisce con il tempo: entra nella vita di ogni giorno.",
+      "life_cta": "Scopri <span class=\"nocase\">iCAUR</span> Life",
+      "life_alt": "Un V27 giallo parcheggiato su un campo da tennis in terra rossa, visto dall'alto",
+      "slides_label": "In evidenza",
+      "pause": "Metti in pausa",
+      "play": "Riprendi"
     },
     "statement": {
       "eyebrow": "<span class=\"nocase\">iCAUR</span> Life",

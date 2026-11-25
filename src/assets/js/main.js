@@ -4,6 +4,7 @@
    on all pages:
      [data-header] [data-megamenu] [data-menu-toggle]          header + mega menu
      [data-video] [data-autoplay] [data-video-toggle]            background videos
+     [data-slider] [data-slide] [data-slide-to]                  hero slideshow with progress steps (paused by [data-video-toggle])
      [data-hover-video]                                         video on card hover
      [data-split-lines] [data-hero-fade]                        hero title reveal
      [data-words]                                               words lighting up on scroll
@@ -191,6 +192,58 @@
         entries.forEach(function (en) { en.isIntersecting ? play(v) : v.pause(); });
       }, { threshold: 0.6 }).observe(card);
     }
+  });
+
+  /* ---------- Hero slideshow [data-slider]: a timer moves to the next slide; the step bar only shows the progress ---------- */
+  $$('[data-slider]').forEach(function (root) {
+    var slides = $$('[data-slide]', root), steps = $$('[data-slide-to]', root);
+    var toggle = root.querySelector('[data-video-toggle]');
+    if (slides.length < 2) return;
+    var interval = parseInt(root.dataset.interval, 10) || 8000;
+    root.style.setProperty('--hero-interval', interval + 'ms');
+    var current = 0, timer = null, startedAt = 0, remaining = interval;
+    var isPaused = function () { return toggle ? toggle.getAttribute('aria-pressed') === 'true' : reduceMotion; };
+    var stop = function () { clearTimeout(timer); timer = null; };
+    var run = function () {
+      stop();
+      if (isPaused()) return;
+      startedAt = Date.now();
+      timer = setTimeout(function () { go(current + 1); }, remaining);
+    };
+    var go = function (i) {
+      current = (i + slides.length) % slides.length;
+      slides.forEach(function (sl, k) {
+        var on = k === current;
+        sl.classList.toggle('is-active', on);
+        if (on) { sl.removeAttribute('aria-hidden'); sl.removeAttribute('inert'); }
+        else { sl.setAttribute('aria-hidden', 'true'); sl.setAttribute('inert', ''); }
+        var v = sl.querySelector('video[data-autoplay]');
+        if (v) { if (on && !isPaused()) play(v); else v.pause(); }
+      });
+      steps.forEach(function (st, k) {
+        st.classList.remove('is-active');
+        st.classList.toggle('is-done', k < current);
+        if (k === current) st.setAttribute('aria-current', 'true'); else st.removeAttribute('aria-current');
+      });
+      var active = steps[current];
+      if (active) { void active.offsetWidth; active.classList.add('is-active'); }   // restart the fill animation
+      remaining = interval;
+      run();
+    };
+    steps.forEach(function (st) {
+      st.addEventListener('click', function () { go(parseInt(st.dataset.slideTo, 10)); });
+    });
+    // the pause button (also pauses the video): runs after the video toggle has updated aria-pressed
+    if (toggle) toggle.addEventListener('click', function () {
+      setTimeout(function () {
+        var paused = isPaused();
+        root.classList.toggle('is-paused', paused);
+        if (paused) { if (timer) remaining = Math.max(0, remaining - (Date.now() - startedAt)); stop(); }
+        else run();
+      }, 0);
+    });
+    root.classList.toggle('is-paused', isPaused());
+    go(0);
   });
 
   /* ---------- Horizontal accordion ---------- */
@@ -548,7 +601,7 @@
       // the hero underneath dims slightly as it gets covered
       var hero = section.previousElementSibling;
       if (hero && hero.matches('[data-hero]')) {
-        gsap.to(hero.querySelector('.hero__frame') || hero, {
+        gsap.to($$('.hero__frame', hero).length ? $$('.hero__frame', hero) : hero, {
           opacity: 0.45, ease: 'none',
           scrollTrigger: { trigger: section, start: 'top bottom', end: 'top top', scrub: true }
         });

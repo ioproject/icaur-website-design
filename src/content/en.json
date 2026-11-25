@@ -79,7 +79,17 @@
       "title": "Always in<br>our element",
       "text": "Discover an SUV that combines distinctive design, a spacious interior and electric drive with extended range.",
       "cta_primary": "Discover the V27",
-      "cta_secondary": "The lineup"
+      "cta_secondary": "The lineup",
+      "slide_label": "Slide",
+      "of": "of",
+      "life_eyebrow": "<span class=\"nocase\">iCAUR</span> Life",
+      "life_title": "One car,<br>many worlds",
+      "life_text": "A true classic doesn't fade with time: it grows into everyday life.",
+      "life_cta": "Discover <span class=\"nocase\">iCAUR</span> Life",
+      "life_alt": "A yellow V27 parked on a clay tennis court, seen from above",
+      "slides_label": "Highlights",
+      "pause": "Pause",
+      "play": "Play"
     },
     "statement": {
       "eyebrow": "<span class=\"nocase\">iCAUR</span> Life",
