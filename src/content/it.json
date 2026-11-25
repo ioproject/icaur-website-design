@@ -37,7 +37,15 @@
       "cookies": "Cookie",
       "privacy": "Privacy",
       "copyright": "© 2026 iCAUR Italia — [Ragione sociale e P.IVA dell'importatore]",
-      "disclaimer": "Le immagini hanno scopo illustrativo. Allestimenti e dotazioni possono variare in base al mercato."
+      "disclaimer": "Le immagini hanno scopo illustrativo. Allestimenti e dotazioni possono variare in base al mercato.",
+      "tagline": "Classic Never Fades.",
+      "about": "iCAUR crede che i veri classici non siano né retrò né di moda. Design che dura, tecnologia elettrica e un'auto pensata per accompagnarti a lungo.",
+      "newsletter": "Newsletter",
+      "province_ph": "Provincia",
+      "email_ph": "nome@email.it",
+      "subscribe": "Iscriviti",
+      "newsletter_note": "Iscrivendoti accetti l'informativa privacy.",
+      "test_drive": "Test drive"
     },
     "form": {
       "name": "Nome",

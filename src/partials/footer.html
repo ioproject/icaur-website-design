@@ -1,55 +1,81 @@
-<!-- ==================== FOOTER (→ footer.php) ==================== -->
+<!-- ==================== FOOTER (→ footer.php) ====================
+     Layout on a dark background:
+     [ tagline + about ]            [ large model links with dividers ]
+     [ newsletter form ]            [ two link columns ]   [ social icons ]
+     [ disclaimer ] — [ copyright · legal links · language ] -->
 <footer class="site-footer">
   <div class="container">
-    <div class="site-footer__top">
-      <div class="site-footer__brand">
-        <img src="{{ @assets }}img/brand/icaur-logo-white.svg" alt="iCAUR" width="140" height="25" loading="lazy">
-        <p class="site-footer__slogan">{{ common.footer.slogan }}</p>
-      </div>
 
-      <nav class="site-footer__nav" aria-label="Footer">
-        <div>
-          <h2 class="site-footer__title">{{ common.footer.models }}</h2>
-          <ul>
-            <li><a href="v27.html">iCAUR V27</a></li>
-            <li><a href="v25.html">iCAUR V25 <span class="badge badge--quiet">{{ common.coming_soon }}</span></a></li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="site-footer__title">{{ common.footer.company }}</h2>
-          <ul>
-            <li><a href="chi-siamo.html">{{ common.nav.about }}</a></li>
-            <li><a href="#news">{{ common.nav.news }}</a></li>
-            <li><a href="#concessionari">{{ common.nav.dealers }}</a></li>
-            <li><a href="contatti.html">{{ common.nav.contact }}</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="site-footer__title">{{ common.footer.follow }}</h2>
-          <!-- Link social: segnaposto, da completare con i profili ufficiali -->
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">TikTok</a></li>
-            <li><a href="#">YouTube</a></li>
-          </ul>
-        </div>
+    <div class="site-footer__row site-footer__row--top">
+      <div class="site-footer__about">
+        <img class="site-footer__logo" src="{{ @assets }}img/brand/icaur-logo-white.svg" alt="iCAUR" width="112" height="20" loading="lazy">
+        <p class="site-footer__tagline">{{ common.footer.tagline }}</p>
+        <p class="site-footer__text">{{ common.footer.about }}</p>
+      </div>
+      <nav aria-label="{{ common.footer.models }}">
+        <ul class="site-footer__big">
+          <li><a href="v27.html"><span><span class="nocase">iCAUR</span> V27</span></a></li>
+          <li><a href="v25.html"><span><span class="nocase">iCAUR</span> V25</span> <span class="badge badge--quiet">{{ common.coming_soon }}</span></a></li>
+          <li><a href="chi-siamo.html"><span>{{ common.nav.life }}</span></a></li>
+          <li><a href="#concessionari">{{ common.nav.dealers }}</a></li>
+        </ul>
       </nav>
     </div>
 
+    <div class="site-footer__row site-footer__row--mid">
+      <!-- Newsletter: segnaposto, da collegare al servizio di invio scelto -->
+      <form class="site-footer__news" action="#" method="post" aria-labelledby="footer-news-title">
+        <p class="site-footer__label" id="footer-news-title">{{ common.footer.newsletter }}</p>
+        <div class="site-footer__fields">
+          <label class="visually-hidden" for="fn-province">{{ common.footer.province_ph }}</label>
+          <input class="site-footer__input site-footer__input--short" id="fn-province" name="provincia" type="text" autocomplete="address-level2" placeholder="{{ common.footer.province_ph }}">
+          <div class="site-footer__email">
+            <label class="visually-hidden" for="fn-email">Email</label>
+            <input class="site-footer__input" id="fn-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="{{ common.footer.email_ph }}" required>
+            <button class="btn btn--light btn--sm site-footer__submit" type="submit">{{ common.footer.subscribe }}</button>
+          </div>
+        </div>
+        <p class="site-footer__note">{{ common.footer.newsletter_note }}</p>
+      </form>
+
+      <div class="site-footer__links">
+      <nav class="site-footer__cols" aria-label="Footer">
+        <ul>
+          <li><a href="chi-siamo.html">{{ common.nav.about }}</a></li>
+          <li><a href="#news">{{ common.nav.news }}</a></li>
+          <li><a href="contatti.html">{{ common.nav.contact }}</a></li>
+        </ul>
+        <ul>
+          <li><a href="contatti.html?motivo=test-drive">{{ common.footer.test_drive }}</a></li>
+          <li><a href="#concessionari">{{ common.nav.dealers }}</a></li>
+        </ul>
+      </nav>
+
+      <!-- Link social: segnaposto, da completare con i profili ufficiali -->
+      <ul class="site-footer__social" aria-label="{{ common.footer.follow }}">
+          <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg></a></li>
+          <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21h3z" fill="currentColor"/></svg></a></li>
+          <li><a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 3c.3 2.2 1.6 3.6 3.9 3.8v2.9c-1.4.1-2.7-.3-3.9-1.1v6.1c0 3.4-2.4 5.8-5.6 5.8-3.1 0-5.5-2.4-5.5-5.4 0-3.3 2.8-5.8 6.3-5.3v3c-1.6-.4-3.2.6-3.2 2.3 0 1.3 1 2.4 2.4 2.4 1.5 0 2.5-1.1 2.5-2.9V3h3.1z" fill="currentColor"/></svg></a></li>
+          <li><a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.6 2.6 0 0 0 2.4 7.2 27 27 0 0 0 2 12a27 27 0 0 0 .4 4.8 2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8A27 27 0 0 0 22 12a27 27 0 0 0-.4-4.8zM10 15V9l5.2 3L10 15z" fill="currentColor"/></svg></a></li>
+      </ul>
+      </div>
+    </div>
+
+    <p class="site-footer__disclaimer">{{ common.footer.disclaimer }}</p>
+
     <div class="site-footer__bottom">
       <p class="site-footer__copy">{{ common.footer.copyright }}</p>
-      <div class="lang-switch site-footer__lang" role="group" aria-label="{{ common.nav.lang_label }}">
-        <a href="{{ @href_it }}" hreflang="it" lang="it" data-lang="it">Italiano</a>
-        <a href="{{ @href_en }}" hreflang="en" lang="en" data-lang="en">English</a>
-      </div>
       <ul class="site-footer__legal">
         <li><a href="#legal">{{ common.footer.legal }}</a></li>
         <li><a href="#cookies">{{ common.footer.cookies }}</a></li>
         <li><a href="#privacy">{{ common.footer.privacy }}</a></li>
       </ul>
+      <div class="lang-switch site-footer__lang" role="group" aria-label="{{ common.nav.lang_label }}">
+        <a href="{{ @href_it }}" hreflang="it" lang="it" data-lang="it">Italiano</a>
+        <a href="{{ @href_en }}" hreflang="en" lang="en" data-lang="en">English</a>
+      </div>
     </div>
-    <p class="site-footer__disclaimer">{{ common.footer.disclaimer }}</p>
+
   </div>
 </footer>
 <!-- ==================== /FOOTER ==================== -->
