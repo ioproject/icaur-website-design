@@ -61,7 +61,6 @@
 .turn-step__caption { padding: var(--space-sm) var(--gutter) 0; max-width: 44ch; }
 .turn-step__title { font-size: var(--fs-md); font-weight: 500; margin-bottom: var(--space-2xs); }
 .turn-step__text { color: var(--c-text-dim); font-size: var(--fs-sm); }
-.turn__progress { display: none; }
 
 @media (min-width: 1024px) {
   .js .turn.is-pinned { height: 100vh; padding: 0; overflow: hidden; }
@@ -75,8 +74,6 @@
     background: rgba(20, 13, 11, 0.45); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
     border: 1px solid var(--c-line-dark);
   }
-  .js .turn.is-pinned .turn__progress { display: block; position: absolute; z-index: 3; left: 50%; bottom: 6vh; width: 160px; height: 2px; margin-left: -80px; background: rgba(255, 255, 255, 0.25); }
-  .turn__progress span { display: block; height: 100%; background: var(--c-white); transform-origin: left; transform: scaleX(0); }
 }
 
 /* ---------- Colours ---------- */

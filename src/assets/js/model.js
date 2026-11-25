@@ -100,7 +100,6 @@
       section.classList.add('is-pinned');
       var imgs = steps.map(function (s) { return s.querySelector('.turn-step__img'); });
       var caps = steps.map(function (s) { return s.querySelector('.turn-step__caption'); });
-      var bar = section.querySelector('[data-turn-progress]');
       imgs.forEach(function (img) { img.loading = 'eager'; });
 
       gsap.set(imgs.slice(1), { opacity: 0 });
@@ -119,8 +118,7 @@
         defaults: { ease: 'power2.inOut' },
         scrollTrigger: {
           trigger: section, start: 'top top', end: '+=' + ((steps.length + lead) * 90) + '%',
-          pin: true, scrub: 0.6, anticipatePin: 1, onRefresh: setOrigin,
-          onUpdate: function (st) { if (bar) bar.style.transform = 'scaleX(' + st.progress + ')'; }
+          pin: true, scrub: 0.6, anticipatePin: 1, onRefresh: setOrigin
         }
       });
       setOrigin();
