@@ -225,9 +225,10 @@ input, select, textarea { font: inherit; }
   max-width: calc(100vw - 2 * var(--edge)); margin-inline: auto;
   display: flex; align-items: stretch; height: var(--header-h);
   color: var(--c-white);
-  transition: left 0.7s var(--ease-bar), right 0.7s var(--ease-bar), max-width 0.7s var(--ease-bar), color 0.4s var(--ease-out);
+  transition: left 0.7s var(--ease-bar), right 0.7s var(--ease-bar), max-width 0.7s var(--ease-bar), color 0.4s var(--ease-out), transform 0.45s var(--ease-out);
 }
 @media (min-width: 768px) { .site-header { --edge: 28px; } }
+.site-header.is-hidden { transform: translateY(calc(-100% - var(--header-top) - 8px)); }   /* hidden while scrolling down (main.js) */
 .site-header.is-solid {
   left: var(--gutter); right: var(--gutter);
   max-width: calc(var(--container) - 2 * var(--gutter));
