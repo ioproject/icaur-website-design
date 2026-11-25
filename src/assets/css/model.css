@@ -132,20 +132,6 @@
   .details__bars span::after { content: ""; position: absolute; inset: 0; background: var(--c-brown); transform: scaleX(var(--p, 0)); transform-origin: left; }
 }
 
-/* ---------- Interior ---------- */
-.interior { background: var(--c-brown); color: var(--c-white); }
-.interior .eyebrow { color: var(--c-gold); }
-.interior .lead { color: rgba(255, 255, 255, 0.82); }
-.interior__frame { overflow: hidden; margin-bottom: var(--space-lg); }
-.interior__frame img { width: 100%; max-height: 92vh; object-fit: cover; aspect-ratio: 4 / 3; }
-@media (min-width: 1024px) { .interior__frame img { aspect-ratio: 16 / 9; } }
-.features { display: grid; gap: var(--space-md); }
-.feature { padding-top: var(--space-sm); border-top: 1px solid rgba(255, 255, 255, 0.2); }
-.feature__title { font-size: var(--fs-md); font-weight: 500; margin-bottom: var(--space-xs); }
-.feature__text { font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.78); }
-@media (min-width: 768px) { .features { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1200px) { .features { grid-template-columns: repeat(4, 1fr); } }
-
 /* ---------- Big numbers ---------- */
 .bignums { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg) var(--space-md); margin-top: var(--space-lg); }
 .bignums div { display: flex; flex-direction: column; gap: var(--space-xs); padding-top: var(--space-sm); border-top: 1px solid var(--c-line-dark); }
@@ -328,3 +314,70 @@
 
 /* Swatch chips: real paint photos set inline as background-image (80px, shown at 40px); the hex colour stays as fallback */
 .swatch { background: var(--swatch) center / cover no-repeat; }
+
+/* ---------- Interior: full-screen views with hotspots + detail card ---------- */
+.interior { background: #1a120f; color: var(--c-white); }
+.ipanel { position: relative; height: 100vh; height: 100svh; min-height: 560px; overflow: hidden; }
+.ipanel__stage {   /* keeps the image ratio so the hotspots stay on their spot; always covers the panel */
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: max(100%, calc(max(100svh, 560px) * var(--r))); aspect-ratio: var(--r);
+}
+.ipanel__stage > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ipanel__head {
+  position: absolute; z-index: 2; left: 0; right: 0; top: 0; pointer-events: none;
+  padding: calc(var(--header-top) + var(--header-h) + var(--space-md)) var(--home-x, var(--gutter)) var(--space-xl);
+  background: linear-gradient(to bottom, rgba(20, 13, 11, 0.6), rgba(20, 13, 11, 0));
+}
+.ipanel__head .section-title { max-width: 14ch; }
+
+.hotspot {
+  position: absolute; z-index: 1; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--c-white); color: var(--c-ink);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28); transition: transform 0.3s var(--ease-out), background 0.3s, color 0.3s;
+}
+.hotspot::before {   /* soft pulse */
+  content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.7);
+  animation: hotspot-pulse 2.4s var(--ease-out) infinite;
+}
+.hotspot > span { position: relative; width: 14px; height: 14px; transition: transform 0.35s var(--ease-out); }
+.hotspot > span::before, .hotspot > span::after { content: ""; position: absolute; left: 0; top: 50%; width: 100%; height: 1.6px; margin-top: -0.8px; background: currentColor; border-radius: 1px; }
+.hotspot > span::after { transform: rotate(90deg); }
+.hotspot:hover { transform: scale(1.1); }
+.hotspot.is-active { background: var(--c-ink); color: var(--c-white); }
+.hotspot.is-active > span { transform: rotate(45deg); }
+.hotspot.is-active::before { animation: none; opacity: 0; }
+@keyframes hotspot-pulse { 0% { transform: scale(0.9); opacity: 0.9; } 70%, 100% { transform: scale(1.5); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .hotspot::before { animation: none; } }
+
+.spotcard {
+  position: absolute; z-index: 4; top: calc(var(--header-top) + var(--header-h) + 16px); bottom: 24px; right: var(--home-x, var(--gutter));
+  width: min(420px, calc(100% - 2 * var(--home-x, var(--gutter))));
+  display: flex; flex-direction: column; padding: 10px; border-radius: 22px;
+  background: var(--c-white); color: var(--c-ink); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  opacity: 0; transform: translateX(40px); transition: opacity 0.4s var(--ease-out), transform 0.5s var(--ease-out);
+}
+.spotcard.is-open { opacity: 1; transform: none; }
+.spotcard__slide { display: flex; flex-direction: column; min-height: 0; flex: 1; overflow: auto; }
+.spotcard__slide[hidden] { display: none; }
+.spotcard__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; flex: none; }
+.spotcard__body { padding: 26px 22px 12px; }
+.spotcard__tag { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
+.spotcard__title { font-size: clamp(1.5rem, 1.2rem + 0.8vw, 1.875rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; }
+.spotcard__text { font-size: 16px; line-height: 1.55; color: #3a3330; }
+.spotcard__close {
+  position: absolute; z-index: 1; top: 22px; right: 22px; width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--c-white); color: var(--c-ink); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+.spotcard__close svg { width: 16px; height: 16px; }
+.spotcard__nav { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px 12px; flex: none; }
+.spotcard__arrow { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--c-ink); color: var(--c-white); transition: background var(--dur-fast); }
+.spotcard__arrow:hover { background: var(--c-brown); }
+.spotcard__arrow svg { width: 20px; height: 20px; }
+.spotcard__dots { display: flex; gap: 8px; }
+.spotcard__dots span { width: 7px; height: 7px; border-radius: 50%; background: #d6d1cc; transition: background var(--dur-fast); }
+.spotcard__dots span.is-active { background: var(--c-ink); }
+@media (max-width: 767px) {
+  .spotcard { top: auto; left: 12px; right: 12px; bottom: 12px; width: auto; max-height: calc(100% - 24px); transform: translateY(40px); }
+  .spotcard__img { aspect-ratio: 16 / 9; }
+  .spotcard__body { padding: 18px 14px 8px; }
+}

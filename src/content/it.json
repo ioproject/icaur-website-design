@@ -379,22 +379,84 @@
       "title": "Tecnologia avanzata,<br>calore da salotto",
       "text": "Pelle color cuoio, linee orizzontali e uno schermo centrale da 15,4 pollici. Tutto è dove te lo aspetti.",
       "alt": "Plancia e sedili anteriori del V27 in pelle color cuoio",
-      "features": [
+      "card_label": "Dettaglio",
+      "close": "Chiudi",
+      "prev": "Dettaglio precedente",
+      "next": "Dettaglio successivo",
+      "spot": "Apri il dettaglio:",
+      "cabin_alt": "Abitacolo del V27 visto di lato, con i sedili in pelle color cuoio",
+      "cockpit": [
         {
+          "x": "50",
+          "y": "36",
+          "img": "int-cockpit",
+          "tag": "Infotainment",
+          "label": "Schermo centrale da 15,4 pollici",
           "title": "Schermo 15,4\" 2.5K",
-          "text": "Chip Qualcomm 8155, comandi vocali, aggiornamenti OTA (con connettività attiva) e monitoraggio del conducente (DMS)."
+          "text": "Chip Qualcomm 8155, comandi vocali, aggiornamenti OTA (con connettività attiva) e monitoraggio del conducente (DMS).",
+          "alt": "Plancia del V27 con lo schermo centrale"
         },
         {
+          "x": "48",
+          "y": "55",
+          "img": "int-console",
+          "tag": "Modalità",
+          "label": "Sette modalità con un tocco",
           "title": "Sette modalità, un tocco",
-          "text": "Riposo, Sentinella, Campeggio, protezione della batteria a vettura spenta e altre ancora."
+          "text": "Riposo, Sentinella, Campeggio, protezione della batteria a vettura spenta e altre ancora: cambi modalità con un solo gesto.",
+          "alt": "Console centrale del V27"
         },
         {
+          "x": "30",
+          "y": "70",
+          "img": "int-seat",
+          "tag": "Comfort",
+          "label": "Sedile guida elettrico",
           "title": "Sedile guida elettrico",
-          "text": "Sei regolazioni con memoria e funzione di benvenuto: trovi la tua posizione in un attimo."
+          "text": "Sei regolazioni con memoria e funzione di benvenuto: chiunque guidi trova la sua posizione in un attimo.",
+          "alt": "Sedile del guidatore in pelle color cuoio"
         },
         {
+          "x": "70",
+          "y": "25",
+          "img": "turn-top",
+          "tag": "Tetto vetrato",
+          "label": "Tetto Starry Sky",
           "title": "Tetto Starry Sky",
-          "text": "Il doppio tetto vetrato porta la luce e il cielo dentro l'abitacolo."
+          "text": "Il doppio tetto vetrato porta la luce e il cielo dentro l'abitacolo, tra i grattacieli come nella natura.",
+          "alt": "V27 visto dall'alto con il doppio tetto vetrato"
+        }
+      ],
+      "cabin": [
+        {
+          "x": "7",
+          "y": "44",
+          "img": "int-trunk",
+          "tag": "Bagagliaio",
+          "label": "Bagagliaio",
+          "title": "Il bagagliaio più grande della categoria",
+          "text": "715 litri con la seconda fila in uso, 1818 litri con la seconda fila reclinata e un vano da 40 litri sotto il piano di carico.",
+          "alt": "Bagagliaio del V27 aperto"
+        },
+        {
+          "x": "19",
+          "y": "52",
+          "img": "int-rear",
+          "tag": "Seconda fila",
+          "label": "Spazio in seconda fila",
+          "title": "La seconda fila più spaziosa della categoria",
+          "text": "950 mm per le ginocchia e 1357 mm dal pavimento al tetto: in seconda fila si viaggia comodi.",
+          "alt": "Divano posteriore del V27"
+        },
+        {
+          "x": "31",
+          "y": "67",
+          "img": "int-flat",
+          "tag": "Campeggio",
+          "label": "Sedili abbattibili in piano",
+          "title": "Seconda fila giù, camera da letto su",
+          "text": "Con un tocco i sedili posteriori si abbattono in piano: una zona notte per il campeggio o un vano enorme per i carichi ingombranti.",
+          "alt": "Vano di carico del V27 con i sedili posteriori abbattuti in piano"
         }
       ]
     },

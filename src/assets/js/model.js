@@ -5,6 +5,7 @@
      [data-turn-cover] [data-turn-word]     cover with a cut-out word that zooms away first
      [data-steps] [data-step]               pinned section: one detail at a time
      [data-colors] [data-swatches]          colour picker
+     [data-hotspots] [data-spot] [data-spot-card]  image hotspots, a click opens the detail card
      [data-expand]                          image grows to full width on scroll
    Pinned effects run only on desktop (≥1024px) without reduced motion;
    otherwise the same markup is shown as a simple vertical list.
@@ -74,6 +75,45 @@
       });
     });
     if (buttons[0]) select(buttons[0]);
+  });
+
+  /* ---------- Hotspots: a click opens the detail card; arrows and dots move between the details of the same image ---------- */
+  $$('[data-hotspots]').forEach(function (panel) {
+    var spots = $$('[data-spot]', panel);
+    var card = panel.querySelector('[data-spot-card]');
+    if (!card || !spots.length) return;
+    var slides = $$('[data-spot-slide]', card), dots = $$('[data-spot-dot]', card);
+    var closeBtn = card.querySelector('[data-spot-close]');
+    var current = -1, opener = null, hideTimer = null;
+    var show = function (i) {
+      current = (i + spots.length) % spots.length;
+      slides.forEach(function (sl, k) { sl.hidden = k !== current; });
+      dots.forEach(function (d, k) { d.classList.toggle('is-active', k === current); });
+      spots.forEach(function (b, k) { b.classList.toggle('is-active', k === current); b.setAttribute('aria-expanded', String(k === current)); });
+    };
+    var open = function (i, btn) {
+      clearTimeout(hideTimer);
+      show(i);
+      if (btn) opener = btn;
+      card.hidden = false;
+      requestAnimationFrame(function () { card.classList.add('is-open'); });
+      if (closeBtn) closeBtn.focus({ preventScroll: true });
+    };
+    var close = function () {
+      card.classList.remove('is-open');
+      spots.forEach(function (b) { b.classList.remove('is-active'); b.setAttribute('aria-expanded', 'false'); });
+      current = -1;
+      hideTimer = setTimeout(function () { card.hidden = true; }, 450);
+      if (opener) opener.focus({ preventScroll: true });
+    };
+    spots.forEach(function (b, k) {
+      b.addEventListener('click', function () { if (current === k) close(); else open(k, b); });
+    });
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    var prev = card.querySelector('[data-spot-prev]'), next = card.querySelector('[data-spot-next]');
+    if (prev) prev.addEventListener('click', function () { show(current - 1); });
+    if (next) next.addEventListener('click', function () { show(current + 1); });
+    panel.addEventListener('keydown', function (e) { if (e.key === 'Escape' && current > -1) close(); });
   });
 
   if (!hasGsap) return;

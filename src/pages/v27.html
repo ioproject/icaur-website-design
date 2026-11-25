@@ -146,27 +146,76 @@
     </div>
   </section>
 
-  <!-- ===== INTERIOR ===== -->
-  <section class="interior section" id="interni" aria-labelledby="interior-title">
-    <div class="container">
-      <header class="section-head">
-        <p class="eyebrow" data-reveal>{{ v27.interior.eyebrow }}</p>
-        <h2 class="section-title" id="interior-title" data-split-lines>{{ v27.interior.title }}</h2>
-        <p class="lead" data-reveal>{{ v27.interior.text }}</p>
-      </header>
-    </div>
-    <div class="interior__frame" data-expand>
-      <img src="{{ @assets }}img/v27/int-cockpit-1440.jpg" srcset="{{ @assets }}img/v27/int-cockpit-800.jpg 800w, {{ @assets }}img/v27/int-cockpit-1440.jpg 1440w, {{ @assets }}img/v27/int-cockpit-2048.jpg 2048w" sizes="100vw" alt="{{ v27.interior.alt }}" width="1440" height="1080" loading="lazy">
-    </div>
-    <div class="container">
-      <ul class="features">
-        {% for f in v27.interior.features %}
-        <li class="feature" data-reveal>
-          <h3 class="feature__title">{{ f.title }}</h3>
-          <p class="feature__text">{{ f.text }}</p>
-        </li>
+  <!-- ===== INTERIOR: two full-screen views with hotspots; a click opens the detail card on the right (model.js [data-hotspots]) ===== -->
+  <section class="interior" id="interni" aria-labelledby="interior-title">
+    <div class="ipanel" data-hotspots>
+      <div class="ipanel__stage" style="--r: 1.3333">
+        <img src="{{ @assets }}img/v27/int-cockpit-1440.jpg" srcset="{{ @assets }}img/v27/int-cockpit-800.jpg 800w, {{ @assets }}img/v27/int-cockpit-1440.jpg 1440w, {{ @assets }}img/v27/int-cockpit-2048.jpg 2048w"
+          sizes="100vw" alt="{{ v27.interior.alt }}" width="1440" height="1080" loading="lazy">
+        {% for s in v27.interior.cockpit %}
+        <button class="hotspot" type="button" data-spot style="left: {{ s.x }}%; top: {{ s.y }}%" aria-expanded="false" aria-label="{{ v27.interior.spot }} {{ s.label }}"><span aria-hidden="true"></span></button>
         {% endfor %}
-      </ul>
+      </div>
+      <header class="ipanel__head">
+        <h2 class="section-title" id="interior-title">{{ v27.interior.title }}</h2>
+      </header>
+      <aside class="spotcard" data-spot-card hidden aria-label="{{ v27.interior.card_label }}">
+        <button class="spotcard__close" type="button" data-spot-close aria-label="{{ v27.interior.close }}">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        {% for s in v27.interior.cockpit %}
+        <article class="spotcard__slide" data-spot-slide hidden>
+          <img class="spotcard__img" src="{{ @assets }}img/v27/{{ s.img }}-800.jpg" alt="{{ s.alt }}" width="800" height="450" loading="lazy">
+          <div class="spotcard__body">
+            <p class="spotcard__tag">{{ s.tag }}</p>
+            <h3 class="spotcard__title">{{ s.title }}</h3>
+            <p class="spotcard__text">{{ s.text }}</p>
+          </div>
+        </article>
+        {% endfor %}
+        <div class="spotcard__nav">
+          <button class="spotcard__arrow" type="button" data-spot-prev aria-label="{{ v27.interior.prev }}">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4M9 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="spotcard__dots" aria-hidden="true">{% for s in v27.interior.cockpit %}<span data-spot-dot></span>{% endfor %}</div>
+          <button class="spotcard__arrow" type="button" data-spot-next aria-label="{{ v27.interior.next }}">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </aside>
+    </div>
+    <div class="ipanel" data-hotspots>
+      <div class="ipanel__stage" style="--r: 1.7778">
+        <img src="{{ @assets }}img/v27/int-cabin-1440.jpg" srcset="{{ @assets }}img/v27/int-cabin-800.jpg 800w, {{ @assets }}img/v27/int-cabin-1440.jpg 1440w"
+          sizes="100vw" alt="{{ v27.interior.cabin_alt }}" width="1440" height="810" loading="lazy">
+        {% for s in v27.interior.cabin %}
+        <button class="hotspot" type="button" data-spot style="left: {{ s.x }}%; top: {{ s.y }}%" aria-expanded="false" aria-label="{{ v27.interior.spot }} {{ s.label }}"><span aria-hidden="true"></span></button>
+        {% endfor %}
+      </div>
+      <aside class="spotcard" data-spot-card hidden aria-label="{{ v27.interior.card_label }}">
+        <button class="spotcard__close" type="button" data-spot-close aria-label="{{ v27.interior.close }}">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        {% for s in v27.interior.cabin %}
+        <article class="spotcard__slide" data-spot-slide hidden>
+          <img class="spotcard__img" src="{{ @assets }}img/v27/{{ s.img }}-800.jpg" alt="{{ s.alt }}" width="800" height="450" loading="lazy">
+          <div class="spotcard__body">
+            <p class="spotcard__tag">{{ s.tag }}</p>
+            <h3 class="spotcard__title">{{ s.title }}</h3>
+            <p class="spotcard__text">{{ s.text }}</p>
+          </div>
+        </article>
+        {% endfor %}
+        <div class="spotcard__nav">
+          <button class="spotcard__arrow" type="button" data-spot-prev aria-label="{{ v27.interior.prev }}">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4M9 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="spotcard__dots" aria-hidden="true">{% for s in v27.interior.cabin %}<span data-spot-dot></span>{% endfor %}</div>
+          <button class="spotcard__arrow" type="button" data-spot-next aria-label="{{ v27.interior.next }}">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </aside>
     </div>
   </section>
 

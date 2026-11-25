@@ -379,22 +379,84 @@
       "title": "Advanced tech,<br>living-room warmth",
       "text": "Tan leather, horizontal lines and a 15.4-inch centre screen. Everything is where you expect it.",
       "alt": "V27 dashboard and front seats in tan leather",
-      "features": [
+      "card_label": "Detail",
+      "close": "Close",
+      "prev": "Previous detail",
+      "next": "Next detail",
+      "spot": "Open detail:",
+      "cabin_alt": "Side view of the V27 cabin with tan leather seats",
+      "cockpit": [
         {
+          "x": "50",
+          "y": "36",
+          "img": "int-cockpit",
+          "tag": "Infotainment",
+          "label": "15.4-inch central screen",
           "title": "15.4\" 2.5K screen",
-          "text": "Qualcomm 8155 chip, voice control, OTA updates (with active connectivity) and Driver Monitoring System (DMS)."
+          "text": "Qualcomm 8155 chip, voice control, OTA updates (with active connectivity) and Driver Monitoring System (DMS).",
+          "alt": "V27 dashboard with the central screen"
         },
         {
+          "x": "48",
+          "y": "55",
+          "img": "int-console",
+          "tag": "Modes",
+          "label": "Seven one-tap modes",
           "title": "Seven modes, one tap",
-          "text": "Nap, Sentinel, Camping, off-vehicle battery protection and more."
+          "text": "Nap, Sentinel, Camping, off-vehicle battery protection and more: switch with a single tap.",
+          "alt": "V27 centre console"
         },
         {
+          "x": "30",
+          "y": "70",
+          "img": "int-seat",
+          "tag": "Comfort",
+          "label": "Power driver's seat",
           "title": "Power driver's seat",
-          "text": "Six-way adjustment with memory and welcome function: find your position in a moment."
+          "text": "Six-way adjustment with memory and welcome function: every driver finds their position in a moment.",
+          "alt": "Driver's seat in tan leather"
         },
         {
+          "x": "70",
+          "y": "25",
+          "img": "turn-top",
+          "tag": "Glass roof",
+          "label": "Starry Sky roof",
           "title": "Starry Sky roof",
-          "text": "The dual glass roof brings light and sky into the cabin."
+          "text": "The dual glass roof brings light and sky into the cabin, among skyscrapers or out in the wild.",
+          "alt": "V27 from above with the dual glass roof"
+        }
+      ],
+      "cabin": [
+        {
+          "x": "7",
+          "y": "44",
+          "img": "int-trunk",
+          "tag": "Trunk",
+          "label": "Trunk",
+          "title": "Largest trunk in its class",
+          "text": "715 litres with the second row upright, 1818 litres with it reclined and a 40-litre compartment under the floor.",
+          "alt": "V27 with the tailgate open"
+        },
+        {
+          "x": "19",
+          "y": "52",
+          "img": "int-rear",
+          "tag": "Second row",
+          "label": "Second-row space",
+          "title": "Largest second row in its class",
+          "text": "950 mm of knee room and 1357 mm from floor to ceiling: the second row travels in comfort.",
+          "alt": "V27 rear bench"
+        },
+        {
+          "x": "31",
+          "y": "67",
+          "img": "int-flat",
+          "tag": "Camping",
+          "label": "Flat-folding seats",
+          "title": "Second row down, bedroom up",
+          "text": "One tap folds the rear seats flat: a sleeping area for camping or a huge space for bulky loads.",
+          "alt": "V27 load area with the rear seats folded flat"
         }
       ]
     },
