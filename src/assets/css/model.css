@@ -148,12 +148,6 @@
 
 /* ---------- Space ---------- */
 .space__head { margin-top: var(--space-lg); color: var(--c-gray); max-width: 60ch; }
-.media-split { display: grid; gap: var(--space-lg); align-items: center; margin-top: var(--space-xl); }
-.media-split__img { overflow: hidden; border-radius: var(--radius); }
-.media-split__img img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
-.media-split__title { font-size: var(--fs-lg); font-weight: 500; margin-bottom: var(--space-sm); }
-.media-split__body p { color: var(--c-gray); }
-@media (min-width: 1024px) { .media-split { grid-template-columns: 3fr 2fr; } }
 
 /* ---------- Comfort carousel ---------- */
 .ccard { scroll-snap-align: start; }
