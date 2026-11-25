@@ -511,7 +511,7 @@ select.field__input { appearance: none; background-image: url("data:image/svg+xm
 .site-footer__email { position: relative; }
 .site-footer__input {
   width: 100%; height: 56px; padding: 0 24px; border-radius: var(--radius-pill);
-  border: 1px solid var(--c-line-dark); background: transparent; color: var(--c-white); font: inherit;
+  border: 1px solid #FFFFFF; background: transparent; color: var(--c-white); font: inherit;
 }
 .site-footer__input::placeholder { color: rgba(255, 255, 255, 0.45); }
 .site-footer__input:focus-visible { outline: 2px solid var(--c-gold); outline-offset: 2px; }
