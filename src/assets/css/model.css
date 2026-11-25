@@ -275,7 +275,7 @@
 .turn__cover-word { font-family: var(--font); font-weight: 700; font-size: 14.4vw; letter-spacing: -0.02em; }
 
 /* ---------- Scroll cue: thin vertical line under the hero content, a light runs down it ---------- */
-.scroll-cue { position: relative; display: block; width: 2px; height: 64px; margin: var(--space-md) auto 0; overflow: hidden; border-radius: 1px; background: rgba(255, 255, 255, 0.4); }
+.scroll-cue { position: relative; display: block; width: 2px; height: 90px; margin: calc(var(--space-md) + 30px) auto 0; overflow: hidden; border-radius: 1px; }   /* no track: only the moving white line */
 .scroll-cue::after { content: ""; position: absolute; inset: 0; background: var(--c-white); transform-origin: top; animation: scroll-cue 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
 @keyframes scroll-cue {
   0% { transform: translateY(-100%); }
