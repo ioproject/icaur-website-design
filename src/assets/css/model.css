@@ -247,7 +247,7 @@
 .mhero .hero__actions { display: flex; flex-wrap: wrap; gap: 20px; }
 .mhero__bottom--end { justify-content: flex-end; }
 .page--v27 .mhero__content { padding-bottom: var(--space-md); }
-.page--v27 .mhero__content { text-align: center; }   /* everything centred */
+.page--v27 .mhero__content { text-align: center; margin-bottom: -40px; }   /* everything centred, 40px lower (overlaps the empty part of the bottom row) */
 .page--v27 .mhero__title { justify-items: center; }
 .page--v27 .mhero__text { margin-inline: auto; }
 .page--v27 .mhero .hero__actions { justify-content: center; }
