@@ -102,14 +102,9 @@
     </svg>
   </section>
 
-  <!-- ===== COLOURS ===== -->
+  <!-- ===== COLOURS: full-screen image, swatches on top (name under the active one) ===== -->
   <section class="colors section section--ink" id="colori" aria-labelledby="colors-title" data-colors>
-    <div class="container">
-      <header class="section-head">
-        <p class="eyebrow" data-reveal>{{ v27.colors.eyebrow }}</p>
-        <h2 class="section-title" id="colors-title" data-reveal>{{ v27.colors.title }}</h2>
-      </header>
-    </div>
+    <h2 class="visually-hidden" id="colors-title">{{ v27.colors.title }}</h2>
     <div class="colors__stage">
       {% for c in v27.colors.items %}
       <img class="colors__img" src="{{ @assets }}img/v27/color-{{ c.slug }}-1440.jpg"
@@ -122,6 +117,7 @@
           {% for c in v27.colors.items %}
           <button class="swatch" type="button" role="radio" aria-checked="false" data-color="{{ c.slug }}" data-name="{{ c.name }}" style="--swatch: {{ c.hex }}">
             <span class="visually-hidden">{{ c.name }}</span>
+            <span class="swatch__label" aria-hidden="true">{{ c.name }}</span>
           </button>
           {% endfor %}
         </div>
