@@ -154,7 +154,8 @@
           <span class="badge badge--gold">{{ common.coming_soon }}</span>
           <img class="model-card__logo" src="{{ @assets }}img/brand/v25-logo.webp" alt="V25" width="232" height="32" loading="lazy">
           <p class="model-card__line">{{ home.models.v25.line }}</p>
-          <span class="btn btn--text btn--text-light model-card__cta" aria-hidden="true"><span>{{ home.models.v25.cta }}</span></span>
+          <!-- sits above the card-wide link so it can show its own hover; the card link remains the one in the tab order -->
+          <a class="btn btn--text btn--text-light model-card__cta" href="v25.html" tabindex="-1" aria-hidden="true"><span>{{ home.models.v25.cta }}</span></a>
         </div>
       </article>
     </div>

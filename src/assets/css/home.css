@@ -267,6 +267,7 @@
 .model-card--v25 .model-card__text { margin-inline: auto; }
 .model-card--v25 .model-card__media::after { background: rgba(20, 13, 11, 0.45); }   /* even shade: text sits in the middle */
 .model-card--v25 .model-card__media img { object-position: 50% 60%; }   /* keeps the car in the middle of the box */
-.model-card__cta { margin-top: var(--space-xs); }
-.model-card:hover .model-card__cta > span::after { transform: scaleX(1); }   /* underline when hovering anywhere on the card */
+.model-card__cta { position: relative; z-index: 4; margin-top: var(--space-xs); font-size: 14px; }   /* above .model-card__link */
+.model-card--v25 .badge { margin-bottom: 20px; }
+.model-card--v25 .model-card__logo { margin-bottom: 15px; }
 @media (max-width: 767px) { .model-card--v25 { aspect-ratio: auto; min-height: 440px; } }   /* 16:9 is too short for the text on phones */
