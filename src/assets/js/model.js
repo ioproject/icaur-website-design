@@ -2,6 +2,7 @@
    iCAUR — model.js (model pages). Loaded after main.js.
      [data-dock] [data-dock-link]           floating section nav + active section
      [data-turn] [data-turn-step]           pinned section: car views change on scroll
+     [data-turn-cover] [data-turn-word]     cover with a cut-out word that zooms away first
      [data-steps] [data-step]               pinned section: one detail at a time
      [data-colors] [data-swatches]          colour picker
      [data-expand]                          image grows to full width on scroll
@@ -105,16 +106,30 @@
       gsap.set(imgs.slice(1), { opacity: 0 });
       gsap.set(caps.slice(1), { opacity: 0, y: 30 });
 
+      // optional cover: the word is cut out of it; it scales up from the middle of the "I" until the first view is fully visible
+      var cover = section.querySelector('[data-turn-cover]'), word = section.querySelector('[data-turn-word]');
+      var setOrigin = function () {
+        if (!cover || !word) return;
+        var txt = word.textContent, i = txt.indexOf('I'), box = null;
+        try { box = word.getExtentOfChar(i < 0 ? Math.floor(txt.length / 2) : i); } catch (e) {}
+        gsap.set(cover, { transformOrigin: box ? (box.x + box.width / 2) + 'px ' + (box.y + box.height * 0.55) + 'px' : '50% 50%' });
+      };
+      var lead = cover ? 1.6 : 0;
       var tl = gsap.timeline({
         defaults: { ease: 'power2.inOut' },
         scrollTrigger: {
-          trigger: section, start: 'top top', end: '+=' + (steps.length * 90) + '%',
-          pin: true, scrub: 0.6, anticipatePin: 1,
+          trigger: section, start: 'top top', end: '+=' + ((steps.length + lead) * 90) + '%',
+          pin: true, scrub: 0.6, anticipatePin: 1, onRefresh: setOrigin,
           onUpdate: function (st) { if (bar) bar.style.transform = 'scaleX(' + st.progress + ')'; }
         }
       });
+      setOrigin();
+      if (cover) {
+        tl.fromTo(cover, { scale: 1, autoAlpha: 1 }, { scale: 90, ease: 'power3.in', duration: lead }, 0)
+          .to(cover, { autoAlpha: 0, duration: 0.1 });
+      }
       // the first view settles in (zoom out), then each view replaces the previous one
-      tl.fromTo(imgs[0], { scale: 1.18 }, { scale: 1, duration: 1 });
+      tl.fromTo(imgs[0], { scale: 1.18 }, { scale: 1, duration: 1 + lead }, 0);
       for (var i = 1; i < steps.length; i++) {
         tl.to(caps[i - 1], { opacity: 0, y: -30, duration: 0.4 }, '+=0.5')
           .fromTo(imgs[i], { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 1 }, '<')
@@ -124,7 +139,7 @@
 
       return function () {
         section.classList.remove('is-pinned');
-        gsap.set(imgs.concat(caps), { clearProps: 'all' });
+        gsap.set(imgs.concat(caps, cover ? [cover] : []), { clearProps: 'all' });
       };
     });
 

@@ -265,10 +265,7 @@
   .vstats__item + .vstats__item { border-left: 1px solid rgba(255, 255, 255, 0.18); }
 }
 
-/* ---------- DESIGN mask: brown cover with the word cut out, zoomed on scroll ---------- */
-.maskzoom { position: relative; height: 300vh; background: var(--c-brown); }
-.maskzoom__sticky { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
-.maskzoom__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.maskzoom__cover { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--c-brown); }
-.maskzoom__word { font-family: var(--font); font-weight: 700; font-size: 24vw; letter-spacing: -0.02em; }
-@media (prefers-reduced-motion: reduce) { .maskzoom { height: auto; } }
+/* ---------- Design cover: brown layer with the word cut out, over the pinned Design section (model.js) ---------- */
+.turn__cover { display: none; }
+.js .turn.is-pinned .turn__cover { display: block; position: absolute; inset: 0; z-index: 5; width: 100%; height: 100%; color: var(--c-brown); pointer-events: none; }
+.turn__cover-word { font-family: var(--font); font-weight: 700; font-size: 14.4vw; letter-spacing: -0.02em; }

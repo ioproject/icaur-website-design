@@ -50,30 +50,13 @@
     </div>
   </section>
 
-  <!-- ===== KEY FIGURES (brown band) + DESIGN mask: the word is cut out of the brown and grows on scroll (main.js [data-mask-zoom]) ===== -->
+  <!-- ===== KEY FIGURES (brown band) ===== -->
   <section class="vstats" aria-label="{{ v27.hero.stats_label }}">
     <dl class="vstats__grid">
       {% for s in v27.hero.stats %}
       <div class="vstats__item"><dt>{{ s.label }}</dt><dd><span data-count="{{ s.count }}" data-decimals="{{ s.dec }}">{{ s.value }}</span><small>{{ s.unit }}</small></dd></div>
       {% endfor %}
     </dl>
-  </section>
-
-  <section class="maskzoom" data-mask-zoom>
-    <div class="maskzoom__sticky">
-      <img class="maskzoom__img" src="{{ @assets }}img/v27/out-canyon-1440.jpg"
-        srcset="{{ @assets }}img/v27/out-canyon-800.jpg 800w, {{ @assets }}img/v27/out-canyon-1440.jpg 1440w, {{ @assets }}img/v27/out-canyon-2048.jpg 2048w"
-        sizes="100vw" alt="{{ v27.hero.mask_alt }}" width="2048" height="1152" loading="lazy" data-mask-img>
-      <svg class="maskzoom__cover" aria-hidden="true" data-mask-cover>
-        <defs>
-          <mask id="maskzoom-word" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
-            <rect width="100%" height="100%" fill="#fff"/>
-            <text class="maskzoom__word" x="50%" y="50%" text-anchor="middle" dominant-baseline="central" fill="#000" data-mask-word>{{ v27.hero.mask_word }}</text>
-          </mask>
-        </defs>
-        <rect width="100%" height="100%" fill="currentColor" mask="url(#maskzoom-word)"/>
-      </svg>
-    </div>
   </section>
 
   <!-- ===== SECTION DOCK (floating sub-navigation) ===== -->
@@ -89,7 +72,7 @@
     <a class="btn btn--light btn--sm dock__cta" href="#test-drive">{{ v27.subnav.cta }}</a>
   </nav>
 
-  <!-- ===== DESIGN: the car turns as you scroll (pinned) ===== -->
+  <!-- ===== DESIGN: brown cover with the word cut out zooms away, then the car turns as you scroll (pinned, model.js) ===== -->
   <section class="turn" id="design" aria-labelledby="design-title" data-turn>
     <header class="turn__head container">
       <p class="eyebrow">{{ v27.turn.eyebrow }}</p>
@@ -109,6 +92,15 @@
       {% endfor %}
     </ol>
     <div class="turn__progress" aria-hidden="true"><span data-turn-progress></span></div>
+    <svg class="turn__cover" aria-hidden="true" data-turn-cover>
+      <defs>
+        <mask id="turn-cover-word" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
+          <rect width="100%" height="100%" fill="#fff"/>
+          <text class="turn__cover-word" x="50%" y="50%" text-anchor="middle" dominant-baseline="central" fill="#000" data-turn-word>{{ v27.hero.mask_word }}</text>
+        </mask>
+      </defs>
+      <rect width="100%" height="100%" fill="currentColor" mask="url(#turn-cover-word)"/>
+    </svg>
   </section>
 
   <!-- ===== COLOURS ===== -->
