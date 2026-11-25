@@ -88,7 +88,6 @@
 }
 .colors__name { font-size: var(--fs-sm); font-weight: 500; letter-spacing: 0.04em; min-height: 1.5em; }
 .colors__picker .swatches { margin: 0; justify-content: center; }
-.dock.is-visible ~ .colors .colors__picker { bottom: 88px; }
 .colors__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.04); transition: opacity 0.9s var(--ease-out), transform 1.6s var(--ease-out); }
 .colors__img.is-active { opacity: 1; transform: none; }
 .swatches { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -99,6 +98,7 @@
 }
 .swatch::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1.5px solid transparent; transition: border-color var(--dur-fast); }
 .swatch:hover { transform: scale(1.08); }
+.swatch[aria-checked="true"]:hover { transform: none; }   /* no zoom on the chosen colour */
 .swatch[aria-checked="true"]::after { border-color: var(--c-white); }
 @media (max-width: 767px) {
   .colors__stage { overflow: visible; aspect-ratio: auto; min-height: 0; max-height: none; display: grid; }
@@ -312,7 +312,7 @@
 @media (min-width: 768px) {
   .colors__stage { aspect-ratio: auto; height: 100vh; height: 100svh; min-height: 560px; max-height: none; }
   .colors__picker, .dock.is-visible ~ .colors .colors__picker {
-    bottom: 150px; padding: 0; border: 0; border-radius: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none;
+    bottom: 90px; padding: 0; border: 0; border-radius: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none;
     max-width: calc(100% - 2 * var(--home-x, var(--gutter)));
   }
   .colors__name { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }   /* still announced */

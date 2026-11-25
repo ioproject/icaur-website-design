@@ -21,10 +21,12 @@
   if (dock && 'IntersectionObserver' in window) {
     var hero = document.querySelector('[data-hero]');
     var footer = document.querySelector('.site-footer');
-    var heroVisible = true, footerVisible = false;
-    var update = function () { dock.classList.toggle('is-visible', !heroVisible && !footerVisible); };
+    var picker = document.querySelector('.colors__picker');   // the colour names sit where the dock is: hide it while they are on screen
+    var heroVisible = true, footerVisible = false, pickerVisible = false;
+    var update = function () { dock.classList.toggle('is-visible', !heroVisible && !footerVisible && !pickerVisible); };
     new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; update(); }, { threshold: 0.05 }).observe(hero);
     if (footer) new IntersectionObserver(function (e) { footerVisible = e[0].isIntersecting; update(); }).observe(footer);
+    if (picker) new IntersectionObserver(function (e) { pickerVisible = e[0].isIntersecting && window.innerWidth >= 768; update(); }).observe(picker);
 
     var links = $$('[data-dock-link]', dock);
     var byId = {};
