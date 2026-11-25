@@ -148,6 +148,9 @@
 
   <!-- ===== INTERIOR: two full-screen views with hotspots; a click opens the detail card on the right (model.js [data-hotspots]) ===== -->
   <section class="interior" id="interni" aria-labelledby="interior-title">
+    <header class="ipanel__head">
+      <h2 class="section-title" id="interior-title">{{ v27.interior.title }}</h2>
+    </header>
     <div class="ipanel" data-hotspots>
       <div class="ipanel__stage" style="--r: 1.7778">
         <img src="{{ @assets }}img/v27/int-dash-1440.jpg" srcset="{{ @assets }}img/v27/int-dash-800.jpg 800w, {{ @assets }}img/v27/int-dash-1440.jpg 1440w, {{ @assets }}img/v27/int-dash-1920.jpg 1920w"
@@ -156,9 +159,6 @@
         <button class="hotspot" type="button" data-spot style="left: {{ s.x }}%; top: {{ s.y }}%" aria-expanded="false" aria-label="{{ v27.interior.spot }} {{ s.label }}"><span aria-hidden="true"></span></button>
         {% endfor %}
       </div>
-      <header class="ipanel__head">
-        <h2 class="section-title" id="interior-title">{{ v27.interior.title }}</h2>
-      </header>
       <aside class="spotcard" data-spot-card hidden aria-label="{{ v27.interior.card_label }}">
         <button class="spotcard__close" type="button" data-spot-close aria-label="{{ v27.interior.close }}">
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -184,6 +184,9 @@
         </div>
       </aside>
     </div>
+    <header class="ipanel__head">
+      <h3 class="section-title">{{ v27.interior.cabin_title }}</h3>
+    </header>
     <div class="ipanel" data-hotspots>
       <div class="ipanel__stage" style="--r: 1.7778">
         <img src="{{ @assets }}img/v27/int-side-1440.jpg" srcset="{{ @assets }}img/v27/int-side-800.jpg 800w, {{ @assets }}img/v27/int-side-1440.jpg 1440w, {{ @assets }}img/v27/int-side-1920.jpg 1920w"

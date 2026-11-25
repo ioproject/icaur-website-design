@@ -418,7 +418,7 @@
         },
         {
           "x": "24",
-          "y": "14",
+          "y": "21",
           "img": "int-card-roof",
           "tag": "Glass roof",
           "label": "Starry Sky roof",
@@ -458,7 +458,8 @@
           "text": "One tap folds the rear seats flat: a sleeping area for camping or a huge space for bulky loads.",
           "alt": "V27 load area with the rear seats folded flat"
         }
-      ]
+      ],
+      "cabin_title": "Spacious comfort"
     },
     "space": {
       "eyebrow": "Space",

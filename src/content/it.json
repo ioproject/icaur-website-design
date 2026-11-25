@@ -418,7 +418,7 @@
         },
         {
           "x": "24",
-          "y": "14",
+          "y": "21",
           "img": "int-card-roof",
           "tag": "Tetto vetrato",
           "label": "Tetto Starry Sky",
@@ -458,7 +458,8 @@
           "text": "Con un tocco i sedili posteriori si abbattono in piano: una zona notte per il campeggio o un vano enorme per i carichi ingombranti.",
           "alt": "Vano di carico del V27 con i sedili posteriori abbattuti in piano"
         }
-      ]
+      ],
+      "cabin_title": "Comfort spazioso"
     },
     "space": {
       "eyebrow": "Spazio",
