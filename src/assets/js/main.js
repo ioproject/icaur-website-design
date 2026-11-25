@@ -72,8 +72,8 @@
     var y = window.scrollY;
     header.classList.toggle('is-solid', y > 24 && !menuOpen);   // compact bar with panels
     header.classList.toggle('is-menu', menuOpen);               // full bar over the open mega menu
-    // after 350px the bar slides away while scrolling down and comes back as soon as the user scrolls up
-    if (menuOpen || y <= 350) header.classList.remove('is-hidden');
+    // after 600px the bar slides away while scrolling down and comes back as soon as the user scrolls up
+    if (menuOpen || y <= 600) header.classList.remove('is-hidden');
     else if (Math.abs(y - lastY) > 4) header.classList.toggle('is-hidden', y > lastY && !header.contains(document.activeElement));
     lastY = y;
   }
