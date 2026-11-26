@@ -157,7 +157,6 @@
 @media (min-width: 768px) { .adas { grid-template-columns: repeat(3, 1fr); } }
 
 /* ---------- Gallery ---------- */
-.gallery__hint { font-size: var(--fs-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--c-text-dim); }
 .gallery__track {
   display: grid; grid-auto-flow: column; grid-auto-columns: min(85vw, 60vw); gap: var(--space-sm);
   overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity;
