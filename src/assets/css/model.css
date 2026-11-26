@@ -265,7 +265,7 @@
 .turn__steps { counter-reset: turn; }
 .turn-step { counter-increment: turn; }
 .turn-step__caption::before {
-  content: counter(turn, decimal-leading-zero) var(--turn-total, ""); display: block;   /* "01 — 06" (total set by model.js) */ margin-bottom: var(--space-sm);
+  content: counter(turn, decimal-leading-zero); display: block; margin-bottom: calc(var(--space-sm) - 15px);
   font-size: 12px; font-weight: 500; letter-spacing: 0.14em; color: rgba(255, 255, 255, 0.7);
 }
 .turn-step__title { font-size: clamp(1.375rem, 1.1rem + 0.8vw, 1.875rem); font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; }
