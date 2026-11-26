@@ -418,3 +418,4 @@ html.is-spot-open .dock { opacity: 0; visibility: hidden; transition: opacity 0.
 html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header-top) - 8px)); }   /* the card uses the full height: the bar steps aside while it is open */
 .space .bignums dt { max-width: none; }   /* labels on one line */
 .comfort--details.section { padding-bottom: calc(var(--space-xl) - 55px); }
+.space .space__head { margin-top: calc(var(--space-lg) + 35px); }   /* 35px more below the figures */
