@@ -505,3 +505,5 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .specs__summary { padding-top: 0; padding-bottom: 70px; border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
 .mcta { margin-inline: var(--gutter); border-radius: var(--radius); }   /* same side margin and radius as the gallery images above */
 .mcta .lead { max-width: 30ch; }   /* keeps the text left of the car */
+.mcta { clip-path: inset(0 round var(--radius)); isolation: isolate; }   /* rounded corners also over the moving (parallax) photo */
+.specs__summary { border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 70px; }   /* separator above the title too */
