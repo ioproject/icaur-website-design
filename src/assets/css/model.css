@@ -166,7 +166,6 @@
 /* large cards from the title edge to the right of the screen, arrows under the cards */
 .comfort__track { grid-auto-columns: min(86vw, 760px); gap: 20px; }
 @media (min-width: 768px) { .comfort__track { grid-auto-columns: min(48vw, 760px); } }
-.comfort__nav { display: flex; justify-content: flex-end; margin-top: var(--space-md); }
 
 /* ---------- Performance ---------- */
 .perf__intro { display: grid; gap: var(--space-lg); align-items: center; }
@@ -411,5 +410,5 @@
 
 /* Comfort: 70px less space above the heading */
 .comfort.section { padding-top: calc(var(--space-xl) - 50px); padding-bottom: calc(var(--space-xl) - 55px); }
-.comfort__nav .round-btn--soft { background: rgba(35, 24, 21, 0.08); }
-.comfort__nav .round-btn--soft:hover { background: var(--c-black); color: var(--c-white); }
+.comfort .carousel-nav .round-btn--soft { background: rgba(35, 24, 21, 0.08); }
+.comfort .carousel-nav .round-btn--soft:hover { background: var(--c-black); color: var(--c-white); }

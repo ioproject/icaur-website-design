@@ -236,12 +236,18 @@
     </div>
   </section>
 
-  <!-- ===== COMFORT (carousel: large cards, bold title + text in one paragraph, arrows below) ===== -->
+  <!-- ===== COMFORT (carousel: large cards, bold title + text in one paragraph, arrows next to the title) ===== -->
   <section class="comfort section section--paper" aria-labelledby="comfort-title" data-carousel>
     <div class="container">
-      <header class="section-head">
-        <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.comfort.eyebrow }}</p>
-        <h2 class="section-title" id="comfort-title" data-reveal>{{ v27.comfort.title }}</h2>
+      <header class="section-head section-head--split">
+        <div>
+          <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.comfort.eyebrow }}</p>
+          <h2 class="section-title" id="comfort-title" data-reveal>{{ v27.comfort.title }}</h2>
+        </div>
+        <div class="carousel-nav">
+          <button class="round-btn round-btn--soft" type="button" data-carousel-prev aria-label="‹"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H5m4-4-4 4 4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          <button class="round-btn round-btn--soft" type="button" data-carousel-next aria-label="›"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        </div>
       </header>
     </div>
     <ul class="carousel comfort__track" data-carousel-track data-drag-scroll>
@@ -255,12 +261,6 @@
       </li>
       {% endfor %}
     </ul>
-    <div class="container comfort__nav">
-      <div class="carousel-nav">
-        <button class="round-btn round-btn--soft" type="button" data-carousel-prev aria-label="‹"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H5m4-4-4 4 4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-        <button class="round-btn round-btn--soft" type="button" data-carousel-next aria-label="›"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-      </div>
-    </div>
   </section>
 
   <!-- ===== TECHNOLOGY / PERFORMANCE ===== -->
