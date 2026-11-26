@@ -499,3 +499,4 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .specs .spec-group dl > div { border-bottom-color: rgba(255, 255, 255, 0.14); }
 .specs .spec-group dt { color: rgba(255, 255, 255, 0.6); }
 @media (max-width: 767px) { .specs__toggle { width: 48px; height: 48px; } }
+.mcta .hero__actions { gap: 20px; }
