@@ -3,7 +3,6 @@
      [data-dock] [data-dock-link]           floating section nav + active section
      [data-turn] [data-turn-step]           pinned section: car views change on scroll
      [data-turn-cover] [data-turn-word]     cover with a cut-out word that zooms away first
-     [data-steps] [data-step] [data-step-bar]  timed slides: one detail at a time, bars fill as a timer
      [data-colors] [data-swatches]          colour picker
      [data-hotspots] [data-spot] [data-spot-card]  image hotspots, a click opens the detail card
      [data-expand]                          image grows to full width on scroll
@@ -195,74 +194,6 @@
     });
 
     /* ---------- Details: one at a time ---------- */
-    // timed: each detail stays for data-interval ms while its bar fills, then the next one comes in (no scroll pinning)
-    $$('[data-steps]').forEach(function (section) {
-      var items = $$('[data-step]', section);
-      if (items.length < 2) return;
-      section.classList.add('is-pinned');   // stacked layout (CSS)
-      var medias = items.map(function (it) { return it.querySelector('.detail__media'); });
-      var texts = items.map(function (it) { return [it.querySelector('.detail__title'), it.querySelector('.detail__text')]; });
-      var bars = $$('[data-step-bar]', section);
-      var interval = parseInt(section.dataset.interval, 10) || 6000;
-      section.style.setProperty('--step-interval', interval + 'ms');
-      $$('img', section).forEach(function (img) { img.loading = 'eager'; });
-
-      gsap.set(medias.slice(1), { clipPath: 'inset(100% 0% 0% 0%)' });
-      texts.slice(1).forEach(function (t) { gsap.set(t, { opacity: 0, y: 40 }); });
-
-      var current = 0, timer = null, startedAt = 0, remaining = interval, inView = false, hover = false;
-      var stop = function () { clearTimeout(timer); timer = null; };
-      var run = function () {
-        stop();
-        section.classList.toggle('is-paused', !inView || hover);
-        if (!inView || hover) return;
-        startedAt = Date.now();
-        timer = setTimeout(function () { go(current + 1); }, remaining);
-      };
-      var pause = function () { if (timer) remaining = Math.max(0, remaining - (Date.now() - startedAt)); stop(); section.classList.add('is-paused'); };
-      var setBars = function () {
-        bars.forEach(function (b, k) {
-          b.classList.remove('is-active');
-          b.classList.toggle('is-done', k < current);
-        });
-        var active = bars[current];
-        if (active) { void active.offsetWidth; active.classList.add('is-active'); }   // restart the fill
-      };
-      var go = function (i) {
-        var prev = current;
-        current = (i + items.length) % items.length;
-        if (current !== prev) {
-          gsap.to(texts[prev], { opacity: 0, y: -40, duration: 0.5, stagger: 0.05, ease: 'power3.in', overwrite: true });
-          gsap.set(medias[current], { zIndex: 2 }); gsap.set(medias[prev], { zIndex: 1 });
-          medias.forEach(function (m, k) { if (k !== current && k !== prev) gsap.set(m, { zIndex: 0, clipPath: 'inset(100% 0% 0% 0%)' }); });
-          gsap.fromTo(medias[current], { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1, ease: 'power3.inOut', overwrite: true,
-            onComplete: function () { gsap.set(medias[prev], { clipPath: 'inset(100% 0% 0% 0%)' }); } });
-          gsap.fromTo(medias[current].querySelector('img'), { scale: 1.2 }, { scale: 1, duration: 1.2, ease: 'power3.out' });
-          gsap.fromTo(texts[current], { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, delay: 0.45, ease: 'power3.out', overwrite: true });
-        }
-        remaining = interval;
-        setBars();
-        run();
-      };
-      bars.forEach(function (b, k) { b.addEventListener('click', function () { go(k); }); });   // mouse shortcut
-      // runs only while on screen; pauses while the pointer or focus is on it
-      new IntersectionObserver(function (e) {
-        inView = e[0].isIntersecting;
-        if (inView) run(); else pause();
-      }, { threshold: 0.4 }).observe(section);
-      section.addEventListener('mouseenter', function () { hover = true; pause(); });
-      section.addEventListener('mouseleave', function () { hover = false; run(); });
-      setBars();
-      section.classList.add('is-paused');
-
-      return function () {
-        stop();
-        section.classList.remove('is-pinned', 'is-paused');
-        gsap.set(medias, { clearProps: 'all' });
-        texts.forEach(function (t) { gsap.set(t, { clearProps: 'all' }); });
-      };
-    });
-
     ScrollTrigger.refresh();
   });
 })();

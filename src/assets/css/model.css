@@ -109,34 +109,6 @@
   }
 }
 
-/* ---------- Details (one at a time) ---------- */
-.details__list { display: grid; gap: var(--space-xl); margin-top: var(--space-sm); }
-.detail__media { overflow: hidden; border-radius: var(--radius); margin-bottom: var(--space-md); }
-.detail__media img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
-.detail__title { font-size: var(--fs-xl); font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; margin-bottom: var(--space-sm); }   /* same size as a section title */
-.detail__text { color: var(--c-gray); max-width: 42ch; }
-.details__bars, .details__stage { display: none; }
-
-@media (min-width: 1024px) {
-  .js .details.is-pinned { height: 100vh; padding: 0; display: flex; align-items: center; }
-  .js .details.is-pinned .details__inner { position: relative; display: grid; grid-template-columns: 5fr 7fr; align-items: center; height: 100%; }
-  .js .details.is-pinned .details__list { display: grid; margin-top: var(--space-sm); gap: 0; }
-  .js .details.is-pinned .detail { grid-area: 1 / 1; }
-  .js .details.is-pinned .detail__media {
-    position: absolute; margin: 0; top: 14vh; bottom: 10vh; right: var(--gutter); width: calc(58% - var(--gutter));
-    border-radius: var(--radius); will-change: clip-path;
-  }
-  .js .details.is-pinned .detail__media img { height: 100%; aspect-ratio: auto; }
-  .js .details.is-pinned .details__bars { display: flex; gap: 8px; margin-top: var(--space-lg); max-width: 220px; }
-  @keyframes step-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-  .details__bars span { position: relative; flex: 1; height: 2px; background: var(--c-line-light); overflow: hidden; cursor: pointer; }
-  .details__bars span::before { content: ""; position: absolute; inset: -10px 0; }   /* taller click area */
-  .details__bars span::after { content: ""; position: absolute; inset: 0; background: var(--c-brown); transform: scaleX(0); transform-origin: left; }
-  .details__bars span.is-done::after { transform: scaleX(1); }
-  .details__bars span.is-active::after { animation: step-fill var(--step-interval, 6000ms) linear forwards; }
-  .details.is-paused .details__bars span.is-active::after { animation-play-state: paused; }
-}
-
 /* ---------- Big numbers ---------- */
 .bignums { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg) var(--space-md); margin-top: var(--space-lg); }
 .bignums div { display: flex; flex-direction: column; gap: var(--space-xs); padding-top: var(--space-sm); border-top: 1px solid var(--c-line-dark); }
@@ -445,3 +417,4 @@ html.is-spot-open .dock { opacity: 0; visibility: hidden; transition: opacity 0.
 .space__head, .space .note { text-align: center; margin-inline: auto; }
 html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header-top) - 8px)); }   /* the card uses the full height: the bar steps aside while it is open */
 .space .bignums dt { max-width: none; }   /* labels on one line */
+.comfort--details.section { padding-bottom: calc(var(--space-xl) - 55px); }

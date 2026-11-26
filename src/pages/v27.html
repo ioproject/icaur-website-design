@@ -125,24 +125,28 @@
     </div>
   </section>
 
-  <!-- ===== DETAILS: one at a time, timed (bars fill as a timer) ===== -->
-  <section class="details section section--paper" aria-labelledby="details-title" data-steps data-interval="6000">
-    <div class="container details__inner">
-      <div class="details__text">
-        <p class="eyebrow eyebrow--dark">{{ v27.details.eyebrow }}</p>
-        <h2 class="visually-hidden" id="details-title">{{ v27.details.title }}</h2>   <!-- each detail title is the visible heading -->
-        <ol class="details__list">
-          {% for d in v27.details.items %}
-          <li class="detail" data-step>
-            <div class="detail__media"><img src="{{ @assets }}img/v27/{{ d.img }}-1440.jpg" srcset="{{ @assets }}img/v27/{{ d.img }}-800.jpg 800w, {{ @assets }}img/v27/{{ d.img }}-1440.jpg 1440w" sizes="(min-width: 1024px) 55vw, 100vw" alt="{{ d.alt }}" width="1440" height="810" loading="lazy" data-step-img></div>
-            <h3 class="detail__title">{{ d.title }}</h3>
-            <p class="detail__text">{{ d.text }}</p>
-          </li>
-          {% endfor %}
-        </ol>
-        <div class="details__bars" aria-hidden="true"><span data-step-bar></span><span data-step-bar></span><span data-step-bar></span></div>
-      </div>
-      <div class="details__stage" aria-hidden="true" data-steps-stage></div>
+  <!-- ===== DETAILS: same carousel as Comfort (large cards, bold title + text, arrows over the images) ===== -->
+  <section class="comfort comfort--details section section--paper" aria-labelledby="details-title" data-carousel>
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.details.eyebrow }}</p>
+        <h2 class="section-title" id="details-title" data-reveal>{{ v27.details.title }}</h2>
+      </header>
+    </div>
+    <div class="comfort__stage">
+      <button class="comfort__arrow comfort__arrow--prev" type="button" data-carousel-prev aria-label="‹"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H5m4-4-4 4 4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <button class="comfort__arrow comfort__arrow--next" type="button" data-carousel-next aria-label="›"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <ul class="carousel comfort__track" data-carousel-track data-drag-scroll>
+        {% for d in v27.details.items %}
+        <li class="ccard">
+          <div class="ccard__media"><img src="{{ @assets }}img/v27/{{ d.img }}-1440.jpg" srcset="{{ @assets }}img/v27/{{ d.img }}-800.jpg 800w, {{ @assets }}img/v27/{{ d.img }}-1440.jpg 1440w" sizes="(min-width: 768px) 48vw, 86vw" alt="{{ d.alt }}" width="1440" height="810" loading="lazy" draggable="false"></div>
+          <div class="ccard__copy">
+            <h3 class="ccard__title">{{ d.title }}.</h3>
+            <p class="ccard__text">{{ d.text }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
   </section>
 
