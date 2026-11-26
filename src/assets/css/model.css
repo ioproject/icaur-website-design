@@ -421,7 +421,7 @@
   display: grid; place-items: center; background: rgba(255, 255, 255, 0.92); color: var(--c-ink); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   transition: opacity 0.3s var(--ease-out), visibility 0.3s, background var(--dur-fast), color var(--dur-fast);
 }
-.comfort__arrow:hover { background: var(--c-ink); color: var(--c-white); }
+.comfort__arrow:hover { background: var(--c-gold); color: var(--c-ink); }   /* #CAA87B */
 .comfort__arrow .icon { width: 20px; height: 20px; }
 .comfort__arrow--prev { left: var(--home-x, var(--gutter)); }
 .comfort__arrow--next { right: var(--home-x, var(--gutter)); }
