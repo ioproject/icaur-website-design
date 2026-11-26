@@ -507,3 +507,10 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .mcta .lead { max-width: 30ch; }   /* keeps the text left of the car */
 .mcta { clip-path: inset(0 round var(--radius)); isolation: isolate; }   /* rounded corners also over the moving (parallax) photo */
 .specs__summary { border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 70px; }   /* separator above the title too */
+.mcta { --cta-r: 20px; border-radius: var(--cta-r); clip-path: inset(0 round var(--cta-r)); }
+.mcta::after { background: linear-gradient(to right, rgba(20, 13, 11, 0.72) 0%, rgba(20, 13, 11, 0.3) 55%, rgba(20, 13, 11, 0.05) 100%); }   /* lighter edge so the rounded corners read against the dark page */
+/* bottom separator belongs to the whole accordion: when it opens, the line moves below the specs */
+.specs__summary { border-bottom: 0; }
+.specs__acc { border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+.specs__acc[open] { padding-bottom: 70px; }
+.specs__acc[open] .specs__summary { padding-bottom: 0; }
