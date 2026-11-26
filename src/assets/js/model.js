@@ -97,10 +97,12 @@
       if (btn) opener = btn;
       card.hidden = false;
       requestAnimationFrame(function () { card.classList.add('is-open'); });
+      document.documentElement.classList.add('is-spot-open');
       if (closeBtn) closeBtn.focus({ preventScroll: true });
     };
     var close = function () {
       card.classList.remove('is-open');
+      document.documentElement.classList.remove('is-spot-open');
       spots.forEach(function (b) { b.classList.remove('is-active'); b.setAttribute('aria-expanded', 'false'); });
       current = -1;
       hideTimer = setTimeout(function () { card.hidden = true; }, 450);

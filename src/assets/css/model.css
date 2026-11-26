@@ -357,8 +357,8 @@
 @media (prefers-reduced-motion: reduce) { .hotspot::before { animation: none; } }
 
 .spotcard {
-  position: absolute; z-index: 4; top: calc(var(--header-top) + var(--header-h) + 16px); bottom: 24px; right: var(--home-x, var(--gutter));
-  width: min(420px, calc(100% - 2 * var(--home-x, var(--gutter))));
+  position: absolute; z-index: 4; top: 16px; bottom: 16px; right: var(--home-x, var(--gutter));   /* full height of the section viewport */
+  width: min(560px, calc(100% - 2 * var(--home-x, var(--gutter))));
   display: flex; flex-direction: column; padding: 10px; border-radius: 22px;
   background: var(--c-white); color: var(--c-ink); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
   opacity: 0; transform: translateX(40px); transition: opacity 0.4s var(--ease-out), transform 0.5s var(--ease-out);
@@ -426,3 +426,21 @@
 .comfort__arrow--prev { left: calc(var(--home-x, var(--gutter)) + 30px); }
 .comfort__arrow--next { right: var(--home-x, var(--gutter)); }
 .comfort__arrow:disabled { opacity: 0; visibility: hidden; }
+
+/* Detail card: bigger image, text below, arrows pinned to the bottom; the section dock hides while it is open */
+.spotcard__img { aspect-ratio: 7 / 5; }
+.spotcard__body { padding: 32px 36px 12px; }
+.spotcard__title { font-size: clamp(1.75rem, 1.3rem + 1.2vw, 2.5rem); }
+.spotcard__text { font-size: 18px; }
+.spotcard__nav { margin-top: auto; padding: 12px 24px 24px; }
+.spotcard__arrow { width: 56px; height: 56px; }
+.spotcard__close { width: 56px; height: 56px; top: 28px; right: 28px; }
+html.is-spot-open .dock { opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0s 0.3s; }
+@media (max-width: 767px) { .spotcard__body { padding: 18px 14px 8px; } .spotcard__text { font-size: 16px; } }
+/* card: the image gives way so the text always fits in the viewport height */
+.spotcard__img { flex: 1 1 auto; min-height: 120px; max-height: 52%; aspect-ratio: auto; height: auto; }
+.spotcard__slide { overflow: hidden; }
+.spotcard__body { flex: none; }
+/* Space: notes centred */
+.space__head, .space .note { text-align: center; margin-inline: auto; }
+html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header-top) - 8px)); }   /* the card uses the full height: the bar steps aside while it is open */
