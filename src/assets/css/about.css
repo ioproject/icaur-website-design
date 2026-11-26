@@ -136,3 +136,12 @@
   .about-story .statement__more-copy { position: relative; }
   .about-story .statement__more-copy .statement__drift { padding-left: calc(25% - 90px); }
 }
+
+/* Story: 150px below the hero collage; brown background grows from inset/rounded to full width (main.js [data-grow-bg]); centred intro */
+.about-story { margin-top: 0; border-top: 150px solid var(--c-white); background: var(--c-white); position: relative; isolation: isolate; }   /* white 150px gap under the collage, white behind the growing brown */
+.about-story .statement__bg { position: absolute; inset: 0; z-index: -1; background: var(--c-black); will-change: clip-path; }
+.about-story .tag-stack, .about-story .tag-stack[class] { position: static; align-items: center; margin: 0 auto var(--space-md); }
+.about-story__intro {
+  max-width: 32em; margin: 0 auto; text-align: center;
+  font-size: clamp(1.0625rem, 0.95rem + 0.4vw, 1.375rem); font-weight: 500; line-height: 1.45; color: rgba(255, 255, 255, 0.62);
+}

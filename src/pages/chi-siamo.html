@@ -37,12 +37,13 @@
   <!-- ===== STORY + MANIFESTO: same full-width module as the home statement, on dark brown; words light up on scroll,
        a short paragraph drifts down beside the image (main.js [data-words] [data-drift]) ===== -->
   <section class="statement statement--full about-story section" aria-labelledby="story-label">
+    <div class="statement__bg" aria-hidden="true" data-grow-bg></div>
     <div class="container statement__inner">
       <div class="tag-stack">
         <span class="tag tag--index" aria-hidden="true"><span class="nocase">i</span>.01</span>
         <p class="tag tag--fill" id="story-label">{{ about.story.eyebrow }}</p>
       </div>
-      <p class="statement__text" data-words>{{ about.story.text }}</p>
+      <p class="about-story__intro" data-reveal>{{ about.story.text }}</p>   <!-- small centred paragraph -->
 
       <div class="statement__more">
         <figure class="statement__more-media">

@@ -655,7 +655,7 @@
           scrollTrigger: { trigger: section, start: 'top bottom', end: 'top 10%', scrub: true } });
       // the hero underneath dims slightly as it gets covered
       var hero = section.previousElementSibling;
-      if (hero && hero.matches('[data-hero]')) {
+      if (hero && hero.matches('[data-hero]') && !hero.matches('[data-collage]')) {   // the collage hero keeps its full brightness
         gsap.to($$('.hero__frame', hero).length ? $$('.hero__frame', hero) : hero, {
           opacity: 0.45, ease: 'none',
           scrollTrigger: { trigger: section, start: 'top bottom', end: 'top top', scrub: true }
