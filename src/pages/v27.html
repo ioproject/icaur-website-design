@@ -265,25 +265,29 @@
     </div>
   </section>
 
-  <!-- ===== TECHNOLOGY / PERFORMANCE ===== -->
+  <!-- ===== TECHNOLOGY: vertical — title, large image, centred text with a highlight, then big numbers + spec groups ===== -->
   <section class="perf section section--ink" id="tecnologia" aria-labelledby="perf-title">
     <div class="container">
-      <div class="perf__intro">
-        <header>
-          <p class="eyebrow" data-reveal>{{ v27.performance.eyebrow }}</p>
-          <h2 class="section-title" id="perf-title" data-split-lines>{{ v27.performance.title }}</h2>
-          <p class="lead lead--dim" data-reveal>{{ v27.performance.text }}</p>
-        </header>
-        <figure class="perf__diagram" data-reveal>
-          <img src="{{ @assets }}img/v27/tech-reev-1440.jpg" srcset="{{ @assets }}img/v27/tech-reev-800.jpg 800w, {{ @assets }}img/v27/tech-reev-1440.jpg 1440w" sizes="(min-width: 1024px) 45vw, 100vw" alt="{{ v27.performance.img_alt }}" width="1440" height="810" loading="lazy">
-        </figure>
+      <header class="perf__head">
+        <p class="eyebrow" data-reveal>{{ v27.performance.eyebrow }}</p>
+        <h2 class="section-title" id="perf-title" data-split-lines>{{ v27.performance.title }}</h2>
+      </header>
+      <figure class="perf__diagram" data-reveal>
+        <img src="{{ @assets }}img/v27/tech-reev-1440.jpg" srcset="{{ @assets }}img/v27/tech-reev-800.jpg 800w, {{ @assets }}img/v27/tech-reev-1440.jpg 1440w" sizes="(min-width: 1200px) 1100px, 100vw" alt="{{ v27.performance.img_alt }}" width="1440" height="810" loading="lazy">
+      </figure>
+      <p class="perf__text" data-reveal>{{ v27.performance.text }}</p>
+      <div class="perf__specs">
+        <dl class="perf__big">
+          {% for b in v27.performance.big %}
+          <div data-reveal><dt>{{ b.label }}</dt><dd>{{ b.value }}<small>{{ b.unit }}</small></dd></div>
+          {% endfor %}
+        </dl>
+        <div class="perf__groups" data-reveal>
+          {% for g in v27.performance.groups %}
+          <div class="perf__group"><h3>{{ g.title }}</h3><p>{{ g.lines }}</p></div>
+          {% endfor %}
+        </div>
       </div>
-      <dl class="bignums">
-        {% for s in v27.performance.stats %}
-        <div data-reveal><dd>{{ s.pre }}<span data-count="{{ s.count }}" data-decimals="{{ s.dec }}">{{ s.count }}</span><small>{{ s.unit }}</small></dd><dt>{{ s.label }}</dt></div>
-        {% endfor %}
-      </dl>
-      <p class="note note--dim" data-reveal>{{ v27.performance.battery }}</p>
     </div>
   </section>
 

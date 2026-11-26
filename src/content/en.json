@@ -548,46 +548,34 @@
     "performance": {
       "eyebrow": "Technology",
       "title": "Golden REEV:<br>electric power at the wheels",
-      "text": "The petrol engine works as a generator and charges the battery when needed. The wheels are always driven by the two electric motors, one per axle.",
+      "text": "The petrol engine works as a generator and charges the battery when needed. <strong>The wheels are always driven by the two electric motors</strong>, one per axle: the quick, quiet response of an EV, with the range for long journeys.",
       "img_alt": "Diagram of the Golden REEV range extender system on the V27 platform",
-      "stats": [
+      "big": [
         {
-          "count": "5.9",
-          "dec": "1",
-          "pre": "",
-          "unit": "s",
-          "label": "0 to 100 km/h"
+          "label": "0 to 100 km/h in",
+          "value": "5.9",
+          "unit": "s"
         },
         {
-          "count": "61",
-          "dec": "0",
-          "pre": "&lt;",
-          "unit": "dB",
-          "label": "In the cabin, 2 dB below the industry standard"
-        },
-        {
-          "count": "45.79",
-          "dec": "2",
-          "pre": "",
-          "unit": "%",
-          "label": "Engine thermal efficiency"
-        },
-        {
-          "count": "335",
-          "dec": "0",
-          "pre": "",
-          "unit": "kW",
-          "label": "150 kW front + 185 kW rear"
-        },
-        {
-          "count": "505",
-          "dec": "0",
-          "pre": "",
-          "unit": "N·m",
-          "label": "200 N·m front + 305 N·m rear"
+          "label": "Maximum power",
+          "value": "335",
+          "unit": "kW"
         }
       ],
-      "battery": "CATL lithium iron phosphate (LFP) battery."
+      "groups": [
+        {
+          "title": "Two electric motors, one per axle",
+          "lines": "Power 335 kW (150 kW front + 185 kW rear)<br>Torque 505 N·m (200 N·m front + 305 N·m rear)<br>Electric all-wheel drive"
+        },
+        {
+          "title": "Golden REEV range extender",
+          "lines": "Engine thermal efficiency 45.79%<br>The petrol engine only acts as a generator<br>CATL lithium iron phosphate (LFP) battery"
+        },
+        {
+          "title": "A quiet cabin",
+          "lines": "Under 61 dB in the cabin<br>2 dB below the industry average"
+        }
+      ]
     },
     "offroad": {
       "eyebrow": "Off-road",

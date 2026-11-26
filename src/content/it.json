@@ -548,46 +548,34 @@
     "performance": {
       "eyebrow": "Tecnologia",
       "title": "Golden REEV:<br>a muovere le ruote è l'elettrico",
-      "text": "Il motore a benzina fa da generatore e ricarica la batteria quando serve. Le ruote le muovono sempre i due motori elettrici, uno per asse.",
+      "text": "Il motore a benzina fa da generatore e ricarica la batteria quando serve. <strong>Le ruote le muovono sempre i due motori elettrici</strong>, uno per asse: la risposta pronta e silenziosa di un'elettrica, con l'autonomia per i viaggi lunghi.",
       "img_alt": "Schema del sistema range extender Golden REEV sul pianale del V27",
-      "stats": [
+      "big": [
         {
-          "count": "5.9",
-          "dec": "1",
-          "pre": "",
-          "unit": "s",
-          "label": "Da 0 a 100 km/h"
+          "label": "Da 0 a 100 km/h in",
+          "value": "5,9",
+          "unit": "s"
         },
         {
-          "count": "61",
-          "dec": "0",
-          "pre": "&lt;",
-          "unit": "dB",
-          "label": "In abitacolo, 2 dB sotto la media del settore"
-        },
-        {
-          "count": "45.79",
-          "dec": "2",
-          "pre": "",
-          "unit": "%",
-          "label": "Rendimento termico del motore"
-        },
-        {
-          "count": "335",
-          "dec": "0",
-          "pre": "",
-          "unit": "kW",
-          "label": "150 kW anteriore + 185 kW posteriore"
-        },
-        {
-          "count": "505",
-          "dec": "0",
-          "pre": "",
-          "unit": "N·m",
-          "label": "200 N·m anteriore + 305 N·m posteriore"
+          "label": "Potenza massima",
+          "value": "335",
+          "unit": "kW"
         }
       ],
-      "battery": "Batteria CATL al litio ferro fosfato (LFP)."
+      "groups": [
+        {
+          "title": "Due motori elettrici, uno per asse",
+          "lines": "Potenza 335 kW (150 kW anteriore + 185 kW posteriore)<br>Coppia 505 N·m (200 N·m anteriore + 305 N·m posteriore)<br>Trazione integrale elettrica"
+        },
+        {
+          "title": "Range extender Golden REEV",
+          "lines": "Rendimento termico del motore 45,79%<br>Il motore a benzina fa solo da generatore<br>Batteria CATL al litio ferro fosfato (LFP)"
+        },
+        {
+          "title": "Silenzio in abitacolo",
+          "lines": "Meno di 61 dB in abitacolo<br>2 dB sotto la media del settore"
+        }
+      ]
     },
     "offroad": {
       "eyebrow": "Fuoristrada",
