@@ -302,7 +302,7 @@
       <p class="lead" data-reveal>{{ v27.offroad.text }}</p>
       <dl class="bignums bignums--compact">
         {% for s in v27.offroad.stats %}
-        <div data-reveal><dd><span data-count="{{ s.count }}">{{ s.count }}</span><small>{{ s.unit }}</small></dd><dt>{{ s.label }}</dt></div>
+        <div data-reveal><dd><span data-count="{{ s.count }}">{{ s.count }}</span><small data-unit="{{ s.unit }}">{{ s.unit }}</small></dd><dt>{{ s.label }}</dt></div>
         {% endfor %}
       </dl>
     </div>

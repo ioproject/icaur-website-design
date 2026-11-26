@@ -445,3 +445,11 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .perf__note { display: block; margin-top: 12px; font-size: 15px; font-weight: 400; letter-spacing: 0; line-height: 1.4; color: rgba(255, 255, 255, 0.55); }
 .perf__note:empty { display: none; }
 .perf__group h3 { font-size: clamp(1.375rem, 1.1rem + 0.9vw, 1.875rem); line-height: 1.2; margin-bottom: 8px; }   /* bigger group titles */
+/* Off-road: everything centred, regular lead, degree sign raised to the top of the number */
+.offroad__content { text-align: center; }
+.offroad__content .section-title, .offroad__content .lead { margin-inline: auto; }
+.offroad .lead { font-weight: 400; }
+.offroad .bignums--compact { justify-content: center; }
+.offroad .bignums dt { margin-inline: auto; }
+.offroad .bignums dd small[data-unit="°"] { vertical-align: top; font-size: 0.55em; line-height: 1; margin-left: 0.04em; }
+.offroad::after { background: linear-gradient(to top, rgba(20, 13, 11, 0.88), rgba(20, 13, 11, 0.45) 50%, rgba(20, 13, 11, 0) 80%); }   /* even shade under the centred text */
