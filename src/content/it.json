@@ -203,10 +203,6 @@
     "cta": {
       "eyebrow": "Vuoi conoscere da vicino iCAUR?",
       "title": "Richiedi informazioni sui modelli o prenota un test drive: il nostro team è a tua disposizione.",
-      "province": "Provincia",
-      "province_ph": "La tua provincia",
-      "email": "Email",
-      "email_ph": "nome@email.it",
       "submit": "Richiedi informazioni",
       "alt": "Un V27 giallo parcheggiato su un campo da tennis in terra rossa, visto dall'alto"
     }
