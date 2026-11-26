@@ -139,6 +139,7 @@
     $$('[data-turn]').forEach(function (section) {
       var steps = $$('[data-turn-step]', section);
       if (steps.length < 2) return;
+      section.style.setProperty('--turn-total', '" — ' + String(steps.length).padStart(2, '0') + '"');   // caption index reads "01 — 06"
       section.classList.add('is-pinned');
       var imgs = steps.map(function (s) { return s.querySelector('.turn-step__img'); });
       var caps = steps.map(function (s) { return s.querySelector('.turn-step__caption'); });
