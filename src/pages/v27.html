@@ -272,14 +272,8 @@
         <p class="eyebrow" data-reveal>{{ v27.performance.eyebrow }}</p>
         <h2 class="section-title" id="perf-title" data-split-lines>{{ v27.performance.title }}</h2>
       </header>
-      <!-- turns the white photo background transparent: alpha falls to 0 only for near-white pixels -->
-      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-        <filter id="knockout-white" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
-          <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -6 -6 -6 0 18"/>
-        </filter>
-      </svg>
       <figure class="perf__diagram" data-reveal>
-        <img src="{{ @assets }}img/v27/tech-reev-1440.jpg" srcset="{{ @assets }}img/v27/tech-reev-800.jpg 800w, {{ @assets }}img/v27/tech-reev-1440.jpg 1440w" sizes="(min-width: 1200px) 1100px, 100vw" alt="{{ v27.performance.img_alt }}" width="1440" height="810" loading="lazy">
+        <img src="{{ @assets }}img/v27/tech-chassis-1440.jpg" srcset="{{ @assets }}img/v27/tech-chassis-800.jpg 800w, {{ @assets }}img/v27/tech-chassis-1440.jpg 1440w, {{ @assets }}img/v27/tech-chassis-2000.jpg 2000w" sizes="100vw" alt="{{ v27.performance.img_alt }}" width="2000" height="1285" loading="lazy">
       </figure>
       <p class="perf__text" data-reveal>{{ v27.performance.text }}</p>
       <div class="perf__specs">
