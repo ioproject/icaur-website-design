@@ -531,3 +531,4 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .specs .spec-group dt { color: var(--c-gray); }
 .specs .note--dim { color: var(--c-gray); }
 .specs__summary:focus-visible { outline-color: var(--c-brown); }
+.specs.section { margin-top: calc(var(--space-xl) - 175px); padding-bottom: 50px; }   /* 35px less above and below the specs card */
