@@ -34,25 +34,22 @@
     </div>
   </section>
 
-  <!-- ===== STORY + MANIFESTO: same full-width module as the home statement, on dark brown; words light up on scroll,
-       a short paragraph drifts down beside the image (main.js [data-words] [data-drift]) ===== -->
-  <section class="statement statement--full about-story section" aria-labelledby="story-label">
+  <!-- ===== STORY + MANIFESTO: brown background grows on scroll (main.js [data-grow-bg]); centred intro; beside the sticky
+       image the manifesto paragraphs scroll up and stack one under the other until the last (main.js [data-stack]) ===== -->
+  <section class="statement statement--full about-story section" aria-label="{{ about.story.eyebrow }}">
     <div class="statement__bg" aria-hidden="true" data-grow-bg></div>
     <div class="container statement__inner">
-      <div class="tag-stack">
-        <span class="tag tag--index" aria-hidden="true"><span class="nocase">i</span>.01</span>
-        <p class="tag tag--fill" id="story-label">{{ about.story.eyebrow }}</p>
-      </div>
-      <p class="about-story__intro" data-reveal>{{ about.story.text }}</p>   <!-- small centred paragraph -->
+      <p class="about-story__intro" data-reveal>{{ about.story.text }}</p>
 
       <div class="statement__more">
         <figure class="statement__more-media">
-          <img src="{{ @assets }}img/about/vinyl-1440.jpg" srcset="{{ @assets }}img/about/vinyl-800.jpg 800w, {{ @assets }}img/about/vinyl-1440.jpg 1440w" sizes="(min-width: 900px) 45vw, 100vw" alt="{{ about.manifesto.alt }}" width="1440" height="960" loading="lazy">
+          <img src="{{ @assets }}img/about/life-road-1080.jpg" srcset="{{ @assets }}img/about/life-road-800.jpg 800w, {{ @assets }}img/about/life-road-1080.jpg 1080w" sizes="(min-width: 900px) 45vw, 100vw" alt="{{ about.manifesto.alt }}" width="1080" height="1350" loading="lazy">
         </figure>
-        <div class="statement__more-copy">
-          <div class="statement__drift" data-drift>
-            <p class="statement__more-text">{{ about.manifesto.short }}</p>
-          </div>
+        <div class="statement__more-copy" data-stack>
+          {% for m in about.manifesto.items %}
+          <p class="statement__more-text" data-stack-item>{{ m.text }}</p>
+          {% endfor %}
+          <p class="statement__more-text statement__more-text--promise" data-stack-item>{{ about.manifesto.promise }}</p>
         </div>
       </div>
     </div>

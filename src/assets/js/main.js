@@ -10,6 +10,7 @@
      [data-words]                                               words lighting up on scroll
      [data-reveal]                                              fade/slide in on enter
      [data-drift]                                               block slides down its column on scroll
+     [data-stack] [data-stack-item]                             sticky paragraphs stack under each other on scroll
      [data-grow-box]                                            centred box grows to full width on scroll
      [data-collage] [data-collage-main] [data-collage-card]     hero photo shrinks into a box among image boxes (first scroll)
      [data-tech] [data-tech-item] [data-tech-img]               pinned stage: image + titles change on scroll
@@ -622,6 +623,28 @@
       return function () { undo.forEach(function (f) { f(); }); };
     });
   }
+
+  // Stack [data-stack] (desktop): each [data-stack-item] is sticky (CSS); its top is the first item's top plus the
+  // heights of the items above, so a paragraph scrolling up lines up under the previous one, until the last. Each item's
+  // bottom margin reaches the bottom of the finished stack (+ a short pause), so the whole stack then leaves together;
+  // the next item's top margin compensates, keeping a gap of ~38vh between paragraphs while they scroll in.
+  $$('[data-stack]').forEach(function (list) {
+    var items = $$('[data-stack-item]', list), mq = window.matchMedia('(min-width: 900px)');
+    function place() {
+      items.forEach(function (it) { it.style.top = it.style.marginTop = it.style.marginBottom = ''; });
+      if (!mq.matches) return;
+      var top = 110, gap = 24, tops = [], vh = window.innerHeight, space = vh * 0.38, pause = vh * 0.2;
+      items.forEach(function (it) { tops.push(top); it.style.top = top + 'px'; top += it.offsetHeight + gap; });
+      var end = top - gap, prev = 0;
+      items.forEach(function (it, i) {
+        var mb = end - (tops[i] + it.offsetHeight) + pause;
+        if (i) it.style.marginTop = (space - prev) + 'px';
+        it.style.marginBottom = mb + 'px'; prev = mb;
+      });
+    }
+    place();
+    window.addEventListener('resize', place);
+  });
 
   // Drift: the block slides down its column while the section scrolls by (desktop only)
   if (!reduceMotion) {

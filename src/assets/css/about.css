@@ -143,5 +143,15 @@
 .about-story .tag-stack, .about-story .tag-stack[class] { position: static; align-items: center; margin: 0 auto var(--space-md); }
 .about-story__intro {
   max-width: 32em; margin: 0 auto; text-align: center;
-  font-size: clamp(1.0625rem, 0.95rem + 0.4vw, 1.375rem); font-weight: 500; line-height: 1.45; color: rgba(255, 255, 255, 0.62);
+  font-size: clamp(1.25rem, 0.9rem + 1vw, 1.75rem); font-weight: 500; line-height: 1.25; letter-spacing: -0.01em; color: #fff;   /* 28px on desktop */
+}
+
+/* Manifesto: sticky image on the left, paragraphs on the right scroll up and stack under each other (tops set by main.js [data-stack]) */
+.about-story .statement__more-text { font-weight: 500; color: #fff; max-width: 30ch; margin: 0 0 var(--space-md); }
+@media (min-width: 900px) {
+  .about-story .statement__more { align-items: start; }
+  .about-story .statement__more-media { position: sticky; top: 110px; }
+  .about-story .statement__more-copy { padding-left: calc(25% - 90px); }
+  .about-story .statement__more-copy { display: flex; flex-direction: column; align-items: flex-start; }   /* no margin collapsing: main.js sets the margins */
+  .about-story .statement__more-text { position: sticky; top: 110px; margin: 0; }
 }
