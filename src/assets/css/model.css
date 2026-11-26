@@ -532,3 +532,7 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .specs .note--dim { color: var(--c-gray); }
 .specs__summary:focus-visible { outline-color: var(--c-brown); }
 .specs.section { margin-top: calc(var(--space-xl) - 175px); padding-bottom: 50px; }   /* 35px less above and below the specs card */
+/* Specs card: beige, full width on large screens (same edges as the gallery and the final box), equal 50px gap above and below */
+.specs__acc { background: #F1EADE; }
+.specs > .container { max-width: none; }
+.specs.section { margin-top: calc(50px - var(--space-xl)); padding-bottom: 50px; }
