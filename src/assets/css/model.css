@@ -280,7 +280,7 @@
   font-size: 12px; font-weight: 500; letter-spacing: 0.14em; color: rgba(255, 255, 255, 0.7);
 }
 .turn-step__title { font-size: clamp(1.375rem, 1.1rem + 0.8vw, 1.875rem); font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; }
-.turn-step__text { line-height: 1.5; }
+.turn-step__text { line-height: 1.5; font-size: 16px; }
 @media (min-width: 1024px) {
   .js .turn.is-pinned .turn__head { top: calc(50% - 240px); left: calc(var(--home-x, var(--gutter)) + 30px); right: auto; max-width: 40vw; padding: 0; translate: 0 -50%; }
   .js .turn.is-pinned .turn__steps::after {   /* soft shade at both sides so white text reads on light photos */
