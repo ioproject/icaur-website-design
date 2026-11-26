@@ -479,3 +479,4 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .perf--light .perf__big div, .perf--light .perf__groups { border-top-color: rgba(20, 13, 11, 0.25); }
 .perf--light .perf__big dt, .perf--light .perf__note, .perf--light .perf__group p, .perf--light .adas__text { color: rgba(20, 13, 11, 0.7); }
 .perf--light .eyebrow--dark { color: var(--c-ink); }
+.perf__text { font-size: 23px; }   /* Technology + Safety intro text */
