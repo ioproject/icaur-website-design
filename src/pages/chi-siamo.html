@@ -35,7 +35,7 @@
   </section>
 
   <!-- ===== STORY + MANIFESTO: brown background grows on scroll (main.js [data-grow-bg]); centred intro; beside the sticky
-       image the manifesto paragraphs scroll up and stack one under the other until the last (main.js [data-stack]) ===== -->
+       image each manifesto paragraph enters at the top and pushes the previous ones down (main.js [data-stack]) ===== -->
   <section class="statement statement--full about-story section" aria-label="{{ about.story.eyebrow }}">
     <div class="statement__bg" aria-hidden="true" data-grow-bg></div>
     <div class="container statement__inner">
@@ -46,10 +46,12 @@
           <img src="{{ @assets }}img/about/life-road-1080.jpg" srcset="{{ @assets }}img/about/life-road-800.jpg 800w, {{ @assets }}img/about/life-road-1080.jpg 1080w" sizes="(min-width: 900px) 45vw, 100vw" alt="{{ about.manifesto.alt }}" width="1080" height="1350" loading="lazy">
         </figure>
         <div class="statement__more-copy" data-stack>
-          {% for m in about.manifesto.items %}
-          <p class="statement__more-text" data-stack-item>{{ m.text }}</p>
-          {% endfor %}
-          <p class="statement__more-text statement__more-text--promise" data-stack-item>{{ about.manifesto.promise }}</p>
+          <div class="stack__pin">
+            {% for m in about.manifesto.items %}
+            <div class="stack__item" data-stack-item><p class="statement__more-text">{{ m.text }}</p></div>
+            {% endfor %}
+            <div class="stack__item" data-stack-item><p class="statement__more-text statement__more-text--promise">{{ about.manifesto.promise }}</p></div>
+          </div>
         </div>
       </div>
     </div>

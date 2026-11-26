@@ -152,6 +152,8 @@
   .about-story .statement__more { align-items: start; }
   .about-story .statement__more-media { position: sticky; top: 110px; }
   .about-story .statement__more-copy { padding-left: calc(25% - 90px); }
-  .about-story .statement__more-copy { display: flex; flex-direction: column; align-items: flex-start; }   /* no margin collapsing: main.js sets the margins */
-  .about-story .statement__more-text { position: sticky; top: 110px; margin: 0; }
+  /* the pin stays still; column-reverse shows the newest paragraph on top while keeping the reading order in the HTML */
+  .about-story .stack__pin { position: sticky; top: 110px; display: flex; flex-direction: column-reverse; }
+  .about-story .stack__item { overflow: hidden; }
+  .about-story .statement__more-text { margin: 0; padding-bottom: 24px; }
 }
