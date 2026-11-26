@@ -410,6 +410,6 @@
 }
 
 /* Comfort: 70px less space above the heading */
-.comfort.section { padding-top: calc(var(--space-xl) - 50px); }
+.comfort.section { padding-top: calc(var(--space-xl) - 50px); padding-bottom: calc(var(--space-xl) - 55px); }
 .comfort__nav .round-btn--soft { background: rgba(35, 24, 21, 0.08); }
 .comfort__nav .round-btn--soft:hover { background: var(--c-black); color: var(--c-white); }
