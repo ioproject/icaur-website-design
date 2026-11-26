@@ -423,6 +423,6 @@
 }
 .comfort__arrow:hover { background: var(--c-gold); color: var(--c-ink); }   /* #CAA87B */
 .comfort__arrow .icon { width: 20px; height: 20px; }
-.comfort__arrow--prev { left: var(--home-x, var(--gutter)); }
+.comfort__arrow--prev { left: calc(var(--home-x, var(--gutter)) + 30px); }
 .comfort__arrow--next { right: var(--home-x, var(--gutter)); }
 .comfort__arrow:disabled { opacity: 0; visibility: hidden; }
