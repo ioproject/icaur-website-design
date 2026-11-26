@@ -110,17 +110,17 @@
 }
 
 /* ---------- Details (one at a time) ---------- */
-.details__list { display: grid; gap: var(--space-xl); margin-top: var(--space-lg); }
+.details__list { display: grid; gap: var(--space-xl); margin-top: var(--space-sm); }
 .detail__media { overflow: hidden; border-radius: var(--radius); margin-bottom: var(--space-md); }
 .detail__media img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
-.detail__title { font-size: var(--fs-lg); font-weight: 500; margin-bottom: var(--space-xs); }
+.detail__title { font-size: var(--fs-xl); font-weight: 500; line-height: 1.02; letter-spacing: -0.03em; margin-bottom: var(--space-sm); }   /* same size as a section title */
 .detail__text { color: var(--c-gray); max-width: 42ch; }
 .details__bars, .details__stage { display: none; }
 
 @media (min-width: 1024px) {
   .js .details.is-pinned { height: 100vh; padding: 0; display: flex; align-items: center; }
   .js .details.is-pinned .details__inner { position: relative; display: grid; grid-template-columns: 5fr 7fr; align-items: center; height: 100%; }
-  .js .details.is-pinned .details__list { display: grid; margin-top: var(--space-lg); gap: 0; }
+  .js .details.is-pinned .details__list { display: grid; margin-top: var(--space-sm); gap: 0; }
   .js .details.is-pinned .detail { grid-area: 1 / 1; }
   .js .details.is-pinned .detail__media {
     position: absolute; margin: 0; top: 14vh; bottom: 10vh; right: var(--gutter); width: calc(58% - var(--gutter));
