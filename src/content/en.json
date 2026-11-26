@@ -786,8 +786,8 @@
     },
     "cta": {
       "eyebrow": "<span class=\"nocase\">iCAUR</span> V27",
-      "title": "The V27<br>is for driving",
-      "text": "Book a test drive at your nearest dealer, or write to us and we'll get back to you.",
+      "title": "Your<br>next step",
+      "text": "Book a test drive at your nearest dealer.",
       "test": "Book a test drive",
       "dealer": "Find a dealer",
       "info": "Request information",
