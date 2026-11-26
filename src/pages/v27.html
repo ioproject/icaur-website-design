@@ -55,7 +55,7 @@
   <section class="vstats" aria-label="{{ v27.hero.stats_label }}">
     <dl class="vstats__grid">
       {% for s in v27.hero.stats %}
-      <div class="vstats__item"><dt>{{ s.label }}</dt><dd><span data-count="{{ s.count }}" data-decimals="{{ s.dec }}">{{ s.value }}</span><small>{{ s.unit }}</small></dd></div>
+      <div class="vstats__item"><dt>{{ s.label }}</dt><dd><span>{{ s.value }}</span><small>{{ s.unit }}</small></dd></div>
       {% endfor %}
     </dl>
   </section>
