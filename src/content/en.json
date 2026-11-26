@@ -786,12 +786,12 @@
     },
     "cta": {
       "eyebrow": "<span class=\"nocase\">iCAUR</span> V27",
-      "title": "Your<br>next step",
-      "text": "Book a test drive at your nearest dealer.",
+      "title": "Take<br>the wheel",
+      "text": "See the V27 for real: book a test drive at your nearest dealer.",
       "test": "Book a test drive",
       "dealer": "Find a dealer",
       "info": "Request information",
-      "alt": "V27 on a high meadow"
+      "alt": "The sand-coloured V27 on a high meadow, with snowy mountains behind"
     },
     "disclaimer": "Visuals are for illustrative purposes only. Configuration details depend on the models available in the Italian market."
   },
