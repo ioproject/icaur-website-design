@@ -616,5 +616,5 @@ select.field__input { appearance: none; background-image: url("data:image/svg+xm
 @media (min-width: 900px) {
   .site-footer__news { position: relative; }
   .site-footer__news .site-footer__label { position: absolute; bottom: 100%; left: 0; margin-bottom: var(--space-sm); }
-  .site-footer__links { padding-top: var(--footer-links-offset, 30px); }
+  .site-footer__links { padding-top: 0; height: 56px; align-self: start; align-content: center; }   /* News, Contatti and socials centred on the fields / Iscriviti button (56px row) */
 }
