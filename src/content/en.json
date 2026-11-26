@@ -554,22 +554,26 @@
         {
           "label": "0 to 100 km/h in",
           "value": "5.9",
-          "unit": "s"
+          "unit": "s",
+          "note": ""
         },
         {
           "label": "Maximum power",
           "value": "335",
-          "unit": "kW"
+          "unit": "kW",
+          "note": "150 kW front + 185 kW rear"
+        },
+        {
+          "label": "Maximum torque",
+          "value": "505",
+          "unit": "N·m",
+          "note": "200 N·m front + 305 N·m rear"
         }
       ],
       "groups": [
         {
-          "title": "Two electric motors, one per axle",
-          "lines": "Power 335 kW (150 kW front + 185 kW rear)<br>Torque 505 N·m (200 N·m front + 305 N·m rear)<br>Electric all-wheel drive"
-        },
-        {
           "title": "Golden REEV range extender",
-          "lines": "Engine thermal efficiency 45.79%<br>The petrol engine only acts as a generator<br>CATL lithium iron phosphate (LFP) battery"
+          "lines": "Two electric motors, one per axle: electric all-wheel drive<br>Engine thermal efficiency 45.79%<br>The petrol engine only acts as a generator<br>CATL lithium iron phosphate (LFP) battery"
         },
         {
           "title": "A quiet cabin",

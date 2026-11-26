@@ -554,22 +554,26 @@
         {
           "label": "Da 0 a 100 km/h in",
           "value": "5,9",
-          "unit": "s"
+          "unit": "s",
+          "note": ""
         },
         {
           "label": "Potenza massima",
           "value": "335",
-          "unit": "kW"
+          "unit": "kW",
+          "note": "150 kW anteriore + 185 kW posteriore"
+        },
+        {
+          "label": "Coppia massima",
+          "value": "505",
+          "unit": "N·m",
+          "note": "200 N·m anteriore + 305 N·m posteriore"
         }
       ],
       "groups": [
         {
-          "title": "Due motori elettrici, uno per asse",
-          "lines": "Potenza 335 kW (150 kW anteriore + 185 kW posteriore)<br>Coppia 505 N·m (200 N·m anteriore + 305 N·m posteriore)<br>Trazione integrale elettrica"
-        },
-        {
           "title": "Range extender Golden REEV",
-          "lines": "Rendimento termico del motore 45,79%<br>Il motore a benzina fa solo da generatore<br>Batteria CATL al litio ferro fosfato (LFP)"
+          "lines": "Due motori elettrici, uno per asse: trazione integrale elettrica<br>Rendimento termico del motore 45,79%<br>Il motore a benzina fa solo da generatore<br>Batteria CATL al litio ferro fosfato (LFP)"
         },
         {
           "title": "Silenzio in abitacolo",

@@ -417,8 +417,8 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 /* ---------- Technology, vertical ---------- */
 .perf__head { text-align: center; }
 .perf__head .section-title { margin-inline: auto; }
-.perf__diagram { max-width: 1100px; margin: var(--space-lg) auto 0; border-radius: 20px; overflow: hidden; background: var(--c-white); }
-.perf__diagram img { display: block; width: 100%; }
+.perf__diagram { max-width: 1100px; margin: var(--space-lg) auto 0; }
+.perf__diagram img { display: block; width: 100%; filter: url(#knockout-white); }   /* white background removed, the chassis sits on the dark section */
 .perf__text {
   max-width: 40em; margin: var(--space-lg) auto 0; text-align: center;
   font-size: clamp(1.0625rem, 0.95rem + 0.45vw, 1.3125rem); line-height: 1.45; font-weight: 500; color: rgba(255, 255, 255, 0.55);
@@ -434,3 +434,5 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .perf__group h3 { font-size: clamp(1.0625rem, 0.95rem + 0.4vw, 1.3125rem); font-weight: 500; line-height: 1.35; }
 .perf__group p { font-size: clamp(1.0625rem, 0.95rem + 0.4vw, 1.3125rem); line-height: 1.45; color: rgba(255, 255, 255, 0.55); }
 @media (min-width: 900px) { .perf__specs { grid-template-columns: 2fr 3fr; gap: clamp(3rem, 6vw, 7rem); } }
+.perf__note { display: block; margin-top: 12px; font-size: 15px; font-weight: 400; letter-spacing: 0; line-height: 1.4; color: rgba(255, 255, 255, 0.55); }
+.perf__note:empty { display: none; }
