@@ -584,7 +584,7 @@
     "offroad": {
       "eyebrow": "Off-road",
       "title": "Where the tarmac ends",
-      "text": "Generous angles, deep wading and a very rigid body: the V27 takes on sand, rocks and dirt tracks calmly.",
+      "text": "Generous angles, deep wading and a very rigid body: <span class=\"nocase\">iCAUR</span> V27 takes on sand, rocks and dirt tracks calmly.",
       "alt": "The sand-coloured V27 climbs a rocky mountain trail, kicking up dust",
       "stats": [
         {

@@ -584,7 +584,7 @@
     "offroad": {
       "eyebrow": "Fuoristrada",
       "title": "Quando l'asfalto finisce",
-      "text": "Angoli generosi, guado profondo e una scocca rigidissima: il V27 affronta sabbia, rocce e sterrati con calma.",
+      "text": "Angoli generosi, guado profondo e una scocca rigidissima: <span class=\"nocase\">iCAUR</span> V27 affronta sabbia, rocce e sterrati con calma.",
       "alt": "Il V27 color sabbia sale su una pietraia di montagna sollevando polvere",
       "stats": [
         {
