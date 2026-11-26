@@ -34,29 +34,25 @@
     </div>
   </section>
 
-  <!-- ===== STORY ===== -->
-  <section class="statement section section--light">
-    <div class="container container--narrow">
-      <p class="eyebrow eyebrow--dark" data-reveal>{{ about.story.eyebrow }}</p>
+  <!-- ===== STORY + MANIFESTO: same full-width module as the home statement, on dark brown; words light up on scroll,
+       a short paragraph drifts down beside the image (main.js [data-words] [data-drift]) ===== -->
+  <section class="statement statement--full about-story section" aria-labelledby="story-label">
+    <div class="container statement__inner">
+      <div class="tag-stack">
+        <span class="tag tag--index" aria-hidden="true"><span class="nocase">i</span>.01</span>
+        <p class="tag tag--fill" id="story-label">{{ about.story.eyebrow }}</p>
+      </div>
       <p class="statement__text" data-words>{{ about.story.text }}</p>
-    </div>
-  </section>
 
-  <!-- ===== MANIFESTO ===== -->
-  <section class="manifesto section section--dark" aria-labelledby="manifesto-title">
-    <div class="container manifesto__inner">
-      <figure class="manifesto__media">
-        <img src="{{ @assets }}img/about/vinyl-1440.jpg" srcset="{{ @assets }}img/about/vinyl-800.jpg 800w, {{ @assets }}img/about/vinyl-1440.jpg 1440w" sizes="(min-width: 1024px) 40vw, 100vw" alt="{{ about.manifesto.alt }}" width="1440" height="960" loading="lazy" data-parallax="-8">
-      </figure>
-      <div class="manifesto__body">
-        <p class="eyebrow" data-reveal>{{ about.manifesto.eyebrow }}</p>
-        <h2 class="manifesto__title" id="manifesto-title" data-reveal>{{ about.manifesto.title }}</h2>
-        <ol class="manifesto__list">
-          {% for m in about.manifesto.items %}
-          <li data-reveal>{{ m.text }}</li>
-          {% endfor %}
-        </ol>
-        <p class="manifesto__promise" data-reveal>{{ about.manifesto.promise }}</p>
+      <div class="statement__more">
+        <figure class="statement__more-media">
+          <img src="{{ @assets }}img/about/vinyl-1440.jpg" srcset="{{ @assets }}img/about/vinyl-800.jpg 800w, {{ @assets }}img/about/vinyl-1440.jpg 1440w" sizes="(min-width: 900px) 45vw, 100vw" alt="{{ about.manifesto.alt }}" width="1440" height="960" loading="lazy">
+        </figure>
+        <div class="statement__more-copy">
+          <div class="statement__drift" data-drift>
+            <p class="statement__more-text">{{ about.manifesto.short }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
