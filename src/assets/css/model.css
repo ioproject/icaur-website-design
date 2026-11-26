@@ -516,3 +516,18 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .specs__acc[open] .specs__summary { padding-bottom: 0; }
 .mcta__img { inset: 0; height: 100%; }   /* no parallax: the photo always fills the box, no dark band at the top */
 .specs.section { padding-bottom: 85px; }   /* 85px between the specs line and the final box */
+/* ---------- Specs as a white rounded card (full container width); opening it grows the card downwards ---------- */
+.specs__acc {
+  background: var(--c-white); color: var(--c-ink); border: 0; border-radius: 20px;
+  padding: 0 clamp(24px, 3.4vw, 56px);
+}
+.specs__acc[open] { padding-bottom: clamp(32px, 4vw, 56px); }
+.specs__summary, .specs__acc[open] .specs__summary { border: 0; padding-block: clamp(32px, 3.6vw, 52px); }
+.specs__acc .specs__grid { margin-top: 0; }
+.specs__toggle { border-color: rgba(20, 13, 11, 0.25); color: var(--c-ink); }
+.specs__summary:hover .specs__toggle { background: var(--c-gold); border-color: var(--c-gold); color: var(--c-ink); }
+.specs .spec-group__title { color: var(--c-brown); }
+.specs .spec-group dl > div { border-bottom-color: var(--c-line-light); }
+.specs .spec-group dt { color: var(--c-gray); }
+.specs .note--dim { color: var(--c-gray); }
+.specs__summary:focus-visible { outline-color: var(--c-brown); }
