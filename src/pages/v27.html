@@ -355,7 +355,7 @@
         </div>
       </header>
     </div>
-    <ul class="gallery__track" data-drag-scroll data-cursor-target="{{ v27.gallery.hint }}">
+    <ul class="gallery__track" data-drag-snap data-cursor-target="{{ v27.gallery.hint }}">
       {% for g in v27.gallery.items %}
       <li class="gallery__item"><img src="{{ @assets }}img/v27/{{ g.img }}-1440.jpg" srcset="{{ @assets }}img/v27/{{ g.img }}-800.jpg 800w, {{ @assets }}img/v27/{{ g.img }}-1440.jpg 1440w" sizes="(min-width: 1024px) 60vw, 85vw" alt="{{ g.alt }}" width="1440" height="810" loading="lazy" draggable="false"></li>
       {% endfor %}

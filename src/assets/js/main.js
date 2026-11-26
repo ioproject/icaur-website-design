@@ -341,6 +341,34 @@
   });
 
   /* ---------- Drag to scroll (mouse only; touch scrolls natively) ---------- */
+  // [data-drag-snap]: a short drag is enough — it jumps to the next / previous item in the drag direction
+  $$('[data-drag-snap]').forEach(function (track) {
+    var startX = 0, down = false, moved = false, done = false;
+    var items = function () { return Array.prototype.slice.call(track.children); };
+    var current = function () {   // item whose centre is closest to the track centre
+      var c = track.getBoundingClientRect(), mid = c.left + c.width / 2, best = 0, dist = Infinity;
+      items().forEach(function (it, i) { var r = it.getBoundingClientRect(), d = Math.abs(r.left + r.width / 2 - mid); if (d < dist) { dist = d; best = i; } });
+      return best;
+    };
+    var goTo = function (i) {
+      var list = items(); i = Math.max(0, Math.min(list.length - 1, i));
+      var c = track.getBoundingClientRect(), r = list[i].getBoundingClientRect();
+      track.scrollBy({ left: (r.left + r.width / 2) - (c.left + c.width / 2), behavior: reduceMotion ? 'auto' : 'smooth' });
+    };
+    track.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      down = true; moved = false; done = false; startX = e.clientX;
+      e.preventDefault();
+    });
+    window.addEventListener('pointermove', function (e) {
+      if (!down || done) return;
+      var dx = e.clientX - startX;
+      if (Math.abs(dx) > 30) { moved = true; done = true; goTo(current() + (dx < 0 ? 1 : -1)); }   // drag left = next
+    });
+    window.addEventListener('pointerup', function () { down = false; });
+    track.addEventListener('click', function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
+  });
+
   $$('[data-drag-scroll]').forEach(function (track) {
     var startX = 0, startLeft = 0, down = false, moved = false;
     track.addEventListener('pointerdown', function (e) {
