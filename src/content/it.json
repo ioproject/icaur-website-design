@@ -573,11 +573,11 @@
       "groups": [
         {
           "title": "Range extender Golden REEV",
-          "lines": "Due motori elettrici, uno per asse: trazione integrale elettrica<br>Rendimento termico del motore 45,79%<br>Il motore a benzina fa solo da generatore<br>Batteria CATL al litio ferro fosfato (LFP)"
+          "lines": "Due motori elettrici, uno per asse: trazione integrale elettrica. Rendimento termico del motore 45,79%. Il motore a benzina fa solo da generatore. Batteria CATL al litio ferro fosfato (LFP)."
         },
         {
           "title": "Silenzio in abitacolo",
-          "lines": "Meno di 61 dB in abitacolo<br>2 dB sotto la media del settore"
+          "lines": "Meno di 61 dB in abitacolo, 2 dB sotto la media del settore."
         }
       ]
     },
