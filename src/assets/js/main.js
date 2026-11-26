@@ -11,6 +11,7 @@
      [data-reveal]                                              fade/slide in on enter
      [data-drift]                                               block slides down its column on scroll
      [data-grow-box]                                            centred box grows to full width on scroll
+     [data-collage] [data-collage-main] [data-collage-card]     hero photo shrinks into a box among image boxes (first scroll)
      [data-tech] [data-tech-item] [data-tech-img]               pinned stage: image + titles change on scroll
      [data-parallax="N"]                                        parallax, N = % of travel
      [data-grow-bg]                                             section background grows to full width
@@ -593,6 +594,32 @@
           scrollTrigger: { trigger: el, start: 'top 95%', end: 'top 5%', scrub: true }
         });
       });
+    });
+  }
+
+  // Collage hero [data-collage]: at the first scroll the full-screen photo shrinks into a rounded centre box and
+  // [data-collage-card] boxes gather around it; it plays on its own (not scrubbed) and rewinds when back at the top (desktop only)
+  if (!reduceMotion) {
+    gsap.matchMedia().add('(min-width: 1024px)', function () {
+      var undo = [];
+      $$('[data-collage]').forEach(function (sec) {
+        var main = sec.querySelector('[data-collage-main]'), text = sec.querySelector('[data-collage-text]');
+        var cards = $$('[data-collage-card]', sec), shade = main && main.querySelector('.phero__shade');
+        if (!main) return;
+        sec.classList.add('is-collage');
+        var tl = gsap.timeline({ paused: true, defaults: { ease: 'power3.inOut' } })
+          .fromTo(main, { clipPath: 'inset(0% 0% 0% 0% round 0px)' }, { clipPath: 'inset(11% 33% 11% 33% round 20px)', duration: 1.2 }, 0)
+          .fromTo(main.querySelector('img'), { scale: 1 }, { scale: 1.08, duration: 1.2 }, 0)
+          .to([text, shade], { autoAlpha: 0, duration: 0.45, ease: 'power2.out' }, 0)
+          .fromTo(cards, { autoAlpha: 0, y: 60, scale: 0.92 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.9, stagger: 0.07, ease: 'power3.out' }, 0.45);
+        var st = ScrollTrigger.create({
+          trigger: sec, start: 'top+=2 top', end: '+=70%', pin: sec.querySelector('.phero__stage'),
+          onEnter: function () { tl.timeScale(1).play(); },
+          onLeaveBack: function () { tl.timeScale(1.4).reverse(); }
+        });
+        undo.push(function () { st.kill(); tl.kill(); sec.classList.remove('is-collage'); gsap.set([main, main.querySelector('img'), text, shade].concat(cards), { clearProps: 'all' }); });
+      });
+      return function () { undo.forEach(function (f) { f(); }); };
     });
   }
 
