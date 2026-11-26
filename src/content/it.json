@@ -659,7 +659,7 @@
     "gallery": {
       "eyebrow": "Galleria",
       "title": "Fin dove vuoi arrivare",
-      "hint": "Trascina per scorrere",
+      "hint": "Trascina",
       "items": [
         {
           "img": "out-canyon",

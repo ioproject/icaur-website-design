@@ -659,7 +659,7 @@
     "gallery": {
       "eyebrow": "Gallery",
       "title": "As far as you want to go",
-      "hint": "Drag to scroll",
+      "hint": "Drag",
       "items": [
         {
           "img": "out-canyon",
