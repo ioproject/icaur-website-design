@@ -358,7 +358,7 @@
 
 .spotcard {
   position: absolute; z-index: 4; top: 16px; bottom: 16px; right: var(--home-x, var(--gutter));   /* full height of the section viewport */
-  width: min(560px, calc(100% - 2 * var(--home-x, var(--gutter))));
+  width: min(510px, calc(100% - 2 * var(--home-x, var(--gutter))));
   display: flex; flex-direction: column; padding: 10px; border-radius: 22px;
   background: var(--c-white); color: var(--c-ink); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
   opacity: 0; transform: translateX(40px); transition: opacity 0.4s var(--ease-out), transform 0.5s var(--ease-out);
