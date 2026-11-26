@@ -462,7 +462,8 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .perf--light .subhead { margin-top: var(--space-xl); }
 .perf--light .perf__diagram { background: #F1EADE; }   /* backdrop for the multiply blend (the reveal transform isolates the figure) */
 /* Off-road: new photo (car upper half), black fade from the bottom (90% → 0), text a little lower */
-.offroad__media img { object-position: 50% 100%; }   /* car in the upper half, rocks under the text */
+.offroad__media { inset: 0; }   /* no parallax shift: the photo always fills the section, no band at the top on wide screens */
+.offroad__media img { object-position: 50% 35%; }   /* car in the upper part, the extra rocks fill the space under the text */
 .offroad::after { background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0) 65%); }
 .offroad__content { padding-bottom: calc(var(--space-md) + 50px); }
 
@@ -478,9 +479,3 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .perf--light .perf__big div, .perf--light .perf__groups { border-top-color: rgba(20, 13, 11, 0.25); }
 .perf--light .perf__big dt, .perf--light .perf__note, .perf--light .perf__group p, .perf--light .adas__text { color: rgba(20, 13, 11, 0.7); }
 .perf--light .eyebrow--dark { color: var(--c-ink); }
-.offroad { min-height: 118vh; }   /* more photo below the car, which sits higher above the text */
-@media (min-width: 768px) {   /* photo anchored by its width so the car sits in the upper third; below it the rocks fade to black */
-  .offroad { background: #000; }
-  .offroad__media { inset: auto 0; top: 0; }   /* new photo: car already in the upper part */
-  .offroad__media img { height: auto; object-fit: initial; }
-}
