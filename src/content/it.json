@@ -607,26 +607,7 @@
     "safety": {
       "eyebrow": "Sicurezza",
       "title": "Avanti tranquilli",
-      "text": "Progettato secondo gli standard a cinque stelle di E-NCAP, C-NCAP, A-NCAP e ASEAN NCAP.",
       "cage_alt": "Scocca a gabbia del V27 con gli acciai ad alta resistenza evidenziati",
-      "points": [
-        {
-          "value": "11 + 11",
-          "label": "Traverse e longheroni formano una gabbia"
-        },
-        {
-          "value": "39",
-          "label": "Punti chiave in acciaio stampato a caldo"
-        },
-        {
-          "value": "76,53%",
-          "label": "Acciai alto resistenziali e alluminio"
-        },
-        {
-          "value": "32.186",
-          "label": "N·m/grado di rigidità torsionale"
-        }
-      ],
       "adas_title": "Assistenza alla guida",
       "adas": [
         {
@@ -646,6 +627,31 @@
           "title": "Sicurezza attiva",
           "text": "Controlla ciò che succede intorno in tempo reale, anticipa i rischi e interviene se serve.",
           "alt": "Illustrazione dei sistemi di sicurezza attiva in autostrada"
+        }
+      ],
+      "intro": "Una scocca pensata per proteggere chi viaggia.<br><strong>Struttura a gabbia e acciai ad alta resistenza</strong>, progettata secondo i più severi standard di sicurezza.",
+      "big": [
+        {
+          "label": "Rigidità torsionale",
+          "value": "32.186",
+          "unit": "N·m/°",
+          "note": ""
+        },
+        {
+          "label": "Acciai ad alta resistenza e alluminio",
+          "value": "76,53",
+          "unit": "%",
+          "note": ""
+        }
+      ],
+      "groups": [
+        {
+          "title": "Struttura a gabbia",
+          "lines": "11 traverse e 11 longheroni formano una gabbia rigida. 39 punti chiave sono in acciaio stampato a caldo."
+        },
+        {
+          "title": "Cinque stelle",
+          "lines": "Progettato secondo gli standard a cinque stelle di E‑NCAP, C‑NCAP, A‑NCAP e ASEAN NCAP."
         }
       ]
     },

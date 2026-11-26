@@ -149,18 +149,11 @@
 .offroad .bignums div { border-top-color: rgba(255, 255, 255, 0.3); }
 
 /* ---------- Safety ---------- */
-.safety__intro { display: grid; gap: var(--space-lg); align-items: center; }
-.safety__cage img { width: 100%; }
-.points { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); margin-top: var(--space-lg); }
-.points li { display: grid; gap: 4px; padding-top: var(--space-sm); border-top: 1px solid var(--c-line-light); }
-.points strong { font-size: var(--fs-lg); font-weight: 500; }
-.points span { font-size: var(--fs-sm); color: var(--c-gray); }
 .adas { display: grid; gap: var(--space-lg) var(--space-md); }
 .adas__media { overflow: hidden; border-radius: var(--radius); margin-bottom: var(--space-sm); border: 1px solid var(--c-line-light); }
 .adas__media img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
 .adas__title { font-size: var(--fs-md); font-weight: 500; margin-bottom: var(--space-2xs); }
 .adas__text { font-size: var(--fs-sm); color: var(--c-gray); }
-@media (min-width: 1024px) { .safety__intro { grid-template-columns: 1fr 1.1fr; } }
 @media (min-width: 768px) { .adas { grid-template-columns: repeat(3, 1fr); } }
 
 /* ---------- Gallery ---------- */
@@ -453,3 +446,18 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .offroad .bignums dt { margin-inline: auto; }
 .offroad .bignums dd small[data-unit="°"] { vertical-align: top; font-size: 0.55em; line-height: 1; margin-left: 0.04em; }
 .offroad::after { background: linear-gradient(to top, rgba(20, 13, 11, 0.88), rgba(20, 13, 11, 0.45) 50%, rgba(20, 13, 11, 0) 80%); }   /* even shade under the centred text */
+
+/* ---------- Safety: Technology layout on light beige ---------- */
+.perf--light { background: #F1EADE; color: var(--c-ink); }
+.perf--light .perf__diagram::after {
+  background:
+    linear-gradient(to bottom, #F1EADE 0%, rgba(241, 234, 222, 0) 18%, rgba(241, 234, 222, 0) 78%, #F1EADE 100%),
+    linear-gradient(to right, #F1EADE 0%, rgba(241, 234, 222, 0) 18%, rgba(241, 234, 222, 0) 82%, #F1EADE 100%);
+}
+.perf--light .perf__diagram img { object-fit: contain; mix-blend-mode: multiply; }   /* white photo background takes the beige */
+.perf--light .perf__text { color: rgba(35, 24, 21, 0.55); }
+.perf--light .perf__text strong { color: var(--c-ink); }
+.perf--light .perf__big div, .perf--light .perf__groups { border-top-color: rgba(35, 24, 21, 0.2); }
+.perf--light .perf__big dt, .perf--light .perf__note, .perf--light .perf__group p { color: rgba(35, 24, 21, 0.6); }
+.perf--light .subhead { margin-top: var(--space-xl); }
+.perf--light .perf__diagram { background: #F1EADE; }   /* backdrop for the multiply blend (the reveal transform isolates the figure) */

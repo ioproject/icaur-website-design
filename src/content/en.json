@@ -607,26 +607,7 @@
     "safety": {
       "eyebrow": "Safety",
       "title": "March forward fearlessly",
-      "text": "Designed to the five-star standards of E-NCAP, C-NCAP, A-NCAP and ASEAN NCAP.",
       "cage_alt": "V27 cage body with high-strength steels highlighted",
-      "points": [
-        {
-          "value": "11 + 11",
-          "label": "Transverse and longitudinal beams form a cage"
-        },
-        {
-          "value": "39",
-          "label": "Key points in hot-formed steel"
-        },
-        {
-          "value": "76.53%",
-          "label": "High-strength steel and aluminium alloy"
-        },
-        {
-          "value": "32,186",
-          "label": "N·m/deg torsional rigidity"
-        }
-      ],
       "adas_title": "Driver assistance",
       "adas": [
         {
@@ -646,6 +627,31 @@
           "title": "Active safety",
           "text": "It monitors the surroundings in real time, anticipates risks and steps in when needed.",
           "alt": "Illustration of active safety systems on the motorway"
+        }
+      ],
+      "intro": "A body built to protect everyone on board.<br><strong>A cage structure and high-strength steels</strong>, designed to the toughest safety standards.",
+      "big": [
+        {
+          "label": "Torsional rigidity",
+          "value": "32,186",
+          "unit": "N·m/°",
+          "note": ""
+        },
+        {
+          "label": "High-strength steel and aluminium",
+          "value": "76.53",
+          "unit": "%",
+          "note": ""
+        }
+      ],
+      "groups": [
+        {
+          "title": "Cage structure",
+          "lines": "11 cross members and 11 longitudinal beams form a rigid cage. 39 key points are made of hot-stamped steel."
+        },
+        {
+          "title": "Five stars",
+          "lines": "Designed to the five-star standards of E‑NCAP, C‑NCAP, A‑NCAP and ASEAN NCAP."
         }
       ]
     },

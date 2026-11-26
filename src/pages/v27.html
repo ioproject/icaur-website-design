@@ -309,22 +309,28 @@
   </section>
 
   <!-- ===== SAFETY ===== -->
-  <section class="safety section section--light" id="sicurezza" aria-labelledby="safety-title">
+  <!-- same vertical layout as Technology, on the light beige background; the driver-assistance cards below are unchanged -->
+  <section class="safety perf perf--light section" id="sicurezza" aria-labelledby="safety-title">
     <div class="container">
-      <div class="safety__intro">
-        <header>
-          <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.safety.eyebrow }}</p>
-          <h2 class="section-title" id="safety-title" data-reveal>{{ v27.safety.title }}</h2>
-          <p class="lead" data-reveal>{{ v27.safety.text }}</p>
-          <ul class="points">
-            {% for p in v27.safety.points %}
-            <li data-reveal><strong>{{ p.value }}</strong><span>{{ p.label }}</span></li>
-            {% endfor %}
-          </ul>
-        </header>
-        <figure class="safety__cage" data-reveal>
-          <img src="{{ @assets }}img/v27/tech-cage-1440.jpg" srcset="{{ @assets }}img/v27/tech-cage-800.jpg 800w, {{ @assets }}img/v27/tech-cage-1440.jpg 1440w" sizes="(min-width: 1024px) 50vw, 100vw" alt="{{ v27.safety.cage_alt }}" width="1440" height="810" loading="lazy">
-        </figure>
+      <header class="perf__head">
+        <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.safety.eyebrow }}</p>
+        <h2 class="section-title" id="safety-title" data-reveal>{{ v27.safety.title }}</h2>
+      </header>
+      <figure class="perf__diagram" data-reveal>
+        <img src="{{ @assets }}img/v27/tech-cage-1440.jpg" srcset="{{ @assets }}img/v27/tech-cage-800.jpg 800w, {{ @assets }}img/v27/tech-cage-1440.jpg 1440w" sizes="100vw" alt="{{ v27.safety.cage_alt }}" width="1440" height="810" loading="lazy">
+      </figure>
+      <p class="perf__text" data-reveal>{{ v27.safety.intro }}</p>
+      <div class="perf__specs">
+        <dl class="perf__big">
+          {% for b in v27.safety.big %}
+          <div data-reveal><dt>{{ b.label }}</dt><dd>{{ b.value }}<small>{{ b.unit }}</small><span class="perf__note">{{ b.note }}</span></dd></div>
+          {% endfor %}
+        </dl>
+        <div class="perf__groups" data-reveal>
+          {% for g in v27.safety.groups %}
+          <div class="perf__group"><h3>{{ g.title }}</h3><p>{{ g.lines }}</p></div>
+          {% endfor %}
+        </div>
       </div>
 
       <h3 class="subhead" data-reveal>{{ v27.safety.adas_title }}</h3>
