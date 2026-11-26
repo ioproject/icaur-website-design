@@ -395,7 +395,7 @@
   content: ""; position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; height: clamp(100px, 10vw, 150px); pointer-events: none;
   background: linear-gradient(to bottom, rgba(36, 23, 15, 0), #24170f);
 }
-.space { background: #24170f; color: var(--c-white); padding-top: var(--space-lg); }
+.space { background: #24170f; color: var(--c-white); padding-top: var(--space-lg); padding-bottom: calc(var(--space-xl) - 50px); }
 .space .eyebrow { color: var(--c-gold); }
 .space .bignums div { border-top-color: rgba(255, 255, 255, 0.18); }
 .space .bignums dt { color: rgba(255, 255, 255, 0.7); }
