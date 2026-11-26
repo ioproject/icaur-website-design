@@ -465,3 +465,16 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .offroad__media img { object-position: 50% 100%; }   /* car in the upper half, rocks under the text */
 .offroad::after { background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0) 65%); }
 .offroad__content { padding-bottom: var(--space-md); }
+
+/* Safety on #A78C64: new cage photo that melts into the tan background */
+.perf--light, .perf--light .perf__diagram { background: #A78C64; }
+.perf--light .perf__diagram img { mix-blend-mode: normal; object-fit: cover; }
+.perf--light .perf__diagram::after {
+  background:
+    linear-gradient(to bottom, #A78C64 0%, rgba(167, 140, 100, 0) 20%, rgba(167, 140, 100, 0) 75%, #A78C64 100%),
+    linear-gradient(to right, #A78C64 0%, rgba(167, 140, 100, 0) 18%, rgba(167, 140, 100, 0) 82%, #A78C64 100%);
+}
+.perf--light .perf__text { color: rgba(20, 13, 11, 0.62); }
+.perf--light .perf__big div, .perf--light .perf__groups { border-top-color: rgba(20, 13, 11, 0.25); }
+.perf--light .perf__big dt, .perf--light .perf__note, .perf--light .perf__group p, .perf--light .adas__text { color: rgba(20, 13, 11, 0.7); }
+.perf--light .eyebrow--dark { color: var(--c-ink); }
