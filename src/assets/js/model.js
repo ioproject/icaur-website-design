@@ -161,7 +161,10 @@
         .fromTo(cover, { scale: 1, autoAlpha: 1 }, { scale: 90, ease: 'power3.in', duration: 1.3 }, 0)
         .to(cover, { autoAlpha: 0, duration: 0.15 })
         .fromTo(imgs[0], { scale: 1.18 }, { scale: 1, ease: 'power2.out', duration: 1.8 }, 0)
-        .fromTo([head, caps[0]], { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out', immediateRender: true }, 1.35) : null;
+        .fromTo(head, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out', immediateRender: true }, 1.35)
+        // the first caption is shown with a class (CSS filter), so it never fights with the scrubbed timeline that hides it later
+        .call(function () { section.classList.toggle('is-covered', intro.reversed()); }, null, 1.35) : null;
+      if (cover) section.classList.add('is-covered');
       var tl = gsap.timeline({
         defaults: { ease: 'power2.inOut' },
         scrollTrigger: {
@@ -183,7 +186,7 @@
       tl.to({}, { duration: 0.6 }); // hold on the last view
 
       return function () {
-        section.classList.remove('is-pinned');
+        section.classList.remove('is-pinned', 'is-covered');
         if (intro) intro.kill();
         gsap.set(imgs.concat(caps, cover ? [cover, head] : []), { clearProps: 'all' });
       };
