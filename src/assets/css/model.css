@@ -444,3 +444,4 @@ html.is-spot-open .dock { opacity: 0; visibility: hidden; transition: opacity 0.
 /* Space: notes centred */
 .space__head, .space .note { text-align: center; margin-inline: auto; }
 html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header-top) - 8px)); }   /* the card uses the full height: the bar steps aside while it is open */
+.space .bignums dt { max-width: none; }   /* labels on one line */
