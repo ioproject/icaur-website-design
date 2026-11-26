@@ -514,3 +514,4 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .specs__acc { border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
 .specs__acc[open] { padding-bottom: 70px; }
 .specs__acc[open] .specs__summary { padding-bottom: 0; }
+.mcta__img { inset: 0; height: 100%; }   /* no parallax: the photo always fills the box, no dark band at the top */
