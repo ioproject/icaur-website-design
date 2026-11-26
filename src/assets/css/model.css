@@ -479,3 +479,23 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .perf--light .perf__big dt, .perf--light .perf__note, .perf--light .perf__group p, .perf--light .adas__text { color: rgba(20, 13, 11, 0.7); }
 .perf--light .eyebrow--dark { color: var(--c-ink); }
 .perf__text { font-size: 23px; }   /* Technology + Safety intro text */
+
+/* ---------- Specs accordion on the dark background ---------- */
+.specs__summary { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); cursor: pointer; list-style: none; padding-block: var(--space-sm); }
+.specs__summary::-webkit-details-marker { display: none; }
+.specs__summary .section-title { margin: 0; }
+.specs__toggle {
+  flex: none; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4); color: var(--c-white); transition: transform 0.4s var(--ease-out), background var(--dur-fast), color var(--dur-fast);
+}
+.specs__toggle svg { width: 22px; height: 22px; }
+.specs__summary:hover .specs__toggle { background: var(--c-gold); border-color: var(--c-gold); color: var(--c-ink); }
+.specs__acc[open] .specs__toggle { transform: rotate(180deg); }
+.specs__summary:focus-visible { outline: 2px solid var(--c-gold); outline-offset: 6px; border-radius: 8px; }
+.specs__acc .specs__grid { margin-top: var(--space-lg); }
+.specs__acc[open] .specs__grid { animation: specs-open 0.5s var(--ease-out); }
+@keyframes specs-open { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: none; } }
+.specs .spec-group__title { color: var(--c-gold); }
+.specs .spec-group dl > div { border-bottom-color: rgba(255, 255, 255, 0.14); }
+.specs .spec-group dt { color: rgba(255, 255, 255, 0.6); }
+@media (max-width: 767px) { .specs__toggle { width: 48px; height: 48px; } }

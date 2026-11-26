@@ -117,6 +117,10 @@
     panel.addEventListener('keydown', function (e) { if (e.key === 'Escape' && current > -1) close(); });
   });
 
+  /* ---------- Specs accordion: the page gets taller/shorter, so scroll positions are recalculated ---------- */
+  var specsAcc = document.querySelector('.specs__acc');
+  if (specsAcc && hasGsap) specsAcc.addEventListener('toggle', function () { setTimeout(function () { ScrollTrigger.refresh(); }, 520); });
+
   if (!hasGsap) return;
 
   /* ---------- Image grows to full width (interior) ---------- */

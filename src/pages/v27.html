@@ -362,32 +362,34 @@
     </ul>
   </section>
 
-  <!-- ===== SPECS ===== -->
-  <section class="specs section section--paper" id="specifiche" aria-labelledby="specs-title">
+  <!-- ===== SPECS: dark like the gallery above; accordion (native <details>), starts closed ===== -->
+  <section class="specs section section--ink" id="specifiche" aria-labelledby="specs-title">
     <div class="container">
-      <header class="section-head">
-        <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.specs.eyebrow }}</p>
-        <h2 class="section-title" id="specs-title" data-reveal>{{ v27.specs.title }}</h2>
-      </header>
-      <div class="specs__grid">
-        <div class="spec-group" data-reveal>
-          <h3 class="spec-group__title">{{ v27.specs.g_power }}</h3>
-          <dl>{% for r in v27.specs.power %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
+      <details class="specs__acc">
+        <summary class="specs__summary">
+          <h2 class="section-title" id="specs-title">{{ v27.specs.title }}</h2>
+          <span class="specs__toggle" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="specs__grid">
+          <div class="spec-group">
+            <h3 class="spec-group__title">{{ v27.specs.g_power }}</h3>
+            <dl>{% for r in v27.specs.power %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
+          </div>
+          <div class="spec-group">
+            <h3 class="spec-group__title">{{ v27.specs.g_space }}</h3>
+            <dl>{% for r in v27.specs.space %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
+          </div>
+          <div class="spec-group">
+            <h3 class="spec-group__title">{{ v27.specs.g_offroad }}</h3>
+            <dl>{% for r in v27.specs.offroad %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
+          </div>
+          <div class="spec-group">
+            <h3 class="spec-group__title">{{ v27.specs.g_tech }}</h3>
+            <dl>{% for r in v27.specs.tech %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
+          </div>
         </div>
-        <div class="spec-group" data-reveal>
-          <h3 class="spec-group__title">{{ v27.specs.g_space }}</h3>
-          <dl>{% for r in v27.specs.space %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
-        </div>
-        <div class="spec-group" data-reveal>
-          <h3 class="spec-group__title">{{ v27.specs.g_offroad }}</h3>
-          <dl>{% for r in v27.specs.offroad %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
-        </div>
-        <div class="spec-group" data-reveal>
-          <h3 class="spec-group__title">{{ v27.specs.g_tech }}</h3>
-          <dl>{% for r in v27.specs.tech %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
-        </div>
-      </div>
-      <p class="note">{{ v27.specs.note }}</p>
+        <p class="note note--dim">{{ v27.specs.note }}</p>
+      </details>
     </div>
   </section>
 
