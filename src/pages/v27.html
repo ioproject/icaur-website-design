@@ -236,29 +236,31 @@
     </div>
   </section>
 
-  <!-- ===== COMFORT (carousel) ===== -->
+  <!-- ===== COMFORT (carousel: large cards, bold title + text in one paragraph, arrows below) ===== -->
   <section class="comfort section section--paper" aria-labelledby="comfort-title" data-carousel>
     <div class="container">
-      <header class="section-head section-head--split">
-        <div>
-          <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.comfort.eyebrow }}</p>
-          <h2 class="section-title" id="comfort-title" data-reveal>{{ v27.comfort.title }}</h2>
-        </div>
-        <div class="carousel-nav">
-          <button class="round-btn" type="button" data-carousel-prev aria-label="‹"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H5m4-4-4 4 4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-          <button class="round-btn" type="button" data-carousel-next aria-label="›"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-        </div>
+      <header class="section-head">
+        <p class="eyebrow eyebrow--dark" data-reveal>{{ v27.comfort.eyebrow }}</p>
+        <h2 class="section-title" id="comfort-title" data-reveal>{{ v27.comfort.title }}</h2>
       </header>
     </div>
-    <ul class="carousel" data-carousel-track data-drag-scroll>
+    <ul class="carousel comfort__track" data-carousel-track data-drag-scroll>
       {% for c in v27.comfort.items %}
       <li class="ccard">
-        <div class="ccard__media"><img src="{{ @assets }}img/v27/{{ c.img }}-800.jpg" alt="{{ c.alt }}" width="800" height="450" loading="lazy" draggable="false"></div>
-        <h3 class="ccard__title">{{ c.title }}</h3>
-        <p class="ccard__text">{{ c.text }}</p>
+        <div class="ccard__media"><img src="{{ @assets }}img/v27/{{ c.img }}-1440.jpg" srcset="{{ @assets }}img/v27/{{ c.img }}-800.jpg 800w, {{ @assets }}img/v27/{{ c.img }}-1440.jpg 1440w" sizes="(min-width: 768px) 48vw, 86vw" alt="{{ c.alt }}" width="1440" height="810" loading="lazy" draggable="false"></div>
+        <div class="ccard__copy">
+          <h3 class="ccard__title">{{ c.title }}.</h3>
+          <p class="ccard__text">{{ c.text }}</p>
+        </div>
       </li>
       {% endfor %}
     </ul>
+    <div class="container comfort__nav">
+      <div class="carousel-nav">
+        <button class="round-btn round-btn--soft" type="button" data-carousel-prev aria-label="‹"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H5m4-4-4 4 4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        <button class="round-btn round-btn--soft" type="button" data-carousel-next aria-label="›"><svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      </div>
+    </div>
   </section>
 
   <!-- ===== TECHNOLOGY / PERFORMANCE ===== -->
