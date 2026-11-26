@@ -608,7 +608,7 @@
         if (!main) return;
         sec.classList.add('is-collage');
         var tl = gsap.timeline({ paused: true, defaults: { ease: 'power3.inOut' } })
-          .fromTo(main, { clipPath: 'inset(0% 0% 0% 0% round 0px)' }, { clipPath: 'inset(11% 33% 11% 33% round 20px)', duration: 1.2 }, 0)
+          .fromTo(main, { clipPath: 'inset(0% 0% 0% 0% round 0px)' }, { clipPath: 'inset(7.2% 35% 6.4% 33.7% round 14px)', duration: 1.2 }, 0)
           .fromTo(main.querySelector('img'), { scale: 1 }, { scale: 1.08, duration: 1.2 }, 0)
           .to([text, shade], { autoAlpha: 0, duration: 0.45, ease: 'power2.out' }, 0)
           .fromTo(cards, { autoAlpha: 0, y: 60, scale: 0.92 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.9, stagger: 0.07, ease: 'power3.out' }, 0.45);
