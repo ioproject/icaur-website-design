@@ -404,4 +404,4 @@
 }
 
 /* Comfort: 70px less space above the heading */
-.comfort.section { padding-top: calc(var(--space-xl) - 70px); }
+.comfort.section { padding-top: calc(var(--space-xl) - 50px); }
