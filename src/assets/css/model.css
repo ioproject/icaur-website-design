@@ -503,5 +503,5 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 /* Specs: 140px less above (pulled into the gallery's bottom space), 100px less below, separator 70px under the title */
 .specs.section { padding-top: 0; margin-top: calc(var(--space-xl) - 140px); padding-bottom: calc(var(--space-xl) - 100px); }
 .specs__summary { padding-top: 0; padding-bottom: 70px; border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
-.mcta { margin-inline: 20px; }   /* 20px outer margin left and right */
+.mcta { margin-inline: var(--gutter); border-radius: var(--radius); }   /* same side margin and radius as the gallery images above */
 .mcta .lead { max-width: 30ch; }   /* keeps the text left of the car */
