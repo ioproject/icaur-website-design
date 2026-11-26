@@ -536,3 +536,14 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .specs__acc { background: #F1EADE; }
 .specs > .container { max-width: none; }
 .specs.section { margin-top: calc(50px - var(--space-xl)); padding-bottom: 50px; }
+
+/* ---------- Specs table: two versions side by side ---------- */
+.specs__table-wrap { overflow-x: auto; }
+.specs__table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 16px; }
+.specs__table th, .specs__table td { padding: 20px 16px; text-align: right; vertical-align: middle; border-bottom: 1px solid rgba(20, 13, 11, 0.12); }
+.specs__table th:first-child, .specs__table tbody th { text-align: left; padding-left: 0; }
+.specs__table td:last-child, .specs__table thead th:last-child { padding-right: 0; }
+.specs__table thead th { font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-ink); border-bottom: 2px solid var(--c-ink); padding-top: 0; }
+.specs__table tbody th { font-size: 12px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-gray); }
+.specs__table td { color: var(--c-ink); }
+.specs .note--dim { margin-top: var(--space-md); }

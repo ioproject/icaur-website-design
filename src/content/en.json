@@ -568,7 +568,7 @@
           "label": "Maximum torque",
           "value": "505",
           "unit": "N·m",
-          "note": "200 N·m front + 305 N·m rear"
+          "note": "205 N·m front + 300 N·m rear"
         }
       ],
       "groups": [
@@ -690,99 +690,87 @@
     "specs": {
       "eyebrow": "Specs",
       "title": "Explore the <span class=\"nocase\">iCAUR</span> V27 specifications",
-      "g_power": "Powertrain and performance",
-      "g_offroad": "Off-road and body",
-      "g_space": "Dimensions and space",
-      "g_tech": "Technology",
-      "power": [
+      "note": "Manufacturer data, subject to confirmation for the Italian market.",
+      "col_param": "Parameter",
+      "col_rwd": "V27 RWD",
+      "col_awd": "V27 AWD",
+      "rows": [
         {
-          "k": "System",
-          "v": "Golden REEV range extender, i-AWD all-wheel drive"
+          "k": "Drivetrain",
+          "rwd": "Rear-wheel drive",
+          "awd": "All-wheel drive"
         },
         {
-          "k": "Motor max power",
-          "v": "335 kW (150 front + 185 rear)"
+          "k": "Vehicle length (mm)",
+          "rwd": "4899",
+          "awd": "4899"
         },
         {
-          "k": "Motor max torque",
-          "v": "505 N·m (200 front + 305 rear)"
+          "k": "Vehicle width (mm)",
+          "rwd": "1976",
+          "awd": "1976"
         },
         {
-          "k": "0–100 km/h",
-          "v": "5.9 s"
+          "k": "Vehicle height (mm)",
+          "rwd": "1894",
+          "awd": "1894"
         },
         {
-          "k": "Thermal efficiency",
-          "v": "45.79%"
+          "k": "Wheelbase (mm)",
+          "rwd": "2900",
+          "awd": "2900"
         },
         {
-          "k": "Battery",
-          "v": "CATL LFP — [capacity kWh to be confirmed]"
+          "k": "Kerb weight (kg)",
+          "rwd": "2299",
+          "awd": "2299"
         },
         {
-          "k": "Range",
-          "v": "[WLTP to be confirmed]"
+          "k": "Ground clearance (mm)",
+          "rwd": "224",
+          "awd": "224"
+        },
+        {
+          "k": "Maximum speed (km/h)",
+          "rwd": "170",
+          "awd": "180"
+        },
+        {
+          "k": "Acceleration 0–100 (s)",
+          "rwd": "8.9",
+          "awd": "5.9"
+        },
+        {
+          "k": "Electric motors",
+          "rwd": "1 (rear)",
+          "awd": "2 (front + rear)"
+        },
+        {
+          "k": "Peak power (kW)",
+          "rwd": "185",
+          "awd": "335 (150 front + 185 rear)"
+        },
+        {
+          "k": "Peak torque (Nm)",
+          "rwd": "300",
+          "awd": "505 (205 front + 300 rear)"
+        },
+        {
+          "k": "Range extender maximum power",
+          "rwd": "105 kW at 5200 rpm",
+          "awd": "105 kW at 5200 rpm"
+        },
+        {
+          "k": "Range extender maximum torque",
+          "rwd": "215 Nm at 2500 rpm",
+          "awd": "215 Nm at 2500 rpm"
+        },
+        {
+          "k": "Boot capacity (L)",
+          "rwd": "715 / 1818",
+          "awd": "715 / 1818"
         }
-      ],
-      "offroad": [
-        {
-          "k": "Approach angle",
-          "v": "24°"
-        },
-        {
-          "k": "Departure angle",
-          "v": "23°"
-        },
-        {
-          "k": "Wading depth",
-          "v": "600 mm"
-        },
-        {
-          "k": "Torsional rigidity",
-          "v": "32,186 N·m/deg"
-        }
-      ],
-      "space": [
-        {
-          "k": "Length × width × height",
-          "v": "[to be confirmed]"
-        },
-        {
-          "k": "Wheelbase",
-          "v": "[to be confirmed]"
-        },
-        {
-          "k": "Knee room, 2nd row",
-          "v": "950 mm"
-        },
-        {
-          "k": "Headroom, front/rear",
-          "v": "1110 / 1116 mm"
-        },
-        {
-          "k": "Boot",
-          "v": "715 L · 1818 L with 2nd row reclined · 40 L underfloor"
-        }
-      ],
-      "tech": [
-        {
-          "k": "Centre screen",
-          "v": "15.4\" 2.5K"
-        },
-        {
-          "k": "Chip",
-          "v": "Qualcomm 8155"
-        },
-        {
-          "k": "Audio",
-          "v": "15 speakers"
-        },
-        {
-          "k": "Wheels",
-          "v": "21\""
-        }
-      ],
-      "note": "Manufacturer data. Values in square brackets are to be confirmed for the Italian market."
+      ]
     },
     "cta": {
       "eyebrow": "<span class=\"nocase\">iCAUR</span> V27",

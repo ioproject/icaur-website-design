@@ -370,23 +370,15 @@
           <h2 class="section-title" id="specs-title">{{ v27.specs.title }}</h2>
           <span class="specs__toggle" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         </summary>
-        <div class="specs__grid">
-          <div class="spec-group">
-            <h3 class="spec-group__title">{{ v27.specs.g_power }}</h3>
-            <dl>{% for r in v27.specs.power %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
-          </div>
-          <div class="spec-group">
-            <h3 class="spec-group__title">{{ v27.specs.g_space }}</h3>
-            <dl>{% for r in v27.specs.space %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
-          </div>
-          <div class="spec-group">
-            <h3 class="spec-group__title">{{ v27.specs.g_offroad }}</h3>
-            <dl>{% for r in v27.specs.offroad %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
-          </div>
-          <div class="spec-group">
-            <h3 class="spec-group__title">{{ v27.specs.g_tech }}</h3>
-            <dl>{% for r in v27.specs.tech %}<div><dt>{{ r.k }}</dt><dd>{{ r.v }}</dd></div>{% endfor %}</dl>
-          </div>
+        <div class="specs__table-wrap">
+          <table class="specs__table">
+            <thead><tr><th scope="col">{{ v27.specs.col_param }}</th><th scope="col">{{ v27.specs.col_rwd }}</th><th scope="col">{{ v27.specs.col_awd }}</th></tr></thead>
+            <tbody>
+              {% for r in v27.specs.rows %}
+              <tr><th scope="row">{{ r.k }}</th><td>{{ r.rwd }}</td><td>{{ r.awd }}</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
         <p class="note note--dim">{{ v27.specs.note }}</p>
       </details>

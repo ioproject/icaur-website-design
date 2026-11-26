@@ -568,7 +568,7 @@
           "label": "Coppia massima",
           "value": "505",
           "unit": "N·m",
-          "note": "200 N·m anteriore + 305 N·m posteriore"
+          "note": "205 N·m anteriore + 300 N·m posteriore"
         }
       ],
       "groups": [
@@ -690,99 +690,87 @@
     "specs": {
       "eyebrow": "Specifiche",
       "title": "Scopri le specifiche di <span class=\"nocase\">iCAUR</span> V27",
-      "g_power": "Motore e prestazioni",
-      "g_offroad": "Fuoristrada e scocca",
-      "g_space": "Dimensioni e spazio",
-      "g_tech": "Tecnologia",
-      "power": [
+      "note": "Dati del costruttore, soggetti a conferma per il mercato italiano.",
+      "col_param": "Parametro",
+      "col_rwd": "V27 trazione posteriore",
+      "col_awd": "V27 AWD",
+      "rows": [
         {
-          "k": "Sistema",
-          "v": "Range extender Golden REEV, trazione integrale i-AWD"
+          "k": "Trasmissione",
+          "rwd": "Trazione posteriore",
+          "awd": "Trazione integrale"
         },
         {
-          "k": "Potenza massima motori",
-          "v": "335 kW (150 anteriore + 185 posteriore)"
+          "k": "Lunghezza del veicolo (mm)",
+          "rwd": "4899",
+          "awd": "4899"
         },
         {
-          "k": "Coppia massima motori",
-          "v": "505 N·m (200 anteriore + 305 posteriore)"
+          "k": "Larghezza del veicolo (mm)",
+          "rwd": "1976",
+          "awd": "1976"
         },
         {
-          "k": "0–100 km/h",
-          "v": "5,9 s"
+          "k": "Altezza del veicolo (mm)",
+          "rwd": "1894",
+          "awd": "1894"
         },
         {
-          "k": "Rendimento termico",
-          "v": "45,79%"
+          "k": "Passo (mm)",
+          "rwd": "2900",
+          "awd": "2900"
         },
         {
-          "k": "Batteria",
-          "v": "CATL LFP — [capacità kWh da confermare]"
+          "k": "Peso a vuoto (kg)",
+          "rwd": "2299",
+          "awd": "2299"
         },
         {
-          "k": "Autonomia",
-          "v": "[WLTP da confermare]"
+          "k": "Altezza da terra (mm)",
+          "rwd": "224",
+          "awd": "224"
+        },
+        {
+          "k": "Velocità massima (km/h)",
+          "rwd": "170",
+          "awd": "180"
+        },
+        {
+          "k": "Accelerazione 0–100 (s)",
+          "rwd": "8,9",
+          "awd": "5,9"
+        },
+        {
+          "k": "Motori elettrici",
+          "rwd": "1 (posteriore)",
+          "awd": "2 (anteriore + posteriore)"
+        },
+        {
+          "k": "Potenza di picco (kW)",
+          "rwd": "185",
+          "awd": "335 (150 anteriore + 185 posteriore)"
+        },
+        {
+          "k": "Coppia di picco (Nm)",
+          "rwd": "300",
+          "awd": "505 (205 anteriore + 300 posteriore)"
+        },
+        {
+          "k": "Potenza massima range extender",
+          "rwd": "105 kW a 5200 giri/min",
+          "awd": "105 kW a 5200 giri/min"
+        },
+        {
+          "k": "Coppia massima range extender",
+          "rwd": "215 Nm a 2500 giri/min",
+          "awd": "215 Nm a 2500 giri/min"
+        },
+        {
+          "k": "Capacità bagagliaio (L)",
+          "rwd": "715 / 1818",
+          "awd": "715 / 1818"
         }
-      ],
-      "offroad": [
-        {
-          "k": "Angolo di attacco",
-          "v": "24°"
-        },
-        {
-          "k": "Angolo di uscita",
-          "v": "23°"
-        },
-        {
-          "k": "Profondità di guado",
-          "v": "600 mm"
-        },
-        {
-          "k": "Rigidità torsionale",
-          "v": "32.186 N·m/grado"
-        }
-      ],
-      "space": [
-        {
-          "k": "Lunghezza × larghezza × altezza",
-          "v": "[da confermare]"
-        },
-        {
-          "k": "Passo",
-          "v": "[da confermare]"
-        },
-        {
-          "k": "Spazio ginocchia, 2ª fila",
-          "v": "950 mm"
-        },
-        {
-          "k": "Spazio testa, ant./post.",
-          "v": "1110 / 1116 mm"
-        },
-        {
-          "k": "Bagagliaio",
-          "v": "715 L · 1818 L con 2ª fila reclinata · vano sotto il piano 40 L"
-        }
-      ],
-      "tech": [
-        {
-          "k": "Schermo centrale",
-          "v": "15,4\" 2.5K"
-        },
-        {
-          "k": "Chip",
-          "v": "Qualcomm 8155"
-        },
-        {
-          "k": "Audio",
-          "v": "15 altoparlanti"
-        },
-        {
-          "k": "Cerchi",
-          "v": "21\""
-        }
-      ],
-      "note": "Dati del costruttore. I valori tra parentesi quadre vanno confermati per il mercato italiano."
+      ]
     },
     "cta": {
       "eyebrow": "<span class=\"nocase\">iCAUR</span> V27",
