@@ -635,16 +635,20 @@
         var items = $$('[data-stack-item]', col), n = items.length;
         if (n < 2) return;
         var gap = function () { return parseFloat(getComputedStyle(items[1]).marginTop) || 0; };
+        gsap.set(items.slice(1), { opacity: 0.7 });   // waiting paragraphs start dimmed, the first one leads
         var tl = gsap.timeline({ defaults: { ease: 'none', duration: 1 },
           scrollTrigger: { trigger: col, start: 'top 65%', end: 'bottom 85%', scrub: true, invalidateOnRefresh: true } });
         for (var k = 1; k < n; k++) {
           for (var i = 0; i < k; i++) {
             (function (i, k) { tl.to(items[i], { y: function () { return gap() * (k - i); } }, k - 1); })(i, k);
           }
+          // when the group reaches paragraph k, it becomes the lead (100%) and the ones above step back (70%)
+          tl.to(items[k], { opacity: 1, duration: 0.3, ease: 'power1.out' }, k - 0.3)
+            .to(items.slice(0, k), { opacity: 0.7, duration: 0.3, ease: 'power1.out' }, k - 0.3);
         }
         tls.push(tl);
       });
-      return function () { tls.forEach(function (tl) { tl.scrollTrigger.kill(); tl.kill(); }); gsap.set($$('[data-stack-item]'), { clearProps: 'transform' }); };
+      return function () { tls.forEach(function (tl) { tl.scrollTrigger.kill(); tl.kill(); }); gsap.set($$('[data-stack-item]'), { clearProps: 'transform,opacity' }); };
     });
   }
 
