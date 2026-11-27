@@ -576,3 +576,7 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
     transform: translateY(-50%);
   }
 }
+@media (max-width: 767px) {
+  .ipanel__stage { touch-action: pan-y; cursor: grab; }   /* sideways drag moves the photo (model.js), vertical swipes scroll the page */
+  .ipanel__stage > img { -webkit-user-drag: none; user-select: none; pointer-events: none; }
+}

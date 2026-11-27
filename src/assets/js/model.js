@@ -117,6 +117,32 @@
     panel.addEventListener('keydown', function (e) { if (e.key === 'Escape' && current > -1) close(); });
   });
 
+  /* ---------- Interior photos on phones: the cropped photo slides sideways with the finger, so every hotspot can be
+     reached; vertical swipes still scroll the page (touch-action: pan-y in model.css) ---------- */
+  var dragMq = window.matchMedia('(max-width: 767px)');
+  $$('[data-hotspots] .ipanel__stage').forEach(function (stage) {
+    var panel = stage.parentElement, startX = 0, startLeft = 0, dragging = false, moved = false;
+    var limit = function () { return Math.min(0, panel.clientWidth - stage.offsetWidth); };
+    stage.addEventListener('pointerdown', function (e) {
+      if (!dragMq.matches || e.button > 0) return;
+      dragging = true; moved = false; startX = e.clientX;
+      startLeft = stage.getBoundingClientRect().left - panel.getBoundingClientRect().left;
+    });
+    stage.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - startX;
+      if (!moved && Math.abs(dx) < 6) return;
+      moved = true;
+      stage.style.left = Math.max(limit(), Math.min(0, startLeft + dx)) + 'px';
+    });
+    var end = function () { dragging = false; };
+    stage.addEventListener('pointerup', end);
+    stage.addEventListener('pointercancel', end);
+    // a drag that ends on a hotspot must not open it
+    stage.addEventListener('click', function (e) { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+    dragMq.addEventListener('change', function () { stage.style.left = ''; });
+  });
+
   /* ---------- Specs accordion: the page gets taller/shorter, so scroll positions are recalculated ---------- */
   var specsAcc = document.querySelector('.specs__acc');
   if (specsAcc && hasGsap) specsAcc.addEventListener('toggle', function () { setTimeout(function () { ScrollTrigger.refresh(); }, 520); });
