@@ -620,3 +620,9 @@ select.field__input { appearance: none; background-image: url("data:image/svg+xm
 }
 .site-footer__logo { width: 170px; height: auto; }
 @media (max-width: 1023px) { .mtile__body { bottom: 32px; } }   /* menu tiles on phones/tablets: titles 20px higher */
+/* Phones: the menu opens edge to edge (no frame, square corners) */
+@media (max-width: 767px) {
+  .megamenu { --frame: 0px; border-radius: 0; clip-path: inset(0 0 100% 0); }
+  .megamenu.is-open { clip-path: inset(0 0 0 0); }
+  .megamenu__inner { padding-inline: 20px; }
+}
