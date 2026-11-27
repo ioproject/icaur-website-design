@@ -205,3 +205,4 @@
   .js .values-h__stage { height: 100vh; height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 0 20px; }
   .js .values-h { overflow: hidden; }
 }
+.mission__text { font-weight: 500; }   /* medium */
