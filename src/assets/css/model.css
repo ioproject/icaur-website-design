@@ -585,3 +585,4 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
   .comfort.section { padding-top: var(--space-xl); padding-bottom: 30px; }
   .comfort .comfort__track { padding-bottom: 0; }
 }
+@media (max-width: 767px) { .comfort.section:not(.comfort--details) { padding-bottom: 50px; } }   /* Comfort: 20px more under the cards */
