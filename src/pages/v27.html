@@ -192,7 +192,7 @@
       <h3 class="section-title">{{ v27.interior.cabin_title }}</h3>
     </header>
     <div class="ipanel" data-hotspots>
-      <div class="ipanel__stage" style="--r: 1.7778">
+      <div class="ipanel__stage" style="--r: 1.7778; --fx: 0.165">   <!-- --fx: centre of its hotspots (share of the width), kept in view on phones -->
         <img src="{{ @assets }}img/v27/int-side-1440.jpg" srcset="{{ @assets }}img/v27/int-side-800.jpg 800w, {{ @assets }}img/v27/int-side-1440.jpg 1440w, {{ @assets }}img/v27/int-side-1920.jpg 1920w"
           sizes="100vw" alt="{{ v27.interior.cabin_alt }}" width="1920" height="1080" loading="lazy">
         {% for s in v27.interior.cabin %}

@@ -566,3 +566,13 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 @media (max-width: 767px) { .ccard__more { display: none; } }   /* phones: the longest details caption drops its last clause */
 /* Phones: the detail card keeps one height for every slide; the photo takes whatever the text leaves */
 @media (max-width: 767px) { .spotcard { height: min(560px, calc(100% - 24px)); } }
+
+/* Phones: the wide interior photo is cropped; --fx (0–1, set on the stage) picks which part stays in view so its hotspots
+   remain visible; the photo still covers the whole panel */
+@media (max-width: 767px) {
+  .ipanel__stage {
+    --w: max(100vw, calc(max(100svh, 560px) * var(--r)));
+    left: clamp(calc(100vw - var(--w)), calc(50vw - var(--w) * var(--fx, 0.5)), 0px);
+    transform: translateY(-50%);
+  }
+}
