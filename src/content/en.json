@@ -886,7 +886,9 @@
           "alt": "Team meeting with colleagues in person and on a video call",
           "n": "01",
           "img2": "service-800",
-          "img3": "life-lounge-800"
+          "img3": "life-lounge-800",
+          "oval": "life-family-1000",
+          "oval_alt": "Mother and son playing catch in the back of an iCAUR, with the sea at sunset"
         },
         {
           "img": "value-design",
@@ -895,7 +897,9 @@
           "alt": "Technicians working on a driving simulator",
           "n": "02",
           "img2": "tag-design-800",
-          "img3": "life-road-800"
+          "img3": "life-road-800",
+          "oval": "value-design-800",
+          "oval_alt": "Technicians working on a driving simulator"
         },
         {
           "img": "value-innovation",
@@ -904,7 +908,9 @@
           "alt": "Engineer with a tablet in a lab",
           "n": "03",
           "img2": "tag-tech-800",
-          "img3": "mission-800"
+          "img3": "mission-800",
+          "oval": "value-innovation-800",
+          "oval_alt": "Engineer with a tablet in a lab"
         },
         {
           "img": "value-safety",
@@ -913,7 +919,9 @@
           "alt": "Welding robots working on a car body in a factory",
           "n": "04",
           "img2": "hero-800",
-          "img3": "tag-eco-800"
+          "img3": "tag-eco-800",
+          "oval": "value-safety-800",
+          "oval_alt": "Welding robots working on a car body in a factory"
         },
         {
           "img": "value-global",
@@ -922,7 +930,9 @@
           "alt": "Earth seen from space at night, with city lights",
           "n": "05",
           "img2": "life-meadow-1000",
-          "img3": "vinyl-800"
+          "img3": "vinyl-800",
+          "oval": "value-global-800",
+          "oval_alt": "Earth seen from space at night, with city lights"
         }
       ],
       "cta": "Discover <span class=\"nocase\">iCAUR</span> V27",
