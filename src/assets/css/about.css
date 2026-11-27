@@ -161,7 +161,7 @@
 .phero__card--c4 { left: calc(65% + var(--cg)); top: calc(62.2% + var(--cg)); width: 31.2%; height: calc(36.4% - var(--cg)); }
 
 .about-story__intro { margin-top: -75px; }   /* higher */
-.about-story .statement__more { margin-top: 100px; }   /* 100px between the intro and the image/paragraphs */
+.about-story .statement__more { margin-top: 130px; }   /* 130px between the intro and the image/paragraphs */
 .tag-card__text { line-height: 1.35; }   /* tighter */
 
 /* ---------- Values: sticky stage, row of cards slides sideways (main.js [data-hscroll]) ---------- */
