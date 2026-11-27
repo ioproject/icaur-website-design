@@ -560,6 +560,7 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 
 /* Details carousel on phones: 50px more above the eyebrow, less empty space under the cards */
 @media (max-width: 767px) {
-  .comfort--details.section { padding-top: calc(var(--space-xl) - 50px + 50px); padding-bottom: 0; }
+  .comfort--details.section { padding-top: calc(var(--space-xl) - 50px + 50px); padding-bottom: 30px; }   /* 50px less than before under the first card, room under the longest captions */
   .comfort--details .comfort__track { padding-bottom: 0; }
 }
+@media (max-width: 767px) { .ccard__more { display: none; } }   /* phones: the longest details caption drops its last clause */
