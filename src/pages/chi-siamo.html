@@ -153,24 +153,41 @@
     </div>
   </section>
 
-  <!-- ===== NEXT ===== -->
-  <section class="split" aria-label="{{ about.next.eyebrow }}">
-    <a class="split__tile" href="v27.html" data-cursor-target="{{ common.nav.explore }}">
-      <img src="{{ @assets }}img/home/v27-card-1280.jpg" srcset="{{ @assets }}img/home/v27-card-768.jpg 768w, {{ @assets }}img/home/v27-card-1280.jpg 1280w, {{ @assets }}img/home/v27-card-1920.jpg 1920w" sizes="(min-width: 768px) 50vw, 100vw" alt="{{ about.next.v27_alt }}" width="1280" height="543" loading="lazy">
-      <span class="split__body">
-        <span class="eyebrow">{{ about.next.eyebrow }}</span>
-        <span class="split__title">{{ about.next.v27_title }}</span>
-        <span class="link-arrow">{{ common.explore_more }}<svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
-      </span>
-    </a>
-    <a class="split__tile" href="contatti.html" data-cursor-target="{{ common.nav.contact }}">
-      <img src="{{ @assets }}img/home/contact-1280.jpg" srcset="{{ @assets }}img/home/contact-768.jpg 768w, {{ @assets }}img/home/contact-1280.jpg 1280w, {{ @assets }}img/home/contact-1920.jpg 1920w" sizes="(min-width: 768px) 50vw, 100vw" alt="{{ about.next.contact_alt }}" width="1280" height="853" loading="lazy">
-      <span class="split__body">
-        <span class="eyebrow">{{ about.next.contact_eyebrow }}</span>
-        <span class="split__title">{{ about.next.contact_title }}</span>
-        <span class="link-arrow">{{ common.explore_more }}<svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
-      </span>
-    </a>
+  <!-- ===== NEXT: V27 in the centred box used for the V25 on the home, then the home's pre-footer contact panel ===== -->
+  <section class="models models--v25 about-end section" aria-label="V27">
+    <div class="models__grid">
+      <article class="model-card model-card--v25 model-card--life" data-cursor-target="{{ common.nav.explore }}">
+        <a class="model-card__link" href="v27.html" aria-label="{{ home.models.v27.cta }}"></a>
+        <div class="model-card__media">
+          <img src="{{ @assets }}img/home/v27-card-1280.jpg" srcset="{{ @assets }}img/home/v27-card-768.jpg 768w, {{ @assets }}img/home/v27-card-1280.jpg 1280w, {{ @assets }}img/home/v27-card-1920.jpg 1920w" sizes="(min-width: 1500px) 1440px, 100vw" alt="{{ home.models.v27.alt }}" width="1280" height="543" loading="lazy">
+        </div>
+        <div class="model-card__body">
+          <img class="model-card__logo" src="{{ @assets }}img/brand/v27-logo.webp" alt="V27" width="232" height="32" loading="lazy">
+          <p class="model-card__line">{{ home.models.v27.line }}</p>
+          <dl class="stats">
+            <div><dt>{{ home.models.v27.stat1_label }}</dt><dd>{{ home.models.v27.stat1_value }}</dd></div>
+            <div><dt>{{ home.models.v27.stat2_label }}</dt><dd>{{ home.models.v27.stat2_value }}</dd></div>
+            <div><dt>{{ home.models.v27.stat3_label }}</dt><dd>{{ home.models.v27.stat3_value }}</dd></div>
+          </dl>
+          <a class="btn btn--text btn--text-light model-card__cta" href="v27.html" tabindex="-1" aria-hidden="true"><span>{{ home.models.v27.cta }}</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta-panel" aria-labelledby="cta-title">
+    <div class="cta-panel__inner">
+      <div class="cta-panel__copy">
+        <div>
+          <p class="cta-panel__eyebrow">{{ home.cta.eyebrow }}</p>
+          <h2 class="cta-panel__title" id="cta-title">{{ home.cta.title }}</h2>
+        </div>
+        <a class="btn btn--light cta-panel__btn" href="contatti.html">{{ home.cta.submit }}</a>
+      </div>
+      <figure class="cta-panel__media">
+        <img src="{{ @assets }}img/home/life-1280.jpg" srcset="{{ @assets }}img/home/life-768.jpg 768w, {{ @assets }}img/home/life-1280.jpg 1280w, {{ @assets }}img/home/life-1920.jpg 1920w" sizes="(min-width: 900px) 55vw, 100vw" alt="{{ home.cta.alt }}" width="1280" height="714" loading="lazy">
+      </figure>
+    </div>
   </section>
 
 </main>

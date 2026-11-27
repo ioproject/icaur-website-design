@@ -207,3 +207,88 @@
 }
 .mission__text { font-weight: 500; }   /* medium */
 .life__text { line-height: 1.35; }   /* tighter */
+
+/* ---------- Closing blocks, same as the home: V27 box (V25-style centred box) + beige contact panel ----------
+   copied from home.css (the about page does not load it): model card, key figures, V25 box, pre-footer panel */
+/* ---------- Models ---------- */
+.models { padding-block: 0; background: var(--c-white); }   /* no heading: the cards start right after the statement */
+.models__grid { display: grid; gap: 2px; }
+
+.model-card {
+  position: relative; overflow: hidden; isolation: isolate;
+  min-height: clamp(520px, 78svh, 820px);
+  display: flex; align-items: flex-end;
+  background: var(--c-ink);
+}
+.model-card__link { position: absolute; inset: 0; z-index: 3; }
+.model-card__link:focus-visible { outline-offset: -4px; }
+
+.model-card__media { position: absolute; inset: 0; z-index: -1; }
+.model-card__media img, .model-card__media video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1.6s var(--ease-out), opacity 0.8s var(--ease-out);
+}
+.model-card__media video { opacity: 0; }
+.model-card__media video.is-playing { opacity: 1; }
+.model-card:hover .model-card__media img,
+.model-card:hover .model-card__media video { transform: scale(1.06); }
+.model-card__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(20, 13, 11, 0.9) 0%, rgba(20, 13, 11, 0.35) 40%, rgba(20, 13, 11, 0) 65%);
+}
+
+.model-card__body { position: relative; width: 100%; padding: var(--space-lg) var(--home-x) calc(var(--space-lg) + 40px); display: grid; gap: var(--space-sm); justify-items: start; }
+.model-card__logo { width: clamp(150px, 14vw, 220px); height: auto; }
+.model-card__line { font-size: var(--fs-md); font-weight: 500; }
+.model-card__text { color: var(--c-text-dim); max-width: 40ch; }
+.model-card .link-arrow { margin-top: var(--space-xs); }
+.model-card:hover .link-arrow .icon { transform: translateX(6px); }
+
+/* Key figures: large values, unit smaller, label underneath, thin dividers */
+.stats { display: grid; grid-template-columns: repeat(3, auto); gap: var(--space-sm) clamp(1rem, 0.4rem + 3vw, 4rem); margin-top: calc(var(--space-sm) + 20px); }
+.stats div { display: flex; flex-direction: column-reverse; gap: 6px; padding-left: clamp(1rem, 0.4rem + 3vw, 4rem); border-left: 1px solid rgba(255, 255, 255, 0.35); }
+.stats div:first-child { padding-left: 0; border-left: 0; }
+.stats dd { font-size: clamp(1.375rem, 0.9rem + 2vw, 2.75rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; white-space: nowrap; }
+.stats__unit { font-size: 0.55em; margin-left: 0.3em; letter-spacing: 0; }
+.stats dt { font-size: clamp(0.8125rem, 0.75rem + 0.35vw, 1.125rem); color: rgba(255, 255, 255, 0.8); }
+/* V25: smaller centred box on white, logo and text centred */
+.models--v25 { padding-block: var(--section-y, clamp(4rem, 2rem + 6vw, 8rem)); }
+.models--v25 .models__grid { margin-top: 0; padding-inline: var(--home-x); }
+.model-card--v25 {
+  width: min(100%, 1440px); margin-inline: auto; border-radius: 20px;
+  min-height: 0; aspect-ratio: 16 / 9; align-items: center; justify-content: center;
+}
+.model-card--v25 .model-card__body { justify-items: center; text-align: center; padding: var(--space-lg) var(--home-x); }
+.model-card--v25 .model-card__text { margin-inline: auto; }
+.model-card--v25 .model-card__media::after { background: rgba(20, 13, 11, 0.45); }   /* even shade: text sits in the middle */
+.model-card--v25 .model-card__media img { object-position: 50% 60%; }   /* keeps the car in the middle of the box */
+.model-card__cta { position: relative; z-index: 4; margin-top: var(--space-xs); font-size: 14px; }   /* above .model-card__link */
+.model-card--v25 .badge { margin-bottom: 20px; }
+.model-card--v25 .model-card__logo { margin-bottom: 15px; }
+@media (max-width: 767px) { .model-card--v25 { aspect-ratio: auto; min-height: 440px; } }   /* 16:9 is too short for the text on phones */
+/* ---------- Pre-footer contact panel ---------- */
+.cta-panel { padding: 0; }   /* full-bleed beige */
+.cta-panel__inner {
+  --cta-bg: #EDE6DA;   /* beige */
+  display: grid; gap: var(--space-lg);
+  padding: clamp(2rem, 1rem + 5vw, 6.5rem) var(--home-x);
+  color: var(--c-black);
+  background-color: var(--cta-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='98' height='98' viewBox='0 0 98 98'%3E%3Cpath d='M49 43v12M43 49h12' stroke='%23D9CFBF' stroke-width='1'/%3E%3C/svg%3E");
+  background-position: -10px -10px;
+}
+.cta-panel__copy { display: flex; flex-direction: column; justify-content: flex-start; gap: var(--space-lg); }   /* button right under the title */
+.cta-panel__eyebrow { font-size: var(--fs-sm); font-weight: 500; color: var(--c-gray); margin-bottom: var(--space-sm); }
+.cta-panel__title { font-size: clamp(1.625rem, 1.1rem + 1.6vw, 2.5rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.025em; max-width: 22ch; }
+.cta-panel__media { overflow: hidden; border-radius: 12px; aspect-ratio: 16 / 10; }
+.cta-panel__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.cta-panel__btn { align-self: flex-start; }   /* single button to the contact page */
+@media (min-width: 900px) {
+  .cta-panel__inner { grid-template-columns: 1fr 1.45fr; gap: clamp(2rem, 1rem + 5vw, 8rem); }
+  .cta-panel__media { aspect-ratio: auto; min-height: 100%; }
+}
+/* V27 inside the centred box: key figures centred too */
+.model-card--life .stats { justify-content: center; text-align: left; }
+.model-card--life .model-card__media img { object-position: 50% 55%; }
+.about-end { background: var(--c-white); }
