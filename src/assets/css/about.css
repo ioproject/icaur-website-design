@@ -184,3 +184,5 @@
 .phero__card--c2 { left: calc(10.4% - var(--cg)); top: calc(37.7% + var(--cg)); width: 23.3%; height: 33.8%; }
 .phero__card--c3 { left: calc(65% + var(--cg)); top: 28.4%; width: 23.3%; height: 33.8%; }
 .phero__card--c4 { left: calc(65% + var(--cg)); top: calc(62.2% + var(--cg)); width: 31.2%; height: calc(36.4% - var(--cg)); }
+
+.about-story__intro { margin-top: -40px; }   /* 40px higher */
