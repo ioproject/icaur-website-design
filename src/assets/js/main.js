@@ -712,8 +712,9 @@
   // Growing background [data-grow-bg]: inset + rounded → full width while its section rises into view
   if (!reduceMotion) {
     $$('[data-grow-bg]').forEach(function (bg) {
-      var section = bg.parentElement;
-      var inset = window.matchMedia('(max-width: 767px)').matches ? 3 : 5;
+      var section = bg.parentElement, phone = window.matchMedia('(max-width: 767px)').matches;
+      if (phone && bg.dataset.growBg === 'desktop') return;   // [data-grow-bg="desktop"]: full background straight away on phones
+      var inset = phone ? 3 : 5;
       gsap.fromTo(bg,
         { clipPath: 'inset(0% ' + inset + '% 0% ' + inset + '% round 20px)' },
         { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none',

@@ -209,3 +209,8 @@
 
 @media (min-width: 900px) { .about-story .stack__item:last-child .statement__more-text { padding-bottom: 0; } }   /* last paragraph ends on the image bottom */
 .about-story .statement__more-text { font-weight: 400; }   /* manifesto paragraphs: regular */
+/* Phones: the brown story starts right under the collage (no white gap, no growing background), intro not pulled up */
+@media (max-width: 767px) {
+  .about-story { border-top: 0; }
+  .about-story__intro { margin-top: 0; }
+}
