@@ -292,3 +292,4 @@
 .model-card--life .model-card__media img { object-position: 50% 55%; }
 .about-end { background: var(--c-white); }
 @media (min-width: 900px) { .about-story .stack__item:last-child .statement__more-text { padding-bottom: 0; } }   /* last paragraph ends on the image bottom */
+.about-story .statement__more-text { font-weight: 400; }   /* manifesto paragraphs: regular */
