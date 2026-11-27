@@ -36,3 +36,7 @@
 .notify__inner { display: grid; gap: var(--space-lg); align-items: start; }
 .notify__text { margin-top: var(--space-md); color: var(--c-gray); max-width: 42ch; }
 @media (min-width: 1024px) { .notify__inner { grid-template-columns: 1fr 1.1fr; gap: var(--space-xl); } }
+
+/* Hero: logo 300px wide, line in medium */
+.soon-hero__logo { width: 300px; max-width: 80vw; }
+.soon-hero__line { font-weight: 500; }

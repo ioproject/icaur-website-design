@@ -5,6 +5,7 @@
   <meta name="description" content="{{ about.meta.description }}">
 {% include head %}
   <link rel="stylesheet" href="{{ @assets }}css/about.css?v={{ @v }}">
+  <link rel="stylesheet" href="{{ @assets }}css/blocks.css?v={{ @v }}">
   <link rel="preload" as="image" href="{{ @assets }}img/about/hero-1440.jpg" imagesrcset="{{ @assets }}img/about/hero-800.jpg 800w, {{ @assets }}img/about/hero-1440.jpg 1440w, {{ @assets }}img/about/hero-2048.jpg 2048w" imagesizes="100vw">
 </head>
 <body class="page page--about">
@@ -154,7 +155,7 @@
   </section>
 
   <!-- ===== NEXT: V27 in the centred box used for the V25 on the home, then the home's pre-footer contact panel ===== -->
-  <section class="models models--v25 about-end section" aria-label="V27">
+  <section class="models models--v25 next-v27 section" aria-label="V27">
     <div class="models__grid">
       <article class="model-card model-card--v25 model-card--life" data-cursor-target="{{ common.nav.explore }}">
         <a class="model-card__link" href="v27.html" aria-label="{{ home.models.v27.cta }}"></a>
