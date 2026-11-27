@@ -547,3 +547,13 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
 .specs__table tbody th { font-size: 12px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-gray); }
 .specs__table td { color: var(--c-ink); }
 .specs .note--dim { margin-top: var(--space-md); }
+
+/* Small screens: nothing may stick out sideways */
+@media (max-width: 767px) {
+  .colors__stage { overflow: hidden; }   /* the hidden colour photos are scaled 1.04 and pushed the page wider */
+}
+@media (max-width: 899px) {
+  .vstats__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vstats__item dd { font-size: clamp(1.75rem, 0.6rem + 6vw, 3rem); }   /* two columns: the figures fit their half */
+}
+.specs__summary .section-title { min-width: 0; overflow-wrap: break-word; hyphens: auto; }   /* long English title on 320px phones */

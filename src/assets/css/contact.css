@@ -32,3 +32,8 @@
   .contact__inner { grid-template-columns: 1.6fr 1fr; }
   .contact__info { position: sticky; top: calc(var(--header-top) + var(--header-h) + var(--space-md)); }
 }
+
+/* Very narrow phones (320px): the column may shrink below its longest word, long words wrap */
+.contact__inner { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1024px) { .contact__inner { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); } }
+.contact__title { overflow-wrap: break-word; hyphens: auto; }
