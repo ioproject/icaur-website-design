@@ -26,10 +26,17 @@
         <img src="{{ @assets }}img/about/hero-1440.jpg" srcset="{{ @assets }}img/about/hero-800.jpg 800w, {{ @assets }}img/about/hero-1440.jpg 1440w, {{ @assets }}img/about/hero-2048.jpg 2048w" sizes="100vw" alt="" width="1440" height="540" fetchpriority="high">
         <div class="phero__shade" aria-hidden="true"></div>
       </div>
-      <div class="container phero__content" data-collage-text>
-        <p class="eyebrow" data-hero-fade>{{ about.hero.eyebrow }}</p>
-        <h1 class="phero__title" data-split-lines>{{ about.hero.title }}</h1>
-        <p class="phero__text" data-hero-fade>{{ about.hero.text }}</p>
+      <!-- centred eyebrow + text; the title runs right to left as a huge uppercase band 60px above the bottom (CSS animation);
+           everything fades out on scroll (main.js [data-collage-text]) -->
+      <div class="phero__content" data-collage-text>
+        <div class="phero__center">
+          <p class="phero__eyebrow" data-hero-fade>{{ about.hero.eyebrow }}</p>
+          <p class="phero__text" data-hero-fade>{{ about.hero.text }}</p>
+        </div>
+        <h1 class="phero__marquee">
+          <span class="visually-hidden">{{ about.hero.marquee }}</span>
+          <span class="phero__marquee-track" aria-hidden="true"><span class="phero__marquee-item">{{ about.hero.marquee }}</span><span class="phero__marquee-item">{{ about.hero.marquee }}</span><span class="phero__marquee-item">{{ about.hero.marquee }}</span><span class="phero__marquee-item">{{ about.hero.marquee }}</span></span>
+        </h1>
       </div>
     </div>
   </section>

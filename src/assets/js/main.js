@@ -650,6 +650,15 @@
     });
   }
 
+  // Collage hero below 1024px (no collage there): its texts fade out while the hero scrolls away
+  if (!reduceMotion) {
+    gsap.matchMedia().add('(max-width: 1023px)', function () {
+      $$('[data-collage]').forEach(function (sec) {
+        gsap.to(sec.querySelector('[data-collage-text]'), { autoAlpha: 0, ease: 'none', scrollTrigger: { trigger: sec, start: 'top top', end: '35% top', scrub: true } });
+      });
+    });
+  }
+
   // Drift: the block slides down its column while the section scrolls by (desktop only)
   if (!reduceMotion) {
     gsap.matchMedia().add('(min-width: 900px)', function () {

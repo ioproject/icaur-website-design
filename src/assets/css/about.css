@@ -157,3 +157,15 @@
   .about-story .stack__item { overflow: hidden; }
   .about-story .statement__more-text { margin: 0; padding-bottom: 24px; }
 }
+
+/* Hero texts: centred eyebrow + text; huge uppercase title running right to left, 60px above the bottom of the image */
+.phero__content { position: absolute; inset: 0; z-index: 3; padding: 0; max-width: none; }
+.phero__center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(100% - 2 * var(--gutter), 40rem); text-align: center; }
+.phero__eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; margin-bottom: 14px; }
+.phero__center .phero__text { margin: 0 auto; text-align: center; }
+.phero__marquee { position: absolute; left: 0; right: 0; bottom: 60px; margin: 0; overflow: hidden; white-space: nowrap;
+  font-size: clamp(4.5rem, 15vw, 20rem); font-weight: 500; line-height: 0.8; letter-spacing: -0.03em; text-transform: uppercase; color: #fff; }
+.phero__marquee-track { display: inline-flex; animation: phero-marquee 28s linear infinite; will-change: transform; }
+.phero__marquee-item { padding-right: 0.35em; }
+@keyframes phero-marquee { to { transform: translateX(-50%); } }   /* 4 copies: moving by half loops seamlessly */
+@media (prefers-reduced-motion: reduce) { .phero__marquee-track { animation: none; } }

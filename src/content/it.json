@@ -824,9 +824,10 @@
       "description": "iCAUR crede che i veri classici non siano né retrò né di moda. Design che dura, tecnologia elettrica e un'auto pensata per accompagnarti a lungo."
     },
     "hero": {
-      "eyebrow": "Chi siamo",
+      "eyebrow": "<span class=\"nocase\">iCAUR</span> LIFE",
       "title": "Classic<br>Never Fades",
-      "text": "Portiamo i classici avanti, nell'era dell'energia nuova."
+      "text": "Portiamo i classici avanti, nell'era dell'energia nuova.",
+      "marquee": "Classic Never Fades"
     },
     "story": {
       "eyebrow": "La nostra storia",
