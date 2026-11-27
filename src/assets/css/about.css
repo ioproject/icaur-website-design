@@ -169,3 +169,10 @@
 .phero__marquee-item { padding-right: 0.35em; }
 @keyframes phero-marquee { to { transform: translateX(-50%); } }   /* 4 copies: moving by half loops seamlessly */
 @media (prefers-reduced-motion: reduce) { .phero__marquee-track { animation: none; } }
+
+/* Hero: new photo under a flat 20% black veil; centred text on one line, medium, 40px higher */
+.phero .phero__shade { background: rgba(0, 0, 0, 0.2); }
+.phero .phero__media img { object-position: 50% 55%; }
+.phero__center { top: calc(50% - 40px); width: auto; max-width: calc(100% - 2 * var(--gutter)); }
+.phero__center .phero__text { max-width: none; font-weight: 500; color: #fff; }
+@media (min-width: 768px) { .phero__center .phero__text { white-space: nowrap; } }
