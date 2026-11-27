@@ -146,15 +146,15 @@
   font-size: clamp(1.25rem, 0.9rem + 1vw, 1.75rem); font-weight: 500; line-height: 1.25; letter-spacing: -0.01em; color: #fff;   /* 28px on desktop */
 }
 
-/* Manifesto: sticky image on the left, paragraphs on the right scroll up and stack under each other (tops set by main.js [data-stack]) */
+/* Manifesto: sticky image on the left; on the right the spread-out paragraphs gather downward on scroll (main.js [data-stack]) */
 .about-story .statement__more-text { font-weight: 500; color: #fff; max-width: 30ch; margin: 0 0 var(--space-md); }
 @media (min-width: 900px) {
   .about-story .statement__more { align-items: start; }
   .about-story .statement__more-media { position: sticky; top: 110px; }
   .about-story .statement__more-copy { padding-left: calc(25% - 90px); }
   /* the pin stays still; column-reverse shows the newest paragraph on top while keeping the reading order in the HTML */
-  .about-story .stack__pin { position: sticky; top: 110px; display: flex; flex-direction: column-reverse; }
-  .about-story .stack__item { overflow: hidden; }
+  .about-story .stack__item + .stack__item { margin-top: 26vh; }   /* spread out; main.js gathers them downward on scroll */
+  .about-story .stack__item { will-change: transform; }
   .about-story .statement__more-text { margin: 0; padding-bottom: 24px; }
 }
 

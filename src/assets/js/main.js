@@ -10,7 +10,7 @@
      [data-words]                                               words lighting up on scroll
      [data-reveal]                                              fade/slide in on enter
      [data-drift]                                               block slides down its column on scroll
-     [data-stack] [data-stack-item]                             each paragraph enters on top, pushing the others down
+     [data-stack] [data-stack-item]                             spread paragraphs gather downward on scroll
      [data-grow-box]                                            centred box grows to full width on scroll
      [data-collage] [data-collage-main] [data-collage-card]     hero photo shrinks into a box among image boxes (first scroll)
      [data-tech] [data-tech-item] [data-tech-img]               pinned stage: image + titles change on scroll
@@ -624,29 +624,26 @@
     });
   }
 
-  // Stack [data-stack] (desktop): the paragraphs sit in a sticky .stack__pin shown in reverse (column-reverse); while the
-  // column scrolls by, each next [data-stack-item] opens at the top and pushes the previous ones down (scrubbed)
+  // Stack [data-stack] (desktop): the [data-stack-item] paragraphs start spread out (CSS margin); while the column scrolls
+  // by, the first slides down until it meets the second, then both move down to the third, and so on, until all sit
+  // together on top of the last (scrubbed)
   if (!reduceMotion) {
     gsap.matchMedia().add('(min-width: 900px)', function () {
-      var undo = [];
+      var tls = [];
       $$('[data-stack]').forEach(function (col) {
         var items = $$('[data-stack-item]', col), n = items.length;
         if (n < 2) return;
-        var step = function () { return window.innerHeight * 0.35; };
-        var full = function (it) { return it.firstElementChild.offsetHeight; };
-        function setH() {   // column = finished stack + scroll room for each entrance
-          var h = 0; items.forEach(function (it) { h += full(it); });
-          col.style.height = (h + (n - 0.5) * step()) + "px";   // + a short pause once complete
+        var gap = function () { return parseFloat(getComputedStyle(items[1]).marginTop) || 0; };
+        var tl = gsap.timeline({ defaults: { ease: 'none', duration: 1 },
+          scrollTrigger: { trigger: col, start: 'top 65%', end: 'bottom 85%', scrub: true, invalidateOnRefresh: true } });
+        for (var k = 1; k < n; k++) {
+          for (var i = 0; i < k; i++) {
+            (function (i, k) { tl.to(items[i], { y: function () { return gap() * (k - i); } }, k - 1); })(i, k);
+          }
         }
-        setH();
-        ScrollTrigger.addEventListener('refreshInit', setH);
-        var tl = gsap.timeline({ scrollTrigger: { trigger: col, start: 'top 110px', end: function () { return '+=' + (n - 1) * step(); }, scrub: true, invalidateOnRefresh: true } });
-        items.slice(1).forEach(function (it, i) {
-          tl.fromTo(it, { height: 0, autoAlpha: 0 }, { height: function () { return full(it); }, autoAlpha: 1, ease: 'power2.inOut', duration: 1 }, i);
-        });
-        undo.push(function () { ScrollTrigger.removeEventListener('refreshInit', setH); tl.scrollTrigger.kill(); tl.kill(); gsap.set(items, { clearProps: 'all' }); col.style.height = ''; });
+        tls.push(tl);
       });
-      return function () { undo.forEach(function (f) { f(); }); };
+      return function () { tls.forEach(function (tl) { tl.scrollTrigger.kill(); tl.kill(); }); gsap.set($$('[data-stack-item]'), { clearProps: 'transform' }); };
     });
   }
 
