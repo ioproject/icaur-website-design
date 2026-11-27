@@ -8,18 +8,18 @@ Static site generator for the iCAUR prototype — Python 3 standard library only
 Source layout
     src/pages/*.html        page templates
     src/partials/*.html     shared parts (head, header, footer...)
-    src/content/<lang>.json all texts, one file per language
+    src/content/it.json     all texts (the site is Italian only)
     src/assets/             css, js, fonts, img, video (copied as-is)
 
-Output: dist/ = default language (it), dist/en/ = English. Assets live once in dist/assets/.
+Output: dist/ (pages at the root, assets in dist/assets/).
 
 Template syntax
-    {{ home.hero.title }}            text from the language JSON (raw HTML allowed)
+    {{ home.hero.title }}            text from it.json (raw HTML allowed)
     {% include header %}             src/partials/header.html
     {% for item in home.news.items %} ... {{ item.title }} ... {% endfor %}   (list in the JSON, not nested)
     {{ @v }}       build timestamp, appended to CSS/JS URLs so browsers fetch the new files
-    {{ @assets }}  path prefix to dist/assets/      {{ @lang }}  current language code
-    {{ @page }}    current page file name           {{ @href_en }}  this page in English (same for every language)
+    {{ @assets }}  path prefix to dist/assets/      {{ @lang }}  language code (it)
+    {{ @page }}    current page file name
     {{ @current:v27.html }}  -> ' aria-current="page"' when on that page
 """
 import json, os, re, shutil, sys, time
@@ -27,8 +27,7 @@ import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC, DIST = os.path.join(ROOT, "src"), os.path.join(ROOT, "dist")
-LANGS = ["it", "en"]  # first one is the default, served at the root
-DEFAULT = LANGS[0]
+LANG = "it"
 
 INCLUDE = re.compile(r"{%\s*include\s+([\w-]+)\s*%}")
 LOOP = re.compile(r"{%\s*for\s+(\w+)\s+in\s+([\w.]+)\s*%}(.*?){%\s*endfor\s*%}", re.S)
@@ -86,22 +85,16 @@ def build():
     shutil.copytree(os.path.join(SRC, "assets"), os.path.join(DIST, "assets"),
                     ignore=shutil.ignore_patterns(".DS_Store"))
     pages = sorted(p for p in os.listdir(os.path.join(SRC, "pages")) if p.endswith(".html"))
-    for lang in LANGS:
-        with open(os.path.join(SRC, "content", f"{lang}.json"), encoding="utf-8") as f:
-            content = json.load(f)
-        out_dir = DIST if lang == DEFAULT else os.path.join(DIST, lang)
-        os.makedirs(out_dir, exist_ok=True)
-        for page in pages:
-            with open(os.path.join(SRC, "pages", page), encoding="utf-8") as f:
-                tpl = f.read()
-            up = "" if lang == DEFAULT else "../"
-            ctx = {"@lang": lang, "@page": page, "@assets": up + "assets/", "@v": version}
-            for l in LANGS:  # {{ @href_it }}, {{ @href_en }}: this page in each language
-                ctx[f"@href_{l}"] = up + (page if l == DEFAULT else f"{l}/{page}")
-            html = render(tpl, content, ctx, f"{lang}/{page}")
-            with open(os.path.join(out_dir, page), "w", encoding="utf-8") as f:
-                f.write(html)
-    print(f"built {len(pages)} pages x {len(LANGS)} languages in {time.time() - t0:.2f}s")
+    with open(os.path.join(SRC, "content", f"{LANG}.json"), encoding="utf-8") as f:
+        content = json.load(f)
+    for page in pages:
+        with open(os.path.join(SRC, "pages", page), encoding="utf-8") as f:
+            tpl = f.read()
+        ctx = {"@lang": LANG, "@page": page, "@assets": "assets/", "@v": version}
+        html = render(tpl, content, ctx, page)
+        with open(os.path.join(DIST, page), "w", encoding="utf-8") as f:
+            f.write(html)
+    print(f"built {len(pages)} pages in {time.time() - t0:.2f}s")
 
 
 def snapshot():

@@ -58,11 +58,6 @@
     else target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
   });
 
-  /* ---------- Language switch: mark current ---------- */
-  $$('.lang-switch [data-lang]').forEach(function (a) {
-    if (a.dataset.lang === root.lang) a.setAttribute('aria-current', 'true');
-  });
-
   /* ---------- Header: transparent and full width at the top, .is-solid once scrolled ---------- */
   var header = document.querySelector('[data-header]');
   var menu = document.querySelector('[data-megamenu]');

@@ -27,14 +27,14 @@ Concessionari e News saranno realizzate in WordPress: nel menu hanno link provvi
 src/
   pages/        template delle pagine
   partials/     head, header, footer, scripts (→ header.php / footer.php)
-  content/      it.json (lingua principale) e en.json: TUTTI i testi del sito
+  content/      it.json: TUTTI i testi del sito (solo italiano)
   assets/
     css/        main.css (token, base, header, footer), home.css, model.css (pagine modello)
     js/         main.js (interazioni comuni), model.js (pagine modello), vendor/ — tutto attivato da attributi data-*
     fonts/      Gotham (Light, Book, Medium, Bold)
     img/ video/ immagini e video ottimizzati
 tools/
-  build.py      generatore: src/ → dist/ (italiano in /, inglese in /en/)
+  build.py      generatore: src/ → dist/
   media.py      ottimizza immagini e video da mater/ (macOS)
   video.swift   taglio/compressione video e poster con AVFoundation
 dist/           output generato (non versionato)
@@ -47,7 +47,7 @@ mater/          materiale originale HQ, 8 GB (non versionato)
 {{ home.hero.title }}                    testo dal file della lingua
 {% include header %}                     partial
 {% for item in home.news.items %}…{{ item.title }}…{% endfor %}
-{{ @assets }}  {{ @lang }}  {{ @href_it }}  {{ @href_en }}  {{ @current:v27.html }}
+{{ @assets }}  {{ @lang }}  {{ @current:v27.html }}
 ```
 
 ## Note per l'integrazione in WordPress
