@@ -10,6 +10,7 @@
      [data-words]                                               words lighting up on scroll
      [data-reveal]                                              fade/slide in on enter
      [data-drift]                                               block slides down its column on scroll
+     [data-hscroll] [data-hscroll-track] [data-hscroll-item]    pinned stage, row of cards slides sideways on scroll
      [data-stack] [data-stack-item]                             spread paragraphs gather downward on scroll
      [data-grow-box]                                            centred box grows to full width on scroll
      [data-collage] [data-collage-main] [data-collage-card]     hero photo shrinks into a box among image boxes (first scroll)
@@ -655,6 +656,33 @@
       });
     });
   }
+
+  // Horizontal scroll [data-hscroll] (desktop): the stage is pinned and [data-hscroll-track] slides right to left while
+  // the page scrolls; [data-hscroll-count] shows the value in view, [data-hscroll-bar] the progress
+  gsap.matchMedia().add('(min-width: 900px)', function () {
+    var kill = [];
+    $$('[data-hscroll]').forEach(function (sec) {
+      var track = sec.querySelector('[data-hscroll-track]'), items = $$('[data-hscroll-item]', sec);
+      var count = sec.querySelector('[data-hscroll-count]'), bar = sec.querySelector('[data-hscroll-bar]');
+      var dist = function () { return Math.max(0, track.scrollWidth - window.innerWidth); };
+      var tw = gsap.to(track, {
+        x: function () { return -dist(); }, ease: 'none',
+        scrollTrigger: {
+          trigger: sec, start: 'top top', end: function () { return '+=' + dist(); }, pin: sec.querySelector('.values-h__stage'),
+          scrub: reduceMotion ? true : 0.6, invalidateOnRefresh: true,
+          onUpdate: function (self) {
+            if (bar) bar.style.transform = 'scaleX(' + (0.2 + 0.8 * self.progress) + ')';
+            if (!count) return;
+            var mid = window.innerWidth * 0.6, n = 1;   // the last value whose card has passed 60% of the screen
+            items.forEach(function (it, i) { if (it.getBoundingClientRect().left < mid) n = i + 1; });
+            count.textContent = (n < 10 ? '0' : '') + n;
+          }
+        }
+      });
+      kill.push(function () { tw.scrollTrigger.kill(); tw.kill(); gsap.set(track, { clearProps: 'transform' }); });
+    });
+    return function () { kill.forEach(function (f) { f(); }); };
+  });
 
   // Drift: the block slides down its column while the section scrolls by (desktop only)
   if (!reduceMotion) {

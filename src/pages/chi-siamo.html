@@ -83,24 +83,44 @@
     </div>
   </section>
 
-  <!-- ===== VALUES (image follows the cursor on desktop) ===== -->
-  <section class="values section section--light" aria-labelledby="values-title" data-hover-reveal>
-    <div class="container">
-      <header class="section-head">
-        <p class="eyebrow eyebrow--dark" data-reveal>{{ about.values.eyebrow }}</p>
-        <h2 class="section-title" id="values-title" data-reveal>{{ about.values.title }}</h2>
-      </header>
-      <ol class="values__list">
-        {% for v in about.values.items %}
-        <li class="value" data-reveal data-hover-img="{{ @assets }}img/about/{{ v.img }}-800.jpg">
-          <img class="value__thumb" src="{{ @assets }}img/about/{{ v.img }}-800.jpg" alt="{{ v.alt }}" width="800" height="450" loading="lazy">
-          <h3 class="value__title">{{ v.title }}</h3>
-          <p class="value__text">{{ v.text }}</p>
-        </li>
-        {% endfor %}
-      </ol>
+  <!-- ===== VALUES: the panel stays on screen while a row of value cards slides right to left;
+       each value = coloured card (number, oval photo, uppercase title) + square photo with text + tall photo.
+       Counter and progress bar follow the scroll (main.js [data-hscroll]); below 900px the row scrolls sideways by touch ===== -->
+  <section class="values-h" aria-labelledby="values-title" data-hscroll>
+    <div class="values-h__stage">
+      <div class="values-h__viewport">
+        <div class="values-h__track" data-hscroll-track>
+          <div class="values-h__intro">
+            <div>
+              <p class="values-h__eyebrow">{{ about.values.eyebrow }}</p>
+              <h2 class="values-h__title" id="values-title">{{ about.values.title }}</h2>
+              <a class="values-h__btn" href="v27.html"><span>{{ about.values.cta }}</span><span aria-hidden="true">→</span></a>
+            </div>
+            <p class="values-h__count"><span data-hscroll-count>01</span>/{{ about.values.count }}</p>
+          </div>
+          {% for v in about.values.items %}
+          <article class="values-h__group" data-hscroll-item>
+            <div class="values-h__banner">
+              <div class="values-h__banner-top">
+                <img class="values-h__mark" src="{{ @assets }}img/brand/icaur-logo-black.svg" alt="" width="112" height="20">
+                <span class="values-h__num" aria-hidden="true">{{ v.n }}</span>
+              </div>
+              <div class="values-h__oval"><img src="{{ @assets }}img/about/{{ v.img }}-800.jpg" alt="{{ v.alt }}" width="800" height="450" loading="lazy"></div>
+              <h3 class="values-h__name">{{ v.title }}</h3>
+            </div>
+            <div class="values-h__cap">
+              <div class="values-h__photo values-h__photo--square"><img src="{{ @assets }}img/about/{{ v.img2 }}.jpg" alt="" loading="lazy"></div>
+              <p class="values-h__text">{{ v.text }}</p>
+            </div>
+            <div class="values-h__cap values-h__cap--tall">
+              <div class="values-h__photo values-h__photo--tall"><img src="{{ @assets }}img/about/{{ v.img3 }}.jpg" alt="" loading="lazy"></div>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="values-h__bar" aria-hidden="true"><span data-hscroll-bar></span></div>
     </div>
-    <div class="hover-reveal" aria-hidden="true" data-hover-reveal-frame><img alt="" data-hover-reveal-img></div>
   </section>
 
   <!-- ===== MISSION ===== -->

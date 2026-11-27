@@ -883,33 +883,50 @@
           "img": "value-user",
           "title": "User-centric",
           "text": "Start with people. Listen first, then design with purpose.",
-          "alt": "Team meeting with colleagues in person and on a video call"
+          "alt": "Team meeting with colleagues in person and on a video call",
+          "n": "01",
+          "img2": "service-800",
+          "img3": "life-lounge-800"
         },
         {
           "img": "value-design",
           "title": "Design-led",
           "text": "Timeless aesthetics that move you. Design defines our character.",
-          "alt": "Technicians working on a driving simulator"
+          "alt": "Technicians working on a driving simulator",
+          "n": "02",
+          "img2": "tag-design-800",
+          "img3": "life-road-800"
         },
         {
           "img": "value-innovation",
           "title": "Innovation first",
           "text": "Push the boundaries of new energy. Make advanced tech feel effortless and human.",
-          "alt": "Engineer with a tablet in a lab"
+          "alt": "Engineer with a tablet in a lab",
+          "n": "03",
+          "img2": "tag-tech-800",
+          "img3": "mission-800"
         },
         {
           "img": "value-safety",
           "title": "Safety matters",
           "text": "Peace of mind, engineered to the highest global standards and proven through reliability.",
-          "alt": "Welding robots working on a car body in a factory"
+          "alt": "Welding robots working on a car body in a factory",
+          "n": "04",
+          "img2": "hero-800",
+          "img3": "tag-eco-800"
         },
         {
           "img": "value-global",
           "title": "Global outlook",
           "text": "Open to the world. Grow with partners and move mobility forward, together.",
-          "alt": "Earth seen from space at night, with city lights"
+          "alt": "Earth seen from space at night, with city lights",
+          "n": "05",
+          "img2": "life-meadow-1000",
+          "img3": "vinyl-800"
         }
-      ]
+      ],
+      "cta": "Discover <span class=\"nocase\">iCAUR</span> V27",
+      "count": "05"
     },
     "mission": {
       "eyebrow": "Our mission",

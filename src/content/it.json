@@ -883,33 +883,50 @@
           "img": "value-user",
           "title": "Le persone prima di tutto",
           "text": "Prima ascoltiamo, poi progettiamo con uno scopo.",
-          "alt": "Riunione di lavoro con colleghi in presenza e in videochiamata"
+          "alt": "Riunione di lavoro con colleghi in presenza e in videochiamata",
+          "n": "01",
+          "img2": "service-800",
+          "img3": "life-lounge-800"
         },
         {
           "img": "value-design",
           "title": "Il design come guida",
           "text": "Un'estetica che emoziona e dura. Il design definisce il nostro carattere.",
-          "alt": "Tecnici al lavoro su un simulatore di guida"
+          "alt": "Tecnici al lavoro su un simulatore di guida",
+          "n": "02",
+          "img2": "tag-design-800",
+          "img3": "life-road-800"
         },
         {
           "img": "value-innovation",
           "title": "Prima l'innovazione",
           "text": "Spingiamo più in là l'energia nuova, per rendere semplice e umana la tecnologia avanzata.",
-          "alt": "Ingegnere con un tablet in un laboratorio"
+          "alt": "Ingegnere con un tablet in un laboratorio",
+          "n": "03",
+          "img2": "tag-tech-800",
+          "img3": "mission-800"
         },
         {
           "img": "value-safety",
           "title": "La sicurezza conta",
           "text": "Tranquillità progettata secondo i più alti standard globali e dimostrata dall'affidabilità.",
-          "alt": "Robot di saldatura su una scocca in fabbrica"
+          "alt": "Robot di saldatura su una scocca in fabbrica",
+          "n": "04",
+          "img2": "hero-800",
+          "img3": "tag-eco-800"
         },
         {
           "img": "value-global",
           "title": "Sguardo globale",
           "text": "Aperti al mondo, cresciamo con i nostri partner e facciamo avanzare la mobilità insieme.",
-          "alt": "La Terra vista dallo spazio di notte, con le luci delle città"
+          "alt": "La Terra vista dallo spazio di notte, con le luci delle città",
+          "n": "05",
+          "img2": "life-meadow-1000",
+          "img3": "vinyl-800"
         }
-      ]
+      ],
+      "cta": "Scopri <span class=\"nocase\">iCAUR</span> V27",
+      "count": "05"
     },
     "mission": {
       "eyebrow": "La nostra missione",
