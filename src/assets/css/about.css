@@ -214,3 +214,8 @@
   .about-story { border-top: 0; }
   .about-story__intro { margin-top: 0; }
 }
+/* Phones: bigger hero line, using the full width (the centred box otherwise shrinks to half the screen) */
+@media (max-width: 767px) {
+  .phero__center { width: calc(100% - 2 * var(--gutter)); }
+  .phero__center .phero__text { font-size: 24px; line-height: 1.2; }
+}
