@@ -557,3 +557,9 @@ html.is-spot-open .site-header { transform: translateY(calc(-100% - var(--header
   .vstats__item dd { font-size: clamp(1.75rem, 0.6rem + 6vw, 3rem); }   /* two columns: the figures fit their half */
 }
 .specs__summary .section-title { min-width: 0; overflow-wrap: break-word; hyphens: auto; }   /* long English title on 320px phones */
+
+/* Details carousel on phones: 50px more above the eyebrow, less empty space under the cards */
+@media (max-width: 767px) {
+  .comfort--details.section { padding-top: calc(var(--space-xl) - 50px + 50px); padding-bottom: 0; }
+  .comfort--details .comfort__track { padding-bottom: 0; }
+}
