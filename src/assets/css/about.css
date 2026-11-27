@@ -206,3 +206,4 @@
   .js .values-h { overflow: hidden; }
 }
 .mission__text { font-weight: 500; }   /* medium */
+.life__text { line-height: 1.35; }   /* tighter */
