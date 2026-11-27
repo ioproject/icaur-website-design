@@ -661,26 +661,32 @@
     });
   }
 
-  // Horizontal scroll [data-hscroll] (desktop): the stage is pinned and [data-hscroll-track] slides right to left while
-  // the page scrolls; [data-hscroll-count] shows the value in view, [data-hscroll-bar] the progress
-  gsap.matchMedia().add('(min-width: 900px)', function () {
+  // Horizontal scroll [data-hscroll] (every screen): the stage is pinned and [data-hscroll-track] slides right to left while
+  // the page scrolls; [data-hscroll-count] / [data-hscroll-total] count the visible values (phones hide some in CSS),
+  // [data-hscroll-bar] fills with the progress. Rebuilt when crossing 768px, where the number of values changes.
+  gsap.matchMedia().add({ phone: '(max-width: 767px)', wide: '(min-width: 768px)' }, function () {
     var kill = [];
     $$('[data-hscroll]').forEach(function (sec) {
-      var track = sec.querySelector('[data-hscroll-track]'), items = $$('[data-hscroll-item]', sec);
+      var track = sec.querySelector('[data-hscroll-track]');
+      var items = $$('[data-hscroll-item]', sec).filter(function (it) { return it.offsetParent !== null; });
       var count = sec.querySelector('[data-hscroll-count]'), bar = sec.querySelector('[data-hscroll-bar]');
+      var total = sec.querySelector('[data-hscroll-total]');
+      if (total) total.textContent = (items.length < 10 ? '0' : '') + items.length;
       var dist = function () { return Math.max(0, track.scrollWidth - window.innerWidth); };
+      // counter and bar follow the row as it actually moves (the scrub lags a little behind the scroll)
+      var sync = function () {
+        var p = dist() ? -gsap.getProperty(track, 'x') / dist() : 0;
+        if (bar) bar.style.transform = 'scaleX(' + (0.2 + 0.8 * p) + ')';   // full at the last value
+        if (!count) return;
+        var mid = window.innerWidth * 0.6, n = 1;   // the last value whose card has passed 60% of the screen
+        items.forEach(function (it, i) { if (it.getBoundingClientRect().left < mid) n = i + 1; });
+        count.textContent = (n < 10 ? '0' : '') + n;
+      };
       var tw = gsap.to(track, {
-        x: function () { return -dist(); }, ease: 'none',
+        x: function () { return -dist(); }, ease: 'none', onUpdate: sync,
         scrollTrigger: {
           trigger: sec, start: 'top top', end: function () { return '+=' + dist(); }, pin: sec.querySelector('.values-h__stage'),
-          scrub: reduceMotion ? true : 0.6, invalidateOnRefresh: true,
-          onUpdate: function (self) {
-            if (bar) bar.style.transform = 'scaleX(' + (0.2 + 0.8 * self.progress) + ')';
-            if (!count) return;
-            var mid = window.innerWidth * 0.6, n = 1;   // the last value whose card has passed 60% of the screen
-            items.forEach(function (it, i) { if (it.getBoundingClientRect().left < mid) n = i + 1; });
-            count.textContent = (n < 10 ? '0' : '') + n;
-          }
+          scrub: reduceMotion ? true : 0.6, invalidateOnRefresh: true
         }
       });
       kill.push(function () { tw.scrollTrigger.kill(); tw.kill(); gsap.set(track, { clearProps: 'transform' }); });

@@ -199,11 +199,10 @@
 .values-h__group:nth-of-type(5) { --vh-c: #A78C64; }
 .values-h__bar { height: 3px; margin: 24px var(--home-x, var(--gutter)) 0; background: rgba(20, 13, 11, 0.08); width: 200px; }
 .values-h__bar span { display: block; height: 100%; background: var(--c-ink); transform-origin: left; transform: scaleX(0.2); }
-@media (min-width: 900px) {
-  .js .values-h__viewport { overflow: visible; scroll-snap-type: none; }
-  .js .values-h__stage { height: 100vh; height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 0 20px; }
-  .js .values-h { overflow: hidden; }
-}
+/* pinned stage, on every screen (with JS; without it the row scrolls sideways by touch) */
+.js .values-h__viewport { overflow: visible; scroll-snap-type: none; }
+.js .values-h__stage { height: 100vh; height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 0 20px; }
+.js .values-h { overflow: hidden; }
 .mission__text { font-weight: 500; }   /* medium */
 .life__text { line-height: 1.35; }   /* tighter */
 
@@ -227,4 +226,9 @@
 @media (max-width: 767px) {
   .values-h__btn { min-height: 44px; padding: 0 7px 0 16px; gap: 10px; font-size: 0.875rem; }
   .values-h__btn::after { width: 28px; height: 28px; }
+}
+
+/* Phones: three values only (counter and bar follow the visible ones, main.js [data-hscroll]) */
+@media (max-width: 767px) {
+  .values-h__group:nth-of-type(n+4) { display: none; }
 }
