@@ -877,7 +877,7 @@
     },
     "values": {
       "eyebrow": "I nostri valori",
-      "title": "Cosa ci guida",
+      "title": "Cosa<br>ci guida",
       "items": [
         {
           "img": "value-user",

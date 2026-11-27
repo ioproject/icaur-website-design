@@ -219,3 +219,12 @@
   .phero__center { width: calc(100% - 2 * var(--gutter)); }
   .phero__center .phero__text { font-size: 24px; line-height: 1.2; }
 }
+/* Values on phones: 20px side margin (also where the swipe snaps), smaller button */
+@media (max-width: 899px) {
+  .values-h__track { padding-inline: 20px; }
+  .values-h__viewport { scroll-padding-inline: 20px; }
+}
+@media (max-width: 767px) {
+  .values-h__btn { min-height: 44px; padding: 0 7px 0 16px; gap: 10px; font-size: 0.875rem; }
+  .values-h__btn::after { width: 28px; height: 28px; }
+}

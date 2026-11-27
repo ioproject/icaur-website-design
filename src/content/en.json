@@ -877,7 +877,7 @@
     },
     "values": {
       "eyebrow": "Our values",
-      "title": "What drives us",
+      "title": "What<br>drives us",
       "items": [
         {
           "img": "value-user",
