@@ -86,3 +86,12 @@
 .model-card--life .stats { justify-content: center; text-align: left; }
 .model-card--life .model-card__media img { object-position: 50% 55%; }
 .next-v27 { background: var(--c-white); }
+
+/* V27 box: button to the model page; tighter figures, values lined up at the top */
+.model-card__cta--btn { margin-top: var(--space-md); font-size: clamp(0.9375rem, 0.88rem + 0.25vw, 1.0625rem); }
+.model-card--life .stats dt { line-height: 1.25; }
+.model-card--life .stats div { justify-content: flex-end; }   /* column-reverse: values on top, labels under them */
+@media (max-width: 767px) {
+  .model-card__cta--btn { min-height: 44px; padding: 0 7px 0 16px; gap: 10px; font-size: 0.875rem; }
+  .model-card__cta--btn::after { width: 28px; height: 28px; }
+}
