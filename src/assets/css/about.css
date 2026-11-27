@@ -186,3 +186,4 @@
 .phero__card--c4 { left: calc(65% + var(--cg)); top: calc(62.2% + var(--cg)); width: 31.2%; height: calc(36.4% - var(--cg)); }
 
 .about-story__intro { margin-top: -40px; }   /* 40px higher */
+.tag-card__text { line-height: 1.35; }   /* tighter */
